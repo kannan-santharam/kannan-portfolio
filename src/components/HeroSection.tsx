@@ -1,0 +1,217 @@
+import React from 'react';
+import { 
+  Calendar, 
+  FileText, 
+  MessageSquare,
+  ShieldCheck,
+  Zap,
+  Bot,
+  Download
+} from 'lucide-react';
+import { RESUME_DATA } from '../data/resumeData';
+
+interface HeroSectionProps {
+  onOpenResumeModal: () => void;
+}
+
+export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) => {
+  return (
+    <section id="hero" className="relative overflow-hidden pb-12 pt-8 sm:pb-20 sm:pt-16 lg:pb-24">
+      {/* Background Radial Glow */}
+      <div className="pointer-events-none absolute -top-24 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-[#E2B755]/15 blur-[120px]" />
+      <div className="pointer-events-none absolute top-40 right-10 h-80 w-80 rounded-full bg-[#00F2FE]/10 blur-[100px]" />
+
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-8">
+          
+          {/* Mobile Profile Photo */}
+          <div className="lg:hidden lg:col-span-5">
+            <div className="relative mx-auto max-w-xs sm:max-w-md">
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-[#E2B755] via-[#00F2FE] to-[#1E2B45] opacity-40 blur-md" />
+              <div className="relative rounded-xl border border-[var(--border-gold)] bg-[var(--bg-card)] p-3.5 shadow-xl backdrop-blur-xl">
+                <div className="relative overflow-hidden rounded-lg border border-[var(--border-card)]">
+                  <img
+                    src="/kannanphoto.jpeg"
+                    alt={RESUME_DATA.name}
+                    className="h-72 sm:h-80 w-full object-cover object-top"
+                  />
+                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent p-3 text-white">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className="text-xs font-bold text-white">{RESUME_DATA.name}</div>
+                        <div className="text-[10px] text-[#E2B755]">Senior Lead Software Engineer</div>
+                      </div>
+                      <div className="rounded bg-slate-900/90 border border-[#E2B755]/40 px-1.5 py-0.5 font-mono text-[9px] text-slate-200">
+                        10.5+ Yrs Exp
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-3 flex items-center justify-between gap-2 text-[11px] theme-sub">
+                  <span>🇦🇪 Relocation: <strong className="theme-gold-text">Dubai, UAE</strong></span>
+                  <span>Notice: <strong className="theme-title">60 Days</strong></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Left Column: Headline & Value Proposition */}
+          <div className="space-y-5 sm:space-y-6 lg:col-span-7">
+            
+            {/* Status Pills */}
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+              <span className="inline-flex items-center gap-1.5 rounded-full theme-gold-badge px-3 py-1 text-[11px] sm:text-xs font-semibold shadow-sm">
+                <span className="text-xs sm:text-sm">🇦🇪</span>
+                <span>{RESUME_DATA.relocation.status}</span>
+              </span>
+
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border-card)] bg-[var(--bg-card)] px-3 py-1 text-[11px] sm:text-xs font-medium theme-sub">
+                <Calendar className="h-3 w-3 theme-cyan-text" />
+                <span>Notice: {RESUME_DATA.relocation.noticePeriod}</span>
+              </span>
+
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border-card)] bg-[var(--bg-card)] px-3 py-1 text-[11px] sm:text-xs font-medium theme-sub">
+                <ShieldCheck className="h-3 w-3 text-emerald-500" />
+                <span>Visa Sponsorship Required</span>
+              </span>
+            </div>
+
+            {/* Name & Title */}
+            <div>
+              <h1 className="text-3xl font-extrabold tracking-tight theme-title sm:text-5xl lg:text-6xl">
+                {RESUME_DATA.name}
+              </h1>
+              <p className="mt-1.5 text-lg font-bold text-gold-gradient sm:text-2xl">
+                {RESUME_DATA.title}
+              </p>
+              <p className="mt-1 font-mono text-[10px] sm:text-xs tracking-wider theme-muted">
+                10.5+ YEARS ENTERPRISE SAAS · REACT 19 · MONOREPOS · AI-NATIVE ARCHITECTURE
+              </p>
+            </div>
+
+            {/* Professional Summary */}
+            <p className="text-sm leading-relaxed theme-sub sm:text-lg">
+              Specialised in AI-driven development and agentic workflows — LLM orchestration, custom <span className="font-semibold theme-title">Claude Code skills</span>, and <span className="font-semibold theme-gold-text">MCP servers</span>. Proven track record of leading solo platform migrations, cutting build compilation times by <span className="font-bold theme-cyan-text">96%</span>, and establishing safety guardrails across distributed engineering teams.
+            </p>
+
+            {/* Core Value Badges */}
+            <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3 sm:gap-3 pt-1">
+              <div className="flex items-center gap-3 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] p-3 shadow-sm">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg theme-gold-badge">
+                  <Zap className="h-4 w-4 sm:h-5 sm:w-5" />
+                </div>
+                <div>
+                  <div className="text-xs font-bold theme-title">96% Faster Builds</div>
+                  <div className="text-[10px] sm:text-[11px] theme-muted">Webpack 5 ➔ Rspack</div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] p-3 shadow-sm">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[var(--color-cyan)]/10 theme-cyan-text">
+                  <Bot className="h-4 w-4 sm:h-5 sm:w-5" />
+                </div>
+                <div>
+                  <div className="text-xs font-bold theme-title">AI-Native Agents</div>
+                  <div className="text-[10px] sm:text-[11px] theme-muted">Claude Code & MCP</div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] p-3 shadow-sm">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-500">
+                  <ShieldCheck className="h-4 w-4 sm:h-5 sm:w-5" />
+                </div>
+                <div>
+                  <div className="text-xs font-bold theme-title">Monorepo Quality</div>
+                  <div className="text-[10px] sm:text-[11px] theme-muted">232 Playwright Specs</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Responsive Action Buttons */}
+            <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2.5 pt-2">
+              <a
+                href="/Kannan_Santharam.pdf"
+                download="Kannan_Santharam_Senior_Lead_Software_Engineer.pdf"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#E2B755] to-[#C29633] px-5 py-3 text-xs sm:text-sm font-bold text-[#07090E] transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-[#E2B755]/25 cursor-pointer"
+              >
+                <Download className="h-4 w-4" />
+                <span>Download Official PDF Resume</span>
+              </a>
+
+              <button
+                onClick={onOpenResumeModal}
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] px-5 py-3 text-xs sm:text-sm font-semibold theme-title transition-all hover:border-[var(--color-gold)] hover:bg-[var(--bg-card-hover)] cursor-pointer"
+              >
+                <FileText className="h-4 w-4 theme-gold-text" />
+                <span>Interactive Resume View</span>
+              </button>
+
+              <a
+                href={`https://wa.me/${RESUME_DATA.contact.phoneClean}?text=Hi%20Kannan,%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20connect%20regarding%20a%20role%20in%20Dubai.`}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-5 py-3 text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400 transition-all hover:bg-emerald-500/20"
+              >
+                <MessageSquare className="h-4 w-4" />
+                <span>WhatsApp Direct</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Right Column: Desktop Executive Photo Card */}
+          <div className="hidden lg:col-span-5 lg:block">
+            <div className="relative mx-auto max-w-md">
+              <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-tr from-[#E2B755] via-[#00F2FE] to-[#1E2B45] opacity-50 blur-lg transition duration-1000 group-hover:opacity-100" />
+              
+              <div className="relative rounded-2xl border border-[var(--border-gold)] bg-[var(--bg-card)] p-5 shadow-2xl backdrop-blur-xl">
+                <div className="relative mb-6 overflow-hidden rounded-xl border border-[var(--border-card)]">
+                  <img
+                    src="/kannanphoto.jpeg"
+                    alt={RESUME_DATA.name}
+                    className="h-88 w-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                  />
+                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent p-4 text-white">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className="text-sm font-bold text-white">{RESUME_DATA.name}</div>
+                        <div className="text-xs text-[#E2B755]">Senior Lead Software Engineer</div>
+                      </div>
+                      <div className="rounded-md bg-slate-900/90 border border-[#E2B755]/40 px-2 py-1 font-mono text-[10px] text-slate-200">
+                        10.5+ Yrs Exp
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-2.5 text-xs theme-sub">
+                  <div className="flex items-center justify-between rounded-lg bg-[var(--bg-inner)] p-2.5 border border-[var(--border-card)]">
+                    <span className="theme-muted">Target Role:</span>
+                    <span className="font-semibold theme-title">Lead Software Engineer / Engineering Manager</span>
+                  </div>
+
+                  <div className="flex items-center justify-between rounded-lg bg-[var(--bg-inner)] p-2.5 border border-[var(--border-card)]">
+                    <span className="theme-muted">Relocation Readiness:</span>
+                    <span className="font-semibold theme-gold-text">Immediate to Dubai, UAE 🇦🇪</span>
+                  </div>
+
+                  <div className="flex items-center justify-between rounded-lg bg-[var(--bg-inner)] p-2.5 border border-[var(--border-card)]">
+                    <span className="theme-muted">Current Position:</span>
+                    <span className="font-semibold theme-title">SuperOps (Senior Lead)</span>
+                  </div>
+
+                  <div className="flex items-center justify-between rounded-lg bg-[var(--bg-inner)] p-2.5 border border-[var(--border-card)]">
+                    <span className="theme-muted">Languages:</span>
+                    <span className="font-semibold theme-sub">English (Fluent) · Tamil · Hindi</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+};

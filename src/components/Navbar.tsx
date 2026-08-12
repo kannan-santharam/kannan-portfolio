@@ -1,0 +1,213 @@
+import React, { useState } from 'react';
+import { FileText, Send, Menu, X, Sun, Moon, Download, MessageSquare } from 'lucide-react';
+import { RESUME_DATA } from '../data/resumeData';
+import { useTheme } from '../context/ThemeContext';
+
+interface NavbarProps {
+  onOpenResumeModal: () => void;
+  activeSection: string;
+  onNavigate: (sectionId: string) => void;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, activeSection, onNavigate }) => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
+
+  const navLinks = [
+    { name: 'Impact Wins', id: 'metrics' },
+    { name: 'AI & Architecture', id: 'ai-spotlight' },
+    { name: 'Experience', id: 'experience' },
+    { name: 'Technical Skills', id: 'skills' },
+    { name: 'Relocation & Visa', id: 'dubai-facts' },
+  ];
+
+  const handleNavClick = (e: React.MouseEvent, id: string) => {
+    e.preventDefault();
+    onNavigate(id);
+    setMobileMenuOpen(false);
+  };
+
+  return (
+    <header className="sticky top-0 z-50 w-full border-b theme-nav backdrop-blur-md transition-colors duration-250 shadow-sm">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-3.5 py-2.5 sm:px-6 lg:px-8">
+        
+        {/* Brand / Logo */}
+        <a 
+          href="#" 
+          onClick={(e) => { e.preventDefault(); onNavigate('hero'); }}
+          className="group flex items-center gap-2.5 shrink-0"
+        >
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#E2B755] to-[#9A7426] p-0.5 shadow-md shadow-[#E2B755]/10 transition-transform group-hover:scale-105">
+            <div className="flex h-full w-full items-center justify-center rounded-[9px] bg-[#07090E] font-mono text-sm font-bold text-[#E2B755]">
+              KS
+            </div>
+          </div>
+          <div>
+            <div className="flex items-center gap-1.5">
+              <span className="font-bold tracking-tight text-sm sm:text-base theme-title">{RESUME_DATA.name}</span>
+              <span className="inline-flex items-center rounded-full theme-gold-badge px-1.5 py-0.5 text-[9px] font-bold sm:text-[10px]">
+                Senior Lead
+              </span>
+            </div>
+            <p className="text-[10px] sm:text-xs theme-muted">React · TypeScript · AI-Native</p>
+          </div>
+        </a>
+
+        {/* Desktop Nav Links */}
+        <nav className="hidden items-center justify-center gap-1 md:flex lg:gap-1.5 mx-2">
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.id;
+            return (
+              <button
+                key={link.id}
+                onClick={(e) => handleNavClick(e, link.id)}
+                className={`relative rounded-lg px-2.5 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
+                  isActive
+                    ? 'theme-gold-badge shadow-sm font-bold'
+                    : 'theme-sub hover:bg-[var(--bg-card-hover)] hover:text-[var(--text-title)]'
+                }`}
+              >
+                {link.name}
+                {isActive && (
+                  <span className="absolute bottom-0 left-1/2 h-0.5 w-4 -translate-x-1/2 rounded-full bg-[var(--color-gold)]" />
+                )}
+              </button>
+            );
+          })}
+        </nav>
+
+        {/* Action Buttons & Theme Switcher (Desktop) */}
+        <div className="hidden items-center gap-2 md:flex shrink-0">
+          <div className="hidden items-center gap-1.5 rounded-full theme-gold-badge px-2.5 py-1 text-xs font-semibold xl:flex">
+            <span className="text-sm">🇦🇪</span>
+            <span>Dubai Ready</span>
+          </div>
+
+          <button
+            onClick={toggleTheme}
+            className="flex h-9 w-9 items-center justify-center rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] text-[var(--text-title)] transition-all hover:border-[var(--color-gold)] hover:text-[var(--color-gold)] cursor-pointer"
+            title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
+            aria-label="Toggle Theme"
+          >
+            {theme === 'dark' ? <Sun className="h-4 w-4 text-[#E2B755]" /> : <Moon className="h-4 w-4 text-[#B88820]" />}
+          </button>
+
+          <a
+            href="/Kannan_Santharam.pdf"
+            download="Kannan_Santharam_Senior_Lead_Frontend_Engineer.pdf"
+            className="flex items-center gap-1.5 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] px-3 py-1.5 text-xs font-semibold theme-title transition-all hover:border-[var(--color-gold)] hover:bg-[var(--bg-card-hover)] cursor-pointer"
+            title="Download PDF Resume"
+          >
+            <Download className="h-3.5 w-3.5 theme-gold-text" />
+            <span>PDF</span>
+          </a>
+
+          <button
+            onClick={onOpenResumeModal}
+            className="flex items-center gap-1.5 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] px-3 py-1.5 text-xs font-semibold theme-title transition-all hover:border-[var(--color-gold)] hover:bg-[var(--bg-card-hover)] cursor-pointer"
+          >
+            <FileText className="h-3.5 w-3.5 theme-gold-text" />
+            <span>View CV</span>
+          </button>
+
+          <a
+            href={`mailto:${RESUME_DATA.contact.email}`}
+            className="flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-[#E2B755] to-[#C29633] px-3.5 py-1.5 text-xs font-bold text-[#07090E] transition-all hover:brightness-110 shadow-md shadow-[#E2B755]/10"
+          >
+            <Send className="h-3.5 w-3.5" />
+            <span>Hire Direct</span>
+          </a>
+        </div>
+
+        {/* Mobile Controls (Touch-Friendly) */}
+        <div className="flex items-center gap-1.5 md:hidden">
+          <button
+            onClick={toggleTheme}
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--border-card)] bg-[var(--bg-card)] text-[var(--text-title)] active:scale-95"
+            aria-label="Toggle Theme"
+          >
+            {theme === 'dark' ? <Sun className="h-4 w-4 text-[#E2B755]" /> : <Moon className="h-4 w-4 text-[#B88820]" />}
+          </button>
+
+          <a
+            href="/Kannan_Santharam.pdf"
+            download="Kannan_Santharam_Senior_Lead_Frontend_Engineer.pdf"
+            className="flex h-9 items-center gap-1 rounded-lg theme-gold-badge px-2.5 text-xs font-bold active:scale-95"
+            title="Download PDF Resume"
+          >
+            <Download className="h-3.5 w-3.5" />
+            <span>PDF</span>
+          </a>
+
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--border-card)] bg-[var(--bg-card)] theme-sub active:scale-95"
+            aria-label="Toggle Navigation Menu"
+          >
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Full Menu Drawer */}
+      {mobileMenuOpen && (
+        <div className="border-t border-[var(--border-card)] bg-[var(--bg-page)] px-4 pb-6 pt-3 backdrop-blur-xl md:hidden shadow-2xl">
+          <div className="mb-3 flex items-center justify-between rounded-xl theme-gold-badge px-3 py-2 text-xs font-medium">
+            <div className="flex items-center gap-2">
+              <span>🇦🇪</span>
+              <span>Ready for Dubai, UAE</span>
+            </div>
+            <span className="font-bold theme-title">60d Notice</span>
+          </div>
+
+          <div className="space-y-1.5">
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.id;
+              return (
+                <button
+                  key={link.id}
+                  onClick={(e) => handleNavClick(e, link.id)}
+                  className={`block w-full text-left rounded-xl px-3.5 py-2.5 text-sm font-semibold transition-all cursor-pointer ${
+                    isActive
+                      ? 'theme-gold-badge font-bold'
+                      : 'theme-sub hover:bg-[var(--bg-card-hover)]'
+                  }`}
+                >
+                  {link.name}
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="mt-4 flex flex-col gap-2 pt-3 border-t border-[var(--border-card)]">
+            <button
+              onClick={() => { setMobileMenuOpen(false); onOpenResumeModal(); }}
+              className="flex w-full items-center justify-center gap-2 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] py-2.5 text-xs font-bold theme-title shadow-sm"
+            >
+              <FileText className="h-4 w-4 theme-gold-text" />
+              <span>Interactive Resume Viewer</span>
+            </button>
+
+            <a
+              href={`https://wa.me/${RESUME_DATA.contact.phoneClean}?text=Hi%20Kannan,%20I'm%20reaching%20out%20regarding%20a%20Lead%20Frontend%20role%20in%20Dubai.`}
+              target="_blank"
+              rel="noreferrer"
+              className="flex w-full items-center justify-center gap-2 rounded-xl border border-emerald-500/40 bg-emerald-500/10 py-2.5 text-xs font-bold text-emerald-600 dark:text-emerald-400"
+            >
+              <MessageSquare className="h-4 w-4" />
+              <span>WhatsApp Direct</span>
+            </a>
+
+            <a
+              href={`mailto:${RESUME_DATA.contact.email}`}
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#E2B755] to-[#C29633] py-2.5 text-xs font-bold text-[#07090E] shadow-md"
+            >
+              <Send className="h-4 w-4" />
+              <span>Email Candidate Direct</span>
+            </a>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+};
