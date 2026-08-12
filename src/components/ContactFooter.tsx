@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MessageSquare, Phone, MapPin, Copy, Check, Download, Send, Sparkles, BookOpen } from 'lucide-react';
+import { Mail, MessageSquare, Phone, MapPin, Copy, Check, Send, Sparkles } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
 
 export const ContactFooter: React.FC = () => {
@@ -9,28 +9,6 @@ export const ContactFooter: React.FC = () => {
     navigator.clipboard.writeText(RESUME_DATA.contact.email);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
-  };
-
-  const handleDownloadVCard = () => {
-    const vCardData = `BEGIN:VCARD
-VERSION:3.0
-FN:Kannan Santharam
-TITLE:Senior Lead Frontend Engineer
-ORG:SuperOps
-TEL;TYPE=CELL:${RESUME_DATA.contact.phone}
-EMAIL:${RESUME_DATA.contact.email}
-URL:${RESUME_DATA.contact.linkedin}
-NOTE:Senior Lead Frontend Engineer | React 19, TypeScript, AI-Native Engineering. Ready to Relocate to Dubai, UAE.
-END:VCARD`;
-
-    const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.setAttribute('download', 'Kannan_Santharam_Dubai.vcf');
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
   };
 
   return (
@@ -91,19 +69,6 @@ END:VCARD`;
                 <Send className="h-4 w-4" />
               </a>
 
-              {/* Technical Architecture & Interview Prep PDF Download */}
-              <a
-                href="/Portfolio_Technical_Doc_Interview_Prep.pdf"
-                download="Portfolio_Technical_Doc_Interview_Prep.pdf"
-                className="flex w-full items-center justify-between rounded-xl border border-[var(--border-gold)] bg-[var(--bg-inner)] p-3.5 text-xs font-bold theme-gold-text transition-all hover:bg-[var(--bg-card-hover)]"
-              >
-                <div className="flex items-center gap-2.5">
-                  <BookOpen className="h-4 w-4" />
-                  <span>Download Architecture & Interview PDF</span>
-                </div>
-                <Download className="h-4 w-4" />
-              </a>
-
               {/* WhatsApp Button */}
               <a
                 href={`https://wa.me/${RESUME_DATA.contact.phoneClean}?text=Hi%20Kannan,%20I'm%20reaching%20out%20regarding%20a%20Lead%20Frontend%20role%20in%20Dubai.`}
@@ -118,28 +83,18 @@ END:VCARD`;
                 <span className="text-xs font-mono">{RESUME_DATA.contact.phone}</span>
               </a>
 
-              {/* LinkedIn & VCard Row */}
-              <div className="grid grid-cols-2 gap-3">
-                <a
-                  href={RESUME_DATA.contact.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-xl border border-[var(--border-card)] bg-[var(--bg-inner)] p-3 text-xs font-semibold theme-title transition-all hover:border-[var(--color-gold)]"
-                >
-                  <svg className="h-4 w-4 fill-[var(--color-cyan)]" viewBox="0 0 24 24">
-                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-                  </svg>
-                  <span>LinkedIn Profile</span>
-                </a>
-
-                <button
-                  onClick={handleDownloadVCard}
-                  className="flex items-center justify-center gap-2 rounded-xl border border-[var(--border-card)] bg-[var(--bg-inner)] p-3 text-xs font-semibold theme-title transition-all hover:border-[var(--color-gold)] cursor-pointer"
-                >
-                  <Download className="h-4 w-4 theme-gold-text" />
-                  <span>Save VCard Contact</span>
-                </button>
-              </div>
+              {/* LinkedIn Button */}
+              <a
+                href={RESUME_DATA.contact.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="flex w-full items-center justify-center gap-2 rounded-xl border border-[var(--border-card)] bg-[var(--bg-inner)] p-3 text-xs font-semibold theme-title transition-all hover:border-[var(--color-gold)]"
+              >
+                <svg className="h-4 w-4 fill-[var(--color-cyan)]" viewBox="0 0 24 24">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                </svg>
+                <span>Connect on LinkedIn</span>
+              </a>
 
               {/* Copy Email Helper */}
               <button
