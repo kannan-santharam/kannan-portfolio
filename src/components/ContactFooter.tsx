@@ -15,6 +15,27 @@ export const ContactFooter: React.FC = () => {
     return `https://wa.me/${RESUME_DATA.contact.phoneClean}?text=${encodeURIComponent(text)}`;
   };
 
+  const quickTopics = [
+    {
+      id: 'dubai',
+      label: '🇦🇪 Dubai Role Inquiry',
+      icon: Globe,
+      message: 'Hi Kannan, I reviewed your executive portfolio and would like to discuss a Lead Engineering role in Dubai, UAE.'
+    },
+    {
+      id: 'rspack',
+      label: '⚡ 96% Rspack Build Speedup',
+      icon: Zap,
+      message: "Hi Kannan, I'm interested in your 96% monorepo build speedup win (Webpack 5 to Rspack). Let's connect."
+    },
+    {
+      id: 'call',
+      label: '📞 Schedule 15-Min Call',
+      icon: PhoneCall,
+      message: "Hi Kannan, I'd like to schedule a 15-minute introductory phone screening call regarding a position."
+    }
+  ];
+
   return (
     <footer id="contact" className="relative overflow-hidden bg-[var(--bg-page)] text-[var(--text-body)] border-t border-[var(--border-card)] pt-16 pb-12 transition-colors duration-250">
       {/* Radial Glow */}
@@ -40,42 +61,38 @@ export const ContactFooter: React.FC = () => {
                 Seeking a Lead Frontend Engineer or Engineering Manager position with a tech product company in Dubai. Available on 60 days notice with full mobility for visa processing.
               </p>
 
-              {/* Quick WhatsApp Topic Presets */}
-              <div className="space-y-2 pt-2">
+              {/* Quick WhatsApp Topic Presets with Hover Message Tooltips */}
+              <div className="space-y-2.5 pt-2">
                 <div className="text-xs font-bold theme-title flex items-center gap-1.5">
                   <MessageSquare className="h-3.5 w-3.5 text-emerald-500" />
-                  <span>Instant WhatsApp Quick-Ping Topics:</span>
+                  <span>Instant WhatsApp Quick-Ping Topics (Hover for message preview):</span>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  <a
-                    href={getWaUrl("Hi Kannan, I reviewed your executive portfolio and would like to discuss a Lead Engineering role in Dubai, UAE.")}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 transition-all"
-                  >
-                    <Globe className="h-3.5 w-3.5" />
-                    <span>🇦🇪 Dubai Role Inquiry</span>
-                  </a>
+                <div className="flex flex-wrap gap-2.5">
+                  {quickTopics.map((topic) => {
+                    const IconComponent = topic.icon;
+                    return (
+                      <div key={topic.id} className="group relative inline-block">
+                        <a
+                          href={getWaUrl(topic.message)}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-500/50 transition-all cursor-pointer shadow-sm"
+                        >
+                          <IconComponent className="h-3.5 w-3.5" />
+                          <span>{topic.label}</span>
+                        </a>
 
-                  <a
-                    href={getWaUrl("Hi Kannan, I'm interested in your 96% monorepo build speedup win (Webpack 5 to Rspack). Let's connect.")}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 transition-all"
-                  >
-                    <Zap className="h-3.5 w-3.5" />
-                    <span>⚡ 96% Rspack Build Speedup</span>
-                  </a>
-
-                  <a
-                    href={getWaUrl("Hi Kannan, I'd like to schedule a 15-minute introductory phone screening call regarding a position.")}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 transition-all"
-                  >
-                    <PhoneCall className="h-3.5 w-3.5" />
-                    <span>📞 Schedule 15-Min Call</span>
-                  </a>
+                        {/* Hover Tooltip displaying exact pre-filled WhatsApp message */}
+                        <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:flex flex-col items-center w-64 z-30 transition-all duration-200">
+                          <div className="rounded-xl border border-[var(--border-gold)] bg-slate-950 p-2.5 text-[11px] text-slate-200 shadow-2xl backdrop-blur-md leading-snug text-center">
+                            <span className="block font-bold text-[#E2B755] text-[10px] uppercase tracking-wider mb-1">Pre-filled WhatsApp Message</span>
+                            "{topic.message}"
+                          </div>
+                          <div className="h-2 w-2 -mt-1 rotate-45 border-r border-b border-[var(--border-gold)] bg-slate-950" />
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 
