@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Bot, X, Send, Sparkles, RefreshCw, Zap } from 'lucide-react';
+import { Bot, X, Send, Sparkles, RefreshCw, Zap, MessageSquare } from 'lucide-react';
 import { streamRealLlmApi, getEnvApiKey } from '../services/aiChatService';
 import type { ChatMessage } from '../services/aiChatService';
+import { RESUME_DATA } from '../data/resumeData';
 
 // Lightweight Markdown Formatter to render bold (**), bullet points, and code cleanly without raw asterisks
 const FormattedMarkdownText: React.FC<{ content: string }> = ({ content }) => {
@@ -67,7 +68,7 @@ export const AiChatbotWidget: React.FC = () => {
     "⚡ How did Kannan cut build times by 96%?",
     "🌊 How does the HTTP Streamable architecture work?",
     "🇦🇪 What is Kannan's Dubai relocation & visa status?",
-    "🛡️ How do Claude Code skills & MCP servers work?"
+    "💼 What are Kannan's salary expectations?"
   ];
 
   const scrollToBottom = () => {
@@ -194,6 +195,17 @@ export const AiChatbotWidget: React.FC = () => {
             </div>
 
             <div className="flex items-center gap-1">
+              <a
+                href={`https://wa.me/${RESUME_DATA.contact.phoneClean}?text=Hi%20Kannan,%20I'm%20chatting%20with%20your%20AI%20Portfolio%20Assistant%20and%20would%20like%20to%20connect%20regarding%20a%20role%20in%20Dubai.`}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-lg p-1.5 border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 hover:bg-emerald-500/20 text-[10px] font-bold flex items-center gap-1"
+                title="Direct WhatsApp"
+              >
+                <MessageSquare className="h-3.5 w-3.5" />
+                <span>WhatsApp</span>
+              </a>
+
               <button
                 onClick={handleClearHistory}
                 className="rounded-lg p-1.5 theme-sub hover:bg-[var(--bg-card-hover)] cursor-pointer"

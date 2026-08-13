@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MessageSquare, Phone, MapPin, Copy, Check, Send, Sparkles } from 'lucide-react';
+import { Mail, MessageSquare, Phone, MapPin, Copy, Check, Send, Sparkles, PhoneCall, Zap, Globe } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
 
 export const ContactFooter: React.FC = () => {
@@ -9,6 +9,10 @@ export const ContactFooter: React.FC = () => {
     navigator.clipboard.writeText(RESUME_DATA.contact.email);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const getWaUrl = (text: string) => {
+    return `https://wa.me/${RESUME_DATA.contact.phoneClean}?text=${encodeURIComponent(text)}`;
   };
 
   return (
@@ -35,6 +39,45 @@ export const ContactFooter: React.FC = () => {
               <p className="text-sm theme-sub leading-relaxed max-w-xl">
                 Seeking a Lead Frontend Engineer or Engineering Manager position with a tech product company in Dubai. Available on 60 days notice with full mobility for visa processing.
               </p>
+
+              {/* Quick WhatsApp Topic Presets */}
+              <div className="space-y-2 pt-2">
+                <div className="text-xs font-bold theme-title flex items-center gap-1.5">
+                  <MessageSquare className="h-3.5 w-3.5 text-emerald-500" />
+                  <span>Instant WhatsApp Quick-Ping Topics:</span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <a
+                    href={getWaUrl("Hi Kannan, I reviewed your executive portfolio and would like to discuss a Lead Engineering role in Dubai, UAE.")}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 transition-all"
+                  >
+                    <Globe className="h-3.5 w-3.5" />
+                    <span>🇦🇪 Dubai Role Inquiry</span>
+                  </a>
+
+                  <a
+                    href={getWaUrl("Hi Kannan, I'm interested in your 96% monorepo build speedup win (Webpack 5 to Rspack). Let's connect.")}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 transition-all"
+                  >
+                    <Zap className="h-3.5 w-3.5" />
+                    <span>⚡ 96% Rspack Build Speedup</span>
+                  </a>
+
+                  <a
+                    href={getWaUrl("Hi Kannan, I'd like to schedule a 15-minute introductory phone screening call regarding a position.")}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 transition-all"
+                  >
+                    <PhoneCall className="h-3.5 w-3.5" />
+                    <span>📞 Schedule 15-Min Call</span>
+                  </a>
+                </div>
+              </div>
 
               <div className="flex flex-wrap items-center gap-4 pt-2 text-xs font-mono theme-muted">
                 <span className="flex items-center gap-1.5">
@@ -71,14 +114,14 @@ export const ContactFooter: React.FC = () => {
 
               {/* WhatsApp Button */}
               <a
-                href={`https://wa.me/${RESUME_DATA.contact.phoneClean}?text=Hi%20Kannan,%20I'm%20reaching%20out%20regarding%20a%20Lead%20Frontend%20role%20in%20Dubai.`}
+                href={getWaUrl("Hi Kannan, I'm reaching out regarding a Lead Frontend / Engineering Manager role in Dubai.")}
                 target="_blank"
                 rel="noreferrer"
                 className="flex w-full items-center justify-between rounded-xl border border-emerald-500/40 bg-emerald-500/10 p-4 font-semibold text-emerald-600 dark:text-emerald-400 transition-all hover:bg-emerald-500/20"
               >
                 <div className="flex items-center gap-3">
-                  <MessageSquare className="h-5 w-5" />
-                  <span>Chat on WhatsApp</span>
+                  <MessageSquare className="h-5 w-5 text-emerald-500" />
+                  <span>Direct WhatsApp Chat</span>
                 </div>
                 <span className="text-xs font-mono">{RESUME_DATA.contact.phone}</span>
               </a>
