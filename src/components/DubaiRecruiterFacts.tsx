@@ -6,7 +6,7 @@ export const DubaiRecruiterFacts: React.FC = () => {
     {
       label: "Relocation Target",
       value: "Dubai, UAE 🇦🇪",
-      subtext: "Actively seeking roles in Dubai tech ecosystem (DIFC, Internet City, Silicon Oasis)",
+      subtext: "Actively seeking roles across the Dubai tech ecosystem",
       icon: Plane,
       color: "theme-gold-text"
     },
