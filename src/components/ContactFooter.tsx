@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MessageSquare, Phone, MapPin, Copy, Check, Send, Sparkles, PhoneCall, Zap, Globe } from 'lucide-react';
+import { Mail, MessageSquare, Phone, MapPin, Copy, Check, Send, Sparkles, PhoneCall, Zap, Globe, PhoneForwarded } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
 
 export const ContactFooter: React.FC = () => {
@@ -54,7 +54,8 @@ export const ContactFooter: React.FC = () => {
                   🇦🇪 Available for Dubai, UAE Hiring
                 </span>
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-bold text-cyan-600 dark:text-cyan-400">
-                  <span>📱 BOTIM App & WhatsApp Active</span>
+                  <PhoneForwarded className="h-3.5 w-3.5" />
+                  <span>BOTIM App Active</span>
                 </span>
               </div>
               
@@ -66,11 +67,11 @@ export const ContactFooter: React.FC = () => {
                 Seeking a Lead Frontend Engineer or Engineering Manager position with a tech product company in Dubai. Available on 60 days notice with full mobility for visa processing.
               </p>
 
-              {/* Quick WhatsApp & BOTIM Topic Presets with Hover Message Tooltips */}
+              {/* Quick WhatsApp Topic Presets with Hover Message Tooltips */}
               <div className="space-y-2.5 pt-2">
                 <div className="text-xs font-bold theme-title flex items-center gap-1.5">
                   <MessageSquare className="h-3.5 w-3.5 text-emerald-500" />
-                  <span>Instant Messaging Topics (WhatsApp & BOTIM App):</span>
+                  <span>WhatsApp Quick-Ping Topics (Hover for message preview):</span>
                 </div>
                 <div className="flex flex-wrap gap-2.5">
                   {quickTopics.map((topic) => {
@@ -87,10 +88,10 @@ export const ContactFooter: React.FC = () => {
                           <span>{topic.label}</span>
                         </a>
 
-                        {/* Hover Tooltip displaying exact pre-filled message */}
+                        {/* Hover Tooltip displaying exact pre-filled WhatsApp message */}
                         <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:flex flex-col items-center w-64 z-30 transition-all duration-200">
                           <div className="rounded-xl border border-[var(--border-gold)] bg-slate-950 p-2.5 text-[11px] text-slate-200 shadow-2xl backdrop-blur-md leading-snug text-center">
-                            <span className="block font-bold text-[#E2B755] text-[10px] uppercase tracking-wider mb-1">Pre-filled WhatsApp & BOTIM Message</span>
+                            <span className="block font-bold text-[#E2B755] text-[10px] uppercase tracking-wider mb-1">Pre-filled WhatsApp Message</span>
                             "{topic.message}"
                           </div>
                           <div className="h-2 w-2 -mt-1 rotate-45 border-r border-b border-[var(--border-gold)] bg-slate-950" />
@@ -109,7 +110,7 @@ export const ContactFooter: React.FC = () => {
                 <span>•</span>
                 <span className="flex items-center gap-1.5">
                   <Phone className="h-4 w-4 theme-cyan-text" />
-                  {RESUME_DATA.contact.phone} (WhatsApp / BOTIM)
+                  {RESUME_DATA.contact.phone}
                 </span>
                 <span>•</span>
                 <span className="flex items-center gap-1.5">
@@ -119,13 +120,13 @@ export const ContactFooter: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Action Grid */}
+            {/* Right Action Grid: SEPARATE Direct Email, WhatsApp, BOTIM App, and LinkedIn */}
             <div className="space-y-3 lg:col-span-5">
               
               {/* Direct Mail Button */}
               <a
                 href={`mailto:${RESUME_DATA.contact.email}?subject=Dubai%20Engineering%20Opportunity%20-%20Kannan%20Santharam`}
-                className="flex w-full items-center justify-between rounded-xl bg-gradient-to-r from-[#E2B755] to-[#C29633] p-4 font-bold text-[#07090E] transition-all hover:scale-[1.01] hover:brightness-110 shadow-md"
+                className="flex w-full items-center justify-between rounded-xl bg-gradient-to-r from-[#E2B755] to-[#C29633] p-3.5 font-bold text-[#07090E] transition-all hover:scale-[1.01] hover:brightness-110 shadow-md"
               >
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5" />
@@ -134,16 +135,28 @@ export const ContactFooter: React.FC = () => {
                 <Send className="h-4 w-4" />
               </a>
 
-              {/* WhatsApp & BOTIM Active Button */}
+              {/* SEPARATE WhatsApp Button */}
               <a
                 href={getWaUrl("Hi Kannan, I'm reaching out regarding a Lead Frontend / Engineering Manager role in Dubai.")}
                 target="_blank"
                 rel="noreferrer"
-                className="flex w-full items-center justify-between rounded-xl border border-emerald-500/40 bg-emerald-500/10 p-4 font-semibold text-emerald-600 dark:text-emerald-400 transition-all hover:bg-emerald-500/20"
+                className="flex w-full items-center justify-between rounded-xl border border-emerald-500/40 bg-emerald-500/10 p-3.5 font-semibold text-emerald-600 dark:text-emerald-400 transition-all hover:bg-emerald-500/20"
               >
                 <div className="flex items-center gap-3">
                   <MessageSquare className="h-5 w-5 text-emerald-500" />
-                  <span>WhatsApp & BOTIM Chat</span>
+                  <span>WhatsApp Direct Chat</span>
+                </div>
+                <span className="text-xs font-mono">{RESUME_DATA.contact.phone}</span>
+              </a>
+
+              {/* SEPARATE BOTIM App Button */}
+              <a
+                href={`tel:${RESUME_DATA.contact.phoneClean}`}
+                className="flex w-full items-center justify-between rounded-xl border border-cyan-500/40 bg-cyan-500/10 p-3.5 font-semibold text-cyan-600 dark:text-cyan-400 transition-all hover:bg-cyan-500/20"
+              >
+                <div className="flex items-center gap-3">
+                  <PhoneForwarded className="h-5 w-5 text-cyan-400" />
+                  <span>BOTIM App VoIP & Phone Call</span>
                 </div>
                 <span className="text-xs font-mono">{RESUME_DATA.contact.phone}</span>
               </a>

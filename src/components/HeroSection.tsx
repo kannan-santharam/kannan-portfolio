@@ -6,7 +6,8 @@ import {
   ShieldCheck,
   Zap,
   Bot,
-  Download
+  Download,
+  PhoneForwarded
 } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
 
@@ -59,20 +60,25 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
           {/* Left Column: Headline & Value Proposition */}
           <div className="space-y-5 sm:space-y-6 lg:col-span-7">
             
-            {/* Status Pills */}
-            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full theme-gold-badge px-3 py-1 text-[11px] sm:text-xs font-semibold shadow-sm">
-                <span className="text-xs sm:text-sm">🇦🇪</span>
+            {/* Perfectly Aligned Status Badges */}
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 rounded-full theme-gold-badge px-3.5 py-1.5 text-xs font-semibold shadow-sm">
+                <span>🇦🇪</span>
                 <span>{RESUME_DATA.relocation.status}</span>
               </span>
 
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border-card)] bg-[var(--bg-card)] px-3 py-1 text-[11px] sm:text-xs font-medium theme-sub">
-                <Calendar className="h-3 w-3 theme-cyan-text" />
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border-card)] bg-[var(--bg-card)] px-3.5 py-1.5 text-xs font-medium theme-sub">
+                <Calendar className="h-3.5 w-3.5 theme-cyan-text" />
                 <span>Notice: {RESUME_DATA.relocation.noticePeriod}</span>
               </span>
 
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border-card)] bg-[var(--bg-card)] px-3 py-1 text-[11px] sm:text-xs font-medium theme-sub">
-                <ShieldCheck className="h-3 w-3 text-emerald-500" />
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3.5 py-1.5 text-xs font-bold text-cyan-600 dark:text-cyan-400">
+                <PhoneForwarded className="h-3.5 w-3.5" />
+                <span>BOTIM App & WhatsApp Active</span>
+              </span>
+
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border-card)] bg-[var(--bg-card)] px-3.5 py-1.5 text-xs font-medium theme-sub">
+                <ShieldCheck className="h-3.5 w-3.5 text-emerald-500" />
                 <span>Visa Sponsorship Required</span>
               </span>
             </div>
@@ -128,35 +134,50 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
               </div>
             </div>
 
-            {/* Responsive Action Buttons */}
-            <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2.5 pt-2">
-              <a
-                href="/Kannan_Santharam.pdf"
-                download="Kannan_Santharam_Senior_Lead_Software_Engineer.pdf"
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#E2B755] to-[#C29633] px-5 py-3 text-xs sm:text-sm font-bold text-[#07090E] transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-[#E2B755]/25 cursor-pointer"
-              >
-                <Download className="h-4 w-4" />
-                <span>Download Official PDF Resume</span>
-              </a>
+            {/* Symmetrically Grouped Action Controls */}
+            <div className="space-y-3 pt-2">
+              {/* Row 1: Primary Document & Executive CV Actions */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                <a
+                  href="/Kannan_Santharam.pdf"
+                  download="Kannan_Santharam_Senior_Lead_Software_Engineer.pdf"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#E2B755] to-[#C29633] px-5 py-3 text-xs sm:text-sm font-bold text-[#07090E] transition-all hover:scale-[1.01] hover:shadow-lg hover:shadow-[#E2B755]/25 cursor-pointer text-center"
+                >
+                  <Download className="h-4 w-4 shrink-0" />
+                  <span>Download Official PDF Resume</span>
+                </a>
 
-              <button
-                onClick={onOpenResumeModal}
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] px-5 py-3 text-xs sm:text-sm font-semibold theme-title transition-all hover:border-[var(--color-gold)] hover:bg-[var(--bg-card-hover)] cursor-pointer"
-              >
-                <FileText className="h-4 w-4 theme-gold-text" />
-                <span>Interactive Resume View</span>
-              </button>
+                <button
+                  onClick={onOpenResumeModal}
+                  className="flex items-center justify-center gap-2 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] px-5 py-3 text-xs sm:text-sm font-semibold theme-title transition-all hover:border-[var(--color-gold)] hover:bg-[var(--bg-card-hover)] cursor-pointer text-center"
+                >
+                  <FileText className="h-4 w-4 shrink-0 theme-gold-text" />
+                  <span>Interactive Executive View</span>
+                </button>
+              </div>
 
-              <a
-                href={`https://wa.me/${RESUME_DATA.contact.phoneClean}?text=Hi%20Kannan,%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20connect%20regarding%20a%20role%20in%20Dubai.`}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-5 py-3 text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400 transition-all hover:bg-emerald-500/20"
-              >
-                <MessageSquare className="h-4 w-4" />
-                <span>WhatsApp Direct</span>
-              </a>
+              {/* Row 2: Direct Messaging & VoIP Channels (WhatsApp + BOTIM App) */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                <a
+                  href={`https://wa.me/${RESUME_DATA.contact.phoneClean}?text=Hi%20Kannan,%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20connect%20regarding%20a%20role%20in%20Dubai.`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-center gap-2 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-4 py-3 text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400 transition-all hover:bg-emerald-500/20 text-center"
+                >
+                  <MessageSquare className="h-4 w-4 shrink-0" />
+                  <span>WhatsApp Direct Chat</span>
+                </a>
+
+                <a
+                  href={`tel:${RESUME_DATA.contact.phoneClean}`}
+                  className="flex items-center justify-center gap-2 rounded-xl border border-cyan-500/40 bg-cyan-500/10 px-4 py-3 text-xs sm:text-sm font-semibold text-cyan-600 dark:text-cyan-400 transition-all hover:bg-cyan-500/20 text-center"
+                >
+                  <PhoneForwarded className="h-4 w-4 shrink-0" />
+                  <span>BOTIM App VoIP & Phone</span>
+                </a>
+              </div>
             </div>
+
           </div>
 
           {/* Right Column: Desktop Executive Photo Card */}
@@ -193,6 +214,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                   <div className="flex items-center justify-between rounded-lg bg-[var(--bg-inner)] p-2.5 border border-[var(--border-card)]">
                     <span className="theme-muted">Relocation Readiness:</span>
                     <span className="font-semibold theme-gold-text">Immediate to Dubai, UAE 🇦🇪</span>
+                  </div>
+
+                  <div className="flex items-center justify-between rounded-lg bg-[var(--bg-inner)] p-2.5 border border-[var(--border-card)]">
+                    <span className="theme-muted">Direct UAE Contact:</span>
+                    <span className="font-semibold text-cyan-400">BOTIM & WhatsApp (+91 97902 47499)</span>
                   </div>
 
                   <div className="flex items-center justify-between rounded-lg bg-[var(--bg-inner)] p-2.5 border border-[var(--border-card)]">
