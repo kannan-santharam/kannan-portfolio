@@ -85,7 +85,7 @@ export const DubaiRecruiterFacts: React.FC = () => {
             </div>
             <div className="flex items-center gap-2">
               <span className="font-semibold theme-title">Target Designation:</span>
-              <span className="theme-sub">Lead Frontend Engineer / Engineering Manager / Staff Frontend Architect</span>
+              <span className="theme-sub">Lead Software Engineer / Engineering Manager</span>
             </div>
           </div>
 
