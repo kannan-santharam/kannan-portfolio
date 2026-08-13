@@ -30,27 +30,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, a
 
   return (
     <header className="sticky top-0 z-50 w-full border-b theme-nav backdrop-blur-md transition-colors duration-250 shadow-sm">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-3.5 py-2.5 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-3 py-2 sm:px-6 lg:px-8 gap-2 overflow-hidden">
         
         {/* Brand / Logo */}
         <a 
           href="#" 
           onClick={(e) => { e.preventDefault(); onNavigate('hero'); }}
-          className="group flex items-center gap-2.5 shrink-0"
+          className="group flex items-center gap-2 min-w-0 shrink"
         >
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#E2B755] to-[#9A7426] p-0.5 shadow-md shadow-[#E2B755]/10 transition-transform group-hover:scale-105">
-            <div className="flex h-full w-full items-center justify-center rounded-[9px] bg-[#07090E] font-mono text-sm font-bold text-[#E2B755]">
+          <div className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#E2B755] to-[#9A7426] p-0.5 shadow-md shadow-[#E2B755]/10 transition-transform group-hover:scale-105 shrink-0">
+            <div className="flex h-full w-full items-center justify-center rounded-[9px] bg-[#07090E] font-mono text-xs sm:text-sm font-bold text-[#E2B755]">
               KS
             </div>
           </div>
-          <div>
-            <div className="flex items-center gap-1.5">
-              <span className="font-bold tracking-tight text-sm sm:text-base theme-title">{RESUME_DATA.name}</span>
-              <span className="inline-flex items-center rounded-full theme-gold-badge px-1.5 py-0.5 text-[9px] font-bold sm:text-[10px]">
-                Senior Lead
-              </span>
+          <div className="min-w-0">
+            <div className="flex items-center gap-1">
+              <span className="font-bold tracking-tight text-xs sm:text-base theme-title truncate">{RESUME_DATA.name}</span>
             </div>
-            <p className="text-[10px] sm:text-xs theme-muted">React · TypeScript · AI-Native</p>
+            <p className="text-[9px] sm:text-xs theme-muted truncate">React · TypeScript · AI-Native</p>
           </div>
         </a>
 
@@ -95,7 +92,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, a
 
           <a
             href="/Kannan_Santharam.pdf"
-            download="Kannan_Santharam_Senior_Lead_Frontend_Engineer.pdf"
+            download="Kannan_Santharam_Senior_Lead_Software_Engineer.pdf"
             className="flex items-center gap-1.5 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] px-3 py-1.5 text-xs font-semibold theme-title transition-all hover:border-[var(--color-gold)] hover:bg-[var(--bg-card-hover)] cursor-pointer"
             title="Download PDF Resume"
           >
@@ -124,32 +121,32 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, a
           </button>
         </div>
 
-        {/* Mobile Controls (Touch-Friendly) */}
-        <div className="flex items-center gap-1.5 md:hidden">
+        {/* Mobile Controls (Touch-Friendly, Fits within 412px S23 Ultra viewport) */}
+        <div className="flex items-center gap-1.5 md:hidden shrink-0">
           <button
             onClick={toggleTheme}
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--border-card)] bg-[var(--bg-card)] text-[var(--text-title)] active:scale-95"
+            className="flex h-8 w-8 items-center justify-center rounded-lg border border-[var(--border-card)] bg-[var(--bg-card)] text-[var(--text-title)] active:scale-95"
             aria-label="Toggle Theme"
           >
-            {theme === 'dark' ? <Sun className="h-4 w-4 text-[#E2B755]" /> : <Moon className="h-4 w-4 text-[#B88820]" />}
+            {theme === 'dark' ? <Sun className="h-3.5 w-3.5 text-[#E2B755]" /> : <Moon className="h-3.5 w-3.5 text-[#B88820]" />}
           </button>
 
           <a
             href="/Kannan_Santharam.pdf"
-            download="Kannan_Santharam_Senior_Lead_Frontend_Engineer.pdf"
-            className="flex h-9 items-center gap-1 rounded-lg theme-gold-badge px-2.5 text-xs font-bold active:scale-95"
+            download="Kannan_Santharam_Senior_Lead_Software_Engineer.pdf"
+            className="flex h-8 items-center gap-1 rounded-lg theme-gold-badge px-2 text-[11px] font-bold active:scale-95"
             title="Download PDF Resume"
           >
-            <Download className="h-3.5 w-3.5" />
+            <Download className="h-3 w-3" />
             <span>PDF</span>
           </a>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--border-card)] bg-[var(--bg-card)] theme-sub active:scale-95"
+            className="flex h-8 w-8 items-center justify-center rounded-lg border border-[var(--border-card)] bg-[var(--bg-card)] theme-sub active:scale-95"
             aria-label="Toggle Navigation Menu"
           >
-            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {mobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
         </div>
       </div>
