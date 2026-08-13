@@ -56,11 +56,12 @@ export const ContactFooter: React.FC = () => {
             
             {/* Left Info */}
             <div className="space-y-4 lg:col-span-7">
+              {/* Informational Status Badges (cursor-default) */}
               <div className="flex flex-wrap items-center gap-2">
-                <span className="inline-flex items-center gap-2 rounded-full theme-gold-badge px-3.5 py-1 text-xs font-semibold">
+                <span className="inline-flex items-center gap-2 rounded-full theme-gold-badge px-3.5 py-1 text-xs font-semibold cursor-default select-none">
                   🇦🇪 Available for Dubai, UAE Hiring
                 </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-bold text-cyan-600 dark:text-cyan-400">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-bold text-cyan-600 dark:text-cyan-400 cursor-default select-none">
                   <PhoneForwarded className="h-3.5 w-3.5" />
                   <span>BOTIM App Active</span>
                 </span>
@@ -74,7 +75,7 @@ export const ContactFooter: React.FC = () => {
                 Seeking a Lead Frontend Engineer or Engineering Manager position with a tech product company in Dubai. Available on 60 days notice with full mobility for visa processing.
               </p>
 
-              {/* Quick WhatsApp Topic Presets with Hover Message Tooltips */}
+              {/* Quick WhatsApp Topic Presets with Hover Message Tooltips (Clickable Actions) */}
               <div className="space-y-2.5 pt-2">
                 <div className="text-xs font-bold theme-title flex items-center gap-1.5">
                   <MessageSquare className="h-3.5 w-3.5 text-emerald-500" />
@@ -89,7 +90,7 @@ export const ContactFooter: React.FC = () => {
                           href={getWaUrl(topic.message)}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-500/50 transition-all cursor-pointer shadow-sm"
+                          className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/40 bg-emerald-500/10 px-3 py-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/25 hover:border-emerald-500/70 transition-all cursor-pointer shadow-sm active:scale-95"
                         >
                           <IconComponent className="h-3.5 w-3.5" />
                           <span>{topic.label}</span>
@@ -109,7 +110,7 @@ export const ContactFooter: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex flex-wrap items-center gap-4 pt-2 text-xs font-mono theme-muted">
+              <div className="flex flex-wrap items-center gap-4 pt-2 text-xs font-mono theme-muted cursor-default select-none">
                 <span className="flex items-center gap-1.5">
                   <MapPin className="h-4 w-4 theme-gold-text" />
                   Dubai Relocation Ready
@@ -127,13 +128,13 @@ export const ContactFooter: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Action Grid: SEPARATE Direct Email, WhatsApp, BOTIM App, and LinkedIn */}
+            {/* Right Action Grid: Interactive Action Controls */}
             <div className="space-y-3 lg:col-span-5">
               
               {/* Direct Mail Button */}
               <a
                 href={`mailto:${RESUME_DATA.contact.email}?subject=Dubai%20Engineering%20Opportunity%20-%20Kannan%20Santharam`}
-                className="flex w-full items-center justify-between rounded-xl bg-gradient-to-r from-[#E2B755] to-[#C29633] p-3.5 font-bold text-[#07090E] transition-all hover:scale-[1.01] hover:brightness-110 shadow-md"
+                className="flex w-full items-center justify-between rounded-xl bg-gradient-to-r from-[#E2B755] to-[#C29633] p-3.5 font-bold text-[#07090E] transition-all hover:scale-[1.01] hover:brightness-110 shadow-md cursor-pointer active:scale-95"
               >
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5" />
@@ -147,7 +148,7 @@ export const ContactFooter: React.FC = () => {
                 href={getWaUrl("Hi Kannan, I'm reaching out regarding a Lead Frontend / Engineering Manager role in Dubai.")}
                 target="_blank"
                 rel="noreferrer"
-                className="flex w-full items-center justify-between rounded-xl border border-emerald-500/40 bg-emerald-500/10 p-3.5 font-semibold text-emerald-600 dark:text-emerald-400 transition-all hover:bg-emerald-500/20"
+                className="flex w-full items-center justify-between rounded-xl border border-emerald-500/40 bg-emerald-500/10 p-3.5 font-semibold text-emerald-600 dark:text-emerald-400 transition-all hover:bg-emerald-500/20 cursor-pointer active:scale-95"
               >
                 <div className="flex items-center gap-3">
                   <MessageSquare className="h-5 w-5 text-emerald-500" />
@@ -156,10 +157,10 @@ export const ContactFooter: React.FC = () => {
                 <span className="text-xs font-mono">{RESUME_DATA.contact.phone}</span>
               </a>
 
-              {/* SEPARATE BOTIM App Copy Button (No native phone app trigger) */}
+              {/* SEPARATE BOTIM App Copy Button */}
               <button
                 onClick={handleCopyBotim}
-                className="flex w-full items-center justify-between rounded-xl border border-cyan-500/40 bg-cyan-500/10 p-3.5 font-semibold text-cyan-600 dark:text-cyan-400 transition-all hover:bg-cyan-500/20 cursor-pointer"
+                className="flex w-full items-center justify-between rounded-xl border border-cyan-500/40 bg-cyan-500/10 p-3.5 font-semibold text-cyan-600 dark:text-cyan-400 transition-all hover:bg-cyan-500/20 cursor-pointer active:scale-95"
               >
                 <div className="flex items-center gap-3">
                   <PhoneForwarded className="h-5 w-5 text-cyan-400" />
@@ -176,7 +177,7 @@ export const ContactFooter: React.FC = () => {
                 href={RESUME_DATA.contact.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="flex w-full items-center justify-center gap-2 rounded-xl border border-[var(--border-card)] bg-[var(--bg-inner)] p-3 text-xs font-semibold theme-title transition-all hover:border-[var(--color-gold)]"
+                className="flex w-full items-center justify-center gap-2 rounded-xl border border-[var(--border-card)] bg-[var(--bg-inner)] p-3 text-xs font-semibold theme-title transition-all hover:border-[var(--color-gold)] cursor-pointer active:scale-95"
               >
                 <svg className="h-4 w-4 fill-[var(--color-cyan)]" viewBox="0 0 24 24">
                   <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
@@ -203,7 +204,7 @@ export const ContactFooter: React.FC = () => {
           <div>
             © {new Date().getFullYear()} Kannan Santharam. Built with React 19 + React Compiler & Tailwind CSS.
           </div>
-          <div className="flex items-center gap-2 font-mono text-[11px] theme-gold-text">
+          <div className="flex items-center gap-2 font-mono text-[11px] theme-gold-text cursor-default select-none">
             <Sparkles className="h-3.5 w-3.5" />
             <span>Dubai, UAE Executive Portfolio Edition</span>
           </div>

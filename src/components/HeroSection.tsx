@@ -52,14 +52,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                         <div className="text-xs font-bold text-white">{RESUME_DATA.name}</div>
                         <div className="text-[10px] text-[#E2B755]">Senior Lead Software Engineer</div>
                       </div>
-                      <div className="rounded bg-slate-900/90 border border-[#E2B755]/40 px-1.5 py-0.5 font-mono text-[9px] text-slate-200">
+                      <div className="rounded bg-slate-900/90 border border-[#E2B755]/40 px-1.5 py-0.5 font-mono text-[9px] text-slate-200 cursor-default select-none">
                         10.5+ Yrs Exp
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="mt-3 flex items-center justify-between gap-2 text-[11px] theme-sub">
+                <div className="mt-3 flex items-center justify-between gap-2 text-[11px] theme-sub cursor-default select-none">
                   <span>🇦🇪 Relocation: <strong className="theme-gold-text">Dubai, UAE</strong></span>
                   <span>Notice: <strong className="theme-title">60 Days</strong></span>
                 </div>
@@ -70,24 +70,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
           {/* Left Column: Headline & Value Proposition */}
           <div className="space-y-5 sm:space-y-6 lg:col-span-7">
             
-            {/* Perfectly Aligned Status Badges */}
+            {/* Informational Status Tags (Explicitly non-interactive, cursor-default) */}
             <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full theme-gold-badge px-3.5 py-1.5 text-xs font-semibold shadow-sm">
+              <span className="inline-flex items-center gap-1.5 rounded-full theme-gold-badge px-3.5 py-1.5 text-xs font-semibold shadow-sm cursor-default select-none">
                 <span>🇦🇪</span>
                 <span>{RESUME_DATA.relocation.status}</span>
               </span>
 
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border-card)] bg-[var(--bg-card)] px-3.5 py-1.5 text-xs font-medium theme-sub">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border-card)] bg-[var(--bg-card)] px-3.5 py-1.5 text-xs font-medium theme-sub cursor-default select-none">
                 <Calendar className="h-3.5 w-3.5 theme-cyan-text" />
                 <span>Notice: {RESUME_DATA.relocation.noticePeriod}</span>
               </span>
 
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3.5 py-1.5 text-xs font-bold text-cyan-600 dark:text-cyan-400">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3.5 py-1.5 text-xs font-bold text-cyan-600 dark:text-cyan-400 cursor-default select-none">
                 <PhoneForwarded className="h-3.5 w-3.5" />
                 <span>BOTIM App & WhatsApp Active</span>
               </span>
 
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border-card)] bg-[var(--bg-card)] px-3.5 py-1.5 text-xs font-medium theme-sub">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border-card)] bg-[var(--bg-card)] px-3.5 py-1.5 text-xs font-medium theme-sub cursor-default select-none">
                 <ShieldCheck className="h-3.5 w-3.5 text-emerald-500" />
                 <span>Visa Sponsorship Required</span>
               </span>
@@ -111,9 +111,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
               Specialised in AI-driven development and agentic workflows — LLM orchestration, custom <span className="font-semibold theme-title">Claude Code skills</span>, and <span className="font-semibold theme-gold-text">MCP servers</span>. Proven track record of leading solo platform migrations, cutting build compilation times by <span className="font-bold theme-cyan-text">96%</span>, and establishing safety guardrails across distributed engineering teams.
             </p>
 
-            {/* Core Value Badges */}
+            {/* Core Value Metric Cards (Informational Summary) */}
             <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3 sm:gap-3 pt-1">
-              <div className="flex items-center gap-3 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] p-3 shadow-sm">
+              <div className="flex items-center gap-3 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] p-3 shadow-sm cursor-default select-none">
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg theme-gold-badge">
                   <Zap className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
@@ -123,7 +123,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] p-3 shadow-sm">
+              <div className="flex items-center gap-3 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] p-3 shadow-sm cursor-default select-none">
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[var(--color-cyan)]/10 theme-cyan-text">
                   <Bot className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
@@ -133,7 +133,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] p-3 shadow-sm">
+              <div className="flex items-center gap-3 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] p-3 shadow-sm cursor-default select-none">
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-500">
                   <ShieldCheck className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
@@ -144,14 +144,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
               </div>
             </div>
 
-            {/* Symmetrically Grouped Action Controls */}
+            {/* Symmetrically Grouped Action Buttons (Clickable CTAs with clear hover & shadow effects) */}
             <div className="space-y-3 pt-2">
               {/* Row 1: Primary Document & Executive CV Actions */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 <a
                   href="/Kannan_Santharam.pdf"
                   download="Kannan_Santharam_Senior_Lead_Software_Engineer.pdf"
-                  className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#E2B755] to-[#C29633] px-5 py-3 text-xs sm:text-sm font-bold text-[#07090E] transition-all hover:scale-[1.01] hover:shadow-lg hover:shadow-[#E2B755]/25 cursor-pointer text-center"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#E2B755] to-[#C29633] px-5 py-3 text-xs sm:text-sm font-bold text-[#07090E] transition-all hover:scale-[1.01] hover:shadow-lg hover:shadow-[#E2B755]/25 cursor-pointer text-center active:scale-95"
                 >
                   <Download className="h-4 w-4 shrink-0" />
                   <span>Download Official PDF Resume</span>
@@ -159,7 +159,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
 
                 <button
                   onClick={onOpenResumeModal}
-                  className="flex items-center justify-center gap-2 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] px-5 py-3 text-xs sm:text-sm font-semibold theme-title transition-all hover:border-[var(--color-gold)] hover:bg-[var(--bg-card-hover)] cursor-pointer text-center"
+                  className="flex items-center justify-center gap-2 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] px-5 py-3 text-xs sm:text-sm font-semibold theme-title transition-all hover:border-[var(--color-gold)] hover:bg-[var(--bg-card-hover)] cursor-pointer text-center active:scale-95"
                 >
                   <FileText className="h-4 w-4 shrink-0 theme-gold-text" />
                   <span>Interactive Executive View</span>
@@ -172,7 +172,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                   href={`https://wa.me/${RESUME_DATA.contact.phoneClean}?text=Hi%20Kannan,%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20connect%20regarding%20a%20role%20in%20Dubai.`}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-4 py-3 text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400 transition-all hover:bg-emerald-500/20 text-center"
+                  className="flex items-center justify-center gap-2 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-4 py-3 text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400 transition-all hover:bg-emerald-500/20 text-center active:scale-95 cursor-pointer"
                 >
                   <MessageSquare className="h-4 w-4 shrink-0" />
                   <span>WhatsApp Direct Chat</span>
@@ -180,7 +180,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
 
                 <button
                   onClick={handleCopyBotim}
-                  className="flex items-center justify-center gap-2 rounded-xl border border-cyan-500/40 bg-cyan-500/10 px-4 py-3 text-xs sm:text-sm font-semibold text-cyan-600 dark:text-cyan-400 transition-all hover:bg-cyan-500/20 cursor-pointer text-center"
+                  className="flex items-center justify-center gap-2 rounded-xl border border-cyan-500/40 bg-cyan-500/10 px-4 py-3 text-xs sm:text-sm font-semibold text-cyan-600 dark:text-cyan-400 transition-all hover:bg-cyan-500/20 cursor-pointer text-center active:scale-95"
                 >
                   {copiedBotim ? <Check className="h-4 w-4 shrink-0 text-cyan-400" /> : <PhoneForwarded className="h-4 w-4 shrink-0" />}
                   <span>{copiedBotim ? "BOTIM Handle Copied!" : "BOTIM App Handle"}</span>
@@ -209,14 +209,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                         <div className="text-sm font-bold text-white">{RESUME_DATA.name}</div>
                         <div className="text-xs text-[#E2B755]">Senior Lead Software Engineer</div>
                       </div>
-                      <div className="rounded-md bg-slate-900/90 border border-[#E2B755]/40 px-2 py-1 font-mono text-[10px] text-slate-200">
+                      <div className="rounded-md bg-slate-900/90 border border-[#E2B755]/40 px-2 py-1 font-mono text-[10px] text-slate-200 cursor-default select-none">
                         10.5+ Yrs Exp
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="space-y-2.5 text-xs theme-sub">
+                <div className="space-y-2.5 text-xs theme-sub cursor-default select-none">
                   <div className="flex items-center justify-between rounded-lg bg-[var(--bg-inner)] p-2.5 border border-[var(--border-card)]">
                     <span className="theme-muted">Target Role:</span>
                     <span className="font-semibold theme-title">Lead Software Engineer / Engineering Manager</span>

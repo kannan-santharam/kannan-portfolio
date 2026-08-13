@@ -15,7 +15,7 @@ export const CANDIDATE_DETAILED_DOSSIER = `
 ## 1. EXECUTIVE OVERVIEW
 - Full Name: Kannan Appiya Santharam
 - Current Role: Senior Lead Software Engineer (10.5+ Years Experience)
-- Target Roles: Lead Software Engineer / Engineering Manager / Principal Software Architect
+- Target Roles: Lead Software Engineer / Engineering Manager
 - Target Location: Dubai, UAE (Ready to relocate immediately)
 - Notice Period: 60 Days
 - Visa Status: Employment Visa Sponsorship Required

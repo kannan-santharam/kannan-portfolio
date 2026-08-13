@@ -115,7 +115,7 @@ function queryDynamicDossier(query: string): string {
 
   // TOPIC: Dubai Relocation, Visa & Notice Period
   if (q.includes('dubai') || q.includes('relocat') || q.includes('visa') || q.includes('notice') || q.includes('settle') || q.includes('uae')) {
-    return `🇦🇪 **Dubai, UAE Relocation & Hiring Status**\n\n• **Target Role:** Lead Software Engineer / Engineering Manager / Principal Architect\n• **Relocation Status:** Ready to relocate immediately to Dubai, UAE upon **60 days notice**\n• **Visa:** Employment Visa Sponsorship Required\n• **Long-Term Plan:** Plans to bring his family to Dubai post-relocation and settle permanently\n• **Demographics:** Indian Citizen (Valid Passport)\n• **Languages:** English (Fluent), Tamil (Native), Hindi (Basic)`;
+    return `🇦🇪 **Dubai, UAE Relocation & Hiring Status**\n\n• **Target Role:** Lead Software Engineer / Engineering Manager\n• **Relocation Status:** Ready to relocate immediately to Dubai, UAE upon **60 days notice**\n• **Visa:** Employment Visa Sponsorship Required\n• **Long-Term Plan:** Plans to bring his family to Dubai post-relocation and settle permanently\n• **Demographics:** Indian Citizen (Valid Passport)\n• **Languages:** English (Fluent), Tamil (Native), Hindi (Basic)`;
   }
 
   // TOPIC: Education & Personal Demographics
