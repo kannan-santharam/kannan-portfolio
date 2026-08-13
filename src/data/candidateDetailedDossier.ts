@@ -1,7 +1,7 @@
 /**
  * CANDIDATE DETAILED DOSSIER FOR AI ASSISTANT
  * ============================================================================
- * KANNAN APPIYA SANTHRAM: Extended detailed background, work history,
+ * KANNAN APPIYA SANTHARAM: Extended detailed background, work history,
  * projects, stories, achievements, preferences, and personal details below.
  * 
  * The AI Assistant will automatically pull from this text, transform, reason,
@@ -52,7 +52,7 @@ I did my school in Madurai, Tamilnadu. I studied Maths, Physics and Computer sci
 I did my Engineering in Computer Science under Anna University. 
 
 ## 6. PERSONAL
-I born in Madurai, Tamilnadu and I am 32 years old.
+Born in Madurai, Tamil Nadu. Indian Citizen with a valid passport.
 
 ## DUBAI Readyness & UAE Communication
 I am looking for visa sponsor from the employeer. I am very much ready to move to Dubai immediately after the notice period.
