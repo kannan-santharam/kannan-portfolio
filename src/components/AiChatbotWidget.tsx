@@ -148,20 +148,20 @@ export const AiChatbotWidget: React.FC<AiChatbotWidgetProps> = ({ isOpen, onOpen
     <>
       {/* Floating Action Trigger Button with Sleek Refined Color Border */}
       {!isOpen && (
-        <div className="fixed bottom-5 right-5 z-40">
+        <div className="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-40">
           <button
             onClick={() => onOpenChange(true)}
-            className="group relative flex items-center justify-center overflow-hidden rounded-full p-[1.75px] transition-transform duration-300 hover:scale-105 cursor-pointer"
+            className="group relative flex items-center justify-center overflow-hidden rounded-full p-[1.75px] transition-transform duration-300 hover:scale-105 cursor-pointer shadow-2xl"
             aria-label="Open AI Candidate Assistant"
           >
             {/* Fast Rotating Conic Color Gradient Border */}
             <span className="absolute inset-[-150%] animate-spin-border bg-[conic-gradient(from_0deg,#E2B755_0%,#00F2FE_25%,#A855F7_50%,#34D399_75%,#E2B755_100%)]" />
 
             {/* Inner Button Content */}
-            <div className="relative flex items-center gap-2.5 rounded-full bg-[#07090E] px-4 py-3 text-slate-100 font-bold">
-              <div className="relative flex h-7 w-7 items-center justify-center rounded-full bg-[#141C2E] text-[#E2B755]">
-                <Bot className="h-4 w-4" />
-                <span className="absolute -top-0.5 -right-0.5 h-2.5 w-2.5 rounded-full bg-emerald-400 ring-2 ring-[#07090E]" />
+            <div className="relative flex items-center gap-2.5 rounded-full bg-[#07090E] px-3.5 py-2.5 sm:px-4 sm:py-3 text-slate-100 font-bold">
+              <div className="relative flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full bg-[#141C2E] text-[#E2B755]">
+                <Bot className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                <span className="absolute -top-0.5 -right-0.5 h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-emerald-400 ring-2 ring-[#07090E]" />
               </div>
               <span className="text-xs font-extrabold sm:text-sm text-white">Ask Candidate AI</span>
               <Sparkles className="h-3.5 w-3.5 text-[#E2B755] group-hover:rotate-12 transition-transform" />
@@ -172,42 +172,47 @@ export const AiChatbotWidget: React.FC<AiChatbotWidgetProps> = ({ isOpen, onOpen
 
       {/* Expanded Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-4 right-4 z-50 flex h-[560px] max-h-[85vh] w-[94vw] max-w-[420px] flex-col overflow-hidden rounded-2xl border border-[var(--border-gold)] bg-[var(--bg-card)] text-[var(--text-body)] shadow-2xl backdrop-blur-2xl transition-all">
+        <div className="fixed bottom-2 right-2 sm:bottom-4 sm:right-4 z-50 flex h-[540px] max-h-[92vh] w-[95vw] sm:w-[420px] max-w-[420px] flex-col overflow-hidden rounded-2xl border border-[var(--border-gold)] bg-[var(--bg-card)] text-[var(--text-body)] shadow-2xl backdrop-blur-2xl transition-all">
           
-          {/* Header */}
-          <div className="flex items-center justify-between border-b border-[var(--border-card)] bg-[var(--bg-page)]/95 px-4 py-3">
-            <div className="flex items-center gap-3">
-              <div className="relative">
+          {/* Clean Non-Overlapping Header */}
+          <div className="flex items-center justify-between border-b border-[var(--border-card)] bg-[var(--bg-page)]/95 px-3 py-2.5 sm:px-4 sm:py-3 gap-2">
+            
+            {/* Left Profile Info */}
+            <div className="flex items-center gap-2.5 min-w-0">
+              <div className="relative shrink-0">
                 <img
                   src="/kannanphoto.jpeg"
                   alt="Kannan"
-                  className="h-9 w-9 rounded-full object-cover object-top border border-[var(--border-gold)] shadow-md"
+                  className="h-8 w-8 sm:h-9 sm:w-9 rounded-full object-cover object-top border border-[var(--border-gold)] shadow-md"
                 />
-                <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-emerald-400 ring-2 ring-[#07090E]" />
+                <span className="absolute bottom-0 right-0 h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-emerald-400 ring-2 ring-[#07090E]" />
               </div>
 
-              <div>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-xs font-extrabold theme-title">Kannan's AI Assistant</span>
-                  <span className="rounded bg-emerald-500/15 px-1.5 py-0.5 text-[9px] font-bold text-emerald-500 flex items-center gap-1">
+              <div className="min-w-0">
+                <h3 className="text-xs font-extrabold theme-title truncate">
+                  Kannan's AI Assistant
+                </h3>
+                <div className="flex items-center gap-1.5 text-[10px] theme-muted mt-0.5">
+                  <span className="inline-flex items-center gap-0.5 rounded bg-emerald-500/15 px-1.5 py-0.2 text-[8px] sm:text-[9px] font-bold text-emerald-500 shrink-0">
                     <Zap className="h-2.5 w-2.5" />
                     <span>HTTP Streamable</span>
                   </span>
+                  <span className="truncate hidden xs:inline">· Gemini 1.5</span>
                 </div>
-                <p className="text-[10px] theme-muted">Gemini Stream Engine (ReadableStream)</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-1">
+            {/* Right Action Controls */}
+            <div className="flex items-center gap-1 shrink-0">
               <a
                 href={`https://wa.me/${RESUME_DATA.contact.phoneClean}?text=Hi%20Kannan,%20I'm%20chatting%20with%20your%20AI%20Portfolio%20Assistant%20and%20would%20like%20to%20connect%20regarding%20a%20role%20in%20Dubai.`}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-lg p-1.5 border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 hover:bg-emerald-500/20 text-[10px] font-bold flex items-center gap-1"
+                className="rounded-lg px-2 py-1 border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 hover:bg-emerald-500/20 text-[10px] font-bold flex items-center gap-1 transition-all"
                 title="Direct WhatsApp"
               >
-                <MessageSquare className="h-3.5 w-3.5" />
-                <span>WhatsApp</span>
+                <MessageSquare className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+                <span className="hidden sm:inline">WhatsApp</span>
               </a>
 
               <button
@@ -241,14 +246,14 @@ export const AiChatbotWidget: React.FC<AiChatbotWidgetProps> = ({ isOpen, onOpen
           </div>
 
           {/* Message Stream Body */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-3 font-sans text-xs">
+          <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 font-sans text-xs">
             {messages.map((msg) => (
               <div
                 key={msg.id}
                 className={`flex flex-col ${msg.sender === 'user' ? 'items-end' : 'items-start'}`}
               >
                 <div
-                  className={`max-w-[88%] rounded-2xl p-3 leading-relaxed ${
+                  className={`max-w-[90%] sm:max-w-[88%] rounded-2xl p-3 leading-relaxed ${
                     msg.sender === 'user'
                       ? 'bg-gradient-to-r from-[#E2B755] to-[#C29633] text-[#07090E] font-semibold rounded-br-none shadow-md'
                       : 'border border-[var(--border-card)] bg-[var(--bg-inner)] theme-title rounded-bl-none shadow-sm'
@@ -284,19 +289,19 @@ export const AiChatbotWidget: React.FC<AiChatbotWidgetProps> = ({ isOpen, onOpen
               e.preventDefault();
               handleSendMessage();
             }}
-            className="border-t border-[var(--border-card)] bg-[var(--bg-page)]/95 p-2.5 flex items-center gap-2"
+            className="border-t border-[var(--border-card)] bg-[var(--bg-page)]/95 p-2 sm:p-2.5 flex items-center gap-2"
           >
             <input
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask about Kannan's experience, Rspack, or HTTP Streamable..."
+              placeholder="Ask about Kannan's experience, Rspack..."
               className="flex-1 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] px-3 py-2 text-xs theme-title outline-none focus:border-[var(--color-gold)]"
             />
             <button
               type="submit"
               disabled={!input.trim() || isLoading}
-              className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-r from-[#E2B755] to-[#C29633] text-[#07090E] disabled:opacity-50 cursor-pointer shadow-md"
+              className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-r from-[#E2B755] to-[#C29633] text-[#07090E] disabled:opacity-50 cursor-pointer shadow-md shrink-0"
             >
               <Send className="h-4 w-4" />
             </button>
