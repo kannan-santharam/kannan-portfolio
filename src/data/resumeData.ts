@@ -28,7 +28,7 @@ export interface SkillCategory {
 export const RESUME_DATA = {
   name: "Kannan Appiya Santharam",
   title: "Senior Lead Software Engineer",
-  subTitle: "React 19 · TypeScript · AI-Native Engineering · Large-Scale Monorepos",
+  subTitle: "React · TypeScript · AI-Native Engineering · Large-Scale Monorepos",
   relocation: {
     targetCity: "Dubai, UAE",
     currentLocation: "Chennai, India",
@@ -86,7 +86,7 @@ export const RESUME_DATA = {
     {
       title: "LLM Agent Orchestration & Real-Time HTTP Streaming",
       description: "Built an enterprise AI test-authoring engine using React & Node.js, streaming real-time LLM agent tool calls and test generation over HTTP Streamable Web Streams (fetch + ReadableStream).",
-      tags: ["LLM Agents", "HTTP Streamable", "ReadableStream", "React 19", "Node.js", "Self-Healing Tests"]
+      tags: ["LLM Agents", "HTTP Streamable", "ReadableStream", "React", "Node.js", "Self-Healing Tests"]
     },
     {
       title: "Model Context Protocol (MCP) Servers & Skills",
@@ -185,7 +185,7 @@ export const RESUME_DATA = {
       title: "Software Core & Frameworks",
       category: "frontend",
       skills: [
-        { name: "React (React 19 / Compiler)", level: "Expert", hot: true },
+        { name: "React (Compiler)", level: "Expert", hot: true },
         { name: "TypeScript", level: "Expert", hot: true },
         { name: "JavaScript (ES6+)", level: "Expert" },
         { name: "HTML5 & Semantic Web", level: "Expert" },

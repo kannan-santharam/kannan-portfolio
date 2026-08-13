@@ -173,7 +173,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             <h2 className="text-sm font-bold uppercase tracking-wider theme-gold-text mb-3">Technical Skills Matrix</h2>
             <div className="space-y-2 text-xs theme-sub">
               <div><strong>AI & Agentic Tooling:</strong> Claude Code, Model Context Protocol (MCP) Servers, Cursor IDE, LLM Orchestration, Agent Guardrails & Write-Scope Design</div>
-              <div><strong>Software Core:</strong> React 19, React Compiler, TypeScript, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS</div>
+              <div><strong>Software Core:</strong> React, React Compiler, TypeScript, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS</div>
               <div><strong>State & Data:</strong> GraphQL, Apollo Client, REST APIs, Zustand, Custom Cached Query Hooks</div>
               <div><strong>Architecture & Performance:</strong> Monorepos, Rspack, Webpack 5, Vite, pnpm, Micro-Frontends, Knip Static Analysis</div>
               <div><strong>Testing & Quality:</strong> Playwright End-to-End Suite, Node.js, Jenkins CI/CD</div>

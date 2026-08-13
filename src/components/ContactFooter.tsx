@@ -202,7 +202,7 @@ export const ContactFooter: React.FC = () => {
         {/* Footer Sub-bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-[var(--border-card)] pt-8 sm:flex-row text-xs theme-muted">
           <div>
-            © {new Date().getFullYear()} Kannan Santharam. Built with React 19 + React Compiler & Tailwind CSS.
+            © {new Date().getFullYear()} Kannan Santharam. Built with React & Tailwind CSS.
           </div>
           <div className="flex items-center gap-2 font-mono text-[11px] theme-gold-text cursor-default select-none">
             <Sparkles className="h-3.5 w-3.5" />

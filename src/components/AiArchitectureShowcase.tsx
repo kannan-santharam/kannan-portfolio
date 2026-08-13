@@ -48,7 +48,7 @@ export const AiArchitectureShowcase: React.FC = () => {
 
             <div className="mt-4 flex flex-wrap gap-1.5">
               <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">LLM Agents</span>
-              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">React 19</span>
+              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">React</span>
               <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Self-Healing</span>
             </div>
           </div>

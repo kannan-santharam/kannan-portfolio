@@ -100,7 +100,7 @@ function queryDynamicDossier(query: string): string {
 
   // TOPIC: AI Test-Authoring Platform & Self-Healing Tests
   if (q.includes('test platform') || q.includes('test authoring') || q.includes('self-healing') || q.includes('playwright')) {
-    return `🤖 **AI Test-Authoring Platform & Self-Healing Suite**\n\nKannan architected an automated end-to-end test platform from scratch using React 19 and Node.js:\n• **Autonomous LLM Agents:** Orchestrates LLM agents to auto-generate and execute Playwright test specs.\n• **Self-Healing Selectors:** Inspects DOM trees and automatically self-heals broken DOM selectors upon UI releases.\n• **Monorepo Coverage:** Maintained a 232-spec Playwright regression suite and eliminated 30,000+ lines of dead code using Knip static analysis.`;
+    return `🤖 **AI Test-Authoring Platform & Self-Healing Suite**\n\nKannan architected an automated end-to-end test platform from scratch using React and Node.js:\n• **Autonomous LLM Agents:** Orchestrates LLM agents to auto-generate and execute Playwright test specs.\n• **Self-Healing Selectors:** Inspects DOM trees and automatically self-heals broken DOM selectors upon UI releases.\n• **Monorepo Coverage:** Maintained a 232-spec Playwright regression suite and eliminated 30,000+ lines of dead code using Knip static analysis.`;
   }
 
   // TOPIC: Claude Code Skills, MCP Servers & Write-Scope Guardrails

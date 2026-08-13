@@ -102,7 +102,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                 {RESUME_DATA.title}
               </p>
               <p className="mt-1 font-mono text-[10px] sm:text-xs tracking-wider theme-muted">
-                10.5+ YEARS ENTERPRISE SAAS · REACT 19 · MONOREPOS · AI-NATIVE ARCHITECTURE
+                10.5+ YEARS ENTERPRISE SAAS · REACT · MONOREPOS · AI-NATIVE ARCHITECTURE
               </p>
             </div>
 

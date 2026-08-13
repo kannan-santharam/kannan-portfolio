@@ -27,7 +27,7 @@ export const CANDIDATE_DETAILED_DOSSIER = `
 
 ## 2. CAREER HIGHLIGHTS & KEY ENGINEERING METRICS
 - **96% Faster Monorepo Builds**: Solo-led a 3-week build migration from Webpack 5 to Rust-powered Rspack across 12 packages at SuperOps. Reduced cold-start compilation from 2 minutes (120s) down to 5 seconds, with HMR hot reloads <50ms. Saved hundreds of engineering hours monthly.
-- **AI Test-Authoring Platform & HTTP Streamable**: Architected an automated end-to-end test platform from scratch using React 19 and Node.js streaming autonomous LLM agent tool calls over HTTP Streamable Web Streams (fetch + ReadableStream). Auto-generates, executes, and self-heals Playwright test specs.
+- **AI Test-Authoring Platform & HTTP Streamable**: Architected an automated end-to-end test platform from scratch using React and Node.js streaming autonomous LLM agent tool calls over HTTP Streamable Web Streams (fetch + ReadableStream). Auto-generates, executes, and self-heals Playwright test specs.
 - **Production Claude Code Skills & MCP Servers**: Authored custom Claude Code skills powered by Model Context Protocol (MCP) servers. Enforced strict write-scope guardrails allowing AI agents to edit feature modules while strictly protecting core system schemas.
 - **Monorepo Quality & Dead Code Elimination**: Maintained a 232-spec Playwright regression suite in Jenkins CI. Stripped 30,000+ lines of dead code using Knip static analysis.
 
