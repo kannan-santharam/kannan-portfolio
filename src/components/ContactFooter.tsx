@@ -3,12 +3,19 @@ import { Mail, MessageSquare, Phone, MapPin, Copy, Check, Send, Sparkles, PhoneC
 import { RESUME_DATA } from '../data/resumeData';
 
 export const ContactFooter: React.FC = () => {
-  const [copied, setCopied] = useState(false);
+  const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copiedBotim, setCopiedBotim] = useState(false);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(RESUME_DATA.contact.email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2000);
+  };
+
+  const handleCopyBotim = () => {
+    navigator.clipboard.writeText(RESUME_DATA.contact.phone);
+    setCopiedBotim(true);
+    setTimeout(() => setCopiedBotim(false), 2000);
   };
 
   const getWaUrl = (text: string) => {
@@ -149,17 +156,20 @@ export const ContactFooter: React.FC = () => {
                 <span className="text-xs font-mono">{RESUME_DATA.contact.phone}</span>
               </a>
 
-              {/* SEPARATE BOTIM App Button */}
-              <a
-                href={`tel:${RESUME_DATA.contact.phoneClean}`}
-                className="flex w-full items-center justify-between rounded-xl border border-cyan-500/40 bg-cyan-500/10 p-3.5 font-semibold text-cyan-600 dark:text-cyan-400 transition-all hover:bg-cyan-500/20"
+              {/* SEPARATE BOTIM App Copy Button (No native phone app trigger) */}
+              <button
+                onClick={handleCopyBotim}
+                className="flex w-full items-center justify-between rounded-xl border border-cyan-500/40 bg-cyan-500/10 p-3.5 font-semibold text-cyan-600 dark:text-cyan-400 transition-all hover:bg-cyan-500/20 cursor-pointer"
               >
                 <div className="flex items-center gap-3">
                   <PhoneForwarded className="h-5 w-5 text-cyan-400" />
-                  <span>BOTIM App VoIP & Phone Call</span>
+                  <span>{copiedBotim ? "BOTIM Handle Copied!" : "BOTIM App Handle"}</span>
                 </div>
-                <span className="text-xs font-mono">{RESUME_DATA.contact.phone}</span>
-              </a>
+                <span className="text-xs font-mono flex items-center gap-1">
+                  {copiedBotim ? <Check className="h-3.5 w-3.5 text-cyan-400" /> : <Copy className="h-3.5 w-3.5" />}
+                  {RESUME_DATA.contact.phone}
+                </span>
+              </button>
 
               {/* LinkedIn Button */}
               <a
@@ -179,8 +189,8 @@ export const ContactFooter: React.FC = () => {
                 onClick={handleCopyEmail}
                 className="flex w-full items-center justify-center gap-2 text-xs theme-muted hover:text-[var(--color-gold)] pt-1 cursor-pointer"
               >
-                {copied ? <Check className="h-3.5 w-3.5 text-emerald-500" /> : <Copy className="h-3.5 w-3.5" />}
-                <span>{copied ? "Email copied to clipboard!" : `Click to copy: ${RESUME_DATA.contact.email}`}</span>
+                {copiedEmail ? <Check className="h-3.5 w-3.5 text-emerald-500" /> : <Copy className="h-3.5 w-3.5" />}
+                <span>{copiedEmail ? "Email copied to clipboard!" : `Click to copy: ${RESUME_DATA.contact.email}`}</span>
               </button>
 
             </div>

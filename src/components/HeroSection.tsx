@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   Calendar, 
   FileText, 
@@ -7,7 +7,9 @@ import {
   Zap,
   Bot,
   Download,
-  PhoneForwarded
+  PhoneForwarded,
+  Copy,
+  Check
 } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
 
@@ -16,6 +18,14 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) => {
+  const [copiedBotim, setCopiedBotim] = useState(false);
+
+  const handleCopyBotim = () => {
+    navigator.clipboard.writeText(RESUME_DATA.contact.phone);
+    setCopiedBotim(true);
+    setTimeout(() => setCopiedBotim(false), 2000);
+  };
+
   return (
     <section id="hero" className="relative overflow-hidden pb-12 pt-8 sm:pb-20 sm:pt-16 lg:pb-24">
       {/* Background Radial Glow */}
@@ -156,7 +166,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                 </button>
               </div>
 
-              {/* Row 2: Direct Messaging & VoIP Channels (WhatsApp + BOTIM App) */}
+              {/* Row 2: Direct Messaging & BOTIM Copy Button */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 <a
                   href={`https://wa.me/${RESUME_DATA.contact.phoneClean}?text=Hi%20Kannan,%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20connect%20regarding%20a%20role%20in%20Dubai.`}
@@ -168,13 +178,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                   <span>WhatsApp Direct Chat</span>
                 </a>
 
-                <a
-                  href={`tel:${RESUME_DATA.contact.phoneClean}`}
-                  className="flex items-center justify-center gap-2 rounded-xl border border-cyan-500/40 bg-cyan-500/10 px-4 py-3 text-xs sm:text-sm font-semibold text-cyan-600 dark:text-cyan-400 transition-all hover:bg-cyan-500/20 text-center"
+                <button
+                  onClick={handleCopyBotim}
+                  className="flex items-center justify-center gap-2 rounded-xl border border-cyan-500/40 bg-cyan-500/10 px-4 py-3 text-xs sm:text-sm font-semibold text-cyan-600 dark:text-cyan-400 transition-all hover:bg-cyan-500/20 cursor-pointer text-center"
                 >
-                  <PhoneForwarded className="h-4 w-4 shrink-0" />
-                  <span>BOTIM App VoIP & Phone</span>
-                </a>
+                  {copiedBotim ? <Check className="h-4 w-4 shrink-0 text-cyan-400" /> : <PhoneForwarded className="h-4 w-4 shrink-0" />}
+                  <span>{copiedBotim ? "BOTIM Handle Copied!" : "BOTIM App Handle"}</span>
+                  {!copiedBotim && <Copy className="h-3 w-3 shrink-0 ml-1 text-cyan-400/70" />}
+                </button>
               </div>
             </div>
 
