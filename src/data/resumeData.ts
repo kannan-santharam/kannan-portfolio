@@ -40,6 +40,7 @@ export const RESUME_DATA = {
   contact: {
     phone: "+91 97902 47499",
     phoneClean: "+919790247499",
+    botim: "+91 97902 47499",
     email: "as.kannan4@gmail.com",
     linkedin: "https://linkedin.com/in/askannan",
     linkedinDisplay: "linkedin.com/in/askannan",

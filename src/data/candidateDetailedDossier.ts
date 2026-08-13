@@ -1,7 +1,7 @@
 /**
  * CANDIDATE DETAILED DOSSIER FOR AI ASSISTANT
  * ============================================================================
- * KANNAN APPIYA SANTHARAM: Extended detailed background, work history,
+ * KANNAN APPIYA SANTHRAM: Extended detailed background, work history,
  * projects, stories, achievements, preferences, and personal details below.
  * 
  * The AI Assistant will automatically pull from this text, transform, reason,
@@ -22,7 +22,7 @@ export const CANDIDATE_DETAILED_DOSSIER = `
 - Citizenship: Indian Citizen
 - Languages: English (Fluent), Tamil (Native), Hindi (Basic)
 - Email: as.kannan4@gmail.com
-- Phone / WhatsApp: +91 97902 47499
+- Phone / WhatsApp / BOTIM App: +91 97902 47499
 - LinkedIn: linkedin.com/in/askannan
 
 ## 2. CAREER HIGHLIGHTS & KEY ENGINEERING METRICS
@@ -54,13 +54,13 @@ I did my Engineering in Computer Science under Anna University.
 ## 6. PERSONAL
 I born in Madurai, Tamilnadu and I am 32 years old.
 
-## DUBAI Readyness
+## DUBAI Readyness & UAE Communication
 I am looking for visa sponsor from the employeer. I am very much ready to move to Dubai immediately after the notice period.
 After I move to Dubai, I have plans to bring my family there and settle.
+Kannan is available for direct messaging and VoIP calls on both BOTIM App and WhatsApp at +91 97902 47499.
 
 ## Salary expectations
 Honestly I want to share it here, but to protect my sensitive data i wish to discuss this over the call. 
-
 
 ## What i am doing:
 I am currently working in Superops as a Senior Lead Software Engineer, fully focusing on 

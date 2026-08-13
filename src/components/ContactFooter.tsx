@@ -49,8 +49,13 @@ export const ContactFooter: React.FC = () => {
             
             {/* Left Info */}
             <div className="space-y-4 lg:col-span-7">
-              <div className="inline-flex items-center gap-2 rounded-full theme-gold-badge px-3.5 py-1 text-xs font-semibold">
-                <span>🇦🇪 Available for Dubai, UAE Hiring</span>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center gap-2 rounded-full theme-gold-badge px-3.5 py-1 text-xs font-semibold">
+                  🇦🇪 Available for Dubai, UAE Hiring
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-bold text-cyan-600 dark:text-cyan-400">
+                  <span>📱 BOTIM App & WhatsApp Active</span>
+                </span>
               </div>
               
               <h2 className="text-3xl font-extrabold theme-title sm:text-4xl">
@@ -61,11 +66,11 @@ export const ContactFooter: React.FC = () => {
                 Seeking a Lead Frontend Engineer or Engineering Manager position with a tech product company in Dubai. Available on 60 days notice with full mobility for visa processing.
               </p>
 
-              {/* Quick WhatsApp Topic Presets with Hover Message Tooltips */}
+              {/* Quick WhatsApp & BOTIM Topic Presets with Hover Message Tooltips */}
               <div className="space-y-2.5 pt-2">
                 <div className="text-xs font-bold theme-title flex items-center gap-1.5">
                   <MessageSquare className="h-3.5 w-3.5 text-emerald-500" />
-                  <span>Instant WhatsApp Quick-Ping Topics (Hover for message preview):</span>
+                  <span>Instant Messaging Topics (WhatsApp & BOTIM App):</span>
                 </div>
                 <div className="flex flex-wrap gap-2.5">
                   {quickTopics.map((topic) => {
@@ -82,10 +87,10 @@ export const ContactFooter: React.FC = () => {
                           <span>{topic.label}</span>
                         </a>
 
-                        {/* Hover Tooltip displaying exact pre-filled WhatsApp message */}
+                        {/* Hover Tooltip displaying exact pre-filled message */}
                         <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:flex flex-col items-center w-64 z-30 transition-all duration-200">
                           <div className="rounded-xl border border-[var(--border-gold)] bg-slate-950 p-2.5 text-[11px] text-slate-200 shadow-2xl backdrop-blur-md leading-snug text-center">
-                            <span className="block font-bold text-[#E2B755] text-[10px] uppercase tracking-wider mb-1">Pre-filled WhatsApp Message</span>
+                            <span className="block font-bold text-[#E2B755] text-[10px] uppercase tracking-wider mb-1">Pre-filled WhatsApp & BOTIM Message</span>
                             "{topic.message}"
                           </div>
                           <div className="h-2 w-2 -mt-1 rotate-45 border-r border-b border-[var(--border-gold)] bg-slate-950" />
@@ -104,7 +109,7 @@ export const ContactFooter: React.FC = () => {
                 <span>•</span>
                 <span className="flex items-center gap-1.5">
                   <Phone className="h-4 w-4 theme-cyan-text" />
-                  {RESUME_DATA.contact.phone}
+                  {RESUME_DATA.contact.phone} (WhatsApp / BOTIM)
                 </span>
                 <span>•</span>
                 <span className="flex items-center gap-1.5">
@@ -129,7 +134,7 @@ export const ContactFooter: React.FC = () => {
                 <Send className="h-4 w-4" />
               </a>
 
-              {/* WhatsApp Button */}
+              {/* WhatsApp & BOTIM Active Button */}
               <a
                 href={getWaUrl("Hi Kannan, I'm reaching out regarding a Lead Frontend / Engineering Manager role in Dubai.")}
                 target="_blank"
@@ -138,7 +143,7 @@ export const ContactFooter: React.FC = () => {
               >
                 <div className="flex items-center gap-3">
                   <MessageSquare className="h-5 w-5 text-emerald-500" />
-                  <span>Direct WhatsApp Chat</span>
+                  <span>WhatsApp & BOTIM Chat</span>
                 </div>
                 <span className="text-xs font-mono">{RESUME_DATA.contact.phone}</span>
               </a>

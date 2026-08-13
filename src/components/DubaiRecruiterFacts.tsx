@@ -1,5 +1,5 @@
 import React from 'react';
-import { Plane, Clock, Award, CheckCircle2, Globe, ShieldCheck } from 'lucide-react';
+import { Plane, Clock, Award, CheckCircle2, ShieldCheck, MessageSquare } from 'lucide-react';
 
 export const DubaiRecruiterFacts: React.FC = () => {
   const facts = [
@@ -25,11 +25,11 @@ export const DubaiRecruiterFacts: React.FC = () => {
       color: "theme-cyan-text"
     },
     {
-      label: "Nationality & Passport",
-      value: "Indian Citizen",
-      subtext: "Valid passport ready for immediate visa processing and onboarding",
-      icon: Globe,
-      color: "text-purple-500"
+      label: "Direct UAE Communication",
+      value: "BOTIM & WhatsApp Active",
+      subtext: "Available on BOTIM App (+91 97902 47499) for UAE VoIP calling & messaging",
+      icon: MessageSquare,
+      color: "text-[#00F2FE]"
     }
   ];
 
