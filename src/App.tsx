@@ -13,6 +13,7 @@ import { AiChatbotWidget } from './components/AiChatbotWidget';
 
 function MainLayout() {
   const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
   const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 });
   const isManualNavRef = useRef(false);
@@ -95,6 +96,7 @@ function MainLayout() {
       {/* Header Navigation with Active Highlight & Theme Toggle */}
       <Navbar
         onOpenResumeModal={() => setIsResumeModalOpen(true)}
+        onOpenChat={() => setIsChatOpen(true)}
         activeSection={activeSection}
         onNavigate={handleNavigate}
       />
@@ -121,7 +123,7 @@ function MainLayout() {
       <ContactFooter />
 
       {/* Floating AI Chatbot Assistant */}
-      <AiChatbotWidget />
+      <AiChatbotWidget isOpen={isChatOpen} onOpenChange={setIsChatOpen} />
 
       {/* Full Resume View Modal */}
       <ResumeModal

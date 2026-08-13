@@ -47,8 +47,12 @@ const FormattedMarkdownText: React.FC<{ content: string }> = ({ content }) => {
   );
 };
 
-export const AiChatbotWidget: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+interface AiChatbotWidgetProps {
+  isOpen: boolean;
+  onOpenChange: (open: boolean) => void;
+}
+
+export const AiChatbotWidget: React.FC<AiChatbotWidgetProps> = ({ isOpen, onOpenChange }) => {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -146,7 +150,7 @@ export const AiChatbotWidget: React.FC = () => {
       {!isOpen && (
         <div className="fixed bottom-5 right-5 z-40">
           <button
-            onClick={() => setIsOpen(true)}
+            onClick={() => onOpenChange(true)}
             className="group relative flex items-center justify-center overflow-hidden rounded-full p-[1.75px] transition-transform duration-300 hover:scale-105 cursor-pointer"
             aria-label="Open AI Candidate Assistant"
           >
@@ -214,7 +218,7 @@ export const AiChatbotWidget: React.FC = () => {
                 <RefreshCw className="h-3.5 w-3.5" />
               </button>
               <button
-                onClick={() => setIsOpen(false)}
+                onClick={() => onOpenChange(false)}
                 className="rounded-lg p-1.5 theme-sub hover:bg-[var(--bg-card-hover)] cursor-pointer"
                 title="Close Chat"
               >

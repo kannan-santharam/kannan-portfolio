@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import { FileText, Send, Menu, X, Sun, Moon, Download, MessageSquare } from 'lucide-react';
+import { FileText, Menu, X, Sun, Moon, Download, MessageSquare, Bot, Sparkles } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
 import { useTheme } from '../context/ThemeContext';
 
 interface NavbarProps {
   onOpenResumeModal: () => void;
+  onOpenChat: () => void;
   activeSection: string;
   onNavigate: (sectionId: string) => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, activeSection, onNavigate }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, activeSection, onNavigate }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
@@ -110,13 +111,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, activeSection
             <span>View CV</span>
           </button>
 
-          <a
-            href={`mailto:${RESUME_DATA.contact.email}`}
-            className="flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-[#E2B755] to-[#C29633] px-3.5 py-1.5 text-xs font-bold text-[#07090E] transition-all hover:brightness-110 shadow-md shadow-[#E2B755]/10"
+          <button
+            onClick={onOpenChat}
+            className="group relative flex items-center justify-center overflow-hidden rounded-full p-[1.5px] transition-transform duration-300 hover:scale-105 cursor-pointer"
           >
-            <Send className="h-3.5 w-3.5" />
-            <span>Hire Direct</span>
-          </a>
+            <span className="absolute inset-[-150%] animate-spin-border bg-[conic-gradient(from_0deg,#E2B755_0%,#00F2FE_25%,#A855F7_50%,#34D399_75%,#E2B755_100%)]" />
+            <div className="relative flex items-center gap-1.5 rounded-full bg-[#07090E] px-3.5 py-1.5 text-xs font-bold text-white">
+              <Bot className="h-3.5 w-3.5 text-[#E2B755]" />
+              <span>Ask AI</span>
+              <Sparkles className="h-3 w-3 text-[#E2B755] group-hover:rotate-12 transition-transform" />
+            </div>
+          </button>
         </div>
 
         {/* Mobile Controls (Touch-Friendly) */}
@@ -198,13 +203,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, activeSection
               <span>WhatsApp Direct</span>
             </a>
 
-            <a
-              href={`mailto:${RESUME_DATA.contact.email}`}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#E2B755] to-[#C29633] py-2.5 text-xs font-bold text-[#07090E] shadow-md"
+            <button
+              onClick={() => { setMobileMenuOpen(false); onOpenChat(); }}
+              className="group relative flex w-full items-center justify-center overflow-hidden rounded-xl p-[1.5px] cursor-pointer"
             >
-              <Send className="h-4 w-4" />
-              <span>Email Candidate Direct</span>
-            </a>
+              <span className="absolute inset-[-150%] animate-spin-border bg-[conic-gradient(from_0deg,#E2B755_0%,#00F2FE_25%,#A855F7_50%,#34D399_75%,#E2B755_100%)]" />
+              <div className="relative flex w-full items-center justify-center gap-2 rounded-[10px] bg-[#07090E] py-2.5 text-xs font-bold text-white">
+                <Bot className="h-4 w-4 text-[#E2B755]" />
+                <span>Ask Candidate AI</span>
+                <Sparkles className="h-3 w-3 text-[#E2B755]" />
+              </div>
+            </button>
           </div>
         </div>
       )}
