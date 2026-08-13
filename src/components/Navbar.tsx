@@ -30,24 +30,27 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, a
 
   return (
     <header className="sticky top-0 z-50 w-full border-b theme-nav backdrop-blur-md transition-colors duration-250 shadow-sm">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-3 py-2 sm:px-6 lg:px-8 gap-2 overflow-hidden">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-3 py-2 sm:px-6 lg:px-8 gap-2">
         
         {/* Brand / Logo */}
         <a 
           href="#" 
           onClick={(e) => { e.preventDefault(); onNavigate('hero'); }}
-          className="group flex items-center gap-2 min-w-0 shrink"
+          className="group flex items-center gap-2 shrink-0"
         >
           <div className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#E2B755] to-[#9A7426] p-0.5 shadow-md shadow-[#E2B755]/10 transition-transform group-hover:scale-105 shrink-0">
             <div className="flex h-full w-full items-center justify-center rounded-[9px] bg-[#07090E] font-mono text-xs sm:text-sm font-bold text-[#E2B755]">
               KS
             </div>
           </div>
-          <div className="min-w-0">
+          <div className="shrink-0">
             <div className="flex items-center gap-1">
-              <span className="font-bold tracking-tight text-xs sm:text-base theme-title truncate">{RESUME_DATA.name}</span>
+              <span className="font-bold tracking-tight text-xs sm:text-base theme-title whitespace-nowrap">
+                <span className="hidden sm:inline">{RESUME_DATA.name}</span>
+                <span className="inline sm:hidden">Kannan Santharam</span>
+              </span>
             </div>
-            <p className="text-[9px] sm:text-xs theme-muted truncate">React · TypeScript · AI-Native</p>
+            <p className="text-[9px] sm:text-xs theme-muted whitespace-nowrap">React · TypeScript · AI-Native</p>
           </div>
         </a>
 
@@ -121,7 +124,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, a
           </button>
         </div>
 
-        {/* Mobile Controls (Touch-Friendly, Fits within 412px S23 Ultra viewport) */}
+        {/* Mobile Controls (Touch-Friendly, Fits within 412px S23 Ultra viewport with zero ellipsis) */}
         <div className="flex items-center gap-1.5 md:hidden shrink-0">
           <button
             onClick={toggleTheme}
