@@ -45,7 +45,7 @@ export const RESUME_DATA = {
     linkedin: "https://linkedin.com/in/askannan",
     linkedinDisplay: "linkedin.com/in/askannan",
   },
-  summary: `Senior Lead Software Engineer with 10.5 years of experience delivering high-performance web applications, monorepos, and scalable client architectures for global SaaS products. Specialised in AI-driven development and agentic workflows — LLM orchestration, custom Claude Code skills, MCP servers, and HTTP Streamable Web Streams (fetch + ReadableStream). Proven record of leading solo platform migrations, cutting build compilation time by 96%, and setting engineering standards and safety guardrails across distributed engineering teams. Seeking a Lead Software Engineer / Engineering Manager role with a product-led technology company in Dubai, UAE.`,
+  summary: `Senior Lead Software Engineer with 10.5 years of experience delivering high-performance web applications, monorepos, and scalable client architectures for global SaaS products. Specialised in AI-driven development and agentic workflows, LLM orchestration, custom Claude Code skills, MCP servers, and HTTP Streamable Web Streams (fetch + ReadableStream). Proven record of leading solo platform migrations, cutting build compilation time by 96%, and setting engineering standards and safety guardrails across distributed engineering teams. Seeking a Lead Software Engineer / Engineering Manager role with a product-led technology company in Dubai, UAE.`,
   
   metrics: [
     {

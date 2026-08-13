@@ -108,7 +108,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
 
             {/* Professional Summary */}
             <p className="text-sm leading-relaxed theme-sub sm:text-lg">
-              Specialised in AI-driven development and agentic workflows — LLM orchestration, custom <span className="font-semibold theme-title">Claude Code skills</span>, and <span className="font-semibold theme-gold-text">MCP servers</span>. Proven track record of leading solo platform migrations, cutting build compilation times by <span className="font-bold theme-cyan-text">96%</span>, and establishing safety guardrails across distributed engineering teams.
+              Specialised in AI-driven development and agentic workflows, LLM orchestration, custom <span className="font-semibold theme-title">Claude Code skills</span>, and <span className="font-semibold theme-gold-text">MCP servers</span>. Proven track record of leading solo platform migrations, cutting build compilation times by <span className="font-bold theme-cyan-text">96%</span>, and establishing safety guardrails across distributed engineering teams.
             </p>
 
             {/* Core Value Metric Cards (Informational Summary) */}
