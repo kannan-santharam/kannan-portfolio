@@ -24,6 +24,7 @@ export const CANDIDATE_DETAILED_DOSSIER = `
 - Email: as.kannan4@gmail.com
 - Phone / WhatsApp / BOTIM App: +91 97902 47499
 - LinkedIn: linkedin.com/in/askannan
+- GitHub: github.com/kannan-santharam
 
 ## 2. CAREER HIGHLIGHTS & KEY ENGINEERING METRICS
 - **96% Faster Monorepo Builds**: Solo-led a 3-week build migration from Webpack 5 to Rust-powered Rspack across 12 packages at SuperOps. Reduced cold-start compilation from 2 minutes (120s) down to 5 seconds, with HMR hot reloads <50ms. Saved hundreds of engineering hours monthly.

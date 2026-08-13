@@ -44,6 +44,8 @@ export const RESUME_DATA = {
     email: "as.kannan4@gmail.com",
     linkedin: "https://linkedin.com/in/askannan",
     linkedinDisplay: "linkedin.com/in/askannan",
+    github: "https://github.com/kannan-santharam",
+    githubDisplay: "github.com/kannan-santharam",
   },
   summary: `Senior Lead Software Engineer with 10.5 years of experience delivering high-performance web applications, monorepos, and scalable client architectures for global SaaS products. Specialised in AI-driven development and agentic workflows, LLM orchestration, custom Claude Code skills, MCP servers, and HTTP Streamable Web Streams (fetch + ReadableStream). Proven record of leading solo platform migrations, cutting build compilation time by 96%, and setting engineering standards and safety guardrails across distributed engineering teams. Seeking a Lead Software Engineer / Engineering Manager role with a product-led technology company in Dubai, UAE.`,
   
