@@ -193,12 +193,12 @@ export const AiChatbotWidget: React.FC<AiChatbotWidgetProps> = ({ isOpen, onOpen
                   Kannan's AI Assistant
                 </h3>
                 <div className="flex items-center gap-1.5 text-[10px] theme-muted mt-0.5">
-                  <span className="inline-flex items-center gap-0.5 rounded bg-emerald-500/15 px-1.5 py-0.2 text-[8px] sm:text-[9px] font-bold text-emerald-500 shrink-0">
+                  <span className="inline-flex items-center gap-0.5 rounded bg-emerald-100 dark:bg-emerald-500/15 px-1.5 py-0.2 text-[8px] sm:text-[9px] font-bold text-emerald-800 dark:text-emerald-400 shrink-0">
                     <Zap className="h-2.5 w-2.5" />
                     <span>HTTP Streamable</span>
                   </span>
-                  <span className="truncate hidden xs:inline">· Gemini 1.5</span>
                 </div>
+                <p className="text-[10px] theme-muted truncate">· Gemini 1.5</p>
               </div>
             </div>
 
@@ -208,7 +208,7 @@ export const AiChatbotWidget: React.FC<AiChatbotWidgetProps> = ({ isOpen, onOpen
                 href={`https://wa.me/${RESUME_DATA.contact.phoneClean}?text=Hi%20Kannan,%20I'm%20chatting%20with%20your%20AI%20Portfolio%20Assistant%20and%20would%20like%20to%20connect%20regarding%20a%20role%20in%20Dubai.`}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-lg px-2 py-1 border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 hover:bg-emerald-500/20 text-[10px] font-bold flex items-center gap-1 transition-all"
+                className="rounded-lg px-2 py-1 border border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 hover:bg-emerald-100 dark:hover:bg-emerald-500/20 text-[10px] font-bold flex items-center gap-1 transition-all"
                 title="Direct WhatsApp"
               >
                 <MessageSquare className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
@@ -264,7 +264,7 @@ export const AiChatbotWidget: React.FC<AiChatbotWidgetProps> = ({ isOpen, onOpen
                 <div className="mt-1 flex items-center gap-1.5 px-1 text-[9px] theme-muted">
                   <span>{msg.timestamp}</span>
                   {msg.isRealLlm && (
-                    <span className="rounded bg-emerald-500/10 px-1 py-0.2 text-[8px] font-bold text-emerald-500">
+                    <span className="rounded bg-emerald-100 dark:bg-emerald-500/10 px-1 py-0.2 text-[8px] font-bold text-emerald-800 dark:text-emerald-400">
                       Gemini HTTP Stream
                     </span>
                   )}

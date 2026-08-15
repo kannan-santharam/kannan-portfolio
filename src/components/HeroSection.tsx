@@ -172,7 +172,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                   href={`https://wa.me/${RESUME_DATA.contact.phoneClean}?text=Hi%20Kannan,%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20connect%20regarding%20a%20role%20in%20Dubai.`}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-4 py-3 text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400 transition-all hover:bg-emerald-500/20 text-center active:scale-95 cursor-pointer"
+                  className="flex items-center justify-center gap-2 rounded-xl border border-emerald-600 bg-emerald-600 dark:bg-emerald-500/10 px-4 py-3 text-xs sm:text-sm font-bold text-white dark:text-emerald-400 transition-all hover:bg-emerald-700 dark:hover:bg-emerald-500/20 text-center active:scale-95 cursor-pointer shadow-md"
                 >
                   <MessageSquare className="h-4 w-4 shrink-0" />
                   <span>WhatsApp Direct Chat</span>

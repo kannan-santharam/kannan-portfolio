@@ -90,7 +90,7 @@ export const ContactFooter: React.FC = () => {
                           href={getWaUrl(topic.message)}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/40 bg-emerald-500/10 px-3 py-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/25 hover:border-emerald-500/70 transition-all cursor-pointer shadow-sm active:scale-95"
+                          className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-600 bg-emerald-600 dark:bg-emerald-500/10 px-3 py-1.5 text-xs font-bold text-white dark:text-emerald-400 hover:bg-emerald-700 dark:hover:bg-emerald-500/25 transition-all cursor-pointer shadow-sm active:scale-95"
                         >
                           <IconComponent className="h-3.5 w-3.5" />
                           <span>{topic.label}</span>
@@ -148,10 +148,10 @@ export const ContactFooter: React.FC = () => {
                 href={getWaUrl("Hi Kannan, I'm reaching out regarding a Lead Frontend / Engineering Manager role in Dubai.")}
                 target="_blank"
                 rel="noreferrer"
-                className="flex w-full items-center justify-between rounded-xl border border-emerald-500/40 bg-emerald-500/10 p-3.5 font-semibold text-emerald-600 dark:text-emerald-400 transition-all hover:bg-emerald-500/20 cursor-pointer active:scale-95"
+                className="flex w-full items-center justify-between rounded-xl border border-emerald-600 bg-emerald-600 dark:bg-emerald-500/10 p-3.5 font-bold text-white dark:text-emerald-400 transition-all hover:bg-emerald-700 dark:hover:bg-emerald-500/20 cursor-pointer active:scale-95 shadow-md"
               >
                 <div className="flex items-center gap-3">
-                  <MessageSquare className="h-5 w-5 text-emerald-500" />
+                  <MessageSquare className="h-5 w-5 text-white dark:text-emerald-500" />
                   <span>WhatsApp Direct Chat</span>
                 </div>
                 <span className="text-xs font-mono">{RESUME_DATA.contact.phone}</span>

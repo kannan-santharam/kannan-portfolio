@@ -52,7 +52,7 @@ export const DubaiRecruiterFacts: React.FC = () => {
               </h2>
             </div>
 
-            <div className="flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+            <div className="flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 px-4 py-1.5 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
               <CheckCircle2 className="h-4 w-4" />
               <span>Full Mobility Readiness</span>
             </div>
