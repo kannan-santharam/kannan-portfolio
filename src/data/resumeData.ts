@@ -76,11 +76,11 @@ export const RESUME_DATA = {
     },
     {
       value: "30k+",
-      label: "Dead Code Stripped & 232 Specs",
-      description: "Maintained 232-spec Playwright regression suite and executed Knip static analysis, eliminating 30,000 lines of unmaintained code across monorepo.",
-      subtext: "Playwright · Knip · Monorepo Maintenance",
-      badge: "Quality & Safety",
-      iconName: "ShieldCheck"
+      label: "Dead Code Stripped (Knip)",
+      description: "Led static dead-code elimination using Knip analysis, removing 30,000+ lines of unmaintained exports and orphaned dependencies.",
+      subtext: "Knip Static Analysis · Monorepo Hygiene",
+      badge: "Code Health",
+      iconName: "Trash2"
     }
   ] as MetricItem[],
 
@@ -116,7 +116,8 @@ export const RESUME_DATA = {
         "Authored custom production Claude Code skills via MCP servers and enforced strict write-scope guardrails, securing autonomous agent workflows across the codebase.",
         "Executed a solo Webpack 5 to Rspack migration in 3 weeks, reducing cold-start build compilation from 2 minutes to 5 seconds across 12 packages.",
         "Improved application load times through React lazy loading, route-level code splitting and per-package chunking strategy across the monorepo.",
-        "Maintained platform health with a 232-spec Playwright regression suite and Knip static analysis, stripping 30k lines of dead code from the monorepo.",
+        "Eliminated 30,000+ lines of dead code and unused dependencies across the monorepo using Knip static analysis.",
+        "Maintained platform health with a 232-spec Playwright regression suite in Jenkins CI.",
         "Sole-authored a reusable API / UI SDK integration framework adopted across product teams, standardising how features consume platform services.",
         "Built role-based access control (RBAC) gates and high-frequency polling dashboards using custom cached Apollo query hooks, balancing data freshness against network load."
       ],

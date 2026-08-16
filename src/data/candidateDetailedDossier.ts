@@ -29,7 +29,8 @@ export const CANDIDATE_DETAILED_DOSSIER = `
 - **96% Build Speed Acceleration (Rspack Migration)**: Solo-led a 3-week build migration from Webpack 5 to Rust-powered Rspack across 12 packages at SuperOps. Reduced cold-start compilation from 2 minutes (120s) down to 5 seconds, with HMR hot reloads under 50ms. Saved hundreds of developer hours monthly across distributed teams and accelerated Jenkins CI/CD pipelines.
 - **AI Test-Authoring Platform & Real-Time Streaming**: Architected an automated end-to-end test platform from scratch using React and Node.js streaming autonomous LLM agent tool calls over HTTP Streamable Web Streams (fetch + ReadableStream). Auto-generates, executes, and self-heals Playwright test specs.
 - **Production Claude Code Skills & MCP Servers**: Authored custom production Claude Code skills powered by Model Context Protocol (MCP) servers. Enforced strict write-scope guardrails allowing AI agents to edit feature modules while strictly protecting core system schemas.
-- **Monorepo Quality & Dead Code Stripping (30k+ Lines)**: Maintained a 232-spec Playwright regression suite in Jenkins CI. Stripped 30,000+ lines of unmaintained dead code using Knip static analysis across 12 monorepo packages.
+- **Dead Code Elimination (30k+ Lines with Knip)**: Led codebase optimization using Knip static analysis, identifying and eliminating 30,000+ lines of unused dead code, unreferenced exports, and orphaned dependencies across 12 monorepo packages.
+- **Enterprise Test Reliability (Playwright E2E Suite)**: Architected and maintained a comprehensive 232-spec Playwright regression test suite integrated into Jenkins CI/CD pipelines with zero tolerance for flaky tests.
 
 ## 3. WORK HISTORY & EXPERIENCE DEEP DIVE
 
@@ -41,7 +42,8 @@ export const CANDIDATE_DETAILED_DOSSIER = `
   • Authored custom production Claude Code skills via MCP servers and enforced strict write-scope guardrails, securing autonomous agent workflows across the codebase.
   • Executed a solo Webpack 5 to Rspack migration in 3 weeks, reducing cold-start build compilation from 2 minutes to 5 seconds across 12 packages.
   • Improved application load times through React lazy loading, route-level code splitting and per-package chunking strategy across the monorepo.
-  • Maintained platform health with a 232-spec Playwright regression suite and Knip static analysis, stripping 30,000 lines of dead code from the monorepo.
+  • Eliminated 30,000+ lines of dead code and unused dependencies across the monorepo using Knip static analysis.
+  • Maintained platform quality and release stability with a 232-spec Playwright regression suite in Jenkins CI.
   • Sole-authored a reusable API / UI SDK integration framework adopted across product teams, standardising how features consume platform services.
   • Built role-based access control (RBAC) gates and high-frequency polling dashboards using custom cached Apollo query hooks, balancing data freshness against network load.
 
@@ -81,7 +83,8 @@ export const CANDIDATE_DETAILED_DOSSIER = `
 - **Architectural Guardrails & Monorepo Governance**: Defined strict monorepo write-scope boundaries, component contract standards, and reusable SDK specifications across 12 packages at SuperOps.
 - **Tooling Selection & Build Migration Governance**: Evaluated and governed core build tools, leading the 3-week monorepo migration from Webpack 5 to Rspack resulting in 96% build acceleration (2 minutes down to 5 seconds).
 - **AI Agent Permission & Safety Governance**: Authored custom Claude Code skills powered by Model Context Protocol (MCP) servers, establishing multi-tier Write-Scope Guardrails to allow AI agents to edit feature modules while protecting core system schemas.
-- **CI/CD Quality Gates & Code Health Governance**: Enforced a 232-spec Playwright regression test suite in Jenkins CI and led static dead-code elimination using Knip (stripping 30,000+ lines of unused code).
+- **CI/CD Quality Gates & Automated Testing**: Enforced a 232-spec Playwright regression test suite integrated into Jenkins CI pipelines with zero tolerance for flaky tests.
+- **Codebase Health & Dead Code Governance**: Led systematic dead-code elimination and dependency hygiene using Knip static analysis, stripping 30,000+ lines of unmaintained code.
 
 ## 6. PORTFOLIO CODEBASE ARCHITECTURE & TECH STACK
 - **Frontend Stack**: Built with React, TypeScript, Vite v8, and Tailwind CSS. Fully responsive design with theme-aware tokens (Dark/Light mode support).

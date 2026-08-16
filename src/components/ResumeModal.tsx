@@ -138,9 +138,9 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
               </div>
 
               <div className="rounded-xl border border-[var(--border-card)] bg-[var(--bg-inner)] p-3.5">
-                <div className="text-lg font-extrabold text-emerald-400">30k Dead Code Stripped</div>
-                <div className="text-xs theme-title font-semibold mt-0.5">Playwright Suite & Knip Analysis</div>
-                <p className="text-[11px] theme-sub mt-1">Maintained 232-spec Playwright regression suite and stripped 30,000 lines of dead code using Knip analysis.</p>
+                <div className="text-lg font-extrabold text-emerald-400">30k+ Dead Code Stripped</div>
+                <div className="text-xs theme-title font-semibold mt-0.5">Knip Static Analysis</div>
+                <p className="text-[11px] theme-sub mt-1">Led codebase hygiene with Knip static analysis, stripping 30,000+ lines of unused dead code and orphaned dependencies across the monorepo.</p>
               </div>
             </div>
           </div>
