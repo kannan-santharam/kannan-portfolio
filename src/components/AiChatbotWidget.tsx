@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Bot, X, Send, Sparkles, RefreshCw, Zap, MessageSquare } from 'lucide-react';
 import { streamRealLlmApi, getEnvApiKey } from '../services/aiChatService';
-import type { ChatMessage } from '../services/aiChatService';
+import type { ChatMessage, ConversationTurn } from '../services/aiChatService';
 import { RESUME_DATA } from '../data/resumeData';
 
-// Lightweight Markdown Formatter to render bold (**), bullet points, and code cleanly without raw asterisks
-const FormattedMarkdownText: React.FC<{ content: string }> = ({ content }) => {
+// Streaming-aware Markdown Formatter: handles split bold tags and lists smoothly
+const FormattedMarkdownText: React.FC<{ content: string; isStreaming?: boolean }> = ({ content, isStreaming }) => {
   const paragraphs = content.split('\n\n');
 
   return (
@@ -20,11 +20,15 @@ const FormattedMarkdownText: React.FC<{ content: string }> = ({ content }) => {
               const isBullet = trimmed.startsWith('•') || trimmed.startsWith('-') || trimmed.startsWith('* ');
               const cleanLine = isBullet ? trimmed.replace(/^[•\-\*]\s*/, '') : line;
 
-              // Parse bold **text**
+              // Parse bold **text** safely even during live incomplete chunks
               const parts = cleanLine.split(/(\*\*.*?\*\*)/g);
               const formattedLine = parts.map((part, i) => {
-                if (part.startsWith('**') && part.endsWith('**')) {
+                if (part.startsWith('**') && part.endsWith('**') && part.length >= 4) {
                   return <strong key={i} className="font-extrabold text-[var(--text-title)]">{part.slice(2, -2)}</strong>;
+                }
+                // If a bold tag is currently opened mid-stream without a closing **
+                if (part.startsWith('**') && !part.slice(2).includes('**')) {
+                  return <span key={i} className="font-bold text-[var(--text-title)]">{part.slice(2)}</span>;
                 }
                 return part;
               });
@@ -43,6 +47,9 @@ const FormattedMarkdownText: React.FC<{ content: string }> = ({ content }) => {
           </div>
         );
       })}
+      {isStreaming && (
+        <span className="inline-block w-1.5 h-3 ml-0.5 bg-[var(--color-gold)] rounded-sm animate-pulse align-middle" />
+      )}
     </div>
   );
 };
@@ -55,35 +62,57 @@ interface AiChatbotWidgetProps {
 export const AiChatbotWidget: React.FC<AiChatbotWidgetProps> = ({ isOpen, onOpenChange }) => {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const [isStreaming, setIsStreaming] = useState(false);
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
   const hasEnvKey = !!getEnvApiKey();
+  const abortControllerRef = useRef<AbortController | null>(null);
+  const rafIdRef = useRef<number | null>(null);
+
+  // Conversation history for multi-turn LLM context (sent to /api/chat on each request)
+  const [conversationHistory, setConversationHistory] = useState<ConversationTurn[]>([]);
+
+  // Cleanup on unmount: abort any in-flight fetch and cancel pending animation frames
+  useEffect(() => {
+    return () => {
+      if (abortControllerRef.current) abortControllerRef.current.abort();
+      if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
+    };
+  }, []);
 
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       id: 'welcome',
       sender: 'ai',
-      text: `Hello! 👋 I am **Kannan Appiya Santharam's AI Assistant**.\n\nAsk me anything about Kannan's **10.5+ years of experience**, **96% Rspack build acceleration**, **AI test-authoring platform**, **HTTP Streamable Web Streams**, **Claude Code & MCP servers**, or **Dubai relocation readiness**.`,
+      text: `Hello! 👋 I'm **Kannan's AI Career Assistant**.\n\nAsk me anything — his **10.5+ years of experience**, **Agentic AI & MCP servers**, the **96% build speed win**, or **Dubai relocation readiness**.\n\nI remember the conversation, so feel free to ask follow-up questions too!`,
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       isRealLlm: hasEnvKey
     }
   ]);
 
   const promptSuggestions = [
-    "⚡ How did Kannan cut build times by 96%?",
-    "🌊 How does the HTTP Streamable architecture work?",
+    "🤖 What is Kannan's experience with Agentic AI, MCP servers, and Playwright?",
+    "🛠️ What is Kannan's AI Test-Authoring Platform?",
     "🇦🇪 What is Kannan's Dubai relocation & visa status?",
-    "💼 What are Kannan's salary expectations?"
+    "💼 What are Kannan's salary expectations?",
+    "⚡ How did Kannan cut build times by 96%?"
   ];
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  // Pinned scroll-to-bottom that keeps scroll anchored without jumping
+  const scrollToBottom = (smooth = false) => {
+    if (!messagesContainerRef.current) return;
+    const container = messagesContainerRef.current;
+    if (smooth) {
+      container.scrollTo({ top: container.scrollHeight, behavior: 'smooth' });
+    } else {
+      container.scrollTop = container.scrollHeight;
+    }
   };
 
   useEffect(() => {
     if (isOpen) {
-      scrollToBottom();
+      scrollToBottom(false);
     }
-  }, [messages, isOpen]);
+  }, [isOpen]);
 
   const handleSendMessage = async (textToSend?: string) => {
     const query = textToSend || input;
@@ -99,25 +128,64 @@ export const AiChatbotWidget: React.FC<AiChatbotWidgetProps> = ({ isOpen, onOpen
     setMessages(prev => [...prev, userMsg]);
     if (!textToSend) setInput('');
     setIsLoading(true);
+    setIsStreaming(true);
+
+    setTimeout(() => scrollToBottom(true), 50);
 
     const aiMsgId = (Date.now() + 1).toString();
     const initialAiMsg: ChatMessage = {
       id: aiMsgId,
       sender: 'ai',
-      text: '▌',
+      text: '',
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       isRealLlm: hasEnvKey
     };
 
     setMessages(prev => [...prev, initialAiMsg]);
 
+    let finalResponse = '';
+    let pendingText = '';
+
+    const controller = new AbortController();
+    abortControllerRef.current = controller;
+
     try {
-      await streamRealLlmApi(query, (accumulatedText, isRealLlmChunk) => {
-        setMessages(prev =>
-          prev.map(m => (m.id === aiMsgId ? { ...m, text: accumulatedText, isRealLlm: isRealLlmChunk } : m))
-        );
-      });
-    } catch (err) {
+      const result = await streamRealLlmApi(
+        query,
+        conversationHistory,
+        (accumulatedText, isRealLlmChunk) => {
+          finalResponse = accumulatedText;
+          pendingText = accumulatedText;
+
+          // Batch DOM updates via requestAnimationFrame to avoid micro-stutters
+          if (!rafIdRef.current) {
+            rafIdRef.current = requestAnimationFrame(() => {
+              setMessages(prev =>
+                prev.map(m => (m.id === aiMsgId ? { ...m, text: pendingText, isRealLlm: isRealLlmChunk } : m))
+              );
+              scrollToBottom(false);
+              rafIdRef.current = null;
+            });
+          }
+        },
+        controller.signal
+      );
+
+      // Flush final text
+      if (rafIdRef.current) { cancelAnimationFrame(rafIdRef.current); rafIdRef.current = null; }
+      setMessages(prev =>
+        prev.map(m => (m.id === aiMsgId ? { ...m, text: finalResponse, isRealLlm: result.isRealLlm } : m))
+      );
+
+      // Cap client-side history to last 8 turns + new exchange = max 10 sent to server
+      setConversationHistory(prev => [
+        ...prev.slice(-8),
+        { role: 'user', text: query },
+        { role: 'model', text: finalResponse || '...' }
+      ]);
+
+    } catch (err: any) {
+      if (err?.name === 'AbortError') return; // Clean exit on user clear or component unmount
       setMessages(prev =>
         prev.map(m =>
           m.id === aiMsgId
@@ -129,16 +197,32 @@ export const AiChatbotWidget: React.FC<AiChatbotWidgetProps> = ({ isOpen, onOpen
         )
       );
     } finally {
+      if (rafIdRef.current) { cancelAnimationFrame(rafIdRef.current); rafIdRef.current = null; }
+      abortControllerRef.current = null;
       setIsLoading(false);
+      setIsStreaming(false);
+      scrollToBottom(false);
     }
   };
 
   const handleClearHistory = () => {
+    // Instantly abort any active stream before clearing state
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+      abortControllerRef.current = null;
+    }
+    if (rafIdRef.current) {
+      cancelAnimationFrame(rafIdRef.current);
+      rafIdRef.current = null;
+    }
+    setIsLoading(false);
+    setIsStreaming(false);
+    setConversationHistory([]);
     setMessages([
       {
         id: Date.now().toString(),
         sender: 'ai',
-        text: `Chat history reset. How can I assist you with **Kannan Appiya Santharam's** qualifications and Dubai availability?`,
+        text: `Chat cleared! Fresh start. 🚀\n\nWhat would you like to know about **Kannan Appiya Santharam**? His experience, AI work, skills, or Dubai availability?`,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       }
     ]);
@@ -198,7 +282,7 @@ export const AiChatbotWidget: React.FC<AiChatbotWidgetProps> = ({ isOpen, onOpen
                     <span>HTTP Streamable</span>
                   </span>
                 </div>
-                <p className="text-[10px] theme-muted truncate">· Gemini 1.5</p>
+                <p className="text-[10px] theme-muted truncate">· Gemini Flash</p>
               </div>
             </div>
 
@@ -246,41 +330,78 @@ export const AiChatbotWidget: React.FC<AiChatbotWidgetProps> = ({ isOpen, onOpen
           </div>
 
           {/* Message Stream Body */}
-          <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 font-sans text-xs">
-            {messages.map((msg) => (
-              <div
-                key={msg.id}
-                className={`flex flex-col ${msg.sender === 'user' ? 'items-end' : 'items-start'}`}
-              >
-                <div
-                  className={`max-w-[90%] sm:max-w-[88%] rounded-2xl p-3 leading-relaxed ${
-                    msg.sender === 'user'
-                      ? 'bg-gradient-to-r from-[#E2B755] to-[#C29633] text-[#07090E] font-semibold rounded-br-none shadow-md'
-                      : 'border border-[var(--border-card)] bg-[var(--bg-inner)] theme-title rounded-bl-none shadow-sm'
-                  }`}
-                >
-                  <FormattedMarkdownText content={msg.text} />
-                </div>
-                <div className="mt-1 flex items-center gap-1.5 px-1 text-[9px] theme-muted">
-                  <span>{msg.timestamp}</span>
-                  {msg.isRealLlm && (
-                    <span className="rounded bg-emerald-100 dark:bg-emerald-500/10 px-1 py-0.2 text-[8px] font-bold text-emerald-800 dark:text-emerald-400">
-                      Gemini HTTP Stream
-                    </span>
-                  )}
-                </div>
-              </div>
-            ))}
+          <div
+            ref={messagesContainerRef}
+            className="relative flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 font-sans text-xs scroll-smooth"
+          >
+            {/* Gemini Ambient Backdrop Glow while Thinking / Streaming */}
+            {isLoading && (
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-purple-500/15 via-blue-500/10 to-transparent gemini-ambient-glow" />
+            )}
 
-            {isLoading && messages[messages.length - 1]?.text === '▌' && (
-              <div className="flex items-start">
-                <div className="flex items-center gap-1.5 rounded-2xl border border-[var(--border-card)] bg-[var(--bg-inner)] px-3 py-2 text-xs theme-sub">
-                  <Bot className="h-3.5 w-3.5 theme-gold-text animate-spin" />
-                  <span className="text-[11px]">Connecting HTTP Streamable...</span>
+            {messages.map((msg) => {
+              if (msg.sender === 'ai' && !msg.text && isLoading) {
+                // Initial thinking state before first token arrives
+                return null;
+              }
+
+              return (
+                <div
+                  key={msg.id}
+                  className={`flex flex-col ${msg.sender === 'user' ? 'items-end' : 'items-start'}`}
+                >
+                  <div
+                    className={`max-w-[90%] sm:max-w-[88%] rounded-2xl p-3 leading-relaxed transition-opacity duration-150 ${
+                      msg.sender === 'user'
+                        ? 'bg-gradient-to-r from-[#E2B755] to-[#C29633] text-[#07090E] font-semibold rounded-br-none shadow-md'
+                        : 'border border-[var(--border-card)] bg-[var(--bg-inner)] theme-title rounded-bl-none shadow-sm'
+                    }`}
+                  >
+                    <FormattedMarkdownText
+                      content={msg.text}
+                      isStreaming={isStreaming && msg.sender === 'ai' && msg.id === messages[messages.length - 1]?.id}
+                    />
+                  </div>
+                  <div className="mt-1 flex items-center gap-1.5 px-1 text-[9px] theme-muted">
+                    <span>{msg.timestamp}</span>
+                    {msg.isRealLlm && (
+                      <span className="rounded bg-emerald-100 dark:bg-emerald-500/10 px-1 py-0.2 text-[8px] font-bold text-emerald-800 dark:text-emerald-400">
+                        Gemini HTTP Stream
+                      </span>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+
+            {/* Gemini Multi-color Gradient Shimmer Loading State (only shown before first token) */}
+            {isLoading && messages[messages.length - 1]?.sender === 'ai' && !messages[messages.length - 1]?.text && (
+              <div className="flex items-start my-1.5">
+                <div className="relative overflow-hidden rounded-2xl p-[1.5px] shadow-lg w-full max-w-[90%]">
+                  {/* Animated Gemini Multi-color Gradient Border */}
+                  <div className="absolute inset-0 gemini-gradient-bg opacity-95" />
+
+                  {/* Inner Shimmer Loading Card */}
+                  <div className="relative flex items-center justify-between rounded-[14px] bg-[var(--bg-inner)] px-3.5 py-2.5 theme-title">
+                    <div className="flex items-center gap-2.5 min-w-0">
+                      <div className="relative flex h-6 w-6 shrink-0 items-center justify-center rounded-full gemini-gradient-bg text-white shadow-md">
+                        <Sparkles className="h-3.5 w-3.5 animate-spin" />
+                      </div>
+                      <span className="gemini-gradient-text text-xs font-extrabold tracking-wide truncate">
+                        Gemini Flash Stream Engine...
+                      </span>
+                    </div>
+
+                    {/* Pulse Dot Indicator */}
+                    <div className="flex items-center gap-1 shrink-0 ml-1">
+                      <span className="h-2 w-2 rounded-full bg-blue-400 animate-ping" />
+                      <span className="h-2 w-2 rounded-full bg-purple-400 animate-ping" style={{ animationDelay: '200ms' }} />
+                      <span className="h-2 w-2 rounded-full bg-amber-400 animate-ping" style={{ animationDelay: '400ms' }} />
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
-            <div ref={messagesEndRef} />
           </div>
 
           {/* Input Footer Bar */}

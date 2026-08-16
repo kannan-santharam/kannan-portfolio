@@ -166,6 +166,42 @@ html.light .text-gold-gradient {
   animation: spinConicBorder 1.8s linear infinite;
 }
 
+/* Gemini Gradient Shimmer Animation for AI Loading */
+@keyframes geminiGradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gemini-gradient-bg {
+  background: linear-gradient(-45deg, #4285F4, #9B51E0, #EC4899, #E2B755, #34D399, #4285F4);
+  background-size: 300% 300%;
+  animation: geminiGradientMove 3s ease infinite;
+}
+
+.gemini-gradient-text {
+  background: linear-gradient(90deg, #4285F4, #9B51E0, #EC4899, #E2B755, #4285F4);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: geminiGradientMove 2.5s linear infinite;
+}
+
+@keyframes geminiPulseGlow {
+  0%, 100% { opacity: 0.2; transform: scale(0.98); }
+  50% { opacity: 0.5; transform: scale(1.02); }
+}
+
+.gemini-ambient-glow {
+  animation: geminiPulseGlow 2.5s ease-in-out infinite;
+}
+
 /* Print Styles */
 @media print {
   body {

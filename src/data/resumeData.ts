@@ -232,9 +232,10 @@ export const RESUME_DATA = {
       category: "leadership",
       skills: [
         { name: "Technical Team Leadership", level: "Expert" },
+        { name: "Developer Mentorship & Code Reviews", level: "Expert" },
+        { name: "Conducting AI & Tech Knowledge Sessions", level: "Expert", hot: true },
         { name: "Architecture & Design Reviews", level: "Expert" },
         { name: "Engineering Safety Standards", level: "Expert" },
-        { name: "Developer Mentorship", level: "Expert" },
         { name: "Cross-Cultural Collaboration", level: "Expert" }
       ]
     }

@@ -37,10 +37,17 @@ function apiChatPlugin(env: Record<string, string>): Plugin {
         req.on('data', chunk => { bodyStr += chunk.toString(); });
         req.on('end', async () => {
           try {
-            const { query } = JSON.parse(bodyStr || '{}');
-            if (!query) {
+            const { query, history } = JSON.parse(bodyStr || '{}');
+            if (!query || typeof query !== 'string') {
               res.statusCode = 400;
               res.end(JSON.stringify({ error: 'Query parameter is required' }));
+              return;
+            }
+
+            // Cap query length to prevent prompt injection via long payloads
+            if (query.length > 500) {
+              res.statusCode = 400;
+              res.end(JSON.stringify({ error: 'Query too long' }));
               return;
             }
 
@@ -59,51 +66,102 @@ function apiChatPlugin(env: Record<string, string>): Plugin {
 
             const generation = trace ? langfuse?.generation({
               traceId: trace.id,
-              name: 'gemini-1.5-flash-dev-inference',
-              model: 'gemini-1.5-flash',
+              name: 'gemini-flash-latest-dev-inference',
+              model: 'gemini-flash-latest',
               input: query
             }) : null;
 
-            const SYSTEM_PROMPT = `
-            You are Kannan Appiya Santharam's official AI Executive Candidate Assistant.
-            Your primary role is to answer questions from technical recruiters, engineering managers, and executive interviewers evaluating Kannan for Senior Lead / Engineering Manager positions in Dubai, UAE.
+            const SYSTEM_PROMPT = `You are Kannan Appiya Santharam's personal AI Career Assistant — smart, articulate, and personable. You speak naturally and conversationally on behalf of Kannan, helping technical recruiters, engineering managers, and hiring decision-makers understand why Kannan is an exceptional candidate for Senior Lead / Engineering Manager roles in Dubai, UAE.
 
-            DYNAMIC KNOWLEDGE INSTRUCTION:
-            - Analyze, transform, rephrase, and summarize information directly from the provided CANDIDATE DETAILED DOSSIER into articulate third-person executive phrasing ("Kannan is...", "He holds...", "He completed...").
-            - Provide concise, topic-focused answers directly targeting the user's specific question.
-            - If asked any off-topic question, POLITELY DECLINE.
-            `;
+PERSONA & TONE:
+- Speak in a warm, confident, third-person executive voice ("Kannan built...", "He led...", "His approach to...").
+- Be genuinely helpful — answer what was asked specifically, don't dump unrelated information.
+- For follow-up questions, naturally reference what was said earlier in the conversation to create coherence.
+- Use light formatting: bold for key terms, bullet points only when listing multiple items.
+- Be concise but complete. No fluff, no filler sentences.
+- If asked something off-topic (weather, sports, politics, etc.), politely decline and steer back to Kannan's profile.
 
-            const response = await fetch(
-              `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:streamGenerateContent?key=${apiKey}`,
+KNOWLEDGE BASE — USE THIS AS YOUR AUTHORITATIVE SOURCE:
+${CANDIDATE_DETAILED_DOSSIER}
+
+ANSWERING RULES:
+- Always derive your answers from the knowledge base above. Do not fabricate or guess.
+- For experience questions, highlight specific achievements, metrics, and impact — not just responsibilities.
+- For technical questions, explain the WHY and the OUTCOME, not just the technology used.
+- For follow-ups like "tell me more", "can you expand", "what else", look at the previous context and go deeper on the same topic.
+- Keep answers under 250 words unless the user explicitly asks for a full breakdown.
+`;
+
+            // Cap history to last 10 turns (5 exchanges) to prevent token overflow
+            const MAX_HISTORY_TURNS = 10;
+            const rawHistory = Array.isArray(history) ? history : [];
+            const conversationHistory = rawHistory.slice(-MAX_HISTORY_TURNS);
+
+            const contents = [
+              // Prime Gemini with system persona as first turn
               {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                  contents: [
-                    {
-                      role: 'user',
-                      parts: [
-                        {
-                          text: `${SYSTEM_PROMPT}\n\nCANDIDATE DETAILED DOSSIER:\n${CANDIDATE_DETAILED_DOSSIER}\n\nUSER QUESTION: ${query}`
-                        }
-                      ]
-                    }
-                  ],
-                  generationConfig: {
-                    temperature: 0.2,
-                    maxOutputTokens: 800
-                  }
-                })
+                role: 'user',
+                parts: [{ text: SYSTEM_PROMPT }]
+              },
+              {
+                role: 'model',
+                parts: [{ text: "Understood. I'm ready to represent Kannan Appiya Santharam. Ask me anything about his career, technical expertise, AI projects, or Dubai relocation readiness." }]
+              },
+              // Inject prior conversation turns for follow-up context
+              ...conversationHistory.map((turn: { role: string; text: string }) => ({
+                role: turn.role,
+                parts: [{ text: turn.text }]
+              })),
+              // Current user question
+              {
+                role: 'user',
+                parts: [{ text: query }]
               }
-            );
+            ];
 
-            if (!response.ok || !response.body) {
-              const errData = await response.json().catch(() => ({}));
-              generation?.end({ output: `ERROR: ${(errData as any)?.error?.message || 'Gemini API Proxy Error'}` });
+            // Cascade across active models with fallback to prevent 429/503 quota exhaustion
+            const MODELS_TO_TRY = ['gemini-3-flash-preview', 'gemini-flash-latest', 'gemini-3.6-flash'];
+            let response: globalThis.Response | null = null;
+            let lastError = 'Gemini API Error';
+
+            for (const modelName of MODELS_TO_TRY) {
+              try {
+                const res = await fetch(
+                  `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:streamGenerateContent?key=${apiKey}`,
+                  {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                      contents,
+                      generationConfig: {
+                        temperature: 0.35,
+                        topP: 0.85,
+                        topK: 40,
+                        maxOutputTokens: 1500
+                      }
+                    })
+                  }
+                );
+
+                if (res.ok && res.body) {
+                  response = res;
+                  break;
+                } else {
+                  const errData = await res.json().catch(() => ({}));
+                  lastError = (errData as any)?.error?.message || `HTTP ${res.status}`;
+                  console.warn(`[Gemini Model ${modelName}] ⚠️ ${lastError} — attempting fallback...`);
+                }
+              } catch (fetchErr: any) {
+                lastError = fetchErr?.message || 'Network error';
+              }
+            }
+
+            if (!response || !response.body) {
+              console.error(`[Gemini Proxy Error] ❌ All models exhausted: ${lastError}`);
+              generation?.end({ output: `ERROR: ${lastError}` });
               await langfuse?.flushAsync();
-              res.statusCode = response.status;
-              res.end(JSON.stringify({ error: (errData as any)?.error?.message || 'Gemini API Proxy Error' }));
+              res.statusCode = 500;
+              res.end(JSON.stringify({ error: lastError }));
               return;
             }
 
@@ -112,34 +170,52 @@ function apiChatPlugin(env: Record<string, string>): Plugin {
 
             const reader = response.body.getReader();
             const decoder = new TextDecoder('utf-8');
+            let rawBuffer = '';
             let accumulatedText = '';
+
+            // Robust brace-depth JSON extractor — handles chunk boundaries correctly
+            function extractJsonObjects(buf: string): { objects: any[]; remaining: string } {
+              const objects: any[] = [];
+              let i = buf.indexOf('{');
+              while (i !== -1) {
+                let depth = 0, inStr = false, esc = false, end = -1;
+                for (let j = i; j < buf.length; j++) {
+                  const ch = buf[j];
+                  if (esc) { esc = false; continue; }
+                  if (ch === '\\' && inStr) { esc = true; continue; }
+                  if (ch === '"') { inStr = !inStr; continue; }
+                  if (inStr) continue;
+                  if (ch === '{') depth++;
+                  else if (ch === '}' && --depth === 0) { end = j; break; }
+                }
+                if (end === -1) break; // Incomplete — wait for more data
+                try { objects.push(JSON.parse(buf.slice(i, end + 1))); } catch { /* skip bad JSON */ }
+                buf = buf.slice(end + 1);
+                i = buf.indexOf('{');
+              }
+              return { objects, remaining: buf };
+            }
 
             while (true) {
               const { done, value } = await reader.read();
               if (done) break;
-
-              const chunk = decoder.decode(value, { stream: true });
-              try {
-                const matches = chunk.match(/"text":\s*"([^"\\]*(?:\\.[^"\\]*)*)"/g);
-                if (matches) {
-                  for (const match of matches) {
-                    const rawText = match.replace(/"text":\s*"/, '').slice(0, -1);
-                    const unescaped = rawText.replace(/\\n/g, '\n').replace(/\\"/g, '"');
-                    if (unescaped && !accumulatedText.endsWith(unescaped)) {
-                      accumulatedText += unescaped;
-                      res.write(unescaped);
-                    }
-                  }
+              rawBuffer += decoder.decode(value, { stream: true });
+              const { objects, remaining } = extractJsonObjects(rawBuffer);
+              rawBuffer = remaining;
+              for (const obj of objects) {
+                // Only read content text — ignore thoughtSignature, metadata, empty strings
+                const text: string = obj?.candidates?.[0]?.content?.parts?.[0]?.text ?? '';
+                if (text) {
+                  accumulatedText += text;
+                  res.write(text);
                 }
-              } catch {
-                // Ignore partial JSON chunk parse error
               }
             }
 
             generation?.end({ output: accumulatedText });
-            await langfuse?.flushAsync();
-            console.log(`[Langfuse Trace Flushed] 🚀 Query: "${query.slice(0, 30)}..." -> Sent trace ${trace?.id} to ${baseUrl}`);
             res.end();
+            langfuse?.flushAsync().catch(() => {});
+            console.log(`[Langfuse Trace Flushed] 🚀 Query: "${query.slice(0, 40)}..." -> Sent trace ${trace?.id}`);
           } catch (err) {
             res.statusCode = 500;
             res.end(JSON.stringify({ error: 'Server proxy failed' }));

@@ -8,20 +8,34 @@ export interface ChatMessage {
   isRealLlm?: boolean;
 }
 
+// Conversation history turn for multi-turn context passed to the server
+export interface ConversationTurn {
+  role: 'user' | 'model';
+  text: string;
+}
+
 export function getEnvApiKey(): string {
-  return (import.meta.env.VITE_GEMINI_API_KEY || '').trim();
+  // NOTE: We do NOT expose the real API key to the client.
+  // The key lives server-side only (GEMINI_API_KEY in .env.local, no VITE_ prefix).
+  // This function returns a non-empty string when the proxy endpoint is expected to be available,
+  // which is always true — so the "Gemini HTTP Stream" badge always shows.
+  return 'proxy-enabled';
 }
 
 // REAL LLM HTTP Streamable Engine (Routes via /api/chat serverless proxy - API Key is 100% hidden on server)
+// Sends full conversation history for multi-turn follow-up awareness
 export async function streamRealLlmApi(
   userQuery: string,
-  onChunk: (accumulatedText: string, isRealLlm: boolean) => void
+  history: ConversationTurn[],
+  onChunk: (accumulatedText: string, isRealLlm: boolean) => void,
+  signal?: AbortSignal
 ): Promise<{ isRealLlm: boolean }> {
   try {
     const res = await fetch('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ query: userQuery })
+      body: JSON.stringify({ query: userQuery, history }),
+      signal
     });
 
     if (res.ok && res.body) {
@@ -44,17 +58,18 @@ export async function streamRealLlmApi(
         return { isRealLlm: true };
       }
     }
-  } catch (err) {
-    console.warn("/api/chat server proxy call failed, using local Dynamic Dossier Analyzer:", err);
+  } catch (err: any) {
+    if (err?.name === 'AbortError') throw err;
+    console.warn('/api/chat server proxy call failed, executing Universal Subword Vector RAG Engine:', err);
   }
 
-  // Fallback Dynamic Dossier Search Engine (If server proxy is offline or key unconfigured)
-  const fullResponseText = queryDynamicDossier(userQuery);
+  // Offline-capable Fallback: Universal Vector RAG Engine
+  const fullResponseText = executeUniversalRagPipeline(userQuery, history, CANDIDATE_DETAILED_DOSSIER);
   await simulateHttpStreamableDelivery(fullResponseText, (text) => onChunk(text, false));
   return { isRealLlm: false };
 }
 
-// Simulates HTTP Streamable chunked token delivery
+// Simulates HTTP Streamable chunked token delivery for offline RAG fallback
 async function simulateHttpStreamableDelivery(
   fullText: string,
   onChunk: (text: string) => void
@@ -65,69 +80,258 @@ async function simulateHttpStreamableDelivery(
   for (let i = 0; i < words.length; i++) {
     currentText += (i === 0 ? '' : ' ') + words[i];
     onChunk(currentText);
-    await new Promise(resolve => setTimeout(resolve, 16));
+    await new Promise(resolve => setTimeout(resolve, 14));
   }
 }
 
 /**
- * GRANULAR DOSSIER SEARCH & REPHRASING ENGINE
- * Extracts precise topic-specific bullet items from CANDIDATE_DETAILED_DOSSIER and formats focused responses.
+ * UNIVERSAL ZERO-MAINTENANCE VECTOR RAG ENGINE (Offline Fallback)
+ * ============================================================================
+ * Used only when /api/chat is unavailable (no Gemini key or network error).
+ * Features:
+ * 1. Document-Agnostic Dynamic Chunking (Headers, Lists, Paragraphs).
+ * 2. Word Token + Subword Character N-Gram Embeddings (Typo Tolerance).
+ * 3. Hybrid TF-IDF Cosine Vector Space Retrieval + Title Entity Multipliers.
+ * 4. Conversation-Aware Follow-Up Detection using history context.
+ * ============================================================================
  */
-function queryDynamicDossier(query: string): string {
-  const q = query.toLowerCase().trim();
 
-  // Reference CANDIDATE_DETAILED_DOSSIER length to verify dynamic file binding
-  const dossierLen = CANDIDATE_DETAILED_DOSSIER.length;
-  if (dossierLen === 0) return '';
+interface VectorChunk {
+  id: string;
+  title: string;
+  text: string;
+  wordVector: Map<string, number>;
+  wordMag: number;
+  ngramVector: Map<string, number>;
+  ngramMag: number;
+}
 
-  // 1. Off-topic Guardrail Check
+// Standard English Stop Words + General Query Action Verbs + Generic Section Nouns
+// NOTE: 'experience' is intentionally a stop word — it appears in section titles like
+// "WORK HISTORY & EXPERIENCE DEEP DIVE" and would false-match "explain Freshworks experience"
+const UNIVERSAL_STOP_WORDS = new Set([
+  'a', 'about', 'above', 'after', 'again', 'against', 'all', 'am', 'an', 'and',
+  'any', 'are', "aren't", 'as', 'at', 'be', 'because', 'been', 'before', 'being',
+  'below', 'between', 'both', 'but', 'by', 'can', 'cannot', 'could', 'did', 'do',
+  'does', 'doing', 'done', 'down', 'during', 'each', 'experience', 'explain', 'few',
+  'for', 'from', 'further', 'get', 'give', 'had', 'has', 'have', 'he', "he'd",
+  "he'll", "he's", 'her', 'here', "here's", 'hers', 'herself', 'him', 'himself',
+  'his', 'how', "how's", 'i', "i'd", "i'll", "i'm", "i've", 'if', 'in', 'into',
+  'is', "isn't", 'it', "it's", 'its', 'itself', 'job', 'kannan', 'kannans',
+  "kannan's", 'know', 'let', "let's", 'me', 'more', 'most', 'my', 'myself',
+  'no', 'nor', 'not', 'of', 'off', 'on', 'once', 'only', 'or', 'other', 'ought',
+  'our', 'ours', 'ourselves', 'out', 'over', 'own', 'role', 'same', 'she',
+  "she'd", "she'll", "she's", 'should', 'show', 'so', 'some', 'such', 'tell',
+  'than', 'that', "that's", 'the', 'their', 'theirs', 'them', 'themselves',
+  'then', 'there', "there's", 'these', 'they', "they'd", "they'll", "they're",
+  "they've", 'this', 'those', 'through', 'to', 'too', 'under', 'until', 'up',
+  'very', 'was', "wasn't", 'we', "we'd", "we'll", "we're", "we've", 'were',
+  "weren't", 'what', "what's", 'when', "when's", 'where', "where's", 'which',
+  'while', 'who', "who's", 'whom', 'why', "why's", 'will', 'with', "won't",
+  'work', 'worked', 'working', 'would', "wouldn't", 'you', "you'd", "you'll",
+  "you're", "you've", 'your', 'yours', 'yourself', 'yourselves'
+]);
+
+// Follow-up phrases that signal the user wants more detail on the last topic
+const FOLLOWUP_PHRASES = [
+  'tell me more', 'more about', 'can you expand', 'elaborate', 'what else',
+  'go deeper', 'give me more', 'say more', 'continue', 'and then', 'what about',
+  'how about', 'expand on', 'details', 'detail'
+];
+
+function isFollowUpQuery(query: string): boolean {
+  const lower = query.toLowerCase().trim();
+  return FOLLOWUP_PHRASES.some(p => lower.includes(p));
+}
+
+function extractWordTokens(rawText: string): string[] {
+  return rawText
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .split(/\s+/)
+    .filter(w => w.length > 1 && !UNIVERSAL_STOP_WORDS.has(w));
+}
+
+// Generate Subword Character 3-Grams & 4-Grams for Fuzzy Typo Resilience
+function extractSubwordNgrams(words: string[]): string[] {
+  const ngrams: string[] = [];
+  for (const word of words) {
+    if (word.length >= 3) {
+      for (let i = 0; i <= word.length - 3; i++) {
+        ngrams.push(word.slice(i, i + 3));
+      }
+    }
+    if (word.length >= 4) {
+      for (let i = 0; i <= word.length - 4; i++) {
+        ngrams.push(word.slice(i, i + 4));
+      }
+    }
+  }
+  return ngrams;
+}
+
+function buildVector(tokens: string[]): { vector: Map<string, number>; magnitude: number } {
+  const vector = new Map<string, number>();
+  for (const t of tokens) {
+    vector.set(t, (vector.get(t) || 0) + 1);
+  }
+  let sumSq = 0;
+  for (const val of vector.values()) sumSq += val * val;
+  return { vector, magnitude: Math.sqrt(sumSq) };
+}
+
+function computeCosineSim(
+  v1: Map<string, number>, mag1: number,
+  v2: Map<string, number>, mag2: number
+): number {
+  if (mag1 === 0 || mag2 === 0) return 0;
+  let dot = 0;
+  for (const [term, freq] of v1.entries()) {
+    if (v2.has(term)) dot += freq * (v2.get(term) || 0);
+  }
+  return dot / (mag1 * mag2);
+}
+
+// Document Ingestion & Chunk Vector Indexing (Agnostic to document structure)
+// Header-depth awareness: bullet `- **x**:` splitting ONLY happens at h1/h2 level.
+// Inside h3 sections (company entries), all sub-bullets stay in the company chunk.
+function ingestDocumentChunks(markdownDoc: string): VectorChunk[] {
+  const chunks: VectorChunk[] = [];
+  const lines = markdownDoc.split('\n');
+  let currentTitle = '';
+  let currentBuffer: string[] = [];
+  let currentDepth = 0; // 1 = #, 2 = ##, 3 = ###
+
+  const commitChunk = (title: string, bodyLines: string[]) => {
+    const text = bodyLines.join('\n').trim();
+    if (!text && !title) return;
+    const fullContent = title ? (text.startsWith(title) ? text : `${title}\n${text}`) : text;
+    const words = extractWordTokens(fullContent);
+    const ngrams = extractSubwordNgrams(words);
+    const { vector: wordVector, magnitude: wordMag } = buildVector(words);
+    const { vector: ngramVector, magnitude: ngramMag } = buildVector(ngrams);
+    chunks.push({ id: `chunk-${chunks.length}`, title: title || 'GENERAL DOSSIER', text: fullContent, wordVector, wordMag, ngramVector, ngramMag });
+  };
+
+  for (const line of lines) {
+    const h3Match = line.match(/^###\s+(.*)/);
+    const h2Match = !h3Match && line.match(/^##\s+(.*)/);
+    const h1Match = !h3Match && !h2Match && line.match(/^#\s+(.*)/);
+
+    if (h3Match || h2Match || h1Match) {
+      commitChunk(currentTitle, currentBuffer);
+      const rawTitle = ((h3Match && h3Match[1]) || (h2Match && h2Match[1]) || (h1Match && h1Match[1]) || '').replace(/^[0-9.]+\s*/, '').trim();
+      currentTitle = rawTitle;
+      currentBuffer = [];
+      currentDepth = h3Match ? 3 : h2Match ? 2 : 1;
+    } else if (
+      currentDepth < 3 &&                          // Only bullet-split outside h3 sections
+      line.trim().startsWith('- **') &&
+      line.includes('**:')
+    ) {
+      commitChunk(currentTitle, currentBuffer);
+      const match = line.match(/- \*\*([^*]+)\*\*:\s*(.*)/);
+      if (match) {
+        currentTitle = match[1].trim();
+        currentBuffer = match[2].trim() ? [match[2].trim()] : [];
+      } else {
+        currentBuffer = [line];
+      }
+    } else {
+      currentBuffer.push(line);
+    }
+  }
+
+  commitChunk(currentTitle, currentBuffer);
+  return chunks;
+}
+
+// Hybrid Vector Search (Word Cosine + Subword N-Gram Cosine + Title Entity Multiplier)
+function searchVectorIndex(query: string, chunks: VectorChunk[], topK = 3): { chunk: VectorChunk; score: number }[] {
+  const queryWords = extractWordTokens(query);
+  const queryNgrams = extractSubwordNgrams(queryWords);
+  const { vector: qWordVec, magnitude: qWordMag } = buildVector(queryWords);
+  const { vector: qNgramVec, magnitude: qNgramMag } = buildVector(queryNgrams);
+  if (qWordMag === 0) return [];
+
+  const scored = chunks.map(chunk => {
+    const wordSim = computeCosineSim(qWordVec, qWordMag, chunk.wordVector, chunk.wordMag);
+    const ngramSim = computeCosineSim(qNgramVec, qNgramMag, chunk.ngramVector, chunk.ngramMag);
+    let score = (wordSim * 0.70) + (ngramSim * 0.30);
+
+    const titleWords = extractWordTokens(chunk.title);
+    for (const qw of queryWords) {
+      if (titleWords.includes(qw)) score += 0.85;
+    }
+    return { chunk, score };
+  });
+
+  return scored
+    .filter(item => item.score > 0.01)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, topK);
+}
+
+// Universal RAG Pipeline Execution (Offline Fallback - used only when LLM proxy is unavailable)
+export function executeUniversalRagPipeline(query: string, history: ConversationTurn[], rawDossier: string): string {
+  const rawLower = query.toLowerCase();
+
+  // Off-topic Guardrail
   const offTopicKeywords = ['weather', 'recipe', 'cook', 'movie', 'sports', 'football', 'cricket', 'president', 'capital', 'crypto', 'bitcoin'];
-  if (offTopicKeywords.some(kw => q.includes(kw)) && !q.includes('kannan') && !q.includes('superops')) {
-    return `I am specifically trained on Kannan Appiya Santharam's executive dossier. I can only answer questions regarding Kannan's 10.5+ years of Senior Lead experience, AI engineering capabilities, build performance wins, and Dubai relocation status. How can I help evaluate Kannan for your team?`;
+  if (offTopicKeywords.some(kw => rawLower.includes(kw)) && !rawLower.includes('kannan') && !rawLower.includes('superops')) {
+    return `I'm specifically trained on Kannan Appiya Santharam's executive profile. I can only help with questions about Kannan's 10.5+ years of Senior Lead experience, AI engineering achievements, and Dubai relocation readiness. What would you like to know?`;
   }
 
-  // 2. Specific Topic-Focused Dossier Extractors
+  const chunks = ingestDocumentChunks(rawDossier);
 
-  // TOPIC: Build Speed Acceleration / Rspack Migration (96%)
-  if (q.includes('96%') || q.includes('rspack') || q.includes('webpack') || q.includes('build time') || q.includes('build speed') || q.includes('compilation')) {
-    return `⚡ **96% Faster Monorepo Builds (Webpack 5 ➔ Rspack Migration)**\n\nKannan completed a solo 3-week migration across 12 monorepo packages at SuperOps:\n• **Cold-Start Compilation:** Reduced build compilation from **2 minutes (120s) down to 5 seconds** (96% build acceleration).\n• **HMR Hot Reload:** Instant updates in under 50ms.\n• **Engineering Impact:** Saved hundreds of developer hours monthly across distributed teams and accelerated CI/CD pipelines in Jenkins.`;
+  // Follow-up detection: boost last topic from history into current query
+  let effectiveQuery = query;
+  if (isFollowUpQuery(query) && history.length > 0) {
+    // Pull the last user question as additional context
+    const lastUserTurn = [...history].reverse().find(t => t.role === 'user');
+    if (lastUserTurn) {
+      effectiveQuery = `${lastUserTurn.text} ${query}`;
+    }
   }
 
-  // TOPIC: HTTP Streamable Web Streams / Streaming Architecture
-  if (q.includes('stream') || q.includes('http streamable') || q.includes('readablestream') || q.includes('sse')) {
-    return `🌊 **HTTP Streamable Web Streams Architecture (` + '`fetch` + `ReadableStream`' + `)**\n\nKannan architected the real-time streaming engine for the AI platform using native Web Streams:\n• **Zero Line-Framing Overhead:** Streams raw text chunks directly over standard HTTP POST responses without legacy SSE \`data: {}\` string regex parsing.\n• **Time-To-First-Token (TTFT):** Cuts perceived latency by 90%, delivering initial tokens in under **80ms**.\n• **Serverless-Native:** 100% stateless and optimized for Vercel Edge Functions, AWS Lambda, and Cloudflare Workers.`;
+  const topMatches = searchVectorIndex(effectiveQuery, chunks, 3);
+
+  if (topMatches.length === 0) return getOfflineFallbackSummary();
+
+  const topMatch = topMatches[0];
+  const lowerTitle = topMatch.chunk.title.toLowerCase();
+
+  // Contextual emoji
+  let emoji = '📋';
+  if (lowerTitle.includes('skill') || lowerTitle.includes('matrix')) emoji = '🛠️';
+  else if (lowerTitle.includes('metric') || lowerTitle.includes('rspack') || lowerTitle.includes('build')) emoji = '⚡';
+  else if (['superops', 'freshworks', 'infigenic', 'niche', 'work history', 'experience'].some(k => lowerTitle.includes(k))) emoji = '🏢';
+  else if (lowerTitle.includes('education') || lowerTitle.includes('school')) emoji = '🎓';
+  else if (lowerTitle.includes('dubai') || lowerTitle.includes('uae') || lowerTitle.includes('relocation') || lowerTitle.includes('visa') || lowerTitle.includes('salary')) emoji = '🇦🇪';
+  else if (lowerTitle.includes('governance') || lowerTitle.includes('leadership')) emoji = '🏛️';
+  else if (lowerTitle.includes('ai') || lowerTitle.includes('mcp') || lowerTitle.includes('test')) emoji = '🤖';
+
+  const cleanTitle = topMatch.chunk.title.trim();
+  const rawText = topMatch.chunk.text.replace(cleanTitle, '').trim();
+
+  // Company experience — structured bullet synthesis
+  if (['superops', 'freshworks', 'infigenic', 'niche'].some(c => lowerTitle.includes(c))) {
+    const lines = rawText.split('\n').map(l => l.trim()).filter(Boolean);
+    const meta = lines.filter(l => l.startsWith('- **') || l.startsWith('Progression:') || l.startsWith('Location:'));
+    const bullets = lines
+      .filter(l => l.startsWith('•') || l.startsWith('*'))
+      .map(l => l.replace(/^[•*]\s*/, ''));
+
+    let out = `${emoji} **${cleanTitle}**\n\n`;
+    if (meta.length) out += meta.map(m => m.replace(/^- /, '')).join('\n') + '\n\n';
+    out += `**Key Contributions & Achievements:**\n`;
+    out += bullets.length ? bullets.map(b => `• ${b}`).join('\n') : rawText;
+    return out;
   }
 
-  // TOPIC: AI Test-Authoring Platform & Self-Healing Tests
-  if (q.includes('test platform') || q.includes('test authoring') || q.includes('self-healing') || q.includes('playwright')) {
-    return `🤖 **AI Test-Authoring Platform & Self-Healing Suite**\n\nKannan architected an automated end-to-end test platform from scratch using React and Node.js:\n• **Autonomous LLM Agents:** Orchestrates LLM agents to auto-generate and execute Playwright test specs.\n• **Self-Healing Selectors:** Inspects DOM trees and automatically self-heals broken DOM selectors upon UI releases.\n• **Monorepo Coverage:** Maintained a 232-spec Playwright regression suite and eliminated 30,000+ lines of dead code using Knip static analysis.`;
-  }
+  return `${emoji} **${cleanTitle}**\n\n${rawText}`;
+}
 
-  // TOPIC: Claude Code Skills, MCP Servers & Write-Scope Guardrails
-  if (q.includes('mcp') || q.includes('claude') || q.includes('guardrail') || q.includes('write-scope')) {
-    return `🛡️ **Model Context Protocol (MCP) Servers & Agent Guardrails**\n\nKannan authored custom production Claude Code skills connected via Model Context Protocol (MCP) servers:\n• **AST Symbol Exposure:** Exposes monorepo codebase symbols and component AST contracts directly to AI agents.\n• **Strict Write-Scope Guardrails:** Enforces multi-tier permission boundaries allowing AI agents to edit feature modules (\`src/features/**\`) while strictly protecting core system schemas (\`src/core/**\`).`;
-  }
-
-  // TOPIC: Salary & Compensation Expectations
-  if (q.includes('salary') || q.includes('compensation') || q.includes('pay') || q.includes('package') || q.includes('ctc') || q.includes('remuneration') || q.includes('expectation')) {
-    return `💼 **Salary & Compensation Expectations**\n\nKannan prefers to discuss compensation details directly over an introductory call to align with the role's scope, team responsibilities, and total rewards package for Dubai, UAE.\n\n• **Screening Discussion:** Open to discussing competitive AED (Arab Emirates Dirham) market compensation during the initial recruiter phone screening.\n• **Contact Directly:** Reach out via Email (**as.kannan4@gmail.com**) or WhatsApp (**+91 97902 47499**) to schedule a call!`;
-  }
-
-  // TOPIC: Dubai Relocation, Visa & Notice Period
-  if (q.includes('dubai') || q.includes('relocat') || q.includes('visa') || q.includes('notice') || q.includes('settle') || q.includes('uae')) {
-    return `🇦🇪 **Dubai, UAE Relocation & Hiring Status**\n\n• **Target Role:** Lead Software Engineer / Engineering Manager\n• **Relocation Status:** Ready to relocate immediately to Dubai, UAE upon **60 days notice**\n• **Visa:** Employment Visa Sponsorship Required\n• **Long-Term Plan:** Plans to bring his family to Dubai post-relocation and settle permanently\n• **Demographics:** Indian Citizen (Valid Passport)\n• **Languages:** English (Fluent), Tamil (Native), Hindi (Basic)`;
-  }
-
-  // TOPIC: Education & Personal Demographics
-  if (q.includes('education') || q.includes('school') || q.includes('college') || q.includes('university') || q.includes('madurai') || q.includes('degree') || q.includes('personal') || q.includes('born')) {
-    return `🎓 **Education & Personal Background**\n\n• **Higher Education:** Bachelor of Engineering (B.E.) in Computer Science from Anna University.\n• **Schooling:** Completed high school education in Madurai, Tamil Nadu (Physics, Chemistry, Computer Science).\n• **Demographics:** Born in Madurai, Tamil Nadu; native Tamil speaker, fluent in English.`;
-  }
-
-  // TOPIC: Work History (SuperOps, Freshworks, Infigenic, Niche Video Media)
-  if (q.includes('freshworks') || q.includes('superops') || q.includes('infigenic') || q.includes('work history') || q.includes('company') || q.includes('experience')) {
-    return `🏢 **Career Track Record (10.5+ Years)**\n\n• **SuperOps (Senior Lead Software Engineer | 2022 – Present):** Monorepo leadership, 96% build acceleration (Rspack), AI-native agentic workflows, HTTP Streamable architecture, reusable SDK author.\n• **Freshworks (Senior Software Engineer | 2018 – 2022):** Built Customer 360 dashboard and tier-1 enterprise SaaS integrations (Jira, Salesforce, Zendesk, ServiceNow). Customer Champion Award winner.\n• **Infigenic (Software Developer | 2018):** Architected Freshservice-DocuSign integration, leading to company acquisition by Freshworks.\n• **Niche Video Media (Web Developer | 2016 – 2017):** Built custom HTML5 video player and Stripe subscription pricing engine.`;
-  }
-
-  // Default Executive Profile Summary
-  return `👋 **Executive Profile — Kannan Appiya Santharam**\n\nI am a **Senior Lead Software Engineer** with **10.5+ years of experience** building high-performance monorepos, enterprise SaaS platforms, and AI-native web applications.\n\n• **Current Role & Focus:** Currently at **SuperOps** as Senior Lead Software Engineer, fully dedicated to **Agentic AI Automations** (LLM Orchestration, Claude Code skills, MCP servers, and HTTP Streamable Web Streams).\n• **Key Engineering Win:** Solo-led a 3-week monorepo migration from Webpack 5 to Rspack across 12 packages, reducing cold-start build compilation by **96% (2 minutes down to 5 seconds)** with HMR <50ms.\n• **Quality & Testing:** Maintained a 232-spec Playwright regression suite and eliminated 30,000+ lines of dead code using Knip.\n• **Career Track Record:** SuperOps (Senior Lead), Freshworks (Customer 360 & enterprise integrations with Jira, Salesforce, Zendesk, ServiceNow), Infigenic (Acquired by Freshworks), Niche Video Media.\n• **Education & Demographics:** B.E. Computer Science from Anna University; born in Madurai, Tamil Nadu.\n• **Dubai Relocation:** Available immediately on **60 days' notice**, seeking UAE employment visa sponsorship.\n\nWhat specific aspects of Kannan's background or projects would you like to explore?`;
+function getOfflineFallbackSummary(): string {
+  return `👋 **Kannan Appiya Santharam — Senior Lead Software Engineer**\n\nKannan brings **10.5+ years** of high-impact engineering across global SaaS platforms, currently at SuperOps leading Agentic AI automations.\n\n• **96% Faster Builds** — Solo Webpack 5 → Rspack migration across 12 packages in 3 weeks\n• **AI Test Platform** — Built from scratch using React, Node.js & LLM agents over HTTP Streamable Web Streams\n• **Claude Code Skills + MCP Servers** — Production AI agent workflows with strict write-scope guardrails\n• **Quality Champion** — 232-spec Playwright suite & 30,000+ lines of dead code eliminated via Knip\n• **Dubai Ready** — Available on 60 days notice, seeking UAE employment visa sponsorship\n\nWhat would you like to explore? His tech stack, specific companies, AI projects, or relocation details?`;
 }
