@@ -43,7 +43,7 @@ export const MetricsGrid: React.FC = () => {
               className="group relative overflow-hidden rounded-2xl border border-[var(--border-card)] bg-[var(--bg-card)] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--border-gold)] hover:bg-[var(--bg-card-hover)] shadow-md"
             >
               {/* Top glow line */}
-              <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-transparent via-[#E2B755]/40 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-transparent via-[#00D2FF]/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 
               <div className="mb-4 flex items-center justify-between">
                 <div className="rounded-xl border border-[var(--border-card)] bg-[var(--bg-inner)] p-3 shadow-inner">

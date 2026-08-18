@@ -39,7 +39,7 @@ export const DubaiRecruiterFacts: React.FC = () => {
         
         {/* Banner Box */}
         <div className="relative overflow-hidden rounded-2xl border border-[var(--border-gold)] bg-[var(--bg-card)] p-6 sm:p-8 shadow-xl">
-          <div className="absolute right-0 top-0 -mr-16 -mt-16 h-64 w-64 rounded-full bg-[#E2B755]/10 blur-3xl" />
+          <div className="absolute right-0 top-0 -mr-16 -mt-16 h-64 w-64 rounded-full bg-[#0052FF]/15 blur-3xl" />
 
           <div className="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
             <div>

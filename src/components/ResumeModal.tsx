@@ -15,13 +15,13 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-slate-950/80 backdrop-blur-md overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-slate-950/80 backdrop-blur-md overflow-y-auto print-modal-container">
       
       {/* Modal Container */}
-      <div className="relative w-full max-w-4xl max-h-[92vh] flex flex-col rounded-2xl border border-[var(--border-gold)] bg-[var(--bg-card)] text-[var(--text-body)] shadow-2xl overflow-hidden">
+      <div className="relative w-full max-w-4xl max-h-[92vh] flex flex-col rounded-2xl border border-[var(--border-gold)] bg-[var(--bg-card)] text-[var(--text-body)] shadow-2xl overflow-hidden print-resume-box">
         
-        {/* Sticky Action Bar */}
-        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-[var(--border-card)] bg-[var(--bg-page)] px-4 py-3 sm:px-6">
+        {/* Sticky Action Bar (Hidden during print) */}
+        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-[var(--border-card)] bg-[var(--bg-page)] px-4 py-3 sm:px-6 no-print print:hidden">
           <div className="flex items-center gap-2">
             <span className="h-3 w-3 rounded-full bg-emerald-500 animate-pulse" />
             <span className="text-xs sm:text-sm font-bold theme-title">Executive CV — Kannan Appiya Santharam</span>
@@ -33,7 +33,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           <div className="flex items-center gap-2">
             <button
               onClick={handlePrint}
-              className="flex items-center gap-1.5 rounded-lg border border-[var(--border-card)] bg-[var(--bg-card)] px-3 py-1.5 text-xs font-semibold theme-title transition-all hover:border-[var(--color-gold)] cursor-pointer"
+              className="flex items-center gap-1.5 rounded-lg border border-[var(--border-card)] bg-[var(--bg-card)] px-3 py-1.5 text-xs font-semibold theme-title transition-all hover:border-[var(--color-primary)] cursor-pointer"
               title="Print CV"
             >
               <Printer className="h-3.5 w-3.5" />
@@ -43,7 +43,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             <a
               href="/Kannan_Santharam.pdf"
               download="Kannan_Appiya_Santharam_Senior_Lead_Software_Engineer.pdf"
-              className="flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-[#E2B755] to-[#C29633] px-3.5 py-1.5 text-xs font-bold text-[#07090E] transition-all hover:brightness-110 shadow-md cursor-pointer"
+              className="flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-[#0052FF] via-[#0066FF] to-[#00D2FF] px-3.5 py-1.5 text-xs font-bold text-white transition-all hover:brightness-110 shadow-md cursor-pointer"
             >
               <Download className="h-3.5 w-3.5" />
               <span>Download PDF</span>
@@ -60,7 +60,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
         </div>
 
         {/* Printable Resume Content */}
-        <div className="flex-1 overflow-y-auto p-6 sm:p-10 space-y-8 font-sans text-xs sm:text-sm">
+        <div className="flex-1 overflow-y-auto p-6 sm:p-10 space-y-8 font-sans text-xs sm:text-sm print-resume-content">
           
           {/* Header */}
           <div className="border-b border-[var(--border-card)] pb-6">
@@ -195,11 +195,11 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
         </div>
 
-        {/* Footer Close Button */}
-        <div className="border-t border-[var(--border-card)] bg-[var(--bg-page)] p-3 text-center">
+        {/* Footer Close Button (Hidden during print) */}
+        <div className="border-t border-[var(--border-card)] bg-[var(--bg-page)] p-3 text-center no-print print:hidden">
           <button
             onClick={onClose}
-            className="rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] px-6 py-2 text-xs font-semibold theme-title hover:border-[var(--color-gold)] cursor-pointer"
+            className="rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] px-6 py-2 text-xs font-semibold theme-title hover:border-[var(--color-primary)] cursor-pointer"
           >
             Close Executive Viewer
           </button>

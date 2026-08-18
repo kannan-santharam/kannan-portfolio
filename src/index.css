@@ -11,56 +11,65 @@ html {
   --font-mono: 'JetBrains Mono', monospace;
 }
 
-/* Dark Theme Tokens (Default) */
+/* Dark Theme Tokens (Default) — Obsidian Night & Electric Cobalt */
 html.dark {
-  --bg-page: #07090E;
-  --bg-card: #0E131F;
-  --bg-card-hover: #141C2E;
-  --bg-inner: #090D16;
-  --bg-pill: #162032;
-  --border-card: #1E2B45;
-  --border-gold: rgba(226, 183, 85, 0.4);
+  --bg-page: #0B0E14;
+  --bg-card: #111622;
+  --bg-card-hover: #182030;
+  --bg-inner: #0D111A;
+  --bg-pill: #1B2438;
+  --border-card: #1E293B;
+  --border-accent: rgba(0, 140, 255, 0.4);
+  --border-gold: rgba(0, 210, 255, 0.45);
   
   --text-title: #FFFFFF;
   --text-body: #E2E8F0;
-  --text-sub: #94A3B8;
-  --text-muted: #64748B;
+  --text-sub: #CBD5E1;
+  --text-muted: #94A3B8;
   
-  --color-gold: #E2B755;
-  --color-gold-hover: #FBE288;
-  --color-cyan: #00F2FE;
-  --color-emerald: #34D399;
+  /* Primary Brand & Accents from Primitives */
+  --color-primary: #0052FF;
+  --color-primary-hover: #0040CC;
+  --color-cyan: #00D2FF;
+  --color-gold: #00D2FF;
+  --color-gold-hover: #38BDF8;
+  --color-emerald: #00D68F;
+  --color-violet: #7C3AED;
   
-  --nav-bg: rgba(7, 9, 14, 0.94);
-  --code-bg: #04060A;
+  --nav-bg: rgba(11, 14, 20, 0.92);
+  --code-bg: #070A0F;
   --code-text: #F1F5F9;
-  --mouse-glow: rgba(226, 183, 85, 0.08);
+  --mouse-glow: rgba(0, 140, 255, 0.12);
 }
 
-/* Light Theme Tokens */
+/* Light Theme Tokens — Clean Crisp Canvas */
 html.light {
-  --bg-page: #F8FAFC;
+  --bg-page: #F8FAFD;
   --bg-card: #FFFFFF;
   --bg-card-hover: #F1F5F9;
   --bg-inner: #F1F5F9;
   --bg-pill: #E2E8F0;
   --border-card: #E2E8F0;
-  --border-gold: rgba(184, 136, 32, 0.4);
+  --border-accent: rgba(0, 82, 255, 0.35);
+  --border-gold: rgba(0, 102, 255, 0.35);
   
   --text-title: #0F172A;
   --text-body: #334155;
   --text-sub: #475569;
   --text-muted: #64748B;
   
-  --color-gold: #B88820;
-  --color-gold-hover: #9A7426;
+  --color-primary: #0052FF;
+  --color-primary-hover: #003DB8;
   --color-cyan: #0284C7;
+  --color-gold: #0052FF;
+  --color-gold-hover: #0040CC;
   --color-emerald: #059669;
+  --color-violet: #6D28D9;
   
-  --nav-bg: rgba(255, 255, 255, 0.96);
+  --nav-bg: rgba(255, 255, 255, 0.94);
   --code-bg: #0F172A;
   --code-text: #F8FAFC;
-  --mouse-glow: rgba(184, 136, 32, 0.07);
+  --mouse-glow: rgba(0, 82, 255, 0.08);
 }
 
 body {
@@ -100,23 +109,39 @@ body {
 }
 
 .theme-gold-text {
-  color: var(--color-gold);
+  color: var(--color-cyan);
 }
 
 .theme-cyan-text {
   color: var(--color-cyan);
 }
 
+.theme-primary-text {
+  color: var(--color-primary);
+}
+
 .theme-gold-badge {
-  background-color: rgba(226, 183, 85, 0.15);
+  background-color: rgba(0, 210, 255, 0.12);
   border: 1px solid var(--border-gold);
-  color: var(--color-gold);
+  color: var(--color-cyan);
 }
 
 html.light .theme-gold-badge {
-  background-color: rgba(184, 136, 32, 0.12);
-  border: 1px solid var(--border-gold);
-  color: #9A7426;
+  background-color: rgba(0, 82, 255, 0.08);
+  border: 1px solid var(--border-accent);
+  color: var(--color-primary);
+}
+
+/* Glowing Accent Badges */
+.badge-cobalt {
+  background: rgba(0, 82, 255, 0.12);
+  border: 1px solid rgba(0, 82, 255, 0.35);
+  color: #38BDF8;
+}
+html.light .badge-cobalt {
+  background: rgba(0, 82, 255, 0.08);
+  border: 1px solid rgba(0, 82, 255, 0.25);
+  color: #0052FF;
 }
 
 /* Mobile Scroll & Touch Helpers */
@@ -133,21 +158,29 @@ html.light .theme-gold-badge {
   width: 6px;
   height: 6px;
 }
-html.dark ::-webkit-scrollbar-track { background: #07090E; }
-html.dark ::-webkit-scrollbar-thumb { background: #1E2B45; border-radius: 4px; }
+html.dark ::-webkit-scrollbar-track { background: #0B0E14; }
+html.dark ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 4px; }
 
-html.light ::-webkit-scrollbar-track { background: #F8FAFC; }
+html.light ::-webkit-scrollbar-track { background: #F8FAFD; }
 html.light ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
 
-/* Metallic Text Gradient */
+/* Vibrant Tech Gradient Text */
 html.dark .text-gold-gradient {
-  background: linear-gradient(135deg, #FFF0BD 0%, #E2B755 50%, #B88820 100%);
+  background: linear-gradient(135deg, #FFFFFF 0%, #7DD3FC 45%, #38BDF8 80%, #00D2FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 2px rgba(0, 82, 255, 0.25));
+}
+
+html.light .text-gold-gradient {
+  background: linear-gradient(135deg, #0052FF 0%, #0284C7 60%, #0369A1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-html.light .text-gold-gradient {
-  background: linear-gradient(135deg, #9A7426 0%, #B88820 50%, #785816 100%);
+/* Electric Violet/Cyan Gradient Text */
+.text-electric-gradient {
+  background: linear-gradient(135deg, #00D2FF 0%, #0052FF 50%, #A855F7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -166,8 +199,8 @@ html.light .text-gold-gradient {
   animation: spinConicBorder 1.8s linear infinite;
 }
 
-/* Gemini Gradient Shimmer Animation for AI Loading */
-@keyframes geminiGradientMove {
+/* Glowing Lapis & Cyan Gradient Animation */
+@keyframes techGradientMove {
   0% {
     background-position: 0% 50%;
   }
@@ -179,36 +212,133 @@ html.light .text-gold-gradient {
   }
 }
 
-.gemini-gradient-bg {
-  background: linear-gradient(-45deg, #4285F4, #9B51E0, #EC4899, #E2B755, #34D399, #4285F4);
+.tech-gradient-bg {
+  background: linear-gradient(-45deg, #0052FF, #00D2FF, #7C3AED, #00E599, #0052FF);
   background-size: 300% 300%;
-  animation: geminiGradientMove 3s ease infinite;
+  animation: techGradientMove 3.5s ease infinite;
+}
+
+.gemini-gradient-bg {
+  background: linear-gradient(-45deg, #0052FF, #00D2FF, #8B5CF6, #00E599, #0052FF);
+  background-size: 300% 300%;
+  animation: techGradientMove 3s ease infinite;
 }
 
 .gemini-gradient-text {
-  background: linear-gradient(90deg, #4285F4, #9B51E0, #EC4899, #E2B755, #4285F4);
+  background: linear-gradient(90deg, #00D2FF, #0052FF, #A855F7, #00E599, #00D2FF);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: geminiGradientMove 2.5s linear infinite;
+  animation: techGradientMove 2.5s linear infinite;
 }
 
 @keyframes geminiPulseGlow {
-  0%, 100% { opacity: 0.2; transform: scale(0.98); }
-  50% { opacity: 0.5; transform: scale(1.02); }
+  0%, 100% { opacity: 0.25; transform: scale(0.98); }
+  50% { opacity: 0.6; transform: scale(1.02); }
 }
 
 .gemini-ambient-glow {
   animation: geminiPulseGlow 2.5s ease-in-out infinite;
 }
 
-/* Print Styles */
+/* Clean, Flawless Executive Print Styles */
 @media print {
-  body {
+  @page {
+    margin: 12mm 15mm;
+    size: A4 portrait;
+  }
+
+  html, body {
     background: #ffffff !important;
     color: #0f172a !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
   }
-  .no-print {
+
+  /* Hide entire background portfolio site, floating widgets, and navigation */
+  header,
+  footer,
+  section,
+  #hero,
+  #dubai-facts,
+  #metrics,
+  #ai-spotlight,
+  #experience,
+  #skills,
+  #contact,
+  .no-print,
+  button,
+  [aria-label="Open AI Candidate Assistant"] {
     display: none !important;
+  }
+
+  /* Ensure modal container fills page cleanly without scrollbars, dark backdrops, or buttons */
+  .print-modal-container {
+    position: static !important;
+    inset: auto !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .print-resume-box {
+    position: static !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    max-height: none !important;
+    overflow: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .print-resume-content {
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Force solid high-contrast black/grey typography */
+  .theme-title {
+    color: #0f172a !important;
+  }
+  .theme-sub {
+    color: #334155 !important;
+  }
+  .theme-muted {
+    color: #64748b !important;
+  }
+  .theme-gold-text,
+  .theme-cyan-text,
+  .text-gold-gradient,
+  .theme-primary-text {
+    color: #0052FF !important;
+    -webkit-text-fill-color: #0052FF !important;
+    background: none !important;
+  }
+
+  /* Clean print borders */
+  .border,
+  [class*="border-"] {
+    border-color: #e2e8f0 !important;
+  }
+
+  /* Key metric cards in print */
+  .print-metric-card {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    page-break-inside: avoid;
+  }
+
+  /* Avoid awkward page breaks */
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+  ul, li, div {
+    page-break-inside: auto;
   }
 }

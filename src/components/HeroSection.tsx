@@ -28,9 +28,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
 
   return (
     <section id="hero" className="relative overflow-hidden pb-12 pt-8 sm:pb-20 sm:pt-16 lg:pb-24">
-      {/* Background Radial Glow */}
-      <div className="pointer-events-none absolute -top-24 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-[#E2B755]/15 blur-[120px]" />
-      <div className="pointer-events-none absolute top-40 right-10 h-80 w-80 rounded-full bg-[#00F2FE]/10 blur-[100px]" />
+      {/* Background Radial Glow with Palette 1 Electric Cobalt & Cyan */}
+      <div className="pointer-events-none absolute -top-24 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-[#0052FF]/20 blur-[130px]" />
+      <div className="pointer-events-none absolute top-40 right-10 h-80 w-80 rounded-full bg-[#00D2FF]/15 blur-[110px]" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-8">
@@ -38,7 +38,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
           {/* Mobile Profile Photo */}
           <div className="lg:hidden lg:col-span-5">
             <div className="relative mx-auto max-w-xs sm:max-w-md">
-              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-[#E2B755] via-[#00F2FE] to-[#1E2B45] opacity-40 blur-md" />
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-[#0052FF] via-[#00D2FF] to-[#7C3AED] opacity-35 blur-md" />
               <div className="relative rounded-xl border border-[var(--border-gold)] bg-[var(--bg-card)] p-3.5 shadow-xl backdrop-blur-xl">
                 <div className="relative overflow-hidden rounded-lg border border-[var(--border-card)]">
                   <img
@@ -50,9 +50,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                     <div className="flex items-center justify-between">
                       <div>
                         <div className="text-xs font-bold text-white">{RESUME_DATA.name}</div>
-                        <div className="text-[10px] text-[#E2B755]">Senior Lead Software Engineer</div>
+                        <div className="text-[10px] text-[#00D2FF]">Senior Lead Software Engineer</div>
                       </div>
-                      <div className="rounded bg-slate-900/90 border border-[#E2B755]/40 px-1.5 py-0.5 font-mono text-[9px] text-slate-200 cursor-default select-none">
+                      <div className="rounded bg-slate-900/90 border border-[#00D2FF]/40 px-1.5 py-0.5 font-mono text-[9px] text-slate-200 cursor-default select-none">
                         10.5+ Yrs Exp
                       </div>
                     </div>
@@ -95,7 +95,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
 
             {/* Name & Title */}
             <div>
-              <h1 className="text-3xl font-extrabold tracking-tight theme-title sm:text-5xl lg:text-6xl">
+              <h1 className="text-2xl font-extrabold tracking-tight theme-title sm:text-4xl lg:text-[42px] xl:text-5xl whitespace-nowrap">
                 {RESUME_DATA.name}
               </h1>
               <p className="mt-1.5 text-lg font-bold text-gold-gradient sm:text-2xl">
@@ -114,7 +114,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
             {/* Core Value Metric Cards (Informational Summary) */}
             <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3 sm:gap-3 pt-1">
               <div className="flex items-center gap-3 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] p-3 shadow-sm cursor-default select-none">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg theme-gold-badge">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#0052FF]/15 text-[#38BDF8]">
                   <Zap className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
                 <div>
@@ -151,7 +151,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                 <a
                   href="/Kannan_Santharam.pdf"
                   download="Kannan_Santharam_Senior_Lead_Software_Engineer.pdf"
-                  className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#E2B755] to-[#C29633] px-5 py-3 text-xs sm:text-sm font-bold text-[#07090E] transition-all hover:scale-[1.01] hover:shadow-lg hover:shadow-[#E2B755]/25 cursor-pointer text-center active:scale-95"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#0052FF] via-[#0066FF] to-[#00D2FF] px-5 py-3 text-xs sm:text-sm font-bold text-white transition-all hover:scale-[1.01] hover:shadow-lg hover:shadow-[#0052FF]/30 cursor-pointer text-center active:scale-95 shadow-md"
                 >
                   <Download className="h-4 w-4 shrink-0" />
                   <span>Download Official PDF Resume</span>
@@ -159,9 +159,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
 
                 <button
                   onClick={onOpenResumeModal}
-                  className="flex items-center justify-center gap-2 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] px-5 py-3 text-xs sm:text-sm font-semibold theme-title transition-all hover:border-[var(--color-gold)] hover:bg-[var(--bg-card-hover)] cursor-pointer text-center active:scale-95"
+                  className="flex items-center justify-center gap-2 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] px-5 py-3 text-xs sm:text-sm font-semibold theme-title transition-all hover:border-[var(--color-primary)] hover:bg-[var(--bg-card-hover)] cursor-pointer text-center active:scale-95"
                 >
-                  <FileText className="h-4 w-4 shrink-0 theme-gold-text" />
+                  <FileText className="h-4 w-4 shrink-0 theme-cyan-text" />
                   <span>Interactive Executive View</span>
                 </button>
               </div>
@@ -194,22 +194,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
           {/* Right Column: Desktop Executive Photo Card */}
           <div className="hidden lg:col-span-5 lg:block">
             <div className="relative mx-auto max-w-md">
-              <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-tr from-[#E2B755] via-[#00F2FE] to-[#1E2B45] opacity-50 blur-lg transition duration-1000 group-hover:opacity-100" />
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-[#0052FF] via-[#00D2FF] to-[#7C3AED] opacity-35 blur-md transition duration-500 group-hover:opacity-50" />
               
-              <div className="relative rounded-2xl border border-[var(--border-gold)] bg-[var(--bg-card)] p-5 shadow-2xl backdrop-blur-xl">
-                <div className="relative mb-6 overflow-hidden rounded-xl border border-[var(--border-card)]">
+              <div className="relative rounded-2xl border border-[var(--border-gold)] bg-[var(--bg-card)] p-4 shadow-xl backdrop-blur-xl">
+                <div className="relative mb-5 overflow-hidden rounded-xl border border-[var(--border-card)]">
                   <img
                     src="/kannanphoto.jpeg"
                     alt={RESUME_DATA.name}
-                    className="h-88 w-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                    className="h-84 w-full object-cover object-top transition-transform duration-500 hover:scale-105"
                   />
-                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent p-4 text-white">
+                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent p-3.5 text-white">
                     <div className="flex items-center justify-between">
                       <div>
                         <div className="text-sm font-bold text-white">{RESUME_DATA.name}</div>
-                        <div className="text-xs text-[#E2B755]">Senior Lead Software Engineer</div>
+                        <div className="text-xs text-[#00D2FF]">Senior Lead Software Engineer</div>
                       </div>
-                      <div className="rounded-md bg-slate-900/90 border border-[#E2B755]/40 px-2 py-1 font-mono text-[10px] text-slate-200 cursor-default select-none">
+                      <div className="rounded-md bg-slate-900/90 border border-[#00D2FF]/40 px-2 py-1 font-mono text-[10px] text-slate-200 cursor-default select-none">
                         10.5+ Yrs Exp
                       </div>
                     </div>

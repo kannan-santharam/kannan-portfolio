@@ -1,8 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Bot, X, Send, Sparkles, RefreshCw, Zap, MessageSquare } from 'lucide-react';
+import { Bot, Send, Sparkles, Trash2, ChevronDown } from 'lucide-react';
 import { streamRealLlmApi, getEnvApiKey } from '../services/aiChatService';
 import type { ChatMessage, ConversationTurn } from '../services/aiChatService';
-import { RESUME_DATA } from '../data/resumeData';
 
 // Streaming-aware Markdown Formatter: handles split bold tags and lists smoothly
 const FormattedMarkdownText: React.FC<{ content: string; isStreaming?: boolean }> = ({ content, isStreaming }) => {
@@ -239,16 +238,16 @@ export const AiChatbotWidget: React.FC<AiChatbotWidgetProps> = ({ isOpen, onOpen
             aria-label="Open AI Candidate Assistant"
           >
             {/* Fast Rotating Conic Color Gradient Border */}
-            <span className="absolute inset-[-150%] animate-spin-border bg-[conic-gradient(from_0deg,#E2B755_0%,#00F2FE_25%,#A855F7_50%,#34D399_75%,#E2B755_100%)]" />
+            <span className="absolute inset-[-150%] animate-spin-border bg-[conic-gradient(from_0deg,#0052FF_0%,#00D2FF_25%,#7C3AED_50%,#00E599_75%,#0052FF_100%)]" />
 
             {/* Inner Button Content */}
-            <div className="relative flex items-center gap-2.5 rounded-full bg-[#07090E] px-3.5 py-2.5 sm:px-4 sm:py-3 text-slate-100 font-bold">
-              <div className="relative flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full bg-[#141C2E] text-[#E2B755]">
+            <div className="relative flex items-center gap-2.5 rounded-full bg-[#0B0E14] px-3.5 py-2.5 sm:px-4 sm:py-3 text-slate-100 font-bold">
+              <div className="relative flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full bg-[#182030] text-[#00D2FF]">
                 <Bot className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                <span className="absolute -top-0.5 -right-0.5 h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-emerald-400 ring-2 ring-[#07090E]" />
+                <span className="absolute -top-0.5 -right-0.5 h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-emerald-400 ring-2 ring-[#0B0E14]" />
               </div>
               <span className="text-xs font-extrabold sm:text-sm text-white">Ask Candidate AI</span>
-              <Sparkles className="h-3.5 w-3.5 text-[#E2B755] group-hover:rotate-12 transition-transform" />
+              <Sparkles className="h-3.5 w-3.5 text-[#00D2FF] group-hover:rotate-12 transition-transform" />
             </div>
           </button>
         </div>
@@ -263,73 +262,47 @@ export const AiChatbotWidget: React.FC<AiChatbotWidgetProps> = ({ isOpen, onOpen
             
             {/* Left Profile Info */}
             <div className="flex items-center gap-2.5 min-w-0">
-              <div className="relative shrink-0">
-                <img
-                  src="/kannanphoto.jpeg"
-                  alt="Kannan"
-                  className="h-8 w-8 sm:h-9 sm:w-9 rounded-full object-cover object-top border border-[var(--border-gold)] shadow-md"
-                />
-                <span className="absolute bottom-0 right-0 h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-emerald-400 ring-2 ring-[#07090E]" />
+              <div className="relative flex h-8 w-8 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-xl bg-[#0052FF]/15 text-[#38BDF8]">
+                <Bot className="h-4 w-4 sm:h-5 sm:w-5" />
+                <span className="absolute -bottom-0.5 -right-0.5 h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-emerald-400 ring-2 ring-[var(--bg-page)]" />
               </div>
 
               <div className="min-w-0">
-                <h3 className="text-xs font-extrabold theme-title truncate">
-                  Kannan's AI Assistant
-                </h3>
-                <div className="flex items-center gap-1.5 text-[10px] theme-muted mt-0.5">
-                  <span className="inline-flex items-center gap-0.5 rounded bg-emerald-100 dark:bg-emerald-500/15 px-1.5 py-0.2 text-[8px] sm:text-[9px] font-bold text-emerald-800 dark:text-emerald-400 shrink-0">
-                    <Zap className="h-2.5 w-2.5" />
-                    <span>HTTP Streamable</span>
+                <div className="flex items-center gap-1.5">
+                  <h3 className="text-xs sm:text-sm font-bold theme-title truncate">Candidate AI</h3>
+                  <span className="rounded bg-emerald-500/15 border border-emerald-500/30 px-1.5 py-0.2 text-[9px] font-bold text-emerald-400 shrink-0">
+                    Live
                   </span>
                 </div>
-                <p className="text-[10px] theme-muted truncate">· Gemini Flash</p>
+                <p className="text-[10px] text-[var(--color-primary)] font-semibold truncate">
+                  10.5+ Yrs · Rspack · AI Test Platform
+                </p>
               </div>
             </div>
 
-            {/* Right Action Controls */}
+            {/* Right Action Icons */}
             <div className="flex items-center gap-1 shrink-0">
-              <a
-                href={`https://wa.me/${RESUME_DATA.contact.phoneClean}?text=Hi%20Kannan,%20I'm%20chatting%20with%20your%20AI%20Portfolio%20Assistant%20and%20would%20like%20to%20connect%20regarding%20a%20role%20in%20Dubai.`}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-lg px-2 py-1 border border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 hover:bg-emerald-100 dark:hover:bg-emerald-500/20 text-[10px] font-bold flex items-center gap-1 transition-all"
-                title="Direct WhatsApp"
-              >
-                <MessageSquare className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
-                <span className="hidden sm:inline">WhatsApp</span>
-              </a>
-
               <button
                 onClick={handleClearHistory}
-                className="rounded-lg p-1.5 theme-sub hover:bg-[var(--bg-card-hover)] cursor-pointer"
-                title="Reset Chat"
+                className="rounded-lg p-1.5 text-xs theme-sub hover:bg-[var(--bg-card-hover)] hover:text-rose-400 transition-colors cursor-pointer"
+                title="Clear Conversation"
+                aria-label="Clear chat history"
               >
-                <RefreshCw className="h-3.5 w-3.5" />
+                <Trash2 className="h-4 w-4" />
               </button>
+
               <button
                 onClick={() => onOpenChange(false)}
-                className="rounded-lg p-1.5 theme-sub hover:bg-[var(--bg-card-hover)] cursor-pointer"
-                title="Close Chat"
+                className="rounded-lg p-1.5 theme-sub hover:bg-[var(--bg-card-hover)] hover:text-[var(--text-title)] transition-colors cursor-pointer"
+                title="Minimize Chat"
+                aria-label="Close chat window"
               >
-                <X className="h-4 w-4" />
+                <ChevronDown className="h-4 w-4" />
               </button>
             </div>
           </div>
 
-          {/* Prompt Suggestions Strip */}
-          <div className="border-b border-[var(--border-card)] bg-[var(--bg-inner)] p-2 overflow-x-auto no-scrollbar flex gap-1.5">
-            {promptSuggestions.map((prompt, idx) => (
-              <button
-                key={idx}
-                onClick={() => handleSendMessage(prompt)}
-                className="shrink-0 rounded-lg border border-[var(--border-card)] bg-[var(--bg-card)] px-2.5 py-1 text-[10px] font-medium theme-title transition-all hover:border-[var(--color-gold)] hover:bg-[var(--bg-card-hover)] cursor-pointer shadow-sm"
-              >
-                {prompt}
-              </button>
-            ))}
-          </div>
-
-          {/* Message Stream Body */}
+          {/* Chat Messages Body */}
           <div
             ref={messagesContainerRef}
             className="relative flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 font-sans text-xs scroll-smooth"
@@ -351,10 +324,10 @@ export const AiChatbotWidget: React.FC<AiChatbotWidgetProps> = ({ isOpen, onOpen
                   className={`flex flex-col ${msg.sender === 'user' ? 'items-end' : 'items-start'}`}
                 >
                   <div
-                    className={`max-w-[90%] sm:max-w-[88%] rounded-2xl p-3 leading-relaxed transition-opacity duration-150 ${
+                    className={`max-w-[88%] rounded-2xl p-3 text-xs leading-relaxed break-words shadow-sm ${
                       msg.sender === 'user'
-                        ? 'bg-gradient-to-r from-[#E2B755] to-[#C29633] text-[#07090E] font-semibold rounded-br-none shadow-md'
-                        : 'border border-[var(--border-card)] bg-[var(--bg-inner)] theme-title rounded-bl-none shadow-sm'
+                        ? 'bg-gradient-to-r from-[#0052FF] to-[#0066FF] text-white rounded-br-none'
+                        : 'bg-[var(--bg-inner)] border border-[var(--border-card)] theme-title rounded-bl-none'
                     }`}
                   >
                     <FormattedMarkdownText
@@ -362,21 +335,32 @@ export const AiChatbotWidget: React.FC<AiChatbotWidgetProps> = ({ isOpen, onOpen
                       isStreaming={isStreaming && msg.sender === 'ai' && msg.id === messages[messages.length - 1]?.id}
                     />
                   </div>
-                  <div className="mt-1 flex items-center gap-1.5 px-1 text-[9px] theme-muted">
-                    <span>{msg.timestamp}</span>
-                    {msg.isRealLlm && (
-                      <span className="rounded bg-emerald-100 dark:bg-emerald-500/10 px-1 py-0.2 text-[8px] font-bold text-emerald-800 dark:text-emerald-400">
-                        Gemini HTTP Stream
-                      </span>
-                    )}
-                  </div>
+                  <span className="text-[9px] theme-muted mt-1 px-1">{msg.timestamp}</span>
                 </div>
               );
             })}
 
-            {/* Gemini Multi-color Gradient Shimmer Loading State (only shown before first token) */}
+            {/* Suggested Prompt Chips (Shown only when history is clean) */}
+            {messages.length === 1 && !isLoading && (
+              <div className="space-y-1.5 pt-2">
+                <div className="text-[10px] font-bold uppercase tracking-wider theme-muted">Suggested Queries</div>
+                <div className="flex flex-col gap-1.5">
+                  {promptSuggestions.map((prompt, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => handleSendMessage(prompt)}
+                      className="rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] p-2 text-left text-xs theme-sub hover:border-[var(--color-primary)] hover:text-[var(--text-title)] transition-all cursor-pointer shadow-xs"
+                    >
+                      {prompt}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Shimmering Multi-Color Gemini Loading Card */}
             {isLoading && messages[messages.length - 1]?.sender === 'ai' && !messages[messages.length - 1]?.text && (
-              <div className="flex items-start my-1.5">
+              <div className="flex items-start gap-2 pt-1 animate-fadeIn">
                 <div className="relative overflow-hidden rounded-2xl p-[1.5px] shadow-lg w-full max-w-[90%]">
                   {/* Animated Gemini Multi-color Gradient Border */}
                   <div className="absolute inset-0 gemini-gradient-bg opacity-95" />
@@ -396,7 +380,7 @@ export const AiChatbotWidget: React.FC<AiChatbotWidgetProps> = ({ isOpen, onOpen
                     <div className="flex items-center gap-1 shrink-0 ml-1">
                       <span className="h-2 w-2 rounded-full bg-blue-400 animate-ping" />
                       <span className="h-2 w-2 rounded-full bg-purple-400 animate-ping" style={{ animationDelay: '200ms' }} />
-                      <span className="h-2 w-2 rounded-full bg-amber-400 animate-ping" style={{ animationDelay: '400ms' }} />
+                      <span className="h-2 w-2 rounded-full bg-cyan-400 animate-ping" style={{ animationDelay: '400ms' }} />
                     </div>
                   </div>
                 </div>
@@ -417,12 +401,12 @@ export const AiChatbotWidget: React.FC<AiChatbotWidgetProps> = ({ isOpen, onOpen
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask about Kannan's experience, Rspack..."
-              className="flex-1 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] px-3 py-2 text-xs theme-title outline-none focus:border-[var(--color-gold)]"
+              className="flex-1 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] px-3 py-2 text-xs theme-title outline-none focus:border-[var(--color-primary)]"
             />
             <button
               type="submit"
               disabled={!input.trim() || isLoading}
-              className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-r from-[#E2B755] to-[#C29633] text-[#07090E] disabled:opacity-50 cursor-pointer shadow-md shrink-0"
+              className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-r from-[#0052FF] to-[#00D2FF] text-white disabled:opacity-50 cursor-pointer shadow-md shrink-0"
             >
               <Send className="h-4 w-4" />
             </button>

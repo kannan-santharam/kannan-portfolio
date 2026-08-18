@@ -44,7 +44,7 @@ export const SkillMatrix: React.FC = () => {
                 onClick={() => setSelectedCategory(cat.id)}
                 className={`shrink-0 rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
                   selectedCategory === cat.id
-                    ? 'bg-gradient-to-r from-[#E2B755] to-[#C29633] text-[#07090E] font-bold shadow-md'
+                    ? 'bg-gradient-to-r from-[#0052FF] via-[#0066FF] to-[#00D2FF] text-white font-bold shadow-md'
                     : 'border border-[var(--border-card)] bg-[var(--bg-card)] theme-sub hover:border-[var(--border-gold)]'
                 }`}
               >
