@@ -24,7 +24,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
         <div className="sticky top-0 z-10 flex items-center justify-between border-b border-[var(--border-card)] bg-[var(--bg-page)] px-4 py-3 sm:px-6 no-print print:hidden">
           <div className="flex items-center gap-2">
             <span className="h-3 w-3 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-xs sm:text-sm font-bold theme-title">Executive CV — Kannan Appiya Santharam</span>
+            <span className="text-xs sm:text-sm font-bold theme-title">Executive CV · Kannan Appiya Santharam</span>
             <span className="hidden sm:inline-flex rounded-full theme-gold-badge px-2.5 py-0.5 text-[10px] font-bold">
               Dubai Hiring Ready
             </span>

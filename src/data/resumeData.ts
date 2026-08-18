@@ -107,12 +107,12 @@ export const RESUME_DATA = {
       id: "superops",
       company: "SuperOps",
       location: "Chennai, India",
-      period: "Jul 2022 – Present",
+      period: "Jul 2022 to Present",
       title: "Senior Lead Software Engineer",
       progression: "Senior Software Engineer → Lead Software Engineer → Senior Lead Software Engineer",
       featured: true,
       highlights: [
-        "Architected an AI test-authoring platform from scratch using React and Node.js, orchestrating LLM agents to auto-generate, execute, and self-heal Playwright test suites with real-time feedback delivered via HTTP Streamable Web Streams (fetch + ReadableStream).",
+        "Architected an AI test authoring platform from scratch using React and Node.js, orchestrating LLM agents to auto generate, execute, and self-heal Playwright test suites with real-time feedback delivered via HTTP Streamable Web Streams (fetch + ReadableStream).",
         "Authored custom production Claude Code skills and engineered Model Context Protocol (MCP) servers, establishing strict multi-tier write-scope guardrails to secure autonomous agent workflows across the codebase.",
         "Executed a solo Webpack 5 to Rspack migration in 3 weeks, reducing cold-start build compilation from 2 minutes to 5 seconds across 12 packages.",
         "Improved application load times through React lazy loading, route-level code splitting and per-package chunking strategy across the monorepo.",
@@ -127,7 +127,7 @@ export const RESUME_DATA = {
       id: "freshworks",
       company: "Freshworks",
       location: "Chennai, India",
-      period: "Jun 2018 – Jul 2022",
+      period: "Jun 2018 to Jul 2022",
       title: "Senior Software Engineer",
       progression: "Onboarding Engineer → Senior Software Engineer (Customer-Facing Engineering)",
       featured: true,
@@ -135,9 +135,9 @@ export const RESUME_DATA = {
         "Worked directly with enterprise customers alongside Support, Customer Success and Sales teams to understand complex requirements, then partnered with Product Design to deliver UI solutions.",
         "Built UI web pages and REST API services across Freshworks products using React, JavaScript, Node.js, HTML and SASS.",
         "Built a Customer 360 dashboard consolidating all customer support, sales, and account information into a single unified operational view.",
-        "Integrated tier-1 enterprise SaaS platforms — Jira, Salesforce, Zendesk and ServiceNow — with Freshworks products through robust REST API services.",
+        "Integrated tier 1 enterprise SaaS platforms including Jira, Salesforce, Zendesk and ServiceNow with Freshworks products through robust REST API services.",
         "Implemented multiple Freshworks add-ons and supporting REST API services to solve customer-specific operational use cases.",
-        "Created UI wireframes and design mockups in Balsamiq; mentored engineers on add-on development and led code & UI design reviews."
+        "Created UI wireframes and design mockups in Balsamiq, mentored engineers on add-on development, and led code & UI design reviews."
       ],
       skills: ["React", "JavaScript", "Node.js", "REST APIs", "SaaS Integrations (Jira, Salesforce, Zendesk, ServiceNow)", "Customer 360", "SASS"]
     },
@@ -145,7 +145,7 @@ export const RESUME_DATA = {
       id: "infigenic",
       company: "Infigenic, LLC",
       location: "Bengaluru, India",
-      period: "Jan 2018 – Jun 2018",
+      period: "Jan 2018 to Jun 2018",
       title: "Software Developer",
       featured: false,
       highlights: [
@@ -158,12 +158,12 @@ export const RESUME_DATA = {
       id: "niche",
       company: "Niche Video Media, LLC",
       location: "Chennai, India",
-      period: "Mar 2016 – Dec 2017",
+      period: "Mar 2016 to Dec 2017",
       title: "Web Application Developer & Designer",
       featured: false,
       highlights: [
         "Designed and implemented responsive web pages, landing pages, and custom plugins for a commercial video-hosting platform.",
-        "Built a video player customisation feature from scratch — configurable player buttons, annotations, and call-to-action overlays.",
+        "Built a video player customisation feature from scratch with configurable player buttons, annotations, and call-to-action overlays.",
         "Implemented an administrative dashboard that dynamically generated Stripe pricing plans based on feature selection, storage tiers, and bandwidth tiers."
       ],
       skills: ["JavaScript", "HTML5", "CSS3", "Stripe API", "Video Player Customization", "Admin Dashboards"]
@@ -244,7 +244,7 @@ export const RESUME_DATA = {
 
   education: {
     degree: "Bachelor of Engineering (B.E.), Computer Science",
-    period: "2011 – 2015",
+    period: "2011 to 2015",
     institution: "K.L.N. College of Information Technology",
     location: "Tamil Nadu, India"
   },
