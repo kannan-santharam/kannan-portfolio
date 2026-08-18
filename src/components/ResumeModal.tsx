@@ -130,37 +130,36 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             {/* Screen View: Responsive Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2.5 no-print print:hidden">
               <div className="rounded-xl border border-[var(--border-card)] bg-[var(--bg-inner)] p-3">
+                <div className="text-base font-extrabold theme-cyan-text">AI Platform & Agentic Tooling</div>
+                <div className="text-xs theme-title font-semibold mt-0.5">Web Streams & MCP Server Guardrails</div>
+                <p className="text-[11px] theme-sub mt-1">Architected AI test-authoring platform via HTTP Web Streams and built custom Claude Code skills with multi-tier write guardrails.</p>
+              </div>
+
+              <div className="rounded-xl border border-[var(--border-card)] bg-[var(--bg-inner)] p-3">
                 <div className="text-base font-extrabold theme-gold-text">96% Build Speed Acceleration</div>
                 <div className="text-xs theme-title font-semibold mt-0.5">Webpack 5 to Rspack Solo Migration</div>
-                <p className="text-[11px] theme-sub mt-1">Reduced cold compilation from 2 minutes to 5 seconds across 12 monorepo packages in 3 weeks.</p>
+                <p className="text-[11px] theme-sub mt-1">Reduced cold compilation from 2 minutes to 5 seconds across 12 monorepo packages in a 3-week solo migration.</p>
               </div>
 
               <div className="rounded-xl border border-[var(--border-card)] bg-[var(--bg-inner)] p-3">
-                <div className="text-base font-extrabold theme-cyan-text">AI Test Platform & Streaming</div>
-                <div className="text-xs theme-title font-semibold mt-0.5">Test Authoring & LLM Agents</div>
-                <p className="text-[11px] theme-sub mt-1">Architected end-to-end AI test platform from scratch, orchestrating LLM agents to auto generate, execute, and self-heal Playwright test suites via Web Streams.</p>
+                <div className="text-base font-extrabold theme-title">Frontend Squad Leadership</div>
+                <div className="text-xs theme-title font-semibold mt-0.5">Cross-Team Execution (4,000+ Customers)</div>
+                <p className="text-[11px] theme-sub mt-1">Led engineering squad across product, design, and QA to deliver enterprise features and standardise a reusable UI SDK.</p>
               </div>
 
               <div className="rounded-xl border border-[var(--border-card)] bg-[var(--bg-inner)] p-3">
-                <div className="text-base font-extrabold theme-title">Claude Code & MCP Servers</div>
-                <div className="text-xs theme-title font-semibold mt-0.5">Custom Skills & Write Guardrails</div>
-                <p className="text-[11px] theme-sub mt-1">Authored custom production Claude Code skills and engineered MCP servers, establishing strict write-scope guardrails to secure autonomous agent workflows.</p>
-              </div>
-
-              <div className="rounded-xl border border-[var(--border-card)] bg-[var(--bg-inner)] p-3">
-                <div className="text-base font-extrabold text-emerald-400">30k+ Dead Code Stripped</div>
-                <div className="text-xs theme-title font-semibold mt-0.5">Knip Static Analysis</div>
-                <p className="text-[11px] theme-sub mt-1">Led codebase hygiene with Knip static analysis, stripping 30,000+ lines of unused dead code and orphaned dependencies across the monorepo.</p>
+                <div className="text-base font-extrabold text-emerald-400">Developer Mentorship (6–7 Eng)</div>
+                <div className="text-xs theme-title font-semibold mt-0.5">Code Quality & Career Ramp-Up</div>
+                <p className="text-[11px] theme-sub mt-1">Mentored junior and onboarding engineers across SuperOps and Freshworks on React best practices, APIs, and UI architecture.</p>
               </div>
             </div>
 
             {/* Print View: Traditional Clean Bullet List */}
             <ul className="hidden print:block print:list-disc print:pl-5 print:space-y-1 print:text-[9.5pt] print:text-slate-800 print:mt-1">
-              <li><strong>96 Percent Build Speed Acceleration:</strong> Solo executed a 3-week build system migration from Webpack 5 to Rust-powered Rspack across 12 packages at SuperOps, reducing cold start compilation from 2 minutes to 5 seconds and achieving HMR reloads under 50ms.</li>
-              <li><strong>AI Test Authoring Platform & Real-Time Streaming:</strong> Architected an automated end-to-end testing platform from scratch using React and Node.js, orchestrating LLM agents to auto generate, execute, and self-heal Playwright test suites with real-time feedback streamed via HTTP Web Streams.</li>
-              <li><strong>Production Claude Code Skills & MCP Servers:</strong> Authored custom production Claude Code skills and engineered Model Context Protocol servers, establishing strict multi-tier write-scope guardrails to secure autonomous agent workflows across the codebase.</li>
-              <li><strong>Dead Code Elimination:</strong> Led codebase optimization using Knip static analysis, removing 30,000+ lines of unused dead code, unreferenced exports, and orphaned dependencies across 12 monorepo packages.</li>
-              <li><strong>Enterprise Test Reliability:</strong> Architected and maintained a comprehensive 232-spec Playwright regression test suite integrated into Jenkins CI/CD pipelines with zero tolerance for flaky tests.</li>
+              <li><strong>AI Platform & Agentic Engineering:</strong> Architected an automated end-to-end AI test-authoring platform using React and Node.js with real-time feedback streamed via HTTP Web Streams, and engineered production Claude Code skills and MCP servers with strict multi-tier write-scope guardrails.</li>
+              <li><strong>96 Percent Build Speed Acceleration:</strong> Solo executed a 3-week build system migration from Webpack 5 to Rust-powered Rspack across 12 packages at SuperOps, reducing cold start compilation from 2 minutes to 5 seconds.</li>
+              <li><strong>Engineering Squad Leadership:</strong> Led a frontend engineering squad at SuperOps, driving sprint execution, architecture reviews, and cross-team collaboration across product, design, and QA supporting 4,000+ enterprise customers.</li>
+              <li><strong>Developer Mentorship:</strong> Mentored 6 to 7 junior and onboarding software engineers across SuperOps and Freshworks on React best practices, REST API development, and UI architecture to accelerate team ramp-up.</li>
             </ul>
           </div>
 

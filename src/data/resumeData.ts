@@ -27,7 +27,7 @@ export interface SkillCategory {
 
 export const RESUME_DATA = {
   name: "Kannan Appiya Santharam",
-  title: "Senior Lead Software Engineer",
+  title: "Senior Lead Software Engineer (Lead Frontend Engineer)",
   subTitle: "React · Node.js · AI-Native Engineering · Large-Scale Monorepos",
   relocation: {
     targetCity: "Dubai, UAE",
@@ -51,6 +51,14 @@ export const RESUME_DATA = {
   
   metrics: [
     {
+      value: "AI-Native",
+      label: "AI Platform & Agentic Tooling",
+      description: "Architected an AI test platform via Web Streams and built custom Claude Code skills with MCP server guardrails.",
+      subtext: "HTTP Web Streams · MCP Servers · Claude Code",
+      badge: "GenAI & Agentic Tech",
+      iconName: "Bot"
+    },
+    {
       value: "96%",
       label: "Build Speed Acceleration",
       description: "Reduced cold-start compilation from 2 minutes to 5 seconds across 12 packages in a solo Webpack 5 → Rspack migration completed in 3 weeks.",
@@ -59,39 +67,31 @@ export const RESUME_DATA = {
       iconName: "Zap"
     },
     {
-      value: "AI-Native",
-      label: "Test-Authoring & LLM Agents",
-      description: "Architected end-to-end AI test platform from scratch using React & Node.js, orchestrating LLM agents to auto generate, execute, and self-heal Playwright test suites with real-time feedback delivered via HTTP Streamable Web Streams (fetch + ReadableStream).",
-      subtext: "React · Node.js · HTTP Streamable · LLM Agents",
-      badge: "GenAI & Agentic Tech",
-      iconName: "Bot"
+      value: "Squad Lead",
+      label: "Frontend Squad Leadership",
+      description: "Led an engineering squad driving sprint execution, architecture reviews, and cross-team delivery for 4,000+ enterprise customers.",
+      subtext: "Cross-Functional Collaboration · Enterprise Scale",
+      badge: "Engineering Leadership",
+      iconName: "Users"
     },
     {
-      value: "MCP / Claude",
-      label: "Custom Claude Code Skills",
-      description: "Authored custom production Claude Code skills and engineered Model Context Protocol (MCP) servers, establishing strict multi-tier write-scope guardrails to secure autonomous agent workflows across the codebase.",
-      subtext: "Model Context Protocol · Custom Guardrails",
-      badge: "Developer Productivity",
-      iconName: "Cpu"
-    },
-    {
-      value: "30k+",
-      label: "Dead Code Stripped (Knip)",
-      description: "Led static dead-code elimination using Knip analysis, removing 30,000+ lines of unmaintained exports and orphaned dependencies.",
-      subtext: "Knip Static Analysis · Monorepo Hygiene",
-      badge: "Code Health",
-      iconName: "Trash2"
+      value: "6–7 Eng",
+      label: "Developer Mentorship",
+      description: "Mentored 6 to 7 junior and onboarding software engineers across React, REST API development, and UI architecture.",
+      subtext: "Talent Development & Ramp-Up Acceleration",
+      badge: "People & Growth",
+      iconName: "Award"
     }
   ] as MetricItem[],
 
-  aiCapabilities: [
+  aiInitiatives: [
     {
-      title: "LLM Agent Orchestration & Real-Time HTTP Streaming",
-      description: "Built an enterprise AI test-authoring engine using React & Node.js, streaming real-time LLM agent tool calls and test generation over HTTP Streamable Web Streams (fetch + ReadableStream).",
-      tags: ["LLM Agents", "HTTP Streamable", "ReadableStream", "React", "Node.js", "Self-Healing Tests"]
+      title: "AI Test-Authoring Platform via Web Streams",
+      description: "Architected an automated testing platform orchestrating LLM agents to auto-generate, execute, and self-heal Playwright test suites with real-time feedback streamed via HTTP Web Streams.",
+      tags: ["HTTP Web Streams", "fetch + ReadableStream", "LLM Orchestration", "Playwright", "Agent Automation"]
     },
     {
-      title: "Model Context Protocol (MCP) Servers & Skills",
+      title: "Custom Claude Code Skills & MCP Servers",
       description: "Authored custom production Claude Code skills and engineered Model Context Protocol (MCP) servers, enabling agents to query codebase symbol graphs and safely generate refactors.",
       tags: ["Claude Code", "MCP (Model Context Protocol)", "MCP Servers", "Cursor IDE"]
     },
@@ -112,9 +112,9 @@ export const RESUME_DATA = {
       progression: "Senior Software Engineer → Lead Software Engineer → Senior Lead Software Engineer",
       featured: true,
       highlights: [
-        "Led an engineering squad of frontend developers, driving sprint execution, architecture reviews, and cross-team collaboration across product, design, and QA to deliver enterprise features on schedule.",
+        "Led an engineering squad of frontend developers, driving sprint execution, architecture reviews, and cross-team collaboration across product, design, and QA to deliver enterprise features supporting 4,000+ MSP and IT enterprise customers.",
         "Mentored junior and mid-level engineers on React best practices and monorepo code quality, while standardizing a reusable UI SDK framework adopted across product teams.",
-        "Architected an AI test authoring platform from zero using React and Node.js, orchestrating LLM agents over HTTP Streamable Web Streams (fetch + ReadableStream) to auto generate, run, and self-heal end-to-end test suites.",
+        "Architected an AI test authoring platform from zero using React and Node.js, orchestrating LLM agents over HTTP Streamable Web Streams (fetch + ReadableStream) to auto-generate, run, and self-heal end-to-end test suites.",
         "Authored custom production Claude Code skills and engineered Model Context Protocol (MCP) servers, establishing strict multi-tier write-scope guardrails to secure autonomous agent workflows across the codebase.",
         "Executed a solo Webpack 5 to Rspack migration in 3 weeks, reducing cold-start build compilation from 2 minutes to 5 seconds across 12 packages.",
         "Improved application load times through React lazy loading, route-level code splitting and per-package chunking strategy across the monorepo.",

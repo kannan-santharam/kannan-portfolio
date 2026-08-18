@@ -38,7 +38,7 @@ export const CANDIDATE_DETAILED_DOSSIER = `
 - **Role Progression**: Senior Software Engineer → Lead Software Engineer → Senior Lead Software Engineer
 - **Location**: Chennai, India
 - **Key Engineering Achievements**:
-  • Led an engineering squad of frontend developers, driving sprint execution, architecture reviews, and cross-team collaboration across product, design, and QA to deliver enterprise features on schedule.
+  • Led an engineering squad of frontend developers, driving sprint execution, architecture reviews, and cross-team collaboration across product, design, and QA to deliver enterprise features supporting 4,000+ MSP and IT enterprise customers.
   • Mentored junior and mid-level engineers on React best practices and monorepo code quality, while standardizing a reusable UI SDK framework adopted across product teams.
   • Architected an AI test-authoring platform from scratch using React and Node.js, orchestrating LLM agents to auto-generate, execute, and self-heal Playwright test suites with real-time feedback delivered via HTTP Streamable Web Streams (fetch + ReadableStream).
   • Authored custom production Claude Code skills and engineered Model Context Protocol (MCP) servers, establishing strict multi-tier write-scope guardrails to secure autonomous agent workflows across the codebase.
