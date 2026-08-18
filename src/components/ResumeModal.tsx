@@ -48,7 +48,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
             <a
               href="/Kannan_Santharam.pdf"
-              download="Kannan-AS.pdf"
+              download="Kannan_Santharam_Senior_Lead_Software_Engineer.pdf"
               className="flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-[#0052FF] via-[#0066FF] to-[#00D2FF] px-3.5 py-1.5 text-xs font-bold text-white transition-all hover:brightness-110 shadow-md cursor-pointer"
             >
               <Download className="h-3.5 w-3.5" />
@@ -171,14 +171,17 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </h2>
             <div className="space-y-5 mt-3 print:space-y-3 print:mt-1.5">
               {RESUME_DATA.experiences.map((exp) => (
-                <div key={exp.id} className="border-l-2 border-[var(--border-gold)] pl-4 space-y-1.5 print:border-l-0 print:pl-0 print:space-y-1">
-                  <div className="flex flex-wrap items-center justify-between gap-1 print:flex-row print:justify-between">
+                <div key={exp.id} className="space-y-1 print:space-y-1">
+                  <div className="flex flex-wrap items-baseline justify-between gap-1 print:flex-row print:justify-between">
                     <h3 className="text-sm sm:text-base font-bold theme-title print:text-[10pt] print:text-slate-900">
-                      {exp.company} — <span className="font-semibold">{exp.title}</span>
+                      {exp.title}
                     </h3>
-                    <span className="text-xs font-mono theme-gold-text print:text-[9pt] print:text-slate-700 print:font-sans">
-                      {exp.period} | {exp.location}
+                    <span className="text-xs font-mono theme-gold-text print:text-[9pt] print:text-slate-700 print:font-sans font-semibold">
+                      {exp.period}
                     </span>
+                  </div>
+                  <div className="text-xs font-semibold text-[var(--color-primary)] print:text-slate-800">
+                    {exp.company} — {exp.location}
                   </div>
                   
                   {exp.progression && (
