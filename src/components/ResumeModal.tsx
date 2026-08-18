@@ -11,7 +11,13 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
   if (!isOpen) return null;
 
   const handlePrint = () => {
-    window.print();
+    // Open the official PDF in a new window or trigger direct print
+    const printWindow = window.open('/Kannan_Santharam.pdf', '_blank');
+    if (printWindow) {
+      printWindow.focus();
+    } else {
+      window.print();
+    }
   };
 
   return (
