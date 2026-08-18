@@ -127,14 +127,14 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
               <div className="rounded-xl border border-[var(--border-card)] bg-[var(--bg-inner)] p-3.5">
                 <div className="text-lg font-extrabold theme-cyan-text">AI Test Platform</div>
-                <div className="text-xs theme-title font-semibold mt-0.5">LLM Agents & Self-Healing Tests</div>
-                <p className="text-[11px] theme-sub mt-1">Built an AI test-authoring platform from zero, using LLM agents to auto-generate, execute, and self-heal test suites.</p>
+                <div className="text-xs theme-title font-semibold mt-0.5">Test-Authoring & LLM Agents</div>
+                <p className="text-[11px] theme-sub mt-1">Architected end-to-end AI test platform from scratch, orchestrating LLM agents to auto-generate, execute, and self-heal Playwright test suites via Web Streams.</p>
               </div>
 
               <div className="rounded-xl border border-[var(--border-card)] bg-[var(--bg-inner)] p-3.5">
                 <div className="text-lg font-extrabold theme-title">Claude Code & MCP</div>
                 <div className="text-xs theme-title font-semibold mt-0.5">Custom Skills & Write Guardrails</div>
-                <p className="text-[11px] theme-sub mt-1">Authored custom production Claude Code skills using MCP servers, with strict write-scope guardrails securing autonomous agent workflows.</p>
+                <p className="text-[11px] theme-sub mt-1">Authored custom production Claude Code skills and engineered MCP servers, establishing strict write-scope guardrails to secure autonomous agent workflows.</p>
               </div>
 
               <div className="rounded-xl border border-[var(--border-card)] bg-[var(--bg-inner)] p-3.5">

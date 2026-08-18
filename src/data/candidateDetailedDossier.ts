@@ -27,8 +27,8 @@ export const CANDIDATE_DETAILED_DOSSIER = `
 
 ## 2. CAREER HIGHLIGHTS & KEY ENGINEERING METRICS
 - **96% Build Speed Acceleration (Rspack Migration)**: Solo-led a 3-week build migration from Webpack 5 to Rust-powered Rspack across 12 packages at SuperOps. Reduced cold-start compilation from 2 minutes (120s) down to 5 seconds, with HMR hot reloads under 50ms. Saved hundreds of developer hours monthly across distributed teams and accelerated Jenkins CI/CD pipelines.
-- **AI Test-Authoring Platform & Real-Time Streaming**: Architected an automated end-to-end test platform from scratch using React and Node.js streaming autonomous LLM agent tool calls over HTTP Streamable Web Streams (fetch + ReadableStream). Auto-generates, executes, and self-heals Playwright test specs.
-- **Production Claude Code Skills & MCP Servers**: Authored custom production Claude Code skills powered by Model Context Protocol (MCP) servers. Enforced strict write-scope guardrails allowing AI agents to edit feature modules while strictly protecting core system schemas.
+- **AI Test-Authoring Platform & Real-Time Streaming**: Architected an automated end-to-end test platform from scratch using React and Node.js, orchestrating LLM agents to auto-generate, execute, and self-heal Playwright test specs with real-time feedback delivered via HTTP Streamable Web Streams (fetch + ReadableStream).
+- **Production Claude Code Skills & MCP Servers**: Authored custom production Claude Code skills and engineered Model Context Protocol (MCP) servers, establishing strict multi-tier write-scope guardrails to secure autonomous agent workflows across the codebase.
 - **Dead Code Elimination (30k+ Lines with Knip)**: Led codebase optimization using Knip static analysis, identifying and eliminating 30,000+ lines of unused dead code, unreferenced exports, and orphaned dependencies across 12 monorepo packages.
 - **Enterprise Test Reliability (Playwright E2E Suite)**: Architected and maintained a comprehensive 232-spec Playwright regression test suite integrated into Jenkins CI/CD pipelines with zero tolerance for flaky tests.
 
@@ -38,8 +38,8 @@ export const CANDIDATE_DETAILED_DOSSIER = `
 - **Role Progression**: Senior Software Engineer → Lead Software Engineer → Senior Lead Software Engineer
 - **Location**: Chennai, India
 - **Key Engineering Achievements**:
-  • Architected an AI test-authoring platform from zero using React and Node.js, orchestrating LLM agents over HTTP Streamable Web Streams (fetch + ReadableStream) to auto-generate, run, and self-heal end-to-end test suites.
-  • Authored custom production Claude Code skills via MCP servers and enforced strict write-scope guardrails, securing autonomous agent workflows across the codebase.
+  • Architected an AI test-authoring platform from scratch using React and Node.js, orchestrating LLM agents to auto-generate, execute, and self-heal Playwright test suites with real-time feedback delivered via HTTP Streamable Web Streams (fetch + ReadableStream).
+  • Authored custom production Claude Code skills and engineered Model Context Protocol (MCP) servers, establishing strict multi-tier write-scope guardrails to secure autonomous agent workflows across the codebase.
   • Executed a solo Webpack 5 to Rspack migration in 3 weeks, reducing cold-start build compilation from 2 minutes to 5 seconds across 12 packages.
   • Improved application load times through React lazy loading, route-level code splitting and per-package chunking strategy across the monorepo.
   • Eliminated 30,000+ lines of dead code and unused dependencies across the monorepo using Knip static analysis.
@@ -82,7 +82,7 @@ export const CANDIDATE_DETAILED_DOSSIER = `
 ## 5. STRATEGIC TECH GOVERNANCE & ENGINEERING LEADERSHIP
 - **Architectural Guardrails & Monorepo Governance**: Defined strict monorepo write-scope boundaries, component contract standards, and reusable SDK specifications across 12 packages at SuperOps.
 - **Tooling Selection & Build Migration Governance**: Evaluated and governed core build tools, leading the 3-week monorepo migration from Webpack 5 to Rspack resulting in 96% build acceleration (2 minutes down to 5 seconds).
-- **AI Agent Permission & Safety Governance**: Authored custom Claude Code skills powered by Model Context Protocol (MCP) servers, establishing multi-tier Write-Scope Guardrails to allow AI agents to edit feature modules while protecting core system schemas.
+- **AI Agent Permission & Safety Governance**: Authored custom production Claude Code skills and engineered Model Context Protocol (MCP) servers, establishing multi-tier Write-Scope Guardrails to allow AI agents to edit feature modules while protecting core system schemas.
 - **CI/CD Quality Gates & Automated Testing**: Enforced a 232-spec Playwright regression test suite integrated into Jenkins CI pipelines with zero tolerance for flaky tests.
 - **Codebase Health & Dead Code Governance**: Led systematic dead-code elimination and dependency hygiene using Knip static analysis, stripping 30,000+ lines of unmaintained code.
 

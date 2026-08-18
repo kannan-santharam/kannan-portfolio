@@ -61,7 +61,7 @@ export const RESUME_DATA = {
     {
       value: "AI-Native",
       label: "Test-Authoring & LLM Agents",
-      description: "Architected end-to-end AI test platform from scratch using LLM agents over HTTP Streamable Web Streams to auto-generate, execute, and self-heal test suites.",
+      description: "Architected end-to-end AI test platform from scratch using React & Node.js, orchestrating LLM agents to auto-generate, execute, and self-heal Playwright test suites with real-time feedback delivered via HTTP Streamable Web Streams (fetch + ReadableStream).",
       subtext: "React · Node.js · HTTP Streamable · LLM Agents",
       badge: "GenAI & Agentic Tech",
       iconName: "Bot"
@@ -69,7 +69,7 @@ export const RESUME_DATA = {
     {
       value: "MCP / Claude",
       label: "Custom Claude Code Skills",
-      description: "Authored custom production Claude Code skills via MCP servers, enforcing strict write-scope guardrails for safe autonomous agent workflows.",
+      description: "Authored custom production Claude Code skills and engineered Model Context Protocol (MCP) servers, establishing strict multi-tier write-scope guardrails to secure autonomous agent workflows across the codebase.",
       subtext: "Model Context Protocol · Custom Guardrails",
       badge: "Developer Productivity",
       iconName: "Cpu"
@@ -92,7 +92,7 @@ export const RESUME_DATA = {
     },
     {
       title: "Model Context Protocol (MCP) Servers & Skills",
-      description: "Engineered custom production Claude Code skills connected via MCP servers to enable agents to query codebase symbols and safely generate refactors.",
+      description: "Authored custom production Claude Code skills and engineered Model Context Protocol (MCP) servers, enabling agents to query codebase symbol graphs and safely generate refactors.",
       tags: ["Claude Code", "MCP (Model Context Protocol)", "MCP Servers", "Cursor IDE"]
     },
     {
@@ -112,8 +112,8 @@ export const RESUME_DATA = {
       progression: "Senior Software Engineer → Lead Software Engineer → Senior Lead Software Engineer",
       featured: true,
       highlights: [
-        "Architected an AI test-authoring platform from zero using React and Node.js, orchestrating LLM agents over HTTP Streamable Web Streams (fetch + ReadableStream) to auto-generate, run, and self-heal end-to-end test suites.",
-        "Authored custom production Claude Code skills via MCP servers and enforced strict write-scope guardrails, securing autonomous agent workflows across the codebase.",
+        "Architected an AI test-authoring platform from scratch using React and Node.js, orchestrating LLM agents to auto-generate, execute, and self-heal Playwright test suites with real-time feedback delivered via HTTP Streamable Web Streams (fetch + ReadableStream).",
+        "Authored custom production Claude Code skills and engineered Model Context Protocol (MCP) servers, establishing strict multi-tier write-scope guardrails to secure autonomous agent workflows across the codebase.",
         "Executed a solo Webpack 5 to Rspack migration in 3 weeks, reducing cold-start build compilation from 2 minutes to 5 seconds across 12 packages.",
         "Improved application load times through React lazy loading, route-level code splitting and per-package chunking strategy across the monorepo.",
         "Eliminated 30,000+ lines of dead code and unused dependencies across the monorepo using Knip static analysis.",
