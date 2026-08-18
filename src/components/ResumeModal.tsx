@@ -239,7 +239,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             onClick={onClose}
             className="rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] px-6 py-2 text-xs font-semibold theme-title hover:border-[var(--color-primary)] cursor-pointer"
           >
-            Close Executive Viewer
+            Close Resume
           </button>
         </div>
 

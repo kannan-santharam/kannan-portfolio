@@ -162,7 +162,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                   className="flex items-center justify-center gap-2 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] px-5 py-3 text-xs sm:text-sm font-semibold theme-title transition-all hover:border-[var(--color-primary)] hover:bg-[var(--bg-card-hover)] cursor-pointer text-center active:scale-95"
                 >
                   <FileText className="h-4 w-4 shrink-0 theme-cyan-text" />
-                  <span>Interactive Executive View</span>
+                  <span>View Resume</span>
                 </button>
               </div>
 
