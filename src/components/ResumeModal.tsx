@@ -86,17 +86,17 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
               {/* Clean Contact Info */}
               <div className="space-y-1 text-xs theme-sub font-mono print:text-right print:font-sans print:text-[9pt] print:text-slate-700">
                 <div>Phone / BOTIM / WhatsApp: {RESUME_DATA.contact.phone}</div>
-                <div>Email: <a href={`mailto:${RESUME_DATA.contact.email}`} className="text-[var(--color-primary)] hover:underline font-semibold">{RESUME_DATA.contact.email}</a></div>
+                <div>Email: <a href={`mailto:${RESUME_DATA.contact.email}`} className="text-[var(--color-primary)] font-semibold">{RESUME_DATA.contact.email}</a></div>
                 <div className="pt-0.5 flex flex-wrap items-center gap-2 print:justify-end">
-                  <a href={RESUME_DATA.contact.linkedin} target="_blank" rel="noreferrer" className="text-[var(--color-primary)] hover:underline font-bold flex items-center gap-1">
+                  <a href={RESUME_DATA.contact.linkedin} target="_blank" rel="noreferrer" className="text-[var(--color-primary)] font-bold flex items-center gap-1">
                     <span>🔗 LinkedIn</span>
                   </a>
                   <span>·</span>
-                  <a href={RESUME_DATA.contact.github} target="_blank" rel="noreferrer" className="text-[var(--color-primary)] hover:underline font-bold flex items-center gap-1">
+                  <a href={RESUME_DATA.contact.github} target="_blank" rel="noreferrer" className="text-[var(--color-primary)] font-bold flex items-center gap-1">
                     <span>🐙 GitHub</span>
                   </a>
                   <span>·</span>
-                  <a href="https://kannan-ai-dev.vercel.app" target="_blank" rel="noreferrer" className="text-[var(--color-primary)] hover:underline font-bold flex items-center gap-1">
+                  <a href="https://kannan-ai-dev.vercel.app" target="_blank" rel="noreferrer" className="text-[var(--color-primary)] font-bold flex items-center gap-1">
                     <span>🌐 Portfolio</span>
                   </a>
                 </div>
