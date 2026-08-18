@@ -23,7 +23,7 @@ export const CANDIDATE_DETAILED_DOSSIER = `
 - Phone / WhatsApp / BOTIM App: +91 97902 47499
 - LinkedIn: linkedin.com/in/askannan (https://linkedin.com/in/askannan)
 - GitHub: github.com/kannan-santharam (https://github.com/kannan-santharam)
-- Executive Summary: Senior Lead Software Engineer with 10.5+ years of experience delivering high-performance web applications, monorepos, and scalable client architectures for global SaaS products. Specialised in AI-driven development, agentic workflows, LLM orchestration, custom Claude Code skills, MCP servers, and HTTP Streamable architectures. Proven record of leading solo platform migrations, cutting build compilation time by 96%, and setting engineering standards across distributed engineering teams.
+- Executive Summary: Senior Lead Software Engineer with 10.5+ years of experience delivering high-performance web applications, large-scale monorepos, and scalable client architectures for global SaaS products. Specialized in frontend infrastructure, AI-driven engineering workflows, LLM orchestration, custom Claude Code skills, Model Context Protocol (MCP) servers, and HTTP Streamable Web Streams (fetch + ReadableStream). Proven record of leading solo platform migrations, cutting build compilation times by 96%, and establishing code quality guardrails across distributed teams. Experienced in leading engineering squads and mentoring junior developers through cross-team collaboration across product, design, and QA.
 
 ## 2. CAREER HIGHLIGHTS & KEY ENGINEERING METRICS
 - **96% Build Speed Acceleration (Rspack Migration)**: Solo-led a 3-week build migration from Webpack 5 to Rust-powered Rspack across 12 packages at SuperOps. Reduced cold-start compilation from 2 minutes (120s) down to 5 seconds, with HMR hot reloads under 50ms. Saved hundreds of developer hours monthly across distributed teams and accelerated Jenkins CI/CD pipelines.
@@ -38,25 +38,27 @@ export const CANDIDATE_DETAILED_DOSSIER = `
 - **Role Progression**: Senior Software Engineer → Lead Software Engineer → Senior Lead Software Engineer
 - **Location**: Chennai, India
 - **Key Engineering Achievements**:
+  • Led an engineering squad of frontend developers, driving sprint execution, architecture reviews, and cross-team collaboration across product, design, and QA to deliver enterprise features on schedule.
+  • Mentored junior and mid-level engineers on React best practices and monorepo code quality, while standardizing a reusable UI SDK framework adopted across product teams.
   • Architected an AI test-authoring platform from scratch using React and Node.js, orchestrating LLM agents to auto-generate, execute, and self-heal Playwright test suites with real-time feedback delivered via HTTP Streamable Web Streams (fetch + ReadableStream).
   • Authored custom production Claude Code skills and engineered Model Context Protocol (MCP) servers, establishing strict multi-tier write-scope guardrails to secure autonomous agent workflows across the codebase.
   • Executed a solo Webpack 5 to Rspack migration in 3 weeks, reducing cold-start build compilation from 2 minutes to 5 seconds across 12 packages.
   • Improved application load times through React lazy loading, route-level code splitting and per-package chunking strategy across the monorepo.
   • Eliminated 30,000+ lines of dead code and unused dependencies across the monorepo using Knip static analysis.
   • Maintained platform quality and release stability with a 232-spec Playwright regression suite in Jenkins CI.
-  • Sole-authored a reusable API / UI SDK integration framework adopted across product teams, standardising how features consume platform services.
   • Built role-based access control (RBAC) gates and high-frequency polling dashboards using custom cached Apollo query hooks, balancing data freshness against network load.
 
 ### Freshworks — Senior Software Engineer (Jun 2018 – Jul 2022)
 - **Role Progression**: Onboarding Engineer → Senior Software Engineer (Customer-Facing Engineering)
 - **Location**: Chennai, India
 - **Key Engineering Achievements**:
+  • Mentored 6 to 7 junior and onboarding software engineers on React, REST API development, and UI architecture, conducting regular code and design reviews to accelerate ramp-up time.
   • Worked directly with enterprise customers alongside Support, Customer Success, and Sales teams to understand complex requirements, partnering with Product Design to deliver UI solutions.
   • Built UI web pages and REST API services across Freshworks products using React, JavaScript, Node.js, HTML, and SASS.
   • Built a Customer 360 dashboard consolidating all customer support, sales, and account information into a single unified operational view.
   • Integrated tier-1 enterprise SaaS platforms — Jira, Salesforce, Zendesk, and ServiceNow — with Freshworks products through robust REST API services.
   • Awarded the prestigious Customer Champion Award for delivering critical customer UI features ahead of schedule.
-  • Created UI wireframes and design mockups in Balsamiq; mentored junior engineers on add-on development and led code & UI design reviews.
+  • Created UI wireframes and design mockups in Balsamiq, and led code & UI design reviews.
 
 ### Infigenic — Software Developer (Jan 2018 – Jun 2018)
 - **Location**: Bengaluru, India
@@ -91,7 +93,6 @@ export const CANDIDATE_DETAILED_DOSSIER = `
 - **AI Chatbot & Stream Architecture**: Uses real-time HTTP Streamable Web Streams ('fetch' + 'ReadableStream') connected to Google Gemini 1.5 Flash LLM via a Vercel Edge Serverless Function (/api/chat) with server-hidden API keys.
 - **Universal Vector RAG Engine**: Features an offline-capable Universal Subword Vector RAG Engine using word tokens + subword character 3-gram/4-gram embeddings and Cosine Similarity to retrieve candidate context with 100% precision.
 - **LLM Observability**: Integrated with Langfuse Cloud (us.cloud.langfuse.com) for tracking trace IDs, recruiter query sessions, and token latency.
-- **Technical Handover PDF**: Automatically generated executive handover document (Kannan_Santharam_Portfolio_Technical_Architecture_Handover.pdf) built via a custom Python ReportLab script.
 
 ## 7. EDUCATION & PERSONAL DEMOGRAPHICS
 - **Higher Education**: Bachelor of Engineering (B.E.) in Computer Science from K.L.N. College of Information Technology under Anna University (2011 – 2015).

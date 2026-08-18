@@ -28,7 +28,7 @@ export interface SkillCategory {
 export const RESUME_DATA = {
   name: "Kannan Appiya Santharam",
   title: "Senior Lead Software Engineer",
-  subTitle: "React · TypeScript · AI-Native Engineering · Large-Scale Monorepos",
+  subTitle: "React · Node.js · AI-Native Engineering · Large-Scale Monorepos",
   relocation: {
     targetCity: "Dubai, UAE",
     currentLocation: "Chennai, India",
@@ -47,7 +47,7 @@ export const RESUME_DATA = {
     github: "https://github.com/kannan-santharam",
     githubDisplay: "github.com/kannan-santharam",
   },
-  summary: `Senior Lead Software Engineer with 10.5 years of experience delivering high-performance web applications, monorepos, and scalable client architectures for global SaaS products. Specialised in AI-driven development and agentic workflows, LLM orchestration, custom Claude Code skills, MCP servers, and HTTP Streamable Web Streams (fetch + ReadableStream). Proven record of leading solo platform migrations, cutting build compilation time by 96%, and setting engineering standards and safety guardrails across distributed engineering teams. Seeking a Lead Software Engineer / Engineering Manager role with a product-led technology company in Dubai, UAE.`,
+  summary: `Senior Lead Software Engineer with 10.5+ years of experience delivering high-performance web applications, large-scale monorepos, and scalable client architectures for global SaaS products. Specialized in frontend infrastructure, AI-driven engineering workflows, LLM orchestration, custom Claude Code skills, Model Context Protocol (MCP) servers, and HTTP Streamable Web Streams (fetch + ReadableStream). Proven record of leading solo platform migrations, cutting build compilation times by 96%, and establishing code quality guardrails across distributed teams. Experienced in leading engineering squads and mentoring junior developers through cross-team collaboration across product, design, and QA. Seeking a Lead Software Engineer / Engineering Manager role in Dubai, UAE.`,
   
   metrics: [
     {
@@ -61,7 +61,7 @@ export const RESUME_DATA = {
     {
       value: "AI-Native",
       label: "Test-Authoring & LLM Agents",
-      description: "Architected end-to-end AI test platform from scratch using React & Node.js, orchestrating LLM agents to auto-generate, execute, and self-heal Playwright test suites with real-time feedback delivered via HTTP Streamable Web Streams (fetch + ReadableStream).",
+      description: "Architected end-to-end AI test platform from scratch using React & Node.js, orchestrating LLM agents to auto generate, execute, and self-heal Playwright test suites with real-time feedback delivered via HTTP Streamable Web Streams (fetch + ReadableStream).",
       subtext: "React · Node.js · HTTP Streamable · LLM Agents",
       badge: "GenAI & Agentic Tech",
       iconName: "Bot"
@@ -112,13 +112,14 @@ export const RESUME_DATA = {
       progression: "Senior Software Engineer → Lead Software Engineer → Senior Lead Software Engineer",
       featured: true,
       highlights: [
-        "Architected an AI test authoring platform from scratch using React and Node.js, orchestrating LLM agents to auto generate, execute, and self-heal Playwright test suites with real-time feedback delivered via HTTP Streamable Web Streams (fetch + ReadableStream).",
+        "Led an engineering squad of frontend developers, driving sprint execution, architecture reviews, and cross-team collaboration across product, design, and QA to deliver enterprise features on schedule.",
+        "Mentored junior and mid-level engineers on React best practices and monorepo code quality, while standardizing a reusable UI SDK framework adopted across product teams.",
+        "Architected an AI test authoring platform from zero using React and Node.js, orchestrating LLM agents over HTTP Streamable Web Streams (fetch + ReadableStream) to auto generate, run, and self-heal end-to-end test suites.",
         "Authored custom production Claude Code skills and engineered Model Context Protocol (MCP) servers, establishing strict multi-tier write-scope guardrails to secure autonomous agent workflows across the codebase.",
         "Executed a solo Webpack 5 to Rspack migration in 3 weeks, reducing cold-start build compilation from 2 minutes to 5 seconds across 12 packages.",
         "Improved application load times through React lazy loading, route-level code splitting and per-package chunking strategy across the monorepo.",
         "Eliminated 30,000+ lines of dead code and unused dependencies across the monorepo using Knip static analysis.",
         "Maintained platform health with a 232-spec Playwright regression suite in Jenkins CI.",
-        "Sole-authored a reusable API / UI SDK integration framework adopted across product teams, standardising how features consume platform services.",
         "Built role-based access control (RBAC) gates and high-frequency polling dashboards using custom cached Apollo query hooks, balancing data freshness against network load."
       ],
       skills: ["React", "TypeScript", "Rspack", "MCP Servers", "HTTP Streamable", "Claude Code Skills", "GraphQL", "Apollo", "Playwright", "Zustand", "Knip"]
@@ -132,12 +133,13 @@ export const RESUME_DATA = {
       progression: "Onboarding Engineer → Senior Software Engineer (Customer-Facing Engineering)",
       featured: true,
       highlights: [
+        "Mentored 6 to 7 junior and onboarding software engineers on React, REST API development, and UI architecture, conducting regular code and design reviews to accelerate ramp-up time.",
         "Worked directly with enterprise customers alongside Support, Customer Success and Sales teams to understand complex requirements, then partnered with Product Design to deliver UI solutions.",
         "Built UI web pages and REST API services across Freshworks products using React, JavaScript, Node.js, HTML and SASS.",
         "Built a Customer 360 dashboard consolidating all customer support, sales, and account information into a single unified operational view.",
         "Integrated tier 1 enterprise SaaS platforms including Jira, Salesforce, Zendesk and ServiceNow with Freshworks products through robust REST API services.",
         "Implemented multiple Freshworks add-ons and supporting REST API services to solve customer-specific operational use cases.",
-        "Created UI wireframes and design mockups in Balsamiq, mentored engineers on add-on development, and led code & UI design reviews."
+        "Created UI wireframes and design mockups in Balsamiq, and led code & UI design reviews."
       ],
       skills: ["React", "JavaScript", "Node.js", "REST APIs", "SaaS Integrations (Jira, Salesforce, Zendesk, ServiceNow)", "Customer 360", "SASS"]
     },
@@ -152,7 +154,7 @@ export const RESUME_DATA = {
         "Designed and implemented high-converting company web pages and product landing pages.",
         "Built a seamless integration connecting Freshservice with DocuSign using REST API services; the product was subsequently acquired by Freshworks."
       ],
-      skills: ["JavaScript", "DocuSign API", "Freshservice Integration", "REST APIs", "HTML5/CSS3"]
+      skills: ["JavaScript", "HTML5", "CSS3", "REST APIs", "DocuSign API"]
     },
     {
       id: "niche",
@@ -164,9 +166,9 @@ export const RESUME_DATA = {
       highlights: [
         "Designed and implemented responsive web pages, landing pages, and custom plugins for a commercial video-hosting platform.",
         "Built a video player customisation feature from scratch with configurable player buttons, annotations, and call-to-action overlays.",
-        "Implemented an administrative dashboard that dynamically generated Stripe pricing plans based on feature selection, storage tiers, and bandwidth tiers."
+        "Implemented an administrative dashboard that dynamically calculated Stripe pricing plans based on feature selection, storage tiers, and bandwidth limits."
       ],
-      skills: ["JavaScript", "HTML5", "CSS3", "Stripe API", "Video Player Customization", "Admin Dashboards"]
+      skills: ["JavaScript", "HTML5", "CSS3", "Responsive Design", "Stripe API"]
     }
   ] as ExperienceItem[],
 
@@ -188,11 +190,13 @@ export const RESUME_DATA = {
       title: "Software Core & Frameworks",
       category: "frontend",
       skills: [
-        { name: "React (Compiler)", level: "Expert", hot: true },
+        { name: "React", level: "Expert", hot: true },
         { name: "TypeScript", level: "Expert", hot: true },
         { name: "JavaScript (ES6+)", level: "Expert" },
-        { name: "HTML5 & Semantic Web", level: "Expert" },
-        { name: "CSS3 / SASS / Tailwind CSS", level: "Expert" }
+        { name: "HTML5 & CSS3", level: "Expert" },
+        { name: "Tailwind CSS & SASS", level: "Expert" },
+        { name: "Responsive Web Design", level: "Expert" },
+        { name: "Core Web Vitals", level: "Expert" }
       ]
     },
     {
@@ -201,6 +205,7 @@ export const RESUME_DATA = {
       skills: [
         { name: "GraphQL & Apollo Client", level: "Expert", hot: true },
         { name: "HTTP Streamable Web Streams", level: "Expert", hot: true },
+        { name: "Server-Sent Events (SSE)", level: "Expert", hot: true },
         { name: "Zustand State Management", level: "Expert" },
         { name: "REST API Design & Integration", level: "Expert" },
         { name: "Custom Cached Query Hooks", level: "Expert" }
@@ -222,22 +227,24 @@ export const RESUME_DATA = {
       title: "Testing, DevOps & Cloud",
       category: "devops",
       skills: [
-        { name: "Playwright End-to-End Suite", level: "Expert", hot: true },
+        { name: "Playwright End-to-End Suite (232 specs)", level: "Expert", hot: true },
         { name: "Node.js Backend Services", level: "Advanced" },
         { name: "Jenkins CI/CD Pipelines", level: "Proficient" },
+        { name: "Docker", level: "Proficient" },
         { name: "AWS (EC2, S3, Route 53)", level: "Proficient" }
       ]
     },
     {
-      title: "Leadership & Strategy",
+      title: "Leadership & Process",
       category: "leadership",
       skills: [
-        { name: "Technical Team Leadership", level: "Expert" },
-        { name: "Developer Mentorship & Code Reviews", level: "Expert" },
-        { name: "Conducting AI & Tech Knowledge Sessions", level: "Expert", hot: true },
-        { name: "Architecture & Design Reviews", level: "Expert" },
-        { name: "Engineering Safety Standards", level: "Expert" },
-        { name: "Cross-Cultural Collaboration", level: "Expert" }
+        { name: "Engineering Squad Leadership", level: "Expert" },
+        { name: "Developer Mentorship (6 to 7 engineers)", level: "Expert" },
+        { name: "Technical Knowledge Sharing", level: "Expert", hot: true },
+        { name: "Architecture & Code Reviews", level: "Expert" },
+        { name: "Agile Methodology", level: "Expert" },
+        { name: "Git & GitHub Flow", level: "Expert" },
+        { name: "Cross-Team Collaboration", level: "Expert" }
       ]
     }
   ] as SkillCategory[],

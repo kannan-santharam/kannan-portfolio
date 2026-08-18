@@ -48,7 +48,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
             <a
               href="/Kannan_Santharam.pdf"
-              download="Kannan_Appiya_Santharam_Senior_Lead_Software_Engineer.pdf"
+              download="Kannan-AS.pdf"
               className="flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-[#0052FF] via-[#0066FF] to-[#00D2FF] px-3.5 py-1.5 text-xs font-bold text-white transition-all hover:brightness-110 shadow-md cursor-pointer"
             >
               <Download className="h-3.5 w-3.5" />
@@ -84,11 +84,22 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
               </div>
 
               {/* Clean Contact Info */}
-              <div className="space-y-0.5 text-xs theme-sub font-mono print:text-right print:font-sans print:text-[9pt] print:text-slate-700">
+              <div className="space-y-1 text-xs theme-sub font-mono print:text-right print:font-sans print:text-[9pt] print:text-slate-700">
                 <div>Phone / BOTIM / WhatsApp: {RESUME_DATA.contact.phone}</div>
-                <div>Email: {RESUME_DATA.contact.email}</div>
-                <div>LinkedIn: {RESUME_DATA.contact.linkedinDisplay}</div>
-                <div>GitHub: {RESUME_DATA.contact.githubDisplay}</div>
+                <div>Email: <a href={`mailto:${RESUME_DATA.contact.email}`} className="text-[var(--color-primary)] hover:underline font-semibold">{RESUME_DATA.contact.email}</a></div>
+                <div className="pt-0.5 flex flex-wrap items-center gap-2 print:justify-end">
+                  <a href={RESUME_DATA.contact.linkedin} target="_blank" rel="noreferrer" className="text-[var(--color-primary)] hover:underline font-bold flex items-center gap-1">
+                    <span>🔗 LinkedIn</span>
+                  </a>
+                  <span>·</span>
+                  <a href={RESUME_DATA.contact.github} target="_blank" rel="noreferrer" className="text-[var(--color-primary)] hover:underline font-bold flex items-center gap-1">
+                    <span>🐙 GitHub</span>
+                  </a>
+                  <span>·</span>
+                  <a href="https://kannan-ai-dev.vercel.app" target="_blank" rel="noreferrer" className="text-[var(--color-primary)] hover:underline font-bold flex items-center gap-1">
+                    <span>🌐 Portfolio</span>
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -195,12 +206,12 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
               Technical Skills Matrix
             </h2>
             <div className="space-y-1.5 text-xs theme-sub mt-2 print:space-y-0.5 print:text-[9pt] print:text-slate-800 print:mt-1">
-              <div><strong>Frontend Core:</strong> React, React Compiler, TypeScript, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, SASS</div>
-              <div><strong>AI & Agentic Tech:</strong> Claude Code Skills, Model Context Protocol (MCP) Servers, Cursor IDE, LLM Orchestration, Write-Scope Safety, Amazon Bedrock AgentCore</div>
-              <div><strong>State & APIs:</strong> GraphQL, Apollo Client, REST APIs, Zustand, Custom Cached Query Hooks, HTTP Streamable Web Streams (fetch + ReadableStream)</div>
-              <div><strong>Architecture & Build:</strong> Monorepos, Rust-powered Rspack, Webpack 5, Vite, pnpm, Micro-Frontends, Knip Static Analysis, Design Systems, UI SDKs</div>
-              <div><strong>Testing & DevOps:</strong> Playwright E2E Suite (232 specs), Node.js, Jenkins CI/CD Pipelines, AWS (EC2, S3, Route 53)</div>
-              <div><strong>Leadership:</strong> Technical Team Leadership, Code Reviews, Developer Mentorship, Technical Knowledge Sharing, Engineering Governance</div>
+              <div><strong>Frontend Core:</strong> React, TypeScript, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, SASS, Responsive Web Design, Core Web Vitals</div>
+              <div><strong>AI & Agentic Tech:</strong> Claude Code Skills, Model Context Protocol (MCP) Servers, Cursor IDE, LLM Orchestration, HTTP Streamable (ReadableStream), Agent Guardrails & Write-Scope Design</div>
+              <div><strong>State, APIs & Streaming:</strong> GraphQL, Apollo Client, REST APIs, Zustand, Custom Cached Query Hooks, Server-Sent Events (SSE), HTTP Streamable Web Streams</div>
+              <div><strong>Architecture & Build:</strong> Monorepos, Rust-powered Rspack, Webpack 5, Micro-Frontends, Knip Static Analysis, Design Systems, Role-Based Access Control (RBAC)</div>
+              <div><strong>Testing, DevOps & Cloud:</strong> Playwright End-to-End Suite (232 specs), Node.js, Jenkins CI/CD Pipelines, Docker, AWS (EC2, S3, Route 53), Amazon Bedrock AgentCore</div>
+              <div><strong>Leadership & Process:</strong> Engineering Squad Leadership, Developer Mentorship (6 to 7 engineers), Technical Knowledge Sharing, Agile Methodology, Git & GitHub Flow, Architecture & Code Reviews, Cross-Team Collaboration</div>
             </div>
           </div>
 
