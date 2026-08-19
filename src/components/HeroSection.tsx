@@ -149,7 +149,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
               {/* Row 1: Primary Document & Executive CV Actions */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 <a
-                  href="/Kannan_Santharam.pdf"
+                  href="/Kannan_Santharam_Senior_Lead_Software_Engineer.pdf"
                   download="Kannan_Santharam_Senior_Lead_Software_Engineer.pdf"
                   className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#0052FF] via-[#0066FF] to-[#00D2FF] px-5 py-3 text-xs sm:text-sm font-bold text-white transition-all hover:scale-[1.01] hover:shadow-lg hover:shadow-[#0052FF]/30 cursor-pointer text-center active:scale-95 shadow-md"
                 >

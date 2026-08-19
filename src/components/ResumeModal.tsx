@@ -12,7 +12,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
   const handlePrint = () => {
     // Open the official PDF in a new window or trigger direct print
-    const printWindow = window.open('/Kannan_Santharam.pdf', '_blank');
+    const printWindow = window.open('/Kannan_Santharam_Senior_Lead_Software_Engineer.pdf', '_blank');
     if (printWindow) {
       printWindow.focus();
     } else {
@@ -47,7 +47,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </button>
 
             <a
-              href="/Kannan_Santharam.pdf"
+              href="/Kannan_Santharam_Senior_Lead_Software_Engineer.pdf"
               download="Kannan_Santharam_Senior_Lead_Software_Engineer.pdf"
               className="flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-[#0052FF] via-[#0066FF] to-[#00D2FF] px-3.5 py-1.5 text-xs font-bold text-white transition-all hover:brightness-110 shadow-md cursor-pointer"
             >
