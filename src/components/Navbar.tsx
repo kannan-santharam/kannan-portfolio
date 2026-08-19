@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FileText, Menu, X, Sun, Moon, MessageSquare, Bot, Sparkles } from 'lucide-react';
+import { FileText, Menu, X, Sun, Moon, MessageSquare, Bot, Sparkles, ChevronDown } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
 import { useTheme } from '../context/ThemeContext';
 
@@ -10,14 +10,27 @@ interface NavbarProps {
   onNavigate: (sectionId: string) => void;
 }
 
+interface NavItem {
+  name: string;
+  id?: string;
+  children?: { name: string; id: string }[];
+}
+
 export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, activeSection, onNavigate }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [aiMenuOpen, setAiMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
-  const navLinks = [
+  const navItems: NavItem[] = [
     { name: 'Relocation & Visa', id: 'dubai-facts' },
+    {
+      name: 'AI',
+      children: [
+        { name: 'DocMind Project', id: 'ai-project' },
+        { name: 'AI & Architecture', id: 'ai-spotlight' },
+      ],
+    },
     { name: 'Impact Wins', id: 'metrics' },
-    { name: 'AI & Architecture', id: 'ai-spotlight' },
     { name: 'Experience', id: 'experience' },
     { name: 'Technical Skills', id: 'skills' },
   ];
@@ -26,6 +39,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, a
     e.preventDefault();
     onNavigate(id);
     setMobileMenuOpen(false);
+    setAiMenuOpen(false);
   };
 
   return (
@@ -56,19 +70,76 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, a
 
         {/* Desktop Nav Links */}
         <nav className="hidden items-center justify-center gap-1 md:flex lg:gap-2 mx-auto">
-          {navLinks.map((link) => {
-            const isActive = activeSection === link.id;
+          {navItems.map((item) => {
+            if (item.children) {
+              const isActive = item.children.some((child) => child.id === activeSection);
+              return (
+                <div
+                  key={item.name}
+                  className="relative"
+                  onMouseEnter={() => setAiMenuOpen(true)}
+                  onMouseLeave={() => setAiMenuOpen(false)}
+                >
+                  <button
+                    onClick={() => setAiMenuOpen(!aiMenuOpen)}
+                    className={`relative flex items-center gap-1 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
+                      isActive
+                        ? 'theme-gold-badge shadow-sm font-bold'
+                        : 'theme-sub hover:bg-[var(--bg-card-hover)] hover:text-[var(--text-title)]'
+                    }`}
+                  >
+                    {item.name}
+                    <ChevronDown className={`h-3 w-3 transition-transform ${aiMenuOpen ? 'rotate-180' : ''}`} />
+                    {isActive && (
+                      <span className="absolute bottom-0 left-1/2 h-0.5 w-4 -translate-x-1/2 rounded-full bg-[var(--color-primary)]" />
+                    )}
+                  </button>
+
+                  {/* AI Dropdown Menu */}
+                  {aiMenuOpen && (
+                    <div className="absolute left-0 top-full z-50 w-52 pt-1.5">
+                      <div className="rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] p-1.5 shadow-xl">
+                        {item.children.map((child) => (
+                          <button
+                            key={child.id}
+                            onClick={(e) => handleNavClick(e, child.id)}
+                            className={`block w-full rounded-lg px-3 py-2 text-left text-xs font-semibold transition-all cursor-pointer ${
+                              activeSection === child.id
+                                ? 'theme-gold-badge font-bold'
+                                : 'theme-sub hover:bg-[var(--bg-card-hover)] hover:text-[var(--text-title)]'
+                            }`}
+                          >
+                            {child.name}
+                          </button>
+                        ))}
+                        <div className="my-1.5 border-t border-[var(--border-card)]" />
+                        <button
+                          onClick={() => { setAiMenuOpen(false); onOpenChat(); }}
+                          className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs font-bold theme-title transition-all hover:bg-[var(--bg-card-hover)] cursor-pointer"
+                        >
+                          <Bot className="h-3.5 w-3.5 text-[#00D2FF]" />
+                          <span>Ask AI Assistant</span>
+                          <Sparkles className="ml-auto h-3 w-3 text-[#00D2FF]" />
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            }
+
+            const isActive = activeSection === item.id;
             return (
               <button
-                key={link.id}
-                onClick={(e) => handleNavClick(e, link.id)}
+                key={item.id}
+                onClick={(e) => handleNavClick(e, item.id!)}
                 className={`relative rounded-lg px-3 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
                   isActive
                     ? 'theme-gold-badge shadow-sm font-bold'
                     : 'theme-sub hover:bg-[var(--bg-card-hover)] hover:text-[var(--text-title)]'
                 }`}
               >
-                {link.name}
+                {item.name}
                 {isActive && (
                   <span className="absolute bottom-0 left-1/2 h-0.5 w-4 -translate-x-1/2 rounded-full bg-[var(--color-primary)]" />
                 )}
@@ -125,18 +196,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, a
             <span>View CV</span>
           </button>
 
-          {/* Ask AI Button */}
-          <button
-            onClick={onOpenChat}
-            className="group relative flex items-center justify-center overflow-hidden rounded-full p-[1.5px] transition-transform duration-300 hover:scale-105 cursor-pointer ml-1"
-          >
-            <span className="absolute inset-[-150%] animate-spin-border bg-[conic-gradient(from_0deg,#0052FF_0%,#00D2FF_25%,#7C3AED_50%,#00E599_75%,#0052FF_100%)]" />
-            <div className="relative flex items-center gap-1.5 rounded-full bg-[#0B0E14] px-3.5 py-1.5 text-xs font-bold text-white">
-              <Bot className="h-3.5 w-3.5 text-[#00D2FF]" />
-              <span>Ask AI</span>
-              <Sparkles className="h-3 w-3 text-[#00D2FF] group-hover:rotate-12 transition-transform" />
-            </div>
-          </button>
         </div>
 
         {/* Mobile Controls (Hides GitHub/LinkedIn, Shows View CV) */}
@@ -181,19 +240,45 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, a
           </div>
 
           <div className="space-y-1.5">
-            {navLinks.map((link) => {
-              const isActive = activeSection === link.id;
+            {navItems.map((item) => {
+              if (item.children) {
+                return (
+                  <div key={item.name}>
+                    <p className="px-3.5 pt-2 pb-1 text-[10px] font-bold uppercase tracking-wider theme-muted">
+                      {item.name}
+                    </p>
+                    {item.children.map((child) => {
+                      const isActive = activeSection === child.id;
+                      return (
+                        <button
+                          key={child.id}
+                          onClick={(e) => handleNavClick(e, child.id)}
+                          className={`block w-full text-left rounded-xl pl-6 pr-3.5 py-2.5 text-sm font-semibold transition-all cursor-pointer ${
+                            isActive
+                              ? 'theme-gold-badge font-bold'
+                              : 'theme-sub hover:bg-[var(--bg-card-hover)]'
+                          }`}
+                        >
+                          {child.name}
+                        </button>
+                      );
+                    })}
+                  </div>
+                );
+              }
+
+              const isActive = activeSection === item.id;
               return (
                 <button
-                  key={link.id}
-                  onClick={(e) => handleNavClick(e, link.id)}
+                  key={item.id}
+                  onClick={(e) => handleNavClick(e, item.id!)}
                   className={`block w-full text-left rounded-xl px-3.5 py-2.5 text-sm font-semibold transition-all cursor-pointer ${
                     isActive
                       ? 'theme-gold-badge font-bold'
                       : 'theme-sub hover:bg-[var(--bg-card-hover)]'
                   }`}
                 >
-                  {link.name}
+                  {item.name}
                 </button>
               );
             })}

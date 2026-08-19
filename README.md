@@ -31,13 +31,13 @@
 
 ---
 
-## 🤖 Built-In AI Career Assistant (Langfuse + Gemini)
+## 🤖 AI Career Assistant — DocMind (Embedded)
 
-The portfolio includes an integrated conversational AI agent that represents Kannan's career, technical deep-dives, and Dubai relocation readiness:
+The portfolio's "Ask AI" experience is powered by [DocMind](https://docmind-rag-llm.vercel.app), a standalone agentic RAG chatbot ([source](https://github.com/kannan-santharam/DocMind)) preloaded with Kannan's professional profile, embedded full-screen via an iframe overlay:
 
-* **Real-time Streaming:** Native HTTP Streamable Web Streams (`fetch` + `ReadableStream`) with real-time UI token updates.
-* **Observability & Guardrails:** Integrated with [Langfuse](https://langfuse.com/) for production trace logging, token telemetry, latency tracking, and query evaluation.
-* **Resilient Model Cascading:** Automatic fallback across Gemini models to prevent quota exhaustion and ensure 99.9% uptime.
+* **Agentic RAG:** A tool-calling Gemini agent decides *when* to retrieve, rewrites its own query when results come back thin, and streams its decision trail to the UI.
+* **Grounded Answers:** Every answer cites the exact source passage; recruiters can also upload their own job description and ask against it.
+* **Stack:** Next.js 16, TypeScript, Gemini function calling, Supabase Postgres + pgvector (HNSW, cosine), [Langfuse](https://langfuse.com/) tracing, deployed on Vercel.
 
 ---
 
@@ -57,11 +57,7 @@ cd kannan-portfolio
 # 2. Install dependencies
 pnpm install
 
-# 3. Configure environment variables (optional for local AI assistant)
-cp .env.example .env.local
-# Add GEMINI_API_KEY and LANGFUSE keys in .env.local
-
-# 4. Start local development server with dev chat middleware
+# 3. Start local development server
 pnpm dev
 ```
 
@@ -80,17 +76,13 @@ pnpm run preview
 ## 📁 Repository Structure
 
 ```text
-├── api/
-│   └── chat.ts                     # Vercel Serverless Function (Gemini Streaming + Langfuse)
 ├── public/
 │   ├── Kannan_Santharam_Senior_Lead_Software_Engineer.pdf   # Canonical ATS Resume PDF
 │   ├── Kannan_Santharam_Cover_Letter_Careem.pdf             # Executive Careem Cover Letter PDF
 │   └── favicon.svg, icons.svg, kannanphoto.jpeg
 ├── src/
-│   ├── components/                 # React UI Components (Hero, Resume Modal, AI Chatbot, etc.)
-│   ├── data/                       # Resume data, Candidate Dossier, and Skills Matrix
-│   ├── services/                   # Client-side AI Chat & Streaming Services
-│   ├── server/                     # Dev server middleware (devChatMiddleware.ts)
+│   ├── components/                 # React UI Components (Hero, Resume Modal, DocMind Overlay, etc.)
+│   ├── data/                       # Resume data and Skills Matrix
 │   └── index.css, App.tsx, main.tsx
 ├── vite.config.ts                  # Clean, declarative Vite configuration
 └── package.json

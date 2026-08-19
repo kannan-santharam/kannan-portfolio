@@ -199,6 +199,31 @@ html.light .text-gold-gradient {
   animation: spinConicBorder 1.8s linear infinite;
 }
 
+/* Comet light circling an element's border (DocMind ask bar) */
+@property --border-run-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.animate-border-run {
+  background: conic-gradient(
+    from var(--border-run-angle),
+    #0052FF 0%,
+    #00D2FF 25%,
+    #7C3AED 50%,
+    #00E599 75%,
+    #0052FF 100%
+  );
+  animation: borderRun 1.2s linear infinite;
+}
+
+@keyframes borderRun {
+  to {
+    --border-run-angle: 360deg;
+  }
+}
+
 /* Glowing Lapis & Cyan Gradient Animation */
 @keyframes techGradientMove {
   0% {

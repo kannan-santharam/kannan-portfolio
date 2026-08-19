@@ -9,7 +9,8 @@ import { ExperienceTimeline } from './components/ExperienceTimeline';
 import { SkillMatrix } from './components/SkillMatrix';
 import { ContactFooter } from './components/ContactFooter';
 import { ResumeModal } from './components/ResumeModal';
-import { AiChatbotWidget } from './components/AiChatbotWidget';
+import { DocMindShowcase } from './components/DocMindShowcase';
+import { DocMindOverlay } from './components/DocMindOverlay';
 
 function MainLayout() {
   const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
@@ -19,7 +20,7 @@ function MainLayout() {
   const isManualNavRef = useRef(false);
   const manualNavTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const sectionIds = ['hero', 'dubai-facts', 'metrics', 'ai-spotlight', 'experience', 'skills', 'contact'];
+  const sectionIds = ['hero', 'dubai-facts', 'ai-project', 'metrics', 'ai-spotlight', 'experience', 'skills', 'contact'];
 
   // Mouse Movement Ambient Glow Listener
   useEffect(() => {
@@ -83,7 +84,7 @@ function MainLayout() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--bg-page)] text-[var(--text-body)] font-sans transition-colors duration-250 relative">
+    <div className="min-h-screen bg-[var(--bg-page)] text-[var(--text-body)] font-sans transition-colors duration-250 relative pb-20 sm:pb-24">
       
       {/* Interactive Mouse Movement Ambient Lighting Layer */}
       <div 
@@ -107,6 +108,9 @@ function MainLayout() {
       {/* Recruiter Quick Facts Bar */}
       <DubaiRecruiterFacts />
 
+      {/* DocMind Featured AI Project */}
+      <DocMindShowcase />
+
       {/* Proven Metrics Grid */}
       <MetricsGrid />
 
@@ -122,8 +126,8 @@ function MainLayout() {
       {/* Contact & Footer */}
       <ContactFooter />
 
-      {/* Floating AI Chatbot Assistant */}
-      <AiChatbotWidget isOpen={isChatOpen} onOpenChange={setIsChatOpen} />
+      {/* Full-Screen DocMind AI Assistant Overlay */}
+      <DocMindOverlay isOpen={isChatOpen} onOpenChange={setIsChatOpen} />
 
       {/* Full Resume View Modal */}
       <ResumeModal
