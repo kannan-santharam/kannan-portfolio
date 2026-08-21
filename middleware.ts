@@ -1,6 +1,6 @@
 import { geolocation, next } from '@vercel/functions';
 
-export const config = { matcher: ['/', '/ind'] };
+export const config = { matcher: '/' };
 
 export default function middleware(request: Request) {
   const cookieHeader = request.headers.get('cookie') ?? '';

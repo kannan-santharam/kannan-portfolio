@@ -1,137 +1,830 @@
 %PDF-1.4
-%“Œ‹ž ReportLab Generated PDF document (opensource)
+%âãÏÓ
 1 0 obj
 <<
-/F1 2 0 R /F2 3 0 R /F3 8 0 R /F4 9 0 R
+/Producer (pypdf)
 >>
 endobj
 2 0 obj
 <<
-/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+/Type /Pages
+/Count 2
+/Kids [ 4 0 R 11 0 R ]
 >>
 endobj
 3 0 obj
 <<
-/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+/Type /Catalog
+/Pages 2 0 R
+/Outlines 13 0 R
 >>
 endobj
 4 0 obj
 <<
-/A <<
-/S /URI /Type /Action /URI (mailto:as.kannan4@gmail.com)
->> /Border [ 0 0 0 ] /Rect [ 438.72 759.3898 546.1258 771.3898 ] /Subtype /Link /Type /Annot
+/Contents 5 0 R
+/MediaBox [ 0 0 595.2756 841.8898 ]
+/Resources <<
+/Font 6 0 R
+/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+/Parent 2 0 R
+/Annots [ 14 0 R 15 0 R 16 0 R 17 0 R ]
 >>
 endobj
 5 0 obj
 <<
-/A <<
-/S /URI /Type /Action /URI (https://linkedin.com/in/askannan)
->> /Border [ 0 0 0 ] /Rect [ 98.5578 745.3898 210.8278 757.3898 ] /Subtype /Link /Type /Annot
+/Length 9645
 >>
+stream
+1 0 0 1 0 0 cm
+BT
+/F1 12 Tf
+14.4 TL
+ET
+q
+1 0 0 1 49.15 787.8898 cm
+q
+0.180392 0.454902 0.709804 rg
+BT
+1 0 0 1 0 3 Tm
+/F2 21 Tf
+24 TL
+90.4208 0.0 Td
+(KANNAN APPIYA SANTHARAM) Tj
+T*
+-90.4208 0.0 Td
+ET
+Q
+Q
+q
+1 0 0 1 49.15 786.3898 cm
+Q
+q
+1 0 0 1 49.15 772.3898 cm
+q
+BT
+1 0 0 1 0 3.5 Tm
+1.664295 0 Td
+14 TL
+/F2 10.5 Tf
+0.2 0.2 0.2 rg
+(Senior Lead Software Engineer \050Lead Frontend Engineer\051  ) Tj
+(\174) Tj
+(  React \267 Node\056js \267 AI\055Native Engineering) Tj
+T*
+-1.664295 0 Td
+ET
+Q
+Q
+q
+1 0 0 1 49.15 771.3898 cm
+Q
+q
+1 0 0 1 49.15 758.3898 cm
+q
+BT
+1 0 0 1 0 3 Tm
+-0.000232 Tw
+13 TL
+/F1 10 Tf
+0.2 0.2 0.2 rg
+(Chennai\054 India \227 Ready to Relocate to Dubai\054 UAE  ) Tj
+(\174) Tj
+(  \05391 97902 47499 \050WhatsApp\051  ) Tj
+(\174) Tj
+(  ) Tj
+0 0.321569 1 rg
+(as\056kannan4\100gmail\056com) Tj
+T*
+0 Tw
+ET
+Q
+Q
+q
+1 0 0 1 49.15 757.3898 cm
+Q
+q
+1 0 0 1 49.15 744.3898 cm
+q
+BT
+1 0 0 1 0 3 Tm
+49.4078 0 Td
+13 TL
+/F1 10 Tf
+0 0.321569 1 rg
+(linkedin\056com\057in\057askannan) Tj
+0.2 0.2 0.2 rg
+(  ) Tj
+( ) Tj
+(\174) Tj
+( ) Tj
+(  ) Tj
+0 0.321569 1 rg
+(github\056com\057kannan\055santharam) Tj
+0.2 0.2 0.2 rg
+(  ) Tj
+( ) Tj
+(\174) Tj
+( ) Tj
+(  ) Tj
+0 0.321569 1 rg
+(kannan\055ai\055dev\056vercel\056app) Tj
+T*
+-49.4078 0 Td
+ET
+Q
+Q
+q
+1 0 0 1 49.15 743.3898 cm
+Q
+q
+1 0 0 1 49.15 730.3898 cm
+q
+BT
+1 0 0 1 0 3 Tm
+19.1428 0 Td
+13 TL
+/F2 10 Tf
+0.2 0.2 0.2 rg
+(Nationality\072) Tj
+/F1 10 Tf
+( Indian  ) Tj
+(\174) Tj
+(  ) Tj
+/F2 10 Tf
+(Visa Status\072) Tj
+/F1 10 Tf
+( Employment Visa Sponsorship Required  ) Tj
+(\174) Tj
+(  ) Tj
+/F2 10 Tf
+(Notice Period\072) Tj
+/F1 10 Tf
+( 60 Days) Tj
+T*
+-19.1428 0 Td
+ET
+Q
+Q
+q
+1 0 0 1 49.15 728.3898 cm
+Q
+q
+1 0 0 1 49.15 709.3898 cm
+q
+0.121569 0.219608 0.392157 rg
+BT
+1 0 0 1 0 3.5 Tm
+/F2 11.5 Tf
+15 TL
+(PROFESSIONAL SUMMARY) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 49.15 707.3898 cm
+q
+1 w
+1 J
+0.121569 0.219608 0.392157 RG
+n
+0 0 m
+496.9756 0 l
+S
+Q
+Q
+q
+1 0 0 1 49.15 594.4898 cm
+q
+0.2 0.2 0.2 rg
+BT
+1 0 0 1 0 99.9 Tm
+/F1 10.5 Tf
+13.8 TL
+(Senior Lead Software Engineer \050Lead Frontend Engineer\051 with 10\0565\053 years of experience delivering) Tj
+T*
+(high\055performance web applications\054 large\055scale monorepos\054 and scalable client architectures for global) Tj
+T*
+(SaaS products\056 Specialised in frontend infrastructure\054 AI\055driven engineering workflows\054 LLM orchestration\054) Tj
+T*
+(custom Claude Code skills\054 Model Context Protocol \050MCP\051 servers\054 and HTTP Streamable Web Streams) Tj
+T*
+(\050fetch \053 ReadableStream\051\056 Proven record of leading solo platform migrations\054 cutting build compilation) Tj
+T*
+(times by 96\045\054 and establishing code quality guardrails across distributed teams\056 Experienced in leading) Tj
+T*
+(engineering squads and mentoring junior developers through cross\055team collaboration across product\054) Tj
+T*
+(design\054 and QA\056 Seeking a Lead Software Engineer \057 Engineering Manager role in Dubai\054 UAE\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 49.15 592.9898 cm
+Q
+q
+1 0 0 1 49.15 573.9898 cm
+q
+0.121569 0.219608 0.392157 rg
+BT
+1 0 0 1 0 3.5 Tm
+/F2 11.5 Tf
+15 TL
+(CAREER HIGHLIGHTS) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 49.15 571.9898 cm
+q
+1 w
+1 J
+0.121569 0.219608 0.392157 RG
+n
+0 0 m
+496.9756 0 l
+S
+Q
+Q
+q
+1 0 0 1 49.15 514.2898 cm
+q
+BT
+1 0 0 1 14 44.7 Tm
+-10 0 Td
+13.8 TL
+/F1 10.5 Tf
+0.2 0.2 0.2 rg
+(\225   Architected an AI test\055authoring platform from zero\054 orchestrating LLM agents over HTTP Streamable) Tj
+T*
+10 0 Td
+(Web Streams \050fetch \053 ReadableStream\051 to auto\055generate\054 execute\054 and self\055heal end\055to\055end test suites\054) Tj
+T*
+(while engineering custom Claude Code skills and Model Context Protocol \050MCP\051 servers with strict) Tj
+T*
+(write\055scope guardrails\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 49.15 513.4898 cm
+Q
+q
+1 0 0 1 49.15 485.8898 cm
+q
+BT
+1 0 0 1 14 17.1 Tm
+-10 0 Td
+13.8 TL
+/F1 10.5 Tf
+0.2 0.2 0.2 rg
+(\225   Reduced cold\055start build compilation from 2 minutes to 5 seconds\054 a 96\045 improvement\054 through a solo) Tj
+T*
+10 0 Td
+(Webpack 5 to Rspack migration completed in 3 weeks across 12 monorepo packages\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 49.15 485.0898 cm
+Q
+q
+1 0 0 1 49.15 457.4898 cm
+q
+BT
+1 0 0 1 14 17.1 Tm
+-10 0 Td
+13.8 TL
+/F1 10.5 Tf
+0.2 0.2 0.2 rg
+(\225   Led an engineering squad of frontend developers at SuperOps\054 driving sprint execution\054 architecture) Tj
+T*
+10 0 Td
+(reviews\054 and cross\055team delivery supporting 4\054000\053 MSP and IT enterprise customers\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 49.15 456.6898 cm
+Q
+q
+1 0 0 1 49.15 429.0898 cm
+q
+BT
+1 0 0 1 14 17.1 Tm
+-10 0 Td
+13.8 TL
+/F1 10.5 Tf
+0.2 0.2 0.2 rg
+(\225   Mentored 6 to 7 junior and onboarding software engineers across SuperOps and Freshworks on React) Tj
+T*
+10 0 Td
+(best practices\054 REST API development\054 and UI architecture to accelerate team ramp\055up\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 49.15 428.2898 cm
+Q
+q
+1 0 0 1 49.15 426.7898 cm
+Q
+q
+1 0 0 1 49.15 407.7898 cm
+q
+0.121569 0.219608 0.392157 rg
+BT
+1 0 0 1 0 3.5 Tm
+/F2 11.5 Tf
+15 TL
+(TECHNICAL SKILLS) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 49.15 405.7898 cm
+q
+1 w
+1 J
+0.121569 0.219608 0.392157 RG
+n
+0 0 m
+496.9756 0 l
+S
+Q
+Q
+q
+1 0 0 1 49.15 375.6898 cm
+q
+BT
+1 0 0 1 0 17.1 Tm
+13.8 TL
+/F2 10.5 Tf
+0.2 0.2 0.2 rg
+(AI \046 Agentic Tooling\072) Tj
+/F1 10.5 Tf
+( Claude Code\054 Model Context Protocol \050MCP\051 Servers\054 Cursor IDE\054 LLM) Tj
+T*
+(Orchestration\054 HTTP Streamable \050ReadableStream\051\054 Agent Guardrails \046 Write\055Scope Design) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 49.15 374.8898 cm
+Q
+q
+1 0 0 1 49.15 347.2898 cm
+q
+BT
+1 0 0 1 0 17.1 Tm
+13.8 TL
+/F2 10.5 Tf
+0.2 0.2 0.2 rg
+(Frontend Core\072) Tj
+/F1 10.5 Tf
+( React\054 TypeScript\054 JavaScript \050ES6\053\051\054 HTML5\054 CSS3\054 Tailwind CSS\054 SASS\054 Responsive) Tj
+T*
+(Web Design\054 Core Web Vitals) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 49.15 346.4898 cm
+Q
+q
+1 0 0 1 49.15 318.8898 cm
+q
+BT
+1 0 0 1 0 17.1 Tm
+13.8 TL
+/F2 10.5 Tf
+0.2 0.2 0.2 rg
+(State\054 APIs \046 Streaming\072) Tj
+/F1 10.5 Tf
+( GraphQL\054 Apollo Client\054 Zustand\054 REST API Design\054 Custom Cached Query) Tj
+T*
+(Hooks\054 Server\055Sent Events \050SSE\051\054 HTTP Streamable Web Streams) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 49.15 318.0898 cm
+Q
+q
+1 0 0 1 49.15 290.4898 cm
+q
+BT
+1 0 0 1 0 17.1 Tm
+13.8 TL
+/F2 10.5 Tf
+0.2 0.2 0.2 rg
+(Architecture\072) Tj
+/F1 10.5 Tf
+( Monorepos\054 Micro\055Frontends\054 Design Systems\054 Role\055Based Access Control \050RBAC\051\054) Tj
+T*
+(Module Federation) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 49.15 289.6898 cm
+Q
+q
+1 0 0 1 49.15 275.8898 cm
+q
+BT
+1 0 0 1 0 3.3 Tm
+13.8 TL
+/F2 10.5 Tf
+0.2 0.2 0.2 rg
+(Build \046 Performance\072) Tj
+/F1 10.5 Tf
+( Rspack\054 Webpack 5\054 Code Splitting\054 Knip Static Analysis\054 Bundle Optimisation) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 49.15 275.0898 cm
+Q
+q
+1 0 0 1 49.15 247.4898 cm
+q
+BT
+1 0 0 1 0 17.1 Tm
+13.8 TL
+/F2 10.5 Tf
+0.2 0.2 0.2 rg
+(Testing\054 Cloud \046 DevOps\072) Tj
+/F1 10.5 Tf
+( Playwright End\055to\055End Suite \050232 specs\051\054 Node\056js\054 Jenkins CI\057CD Pipelines\054) Tj
+T*
+(Docker\054 AWS \050EC2\054 S3\054 Route 53\051\054 Amazon Bedrock AgentCore) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 49.15 246.6898 cm
+Q
+q
+1 0 0 1 49.15 205.2898 cm
+q
+BT
+1 0 0 1 0 30.9 Tm
+13.8 TL
+/F2 10.5 Tf
+0.2 0.2 0.2 rg
+(Leadership \046 Process\072) Tj
+/F1 10.5 Tf
+( Engineering Squad Leadership\054 Developer Mentorship \0506 to 7 engineers\051\054) Tj
+T*
+(Technical Knowledge Sharing\054 Agile Methodology\054 Git \046 GitHub Flow\054 Architecture \046 Code Reviews\054) Tj
+T*
+(Cross\055Team Collaboration) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 49.15 204.4898 cm
+Q
+q
+1 0 0 1 49.15 202.9898 cm
+Q
+q
+1 0 0 1 49.15 183.9898 cm
+q
+0.121569 0.219608 0.392157 rg
+BT
+1 0 0 1 0 3.5 Tm
+/F2 11.5 Tf
+15 TL
+(PROFESSIONAL EXPERIENCE) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 49.15 181.9898 cm
+q
+1 w
+1 J
+0.121569 0.219608 0.392157 RG
+n
+0 0 m
+496.9756 0 l
+S
+Q
+Q
+q
+1 0 0 1 49.15 165.9898 cm
+q
+0 0 0 rg
+BT
+/F1 10 Tf
+12 TL
+ET
+q
+1 0 0 1 0 0 cm
+q
+0.2 0.2 0.2 rg
+BT
+1 0 0 1 0 3 Tm
+/F2 10.5 Tf
+13.5 TL
+(Senior Lead Software Engineer) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 345 0 cm
+q
+0.2 0.2 0.2 rg
+BT
+1 0 0 1 0 3 Tm
+/F2 10.5 Tf
+13.5 TL
+72.3365 0 Td
+(Jul 2022 \226 Present) Tj
+T*
+-72.3365 0 Td
+ET
+Q
+Q
+q
+Q
+Q
+Q
+q
+1 0 0 1 49.15 152.4898 cm
+q
+0.180392 0.454902 0.709804 rg
+BT
+1 0 0 1 0 3 Tm
+/F2 10.5 Tf
+13.5 TL
+(SuperOps \227 Chennai\054 India) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 49.15 140.4898 cm
+q
+0.333333 0.333333 0.333333 rg
+BT
+1 0 0 1 0 3 Tm
+/F3 9 Tf
+12 TL
+(Progression\072 Senior Software Engineer ) Tj
+/F4 9 Tf
+12 TL
+(\256) Tj
+/F3 9 Tf
+12 TL
+( Lead Software Engineer ) Tj
+/F4 9 Tf
+12 TL
+(\256) Tj
+/F3 9 Tf
+12 TL
+( Senior Lead Software Engineer) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 49.15 139.6898 cm
+Q
+q
+1 0 0 1 49.15 98.28976 cm
+q
+BT
+1 0 0 1 14 30.9 Tm
+-10 0 Td
+13.8 TL
+/F1 10.5 Tf
+0.2 0.2 0.2 rg
+(\225   Led an engineering squad of frontend developers\054 driving sprint execution\054 architecture reviews\054 and) Tj
+T*
+10 0 Td
+(cross\055team collaboration across product\054 design\054 and QA to deliver enterprise features supporting) Tj
+T*
+(4\054000\053 MSP and IT enterprise customers\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 49.15 97.48976 cm
+Q
+q
+1 0 0 1 49.15 69.88976 cm
+q
+BT
+1 0 0 1 14 17.1 Tm
+-10 0 Td
+13.8 TL
+/F1 10.5 Tf
+0.2 0.2 0.2 rg
+(\225   Mentored junior and mid\055level engineers on React best practices and monorepo code quality\054 while) Tj
+T*
+10 0 Td
+(standardising a reusable UI SDK framework adopted across product teams\056) Tj
+T*
+ET
+Q
+Q
+q
+1 0 0 1 49.15 69.08976 cm
+Q
+q
+1 0 0 1 49.15 41.48976 cm
+q
+BT
+1 0 0 1 14 17.1 Tm
+-10 0 Td
+13.8 TL
+/F1 10.5 Tf
+0.2 0.2 0.2 rg
+(\225   Architected an AI test\055authoring platform from zero using React and Node\056js\054 orchestrating LLM agents) Tj
+T*
+10 0 Td
+(over HTTP Streamable Web Streams \050fetch \053 ReadableStream\051 to auto\055generate\054 run\054 and self\055heal) Tj
+T*
+ET
+Q
+Q
+
+endstream
 endobj
 6 0 obj
 <<
-/A <<
-/S /URI /Type /Action /URI (https://github.com/kannan-santharam)
->> /Border [ 0 0 0 ] /Rect [ 230.1078 745.3898 365.1678 757.3898 ] /Subtype /Link /Type /Annot
+/F1 7 0 R
+/F2 8 0 R
+/F3 9 0 R
+/F4 10 0 R
 >>
 endobj
 7 0 obj
 <<
-/A <<
-/S /URI /Type /Action /URI (https://kannan-ai-dev.vercel.app)
->> /Border [ 0 0 0 ] /Rect [ 384.4478 745.3898 496.7178 757.3898 ] /Subtype /Link /Type /Annot
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
 >>
 endobj
 8 0 obj
 <<
-/BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+/Name /F2
+/Subtype /Type1
+/Type /Font
 >>
 endobj
 9 0 obj
 <<
-/BaseFont /Symbol /Name /F4 /Subtype /Type1 /Type /Font
+/BaseFont /Helvetica-Oblique
+/Encoding /WinAnsiEncoding
+/Name /F3
+/Subtype /Type1
+/Type /Font
 >>
 endobj
 10 0 obj
 <<
-/Annots [ 4 0 R 5 0 R 6 0 R 7 0 R ] /Contents 15 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 14 0 R /Resources <<
-/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
->> /Rotate 0 
-  /Trans <<
-
->> /Type /Page
+/BaseFont /Symbol
+/Name /F4
+/Subtype /Type1
+/Type /Font
 >>
 endobj
 11 0 obj
 <<
-/Contents 16 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 14 0 R /Resources <<
-/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
->> /Rotate 0 /Trans <<
-
->> 
-  /Type /Page
+/Contents 12 0 R
+/MediaBox [ 0 0 595.2756 841.8898 ]
+/Resources <<
+/Font 6 0 R
+/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+/Parent 2 0 R
 >>
 endobj
 12 0 obj
 <<
-/PageMode /UseNone /Pages 14 0 R /Type /Catalog
+/Filter [ /ASCII85Decode /FlateDecode ]
+/Length 2880
 >>
+stream
+GauHM?$G!n(4=H3\50`^/h$Q![/4AIB*V6!aTSn0B9-C<WIZ*LC.04VfO)DD/HN.C<oROGNks)@e[N,-h7AS52LZY;(p/XtB(YMD6]OgG"Za<Ye*J;bcea%rj4'^n6d#dL(lg.o'TR,E`c0IGf^[(i4IWConZ7keg<=26JY(80li5Y$/pJ$'$e<92'g+,t0*RrL[l!uAAq/9Rr=qQ;G90q*IHM9=6"#]+en&'Z?<H+4Dp@;0(#HQ?5X^rMYu2I#.4XpUXXVLo>XjED$&p5]@npNfL\sG/R1hqM4B[PpF+):bL*SsE'`@]W5%U`jOcjg9EBF/As)o4FDFkX)cQ7@tpBZSZ\J4j3,YQ:<9LK&d93I("+a?JG$t/c"8>ViB--P;,$/E0iPk1it33fbcM-?qm.pDM>TT.)8(/f#?h*!DnPc5YSX>iXNjdbGF'7JeS\"iC%/\_I;B4s</6N?n+"B5@m7_+\>^@HQlU'D$IYb-".pKB+(Ai<%&jO&_R#=&Rib=KMU^uIWJbR0f*6=M1i3Yes3@ZdY_d5JM%1;R6*U4L<`,r(L_&4:d-gB,uE]".uZcjJDJ$sV3EeUUBF+R#R)/5;ssW[O]Q82IO%&Zmfg/m%\51N5sls)-(0J-'6g62)[T"D8rHC.qJ=)FVj9P\9qUnfu5M<LGu!A7YpODQ1IU27T%D<-?#7J?H7lpL%\'_)rgSUqg:mbqRK3fs^j'P"=H"e:M/TiX,o2I@6<[4r*Z'R`1I]nGH7E<9>*RT+d>.Vg!^ZLbKd3gK\j+B.sVcEctnK(j(W(&#4-f6rMqZEMc9gL!%uRi_1+<g'BepE]pn(V`^\LP&2@0b>j*e>@p"D2:7A?lSQ95RLV?;-e<>Ug7j;2]Wh2CQa:W0($#A<=-E<cr#o^I#_?C0P9Me<rV>`!I/fLu9T+I6_$UeK(E*6RJc].KQ'?U,A!X=\$::97qd1(rj"t2l$MV*\f."Q^fp5Z2Bt]rkac`TkXC)SdT!&d?)RdSETL(!<cmiq][?EW_Sen?c#+!k)l8XbQC7DJEq.=7LCh!t1,AU,D#e\PM]"(Zr),@pCi9p=Bq\87>/uC`C.\itH'H;etF^8'Fm(h6R$0Cuu$okjBr-]ud7jrV2nG;5T!\8BZT\cuD1*P7m7Kh-JkbaShjgr&cpRchX^Q)YsmRdJ-oCg7/cH,]G/Bn_'d)P\(%S*u-"0d4#*7::tp#:]_?L]:LU.:Cm(9E-4_._2#N+`.;oB2FYGSD34Duj=P;h0AE08W8Rk$F0Qb.A2`PH4--?r.@rSW;Ffcl#\g"g,-AJtWpN>=!/cXc,7[BWEh_hb(4qXVC&N6bWq=k6t3oP,\TXkk"Ih7[K_oW%=mZ.U?Q,SseQ\j@DL;(9O76;#um4dlM'A-uK%p/g\[NjXTE'==/:m;=KQ"10WHYf@?9E[SH^2C+MZ;P\AjBG#[::O87I*r<c0_;CaLj.^rFFM/"2a+A.nMF+HTSAX]V-E:$U+mo0q&+db$a%1d)e'7YkESY606nI_k$lkH,p<7bi,a0##(5aP@'',\Hb8;s<&C\^s&!;*u,)3_u#$WqU_"cs)FWaf,E9KLRD8(Omb?/+%BJ**d*AHJVh7psM$l9,Z#'-a0']4n3;h>?Pr>g;1Gp;j+.-ISW4K^9`SB`/,PJ"#2BXEN]G3pf>S[U1FZrm9J2G%O_+JP"_65*U2\C?Rkb9!`NT;JLj*p8%V%%b%3?d]O,.q*l8JaU)6VeXnO@KTFF(/i<L"ZWF:CUV>X4nT/gbBNTCU`H=+Dn1;fe;Imr&FDhS1`/uU1^tjg*or<DW:]tM/O#G,U6abqhU$gFMABthlV[0_L;kC>$'.i$fTa:EgE;h&3Q:i.(!*Z6ka3/)GYW2''4pHqX;Cn"p7gZ*jG9n>,FB:O;Uoh+.TSI3"MY?>cM%-1tQZ=0Wdmg.b2AG21)\QkmJYXnpG\XdgldK$+%qVcO6s!(ECb<A$`D?%on+C8_XIaiY;rL)7g=bCA)XnE8%6O+[o"dD_n@nGp03Ff1k&=TV%%Y)LAPX=ap$1ISRih';\/qI!5,6#d,R^l1)iT+8n`.-"\Q<`I9U8iWI6Q88HFER5?I4.7oifdFY!BI[TWVsaK0FNhanAlr7GDHC1jsD=e3Rn(Gj/b\F8poWV7K!^lGe#qDQ&I"Y:QVL]NWK.S+L#Uj]#l0D&8cOhER!*W\pD,/3c<Q.He8+[C$HSOn!!;c*n.-m1MS.IHaSM6_iH)^H>oarW*<bB).J?9t!7eq^]0rff6Rt.foT[8$"pJ'[ZOus"!#Gd7Z_.#*gOJkE13N4D7(AZQ54e6=bjaP_;+1JMdC]rE![IOT,c(pn7oE75s(@X5%-1210NR[49(#&UI77TW3^F/=62eD4t0,XWjtNO[/#Xe0srj.b=uOPWV%*es.EHn>.>nqX4/2e';g"!48TXK&Dp;&UAd[&*KV#b0VO.PXj)iW'5ogk+F2g)4SNVe^r*iU4C;4GU9@D1E<HP`\N-if3^YFl73j.V@>>'Wea-<h)`*,J,V(1Be,mg/7-4>*BK?m`<qL3#qV:#BhPCg]X$nQ!mR)J<ah$4!"m:NST#X#4n7Wtj9Chi@378OY@?B/%iZ)_Gl?Gs2c>I8>u=nJI6ij`Yc5*tj#Y"!">!;-YX`4i31OB$X;)Yk=tQ7J/Lmm4IfEu,3Lfqef<Jp8F;jmrBS533f)'srf:0]`^;f7:.i\as#pi;AcTUn>q/]:MBq5l.6`l7sIEjAe([+a9-`2!8EFiE[pMYC8L)29HI:<fqSj^6)VMo=Zrn=*@V'W2LL'lp>o`TaJqc_GC84P+K#0l1imln&4iT)!=oX"5<]!DBkP^LS1>*DDp5NC-@;,T!T4dmP?,i,`8`HK\!rrL3J(KL~>
+endstream
 endobj
 13 0 obj
 <<
-/Author (Kannan Santharam) /CreationDate (D:20260819093450+05'00') /Creator (ReportLab) /Keywords () /ModDate (D:20260819093450+05'00') /Producer (ReportLab PDF Library - \(opensource\)) 
-  /Subject (Executive Resume / CV \204 Senior Lead Software Engineer) /Title (Kannan Santharam \204 Senior Lead Software Engineer \(Lead Frontend Engineer\)) /Trapped /False
 >>
 endobj
 14 0 obj
 <<
-/Count 2 /Kids [ 10 0 R 11 0 R ] /Type /Pages
+/A <<
+/S /URI
+/Type /Action
+/URI (mailto\072as\056kannan4\100gmail\056com)
+>>
+/Border [ 0 0 0 ]
+/Rect [ 438.72 759.3898 546.1258 771.3898 ]
+/Subtype /Link
+/Type /Annot
 >>
 endobj
 15 0 obj
 <<
-/Filter [ /ASCII85Decode /FlateDecode ] /Length 3406
+/A <<
+/S /URI
+/Type /Action
+/URI (https\072\057\057linkedin\056com\057in\057askannan)
 >>
-stream
-Gau0E>C5'p&q/*0W0bb!2PB7<6M%PePF09J%O.+mrVY*0g7Y]I/%XC'I.QCmF@umJ&0tCS*1Mjih,UAQ:0hClNZUXep")TM(\Hj\6&%sh>;C$>VSr^5(,*D80WLDHWu6>+L5n/3\jP8+CRR!-/_;8mmb=n)=%@Ii\kVG["ZA4&1Fu_2Z+il-+nmqGmY5:f[UiRN^'L\/EHHId\g239\Mt\U8$c:(pk'@^Uu(N#aRg?7qf3-&X-2ea<QD2EIX<9-esF5kg0e<XDSJ<P:]a7?%:*;T--`OjVb?<"4:XeP(RtZiM;.rZV48n&15n4hl+3WB]Lt\`o/N[%>e_I\8p1+_?\mj7q)M`M",AKt^pQD4o##.p]4?23^YLc+QWl^uA8MFe0oc:_+1;4piTTNpY3VqgGBeY38i5HIqApF4'oui?G%hj"+bTQe,Lm,B.2R4B$(p<a^-=,cjK^G6aW:ko?%ZBP3fra]XpYBIY#q9TP2lUTl;]4V16):KKud.!Q>(OOEl@[dQ>77*RP352]QC,?)bPPA(eV5b'IBidF_=hPbS-54MAV';*=p"hMY8BUhls2H=GaQjksjb^RND]@)<S!Z7dXK!gWN]hY?8rucZ;@Z.gp\)^Xqn!lLRPV8Q'os%N'&%gX\*h/c@*Q#$0F>'=c:S:+:fc`%28ea5<,3>I/ED7u\&VeTS^QmpX5Wb?8.^qg2#f8L,A/4O0p2Q\[U7Bsn?^3;p<19R1UJKM.G_5,To![g;]R)!H(]*j]_92q;gKfGkq7=Eb\aCIW#Fbr"4,5(pUTI,XFUGKGq=E2-r2lill?=7]5V-D!0pF?-oTn&oN*Rf@"FDOZ0fdh'?g#Q0$a'kRCD7BCBnYr9s6Va%tPLqJ@epKcj^Xa43,f[\#b27HQ+W9N-B[%UC^Q`9oa!N<GR9okg@)2VSWh\4Y.a"VPL,LC_"`]L5?\a!V>X[q&;Y'JqaKSYLP?b(++V21s@hTL9^EE\9&Uc]7aRc.rU-+h"fIM>C5A?!<NF7/3[atpo+[#Dp4MsB=b`]Qjk&JT\cC%,6mLPV$#NZ,oZ]2:#9Dc;t`Bq]_8b#B(N&3VAS9h"[sd_"7)4@#9lM\ug@c>f&2]3?BA(KiBA1lbZME#Kt=;0EaF&al+H6\MX^kkCUM;NV>o6i_Hi^&j`@:OuQClM4n/Kh+lt>:Y]J!iPU!*?:X9c7RB@'tmYi7kQ;n>ee_JmSa%Kq]ZKF>p:h^>%AfiPXI'h-D5Lk9K0ca7@q[;2anPe"BJ7686r8,bel;W^3LuJn;gI@!.],XDuaeJV6\tc77":3=;mu+9,THK'j4!l#dhI<+p[tT<(*KQm4?C&Q&PB]:%U5X*+\>28O5[kq+%,@([R*VMlebW=/dU6.oJn2j=q2rK%GfVc]'WD;f(h:n17haV,j3Yn.j7;j:SIF0&AGN'Ul:o/b*[-?nA7^c2?9%G3HQ8k-i]>hm)IIcTtpud<m^;e+rY7q#u3`hC7\c;Rq8nGG4.W&*6!>U8UBu<KnBt-MNdAeRYnTr.cc':ILre-buR?nO?IP>*enbOfqBLWI5lI^SX5@._<l,`X3U>0P6i-ck)=8@r[.R7^>c62Q8hdAN^;J6k;A#S-5GBh`6:K=6.ArgYRgo#c&.+YYHs;Pb#)]$>!FCI9;2BZ=\'_P)e8la*=LmEuC^$^-*sbd3)p%=!OG8\ho@W\%8q0lo3Xt?*bK1B)IhFk8`I)-#H(:&#>HPq`In_g]Zl\5Wt;8ksKf)`.;H)a_DNm'?Qc-@_+Fb0ZBK9m%,p2%\(PF5?%#d6<+7\4>3,I6DELa2&2kIgnZik\&$foJgt3XgHe8*Da-1Z(M+$BdBLhBFn0@10?_HfnEs3V4Cn^sG9j[QYC'WQb+5oQ#AVEM6iKnn_$5g!`Pa!q+\>)%!nH_5@=(^)mn0^R/g+oS;]M1p.OH:h8RVDtD9rcol.3(')mD,`_1:r=\rO,=@o<UFh[%/'RB!<XZS=`459#j;*Uci&XCQ;P\r+])H4SOFaWjB79;oQ*mX4"GBQQ,f=Kh@@\_EJ8NdVUWq<3/>AZ<=:kc^.UOds?)Fh)c#f7E(k?U`*'4Cd)L9ZH7^e$1IW5>Eja:1ZRmml-8VhQ1?MrS$)!FF5$Wg:C/)0Et\I-&lGm$@Q(`JNeG6Co5?Z3mE=sZMa>Qjla-EdFQ_;Cn_9m3Z!1t.<tS:eEbE/N7TXMV"`VAn0NK_)9#Mlj\430-Z!3OG+C5q>d^-?28i:`=gp;!`8i'Y<D7OLnX+:A:W!>(5HoK8^5(\]Dt$r1HbPkQoDtWJ=]c,e+%!N=kB4lcahMngaefqD<hh.&LU4#SPio)>s7\3[;0E9`HZ17R>/p&NQMh+tj<R"!6W[3#\^IQ2T(Y?Zam/I$(+1N>"["G;Pk&1c0PI<!346%lc,/C=.(K_)HO\-.&9mW^dNs73FJ?mj.`ebSSi8+'51q'di<EiH'<16]LD/puKP,p&%tQUm[^EFQN8E<6+MK8_+n%//q-#O2)N*BU-<o%5GSoKp,</\S4+B=1",e'U7!J_\hXQ,o4.TR`&dY!PREotYl82)>edhfO<g@&Gjg\sPnK3]C<BG?&/uZ?m%I5<R-"WtBd`4=@e78o>2i:c1R"YP'D%R"Lpeudi1sCD>A`m/1A_J_9e5$p2!KL,'O!@Lmjj3]b;Y;3HY9N[r$@B=8H^?TS?BEt$40YlX6tZi#1[4>XW#WanA+ZVeK'Acp)-qq&lCtfA*LmH9Ni*0$YF_PeZ&(HGU`Z;mV7rd>H-Q=VWUQ2Y.2J7$/\1$YG4r1-a[FEj@:Dk_Vb\\FPH?_r-]0QgL6DOb#e4L0mAYtbH`%:GWZnS1/@FAXVlI/i@]C;+$gt4Xcq!^#0bt93&!l_!'haf87n_NRbr@c*!.DZRYtOQ'*"q9"H#Z4?,4X$VB$fS,Eo;4Cbgts9<C+6Y<ReN=Q8jT2DBGQu;a30+0S[n86.d'*:B#Z!R852sj2hT:N8`YQ7kb/G`nn;<<pI"3/^&os:EJqhNrb;9:$Y;oNKIrToZ4BS$Hql;qO-noSi*GfJ9=$iOgM_L+$L,F.Qi?af44EC[C$jD&#7`8RhOkTICcs"c)*EsO2Z8aQ(;q.]:"#>K)A,7?X#q'aP@cG"7fOqPROhi)cbJCTA`f"@di)uD>"4bL#"oH-@nClbHL_:KogF.A%Sc"EX%;FeI;c`h*Z]7D>^BdkjS2F5<?NTh6F(mphEXP*!P,<<^%_[c44SYI\%F/X6PEPq>I>r<u+\hmIL;'&/rH=FVs`pBo9pO?o&Ihh&/JgIPZXlNpaNT#)mme;2)Y&9k<?j4QT#/9(+E3o$0G9);(D$3<ZTP,\m=iA#sG/Ifd`C)Rm'sBcC9HT+/nL(`?8G5U_2K8CmH:gF.=Xc9n@<qW1Rp>/X4VaA6cP(]OTu*GeC~>endstream
+/Border [ 0 0 0 ]
+/Rect [ 98.5578 745.3898 210.8278 757.3898 ]
+/Subtype /Link
+/Type /Annot
+>>
 endobj
 16 0 obj
 <<
-/Filter [ /ASCII85Decode /FlateDecode ] /Length 2880
+/A <<
+/S /URI
+/Type /Action
+/URI (https\072\057\057github\056com\057kannan\055santharam)
 >>
-stream
-GauHM?$G!n(4=H3\50`^/h$Q![/4AIB*V6!aTSn0B9-C<WIZ*LC.04VfO)DD/HN.C<oROGNks)@e[N,-h7AS52LZY;(p/XtB(YMD6]OgG"Za<Ye*J;bcea%rj4'^n6d#dL(lg.o'TR,E`c0IGf^[(i4IWConZ7keg<=26JY(80li5Y$/pJ$'$e<92'g+,t0*RrL[l!uAAq/9Rr=qQ;G90q*IHM9=6"#]+en&'Z?<H+4Dp@;0(#HQ?5X^rMYu2I#.4XpUXXVLo>XjED$&p5]@npNfL\sG/R1hqM4B[PpF+):bL*SsE'`@]W5%U`jOcjg9EBF/As)o4FDFkX)cQ7@tpBZSZ\J4j3,YQ:<9LK&d93I("+a?JG$t/c"8>ViB--P;,$/E0iPk1it33fbcM-?qm.pDM>TT.)8(/f#?h*!DnPc5YSX>iXNjdbGF'7JeS\"iC%/\_I;B4s</6N?n+"B5@m7_+\>^@HQlU'D$IYb-".pKB+(Ai<%&jO&_R#=&Rib=KMU^uIWJbR0f*6=M1i3Yes3@ZdY_d5JM%1;R6*U4L<`,r(L_&4:d-gB,uE]".uZcjJDJ$sV3EeUUBF+R#R)/5;ssW[O]Q82IO%&Zmfg/m%\51N5sls)-(0J-'6g62)[T"D8rHC.qJ=)FVj9P\9qUnfu5M<LGu!A7YpODQ1IU27T%D<-?#7J?H7lpL%\'_)rgSUqg:mbqRK3fs^j'P"=H"e:M/TiX,o2I@6<[4r*Z'R`1I]nGH7E<9>*RT+d>.Vg!^ZLbKd3gK\j+B.sVcEctnK(j(W(&#4-f6rMqZEMc9gL!%uRi_1+<g'BepE]pn(V`^\LP&2@0b>j*e>@p"D2:7A?lSQ95RLV?;-e<>Ug7j;2]Wh2CQa:W0($#A<=-E<cr#o^I#_?C0P9Me<rV>`!I/fLu9T+I6_$UeK(E*6RJc].KQ'?U,A!X=\$::97qd1(rj"t2l$MV*\f."Q^fp5Z2Bt]rkac`TkXC)SdT!&d?)RdSETL(!<cmiq][?EW_Sen?c#+!k)l8XbQC7DJEq.=7LCh!t1,AU,D#e\PM]"(Zr),@pCi9p=Bq\87>/uC`C.\itH'H;etF^8'Fm(h6R$0Cuu$okjBr-]ud7jrV2nG;5T!\8BZT\cuD1*P7m7Kh-JkbaShjgr&cpRchX^Q)YsmRdJ-oCg7/cH,]G/Bn_'d)P\(%S*u-"0d4#*7::tp#:]_?L]:LU.:Cm(9E-4_._2#N+`.;oB2FYGSD34Duj=P;h0AE08W8Rk$F0Qb.A2`PH4--?r.@rSW;Ffcl#\g"g,-AJtWpN>=!/cXc,7[BWEh_hb(4qXVC&N6bWq=k6t3oP,\TXkk"Ih7[K_oW%=mZ.U?Q,SseQ\j@DL;(9O76;#um4dlM'A-uK%p/g\[NjXTE'==/:m;=KQ"10WHYf@?9E[SH^2C+MZ;P\AjBG#[::O87I*r<c0_;CaLj.^rFFM/"2a+A.nMF+HTSAX]V-E:$U+mo0q&+db$a%1d)e'7YkESY606nI_k$lkH,p<7bi,a0##(5aP@'',\Hb8;s<&C\^s&!;*u,)3_u#$WqU_"cs)FWaf,E9KLRD8(Omb?/+%BJ**d*AHJVh7psM$l9,Z#'-a0']4n3;h>?Pr>g;1Gp;j+.-ISW4K^9`SB`/,PJ"#2BXEN]G3pf>S[U1FZrm9J2G%O_+JP"_65*U2\C?Rkb9!`NT;JLj*p8%V%%b%3?d]O,.q*l8JaU)6VeXnO@KTFF(/i<L"ZWF:CUV>X4nT/gbBNTCU`H=+Dn1;fe;Imr&FDhS1`/uU1^tjg*or<DW:]tM/O#G,U6abqhU$gFMABthlV[0_L;kC>$'.i$fTa:EgE;h&3Q:i.(!*Z6ka3/)GYW2''4pHqX;Cn"p7gZ*jG9n>,FB:O;Uoh+.TSI3"MY?>cM%-1tQZ=0Wdmg.b2AG21)\QkmJYXnpG\XdgldK$+%qVcO6s!(ECb<A$`D?%on+C8_XIaiY;rL)7g=bCA)XnE8%6O+[o"dD_n@nGp03Ff1k&=TV%%Y)LAPX=ap$1ISRih';\/qI!5,6#d,R^l1)iT+8n`.-"\Q<`I9U8iWI6Q88HFER5?I4.7oifdFY!BI[TWVsaK0FNhanAlr7GDHC1jsD=e3Rn(Gj/b\F8poWV7K!^lGe#qDQ&I"Y:QVL]NWK.S+L#Uj]#l0D&8cOhER!*W\pD,/3c<Q.He8+[C$HSOn!!;c*n.-m1MS.IHaSM6_iH)^H>oarW*<bB).J?9t!7eq^]0rff6Rt.foT[8$"pJ'[ZOus"!#Gd7Z_.#*gOJkE13N4D7(AZQ54e6=bjaP_;+1JMdC]rE![IOT,c(pn7oE75s(@X5%-1210NR[49(#&UI77TW3^F/=62eD4t0,XWjtNO[/#Xe0srj.b=uOPWV%*es.EHn>.>nqX4/2e';g"!48TXK&Dp;&UAd[&*KV#b0VO.PXj)iW'5ogk+F2g)4SNVe^r*iU4C;4GU9@D1E<HP`\N-if3^YFl73j.V@>>'Wea-<h)`*,J,V(1Be,mg/7-4>*BK?m`<qL3#qV:#BhPCg]X$nQ!mR)J<ah$4!"m:NST#X#4n7Wtj9Chi@378OY@?B/%iZ)_Gl?Gs2c>I8>u=nJI6ij`Yc5*tj#Y"!">!;-YX`4i31OB$X;)Yk=tQ7J/Lmm4IfEu,3Lfqef<Jp8F;jmrBS533f)'srf:0]`^;f7:.i\as#pi;AcTUn>q/]:MBq5l.6`l7sIEjAe([+a9-`2!8EFiE[pMYC8L)29HI:<fqSj^6)VMo=Zrn=*@V'W2LL'lp>o`TaJqc_GC84P+K#0l1imln&4iT)!=oX"5<]!DBkP^LS1>*DDp5NC-@;,T!T4dmP?,i,`8`HK\!rrL3J(KL~>endstream
+/Border [ 0 0 0 ]
+/Rect [ 230.1078 745.3898 365.1678 757.3898 ]
+/Subtype /Link
+/Type /Annot
+>>
+endobj
+17 0 obj
+<<
+/A <<
+/S /URI
+/Type /Action
+/URI (https\072\057\057kannan\055ai\055dev\056vercel\056app)
+>>
+/Border [ 0 0 0 ]
+/Rect [ 384.4478 745.3898 496.7178 757.3898 ]
+/Subtype /Link
+/Type /Annot
+>>
 endobj
 xref
-0 17
+0 18
 0000000000 65535 f 
-0000000061 00000 n 
-0000000122 00000 n 
-0000000229 00000 n 
-0000000341 00000 n 
-0000000518 00000 n 
-0000000701 00000 n 
-0000000888 00000 n 
-0000001072 00000 n 
-0000001187 00000 n 
-0000001264 00000 n 
-0000001506 00000 n 
-0000001712 00000 n 
-0000001782 00000 n 
-0000002166 00000 n 
-0000002234 00000 n 
-0000005732 00000 n 
+0000000015 00000 n 
+0000000054 00000 n 
+0000000120 00000 n 
+0000000186 00000 n 
+0000000425 00000 n 
+0000010122 00000 n 
+0000010184 00000 n 
+0000010291 00000 n 
+0000010403 00000 n 
+0000010518 00000 n 
+0000010596 00000 n 
+0000010797 00000 n 
+0000013770 00000 n 
+0000013792 00000 n 
+0000013982 00000 n 
+0000014184 00000 n 
+0000014390 00000 n 
 trailer
 <<
-/ID 
-[<0afb70af2358a9227c226ae032093080><0afb70af2358a9227c226ae032093080>]
-% ReportLab generated PDF document -- digest (opensource)
-
-/Info 13 0 R
-/Root 12 0 R
-/Size 17
+/Size 18
+/Root 3 0 R
+/Info 1 0 R
 >>
 startxref
-8704
+14596
 %%EOF

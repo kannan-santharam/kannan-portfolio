@@ -20,20 +20,21 @@ const getCookie = (name: string): string | undefined => {
 
 const isRegion = (value: string | undefined): value is Region => value === 'dubai' || value === 'india';
 
-// TESTING: /ind is not a published/shared link yet, so it's the safe place
-// to exercise the real geolocation cookie set by middleware.ts, falling back
-// to 'india' when that cookie is absent (e.g. local dev). The root path
-// stays hardcoded to 'dubai' during this testing phase — swap the two once
-// geolocation is verified and /ind is ready to be shared as a fixed link.
-const isIndPath = (): boolean => window.location.pathname.replace(/\/+$/, '') === '/ind';
+// Explicit /ind link (shared directly with Indian recruiters): always India,
+// regardless of geolocation. The root path defaults to Dubai, switching to
+// India only when the geolocation cookie set by middleware.ts says so.
+const getPathRegion = (): Region | undefined => {
+  const path = window.location.pathname.replace(/\/+$/, '');
+  return path === '/ind' ? 'india' : undefined;
+};
 
 export const RegionProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [region] = useState<Region>(() => {
-    if (isIndPath()) {
-      const cookie = getCookie('region');
-      if (isRegion(cookie)) return cookie;
-      return 'india';
-    }
+    const pathRegion = getPathRegion();
+    if (pathRegion) return pathRegion;
+
+    const cookie = getCookie('region');
+    if (isRegion(cookie)) return cookie;
 
     return 'dubai';
   });

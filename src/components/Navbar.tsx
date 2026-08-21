@@ -62,8 +62,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, a
           <div className="shrink-0">
             <div className="flex items-center gap-1">
               <span className="font-bold tracking-tight text-xs sm:text-base theme-title whitespace-nowrap">
-                <span className="hidden sm:inline">{RESUME_DATA.name}</span>
-                <span className="inline sm:hidden">Kannan Santharam</span>
+                <span>{RESUME_DATA.name}</span>
               </span>
             </div>
             <p className="text-[9px] sm:text-xs theme-muted whitespace-nowrap">React · TypeScript · AI-Native</p>
