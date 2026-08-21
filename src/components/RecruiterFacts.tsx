@@ -64,7 +64,7 @@ export const RecruiterFacts: React.FC = () => {
           <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-[var(--border-card)] pt-4 text-xs theme-sub">
             <div className="flex items-center gap-2">
               <span className="font-semibold theme-gold-text">Language Proficiency:</span>
-              <span>English (Fluent Professional) · Tamil (Native) · Hindi (Basic)</span>
+              <span>English (Fluent Professional) · Tamil (Native) · Hindi (Intermediate)</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="font-semibold theme-title">Target Designation:</span>

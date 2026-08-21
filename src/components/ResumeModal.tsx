@@ -195,7 +195,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
                   <ul className="mt-1 space-y-1 text-xs theme-sub print:list-disc print:pl-5 print:space-y-0.5 print:text-[9.5pt] print:text-slate-800">
                     {exp.highlights.map((h, i) => (
-                      <li key={i} className="flex items-start gap-2 print:list-item print:block">
+                      <li key={i} className="flex items-start gap-2 print:list-item">
                         <span className="theme-gold-text mt-0.5 no-print print:hidden">•</span>
                         <span>{h}</span>
                       </li>

@@ -42,7 +42,7 @@ export const RESUME_DATA = {
     github: "https://github.com/kannan-santharam",
     githubDisplay: "github.com/kannan-santharam",
   },
-  summary: `Senior Lead Software Engineer with 10.5+ years of experience delivering high-performance web applications, large-scale monorepos, and scalable client architectures for global SaaS products. Specialized in frontend infrastructure, AI-driven engineering workflows, LLM orchestration, custom Claude Code skills, Model Context Protocol (MCP) servers, and HTTP Streamable Web Streams (fetch + ReadableStream). Proven record of leading solo platform migrations, cutting build compilation times by 96%, and establishing code quality guardrails across distributed teams. Experienced in leading engineering squads and mentoring junior developers through cross-team collaboration across product, design, and QA.`,
+  summary: `Senior Lead Software Engineer with 10.5+ years of experience turning AI-native engineering into measurable business impact: architected an AI test-authoring platform and LLM-orchestrated agent workflows, backed by custom Claude Code skills and Model Context Protocol (MCP) servers with strict write-scope guardrails, cutting manual test effort and speeding releases. Delivered a 96% build-time reduction reclaiming hundreds of engineering hours monthly and eliminated 30,000+ lines of dead code, without disrupting a platform serving 4,000+ MSP and IT enterprise customers. Proven record leading solo platform migrations and mentoring engineering teams.`,
   
   metrics: [
     {
@@ -147,7 +147,7 @@ export const RESUME_DATA = {
       featured: false,
       highlights: [
         "Designed and implemented high-converting company web pages and product landing pages.",
-        "Built a seamless integration connecting Freshservice with DocuSign using REST API services; the product was subsequently acquired by Freshworks."
+        "Built a seamless integration connecting Freshservice with DocuSign using REST API services; the company was subsequently acquired by Freshworks."
       ],
       skills: ["JavaScript", "HTML5", "CSS3", "REST APIs", "DocuSign API"]
     },
@@ -254,6 +254,6 @@ export const RESUME_DATA = {
   languages: [
     { name: "English", level: "Fluent (Professional Working Proficiency)" },
     { name: "Tamil", level: "Native" },
-    { name: "Hindi", level: "Basic" }
+    { name: "Hindi", level: "Intermediate" }
   ]
 };
