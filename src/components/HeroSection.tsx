@@ -12,6 +12,7 @@ import {
   Check
 } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
+import { useRegion } from '../context/RegionContext';
 
 interface HeroSectionProps {
   onOpenResumeModal: () => void;
@@ -19,6 +20,7 @@ interface HeroSectionProps {
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) => {
   const [copiedBotim, setCopiedBotim] = useState(false);
+  const { content } = useRegion();
 
   const handleCopyBotim = () => {
     navigator.clipboard.writeText(RESUME_DATA.contact.phone);
@@ -60,7 +62,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                 </div>
 
                 <div className="mt-3 flex items-center justify-between gap-2 text-[11px] theme-sub cursor-default select-none">
-                  <span>🇦🇪 Relocation: <strong className="theme-gold-text">Dubai, UAE</strong></span>
+                  <span><strong className="theme-gold-text">{content.hero.mobileStrip}</strong></span>
                   <span>Notice: <strong className="theme-title">60 Days</strong></span>
                 </div>
               </div>
@@ -73,8 +75,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
             {/* Informational Status Tags (Explicitly non-interactive, cursor-default) */}
             <div className="flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center gap-1.5 rounded-full theme-gold-badge px-3.5 py-1.5 text-xs font-semibold shadow-sm cursor-default select-none">
-                <span>🇦🇪</span>
-                <span>{RESUME_DATA.relocation.status}</span>
+                <span>{content.flag}</span>
+                <span>{content.hero.statusBadge}</span>
               </span>
 
               <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border-card)] bg-[var(--bg-card)] px-3.5 py-1.5 text-xs font-medium theme-sub cursor-default select-none">
@@ -82,15 +84,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                 <span>Notice: {RESUME_DATA.relocation.noticePeriod}</span>
               </span>
 
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3.5 py-1.5 text-xs font-bold text-cyan-600 dark:text-cyan-400 cursor-default select-none">
-                <PhoneForwarded className="h-3.5 w-3.5" />
-                <span>BOTIM App & WhatsApp Active</span>
-              </span>
+              {content.hero.contactBadge && (
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3.5 py-1.5 text-xs font-bold text-cyan-600 dark:text-cyan-400 cursor-default select-none">
+                  <PhoneForwarded className="h-3.5 w-3.5" />
+                  <span>{content.hero.contactBadge}</span>
+                </span>
+              )}
 
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border-card)] bg-[var(--bg-card)] px-3.5 py-1.5 text-xs font-medium theme-sub cursor-default select-none">
-                <ShieldCheck className="h-3.5 w-3.5 text-emerald-500" />
-                <span>Visa Sponsorship Required</span>
-              </span>
+              {content.hero.visaBadge && (
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border-card)] bg-[var(--bg-card)] px-3.5 py-1.5 text-xs font-medium theme-sub cursor-default select-none">
+                  <ShieldCheck className="h-3.5 w-3.5 text-emerald-500" />
+                  <span>{content.hero.visaBadge}</span>
+                </span>
+              )}
             </div>
 
             {/* Name & Title */}
@@ -149,8 +155,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
               {/* Row 1: Primary Document & Executive CV Actions */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 <a
-                  href="/Kannan_Santharam_Senior_Lead_Software_Engineer.pdf"
-                  download="Kannan_Santharam_Senior_Lead_Software_Engineer.pdf"
+                  href={content.resumePdf}
+                  download={content.resumePdf.split('/').pop()}
                   className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#0052FF] via-[#0066FF] to-[#00D2FF] px-5 py-3 text-xs sm:text-sm font-bold text-white transition-all hover:scale-[1.01] hover:shadow-lg hover:shadow-[#0052FF]/30 cursor-pointer text-center active:scale-95 shadow-md"
                 >
                   <Download className="h-4 w-4 shrink-0" />
@@ -167,9 +173,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
               </div>
 
               {/* Row 2: Direct Messaging & BOTIM Copy Button */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <div className={`grid grid-cols-1 gap-2.5 ${content.botim ? 'sm:grid-cols-2' : ''}`}>
                 <a
-                  href={`https://wa.me/${RESUME_DATA.contact.phoneClean}?text=Hi%20Kannan,%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20connect%20regarding%20a%20role%20in%20Dubai.`}
+                  href={`https://wa.me/${RESUME_DATA.contact.phoneClean}?text=${encodeURIComponent(content.hero.whatsappMessage)}`}
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center justify-center gap-2 rounded-xl border border-emerald-600 bg-emerald-600 dark:bg-emerald-500/10 px-4 py-3 text-xs sm:text-sm font-bold text-white dark:text-emerald-400 transition-all hover:bg-emerald-700 dark:hover:bg-emerald-500/20 text-center active:scale-95 cursor-pointer shadow-md"
@@ -178,14 +184,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                   <span>WhatsApp Direct Chat</span>
                 </a>
 
-                <button
-                  onClick={handleCopyBotim}
-                  className="flex items-center justify-center gap-2 rounded-xl border border-cyan-500/40 bg-cyan-500/10 px-4 py-3 text-xs sm:text-sm font-semibold text-cyan-600 dark:text-cyan-400 transition-all hover:bg-cyan-500/20 cursor-pointer text-center active:scale-95"
-                >
-                  {copiedBotim ? <Check className="h-4 w-4 shrink-0 text-cyan-400" /> : <PhoneForwarded className="h-4 w-4 shrink-0" />}
-                  <span>{copiedBotim ? "BOTIM Handle Copied!" : "BOTIM App Handle"}</span>
-                  {!copiedBotim && <Copy className="h-3 w-3 shrink-0 ml-1 text-cyan-400/70" />}
-                </button>
+                {content.botim && (
+                  <button
+                    onClick={handleCopyBotim}
+                    className="flex items-center justify-center gap-2 rounded-xl border border-cyan-500/40 bg-cyan-500/10 px-4 py-3 text-xs sm:text-sm font-semibold text-cyan-600 dark:text-cyan-400 transition-all hover:bg-cyan-500/20 cursor-pointer text-center active:scale-95"
+                  >
+                    {copiedBotim ? <Check className="h-4 w-4 shrink-0 text-cyan-400" /> : <PhoneForwarded className="h-4 w-4 shrink-0" />}
+                    <span>{copiedBotim ? "BOTIM Handle Copied!" : "BOTIM App Handle"}</span>
+                    {!copiedBotim && <Copy className="h-3 w-3 shrink-0 ml-1 text-cyan-400/70" />}
+                  </button>
+                )}
               </div>
             </div>
 
@@ -223,13 +231,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                   </div>
 
                   <div className="flex items-center justify-between rounded-lg bg-[var(--bg-inner)] p-2.5 border border-[var(--border-card)]">
-                    <span className="theme-muted">Relocation Readiness:</span>
-                    <span className="font-semibold theme-gold-text">Immediate to Dubai, UAE 🇦🇪</span>
+                    <span className="theme-muted">{content.hero.readinessLabel}</span>
+                    <span className="font-semibold theme-gold-text">{content.hero.readinessValue}</span>
                   </div>
 
                   <div className="flex items-center justify-between rounded-lg bg-[var(--bg-inner)] p-2.5 border border-[var(--border-card)]">
-                    <span className="theme-muted">Direct UAE Contact:</span>
-                    <span className="font-semibold text-cyan-400">BOTIM & WhatsApp (+91 97902 47499)</span>
+                    <span className="theme-muted">{content.hero.contactLabel}</span>
+                    <span className="font-semibold text-cyan-400">{content.hero.contactValue}</span>
                   </div>
 
                   <div className="flex items-center justify-between rounded-lg bg-[var(--bg-inner)] p-2.5 border border-[var(--border-card)]">

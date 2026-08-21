@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, Download, Printer } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
+import { useRegion } from '../context/RegionContext';
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -8,11 +9,12 @@ interface ResumeModalProps {
 }
 
 export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => {
+  const { content } = useRegion();
   if (!isOpen) return null;
 
   const handlePrint = () => {
     // Open the official PDF in a new window or trigger direct print
-    const printWindow = window.open('/Kannan_Santharam_Senior_Lead_Software_Engineer.pdf', '_blank');
+    const printWindow = window.open(content.resumePdf, '_blank');
     if (printWindow) {
       printWindow.focus();
     } else {
@@ -32,7 +34,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             <span className="h-3 w-3 rounded-full bg-emerald-500 animate-pulse" />
             <span className="text-xs sm:text-sm font-bold theme-title">Executive CV · Kannan Appiya Santharam</span>
             <span className="hidden sm:inline-flex rounded-full theme-gold-badge px-2.5 py-0.5 text-[10px] font-bold">
-              Dubai Hiring Ready
+              {content.resumeModal.badge}
             </span>
           </div>
 
@@ -47,8 +49,8 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </button>
 
             <a
-              href="/Kannan_Santharam_Senior_Lead_Software_Engineer.pdf"
-              download="Kannan_Santharam_Senior_Lead_Software_Engineer.pdf"
+              href={content.resumePdf}
+              download={content.resumePdf.split('/').pop()}
               className="flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-[#0052FF] via-[#0066FF] to-[#00D2FF] px-3.5 py-1.5 text-xs font-bold text-white transition-all hover:brightness-110 shadow-md cursor-pointer"
             >
               <Download className="h-3.5 w-3.5" />
@@ -79,13 +81,13 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                   {RESUME_DATA.title}
                 </p>
                 <p className="text-xs theme-muted print:text-slate-600 print:text-[9.5pt]">
-                  Chennai, India · Notice Period: 60 Days · Target Location: Dubai, UAE (Relocation Ready)
+                  {content.resumeModal.locationLine}
                 </p>
               </div>
 
               {/* Clean Contact Info */}
               <div className="space-y-1 text-xs theme-sub font-mono print:text-right print:font-sans print:text-[9pt] print:text-slate-700">
-                <div>Phone / BOTIM / WhatsApp: {RESUME_DATA.contact.phone}</div>
+                <div>{content.resumeModal.contactLine}: {RESUME_DATA.contact.phone}</div>
                 <div>Email: <a href={`mailto:${RESUME_DATA.contact.email}`} className="text-[var(--color-primary)] font-semibold">{RESUME_DATA.contact.email}</a></div>
                 <div className="pt-0.5 flex flex-wrap items-center gap-2 print:justify-end">
                   <a href={RESUME_DATA.contact.linkedin} target="_blank" rel="noreferrer" className="text-[var(--color-primary)] font-bold flex items-center gap-1">
@@ -105,9 +107,11 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
             {/* UI Status Strip (Screen only — hidden during print) */}
             <div className="mt-3 flex flex-wrap items-center gap-2 pt-2 border-t border-[var(--border-card)] text-xs no-print print:hidden">
-              <span className="theme-gold-badge rounded-full px-3 py-1 font-bold">🇦🇪 {RESUME_DATA.relocation.status}</span>
+              <span className="theme-gold-badge rounded-full px-3 py-1 font-bold">{content.resumeModal.statusBadge}</span>
               <span className="rounded-full border border-[var(--border-card)] bg-[var(--bg-inner)] px-3 py-1 theme-sub">Notice Period: {RESUME_DATA.relocation.noticePeriod}</span>
-              <span className="rounded-full border border-[var(--border-card)] bg-[var(--bg-inner)] px-3 py-1 theme-sub">Visa Sponsorship Required</span>
+              {content.resumeModal.visaBadge && (
+                <span className="rounded-full border border-[var(--border-card)] bg-[var(--bg-inner)] px-3 py-1 theme-sub">{content.resumeModal.visaBadge}</span>
+              )}
             </div>
           </div>
 
@@ -117,7 +121,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
               Professional Summary
             </h2>
             <p className="theme-sub leading-relaxed text-xs sm:text-sm mt-1.5 print:text-slate-800 print:text-[9.5pt] print:mt-1 print:leading-normal">
-              {RESUME_DATA.summary}
+              {RESUME_DATA.summary} {content.seekingLine}
             </p>
           </div>
 

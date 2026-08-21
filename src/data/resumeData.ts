@@ -30,12 +30,7 @@ export const RESUME_DATA = {
   title: "Senior Lead Software Engineer (Lead Frontend Engineer)",
   subTitle: "React · Node.js · AI-Native Engineering · Large-Scale Monorepos",
   relocation: {
-    targetCity: "Dubai, UAE",
-    currentLocation: "Chennai, India",
-    status: "Ready to Relocate to Dubai, UAE",
-    visaStatus: "Employment Visa Sponsorship Required",
     noticePeriod: "60 Days",
-    nationality: "Indian",
   },
   contact: {
     phone: "+91 97902 47499",
@@ -47,7 +42,7 @@ export const RESUME_DATA = {
     github: "https://github.com/kannan-santharam",
     githubDisplay: "github.com/kannan-santharam",
   },
-  summary: `Senior Lead Software Engineer with 10.5+ years of experience delivering high-performance web applications, large-scale monorepos, and scalable client architectures for global SaaS products. Specialized in frontend infrastructure, AI-driven engineering workflows, LLM orchestration, custom Claude Code skills, Model Context Protocol (MCP) servers, and HTTP Streamable Web Streams (fetch + ReadableStream). Proven record of leading solo platform migrations, cutting build compilation times by 96%, and establishing code quality guardrails across distributed teams. Experienced in leading engineering squads and mentoring junior developers through cross-team collaboration across product, design, and QA. Seeking a Lead Software Engineer / Engineering Manager role in Dubai, UAE.`,
+  summary: `Senior Lead Software Engineer with 10.5+ years of experience delivering high-performance web applications, large-scale monorepos, and scalable client architectures for global SaaS products. Specialized in frontend infrastructure, AI-driven engineering workflows, LLM orchestration, custom Claude Code skills, Model Context Protocol (MCP) servers, and HTTP Streamable Web Streams (fetch + ReadableStream). Proven record of leading solo platform migrations, cutting build compilation times by 96%, and establishing code quality guardrails across distributed teams. Experienced in leading engineering squads and mentoring junior developers through cross-team collaboration across product, design, and QA.`,
   
   metrics: [
     {
