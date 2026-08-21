@@ -1,42 +1,25 @@
 import React from 'react';
-import { Plane, Clock, Award, CheckCircle2, ShieldCheck, MessageSquare } from 'lucide-react';
+import { Plane, Clock, Award, CheckCircle2, ShieldCheck, MessageSquare, MapPin } from 'lucide-react';
+import { useRegion } from '../context/RegionContext';
+import type { RecruiterFact } from '../data/regionContent';
 
-export const DubaiRecruiterFacts: React.FC = () => {
-  const facts = [
-    {
-      label: "Relocation Target",
-      value: "Dubai, UAE 🇦🇪",
-      subtext: "Actively seeking roles across the Dubai tech ecosystem",
-      icon: Plane,
-      color: "theme-gold-text"
-    },
-    {
-      label: "Visa Sponsorship Status",
-      value: "Employment Visa Required",
-      subtext: "Requires standard UAE Employment Visa sponsorship from employer",
-      icon: ShieldCheck,
-      color: "text-emerald-500"
-    },
-    {
-      label: "Notice Period",
-      value: "60 Days",
-      subtext: "Standard transition period from current Senior Lead role at SuperOps",
-      icon: Clock,
-      color: "theme-cyan-text"
-    },
-    {
-      label: "Direct UAE Communication",
-      value: "BOTIM & WhatsApp Active",
-      subtext: "Available on BOTIM App (+91 97902 47499) for UAE VoIP calling & messaging",
-      icon: MessageSquare,
-      color: "text-[#00F2FE]"
-    }
-  ];
+const getIcon = (iconName: RecruiterFact['iconName']) => {
+  switch (iconName) {
+    case 'Plane': return Plane;
+    case 'ShieldCheck': return ShieldCheck;
+    case 'Clock': return Clock;
+    case 'MessageSquare': return MessageSquare;
+    case 'MapPin': return MapPin;
+  }
+};
+
+export const RecruiterFacts: React.FC = () => {
+  const { content } = useRegion();
 
   return (
-    <section id="dubai-facts" className="py-12 bg-[var(--bg-page)] text-[var(--text-body)] transition-colors duration-250">
+    <section id="location-facts" className="py-12 bg-[var(--bg-page)] text-[var(--text-body)] transition-colors duration-250">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        
+
         {/* Banner Box */}
         <div className="relative overflow-hidden rounded-2xl border border-[var(--border-gold)] bg-[var(--bg-card)] p-6 sm:p-8 shadow-xl">
           <div className="absolute right-0 top-0 -mr-16 -mt-16 h-64 w-64 rounded-full bg-[#0052FF]/15 blur-3xl" />
@@ -48,21 +31,21 @@ export const DubaiRecruiterFacts: React.FC = () => {
                 <span>Executive Recruiter Summary</span>
               </div>
               <h2 className="mt-1 text-2xl font-extrabold theme-title sm:text-3xl">
-                Dubai & UAE Hiring Checklist
+                {content.sectionHeading}
               </h2>
             </div>
 
             <div className="flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 px-4 py-1.5 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
               <CheckCircle2 className="h-4 w-4" />
-              <span>Full Mobility Readiness</span>
+              <span>{content.sectionBadge}</span>
             </div>
           </div>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {facts.map((item, index) => {
-              const IconComp = item.icon;
+            {content.recruiterFacts.map((item, index) => {
+              const IconComp = getIcon(item.iconName);
               return (
-                <div 
+                <div
                   key={index}
                   className="rounded-xl border border-[var(--border-card)] bg-[var(--bg-inner)] p-4 transition-all hover:border-[var(--border-gold)] shadow-sm"
                 >

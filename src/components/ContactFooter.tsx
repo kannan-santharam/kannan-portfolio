@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Mail, MessageSquare, Phone, MapPin, Copy, Check, Sparkles, PhoneCall, Zap, Globe, PhoneForwarded } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
+import { useRegion } from '../context/RegionContext';
 
 export const ContactFooter: React.FC = () => {
+  const { content } = useRegion();
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedBotim, setCopiedBotim] = useState(false);
 
@@ -23,12 +25,14 @@ export const ContactFooter: React.FC = () => {
   };
 
   const quickTopics = [
-    {
-      id: 'dubai',
-      label: '🇦🇪 Dubai Role Inquiry',
-      icon: Globe,
-      message: 'Hi Kannan, I reviewed your executive portfolio and would like to discuss a Lead Engineering role in Dubai, UAE.'
-    },
+    ...(content.footer.quickTopic
+      ? [{
+          id: content.code,
+          label: content.footer.quickTopic.label,
+          icon: Globe,
+          message: content.footer.quickTopic.message,
+        }]
+      : []),
     {
       id: 'rspack',
       label: '⚡ 96% Rspack Build Speedup',
@@ -59,20 +63,22 @@ export const ContactFooter: React.FC = () => {
               {/* Informational Status Badges (cursor-default) */}
               <div className="flex flex-wrap items-center gap-2">
                 <span className="inline-flex items-center gap-2 rounded-full theme-gold-badge px-3.5 py-1 text-xs font-semibold cursor-default select-none">
-                  🇦🇪 Available for Dubai, UAE Hiring
+                  {content.footer.bannerBadge}
                 </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-bold text-cyan-600 dark:text-cyan-400 cursor-default select-none">
-                  <PhoneForwarded className="h-3.5 w-3.5" />
-                  <span>BOTIM App Active</span>
-                </span>
+                {content.botim && (
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-bold text-cyan-600 dark:text-cyan-400 cursor-default select-none">
+                    <PhoneForwarded className="h-3.5 w-3.5" />
+                    <span>BOTIM App Active</span>
+                  </span>
+                )}
               </div>
-              
+
               <h2 className="text-3xl font-extrabold theme-title sm:text-4xl">
-                Ready to Lead & Accelerate Frontend Engineering in Dubai
+                {content.footer.heading}
               </h2>
 
               <p className="text-sm theme-sub leading-relaxed max-w-xl">
-                Seeking a Lead Frontend Engineer or Engineering Manager position with a tech product company in Dubai. Available on 60 days notice with full mobility for visa processing.
+                {content.footer.paragraph}
               </p>
 
               {/* Quick WhatsApp Topic Presets with Hover Message Tooltips (Clickable Actions) */}
@@ -113,7 +119,7 @@ export const ContactFooter: React.FC = () => {
               <div className="flex flex-wrap items-center gap-4 pt-2 text-xs font-mono theme-muted cursor-default select-none">
                 <span className="flex items-center gap-1.5">
                   <MapPin className="h-4 w-4 theme-gold-text" />
-                  Dubai Relocation Ready
+                  {content.footer.monoLine}
                 </span>
                 <span>•</span>
                 <span className="flex items-center gap-1.5">
@@ -143,19 +149,21 @@ export const ContactFooter: React.FC = () => {
               </a>
 
               {/* BOTIM App CTA */}
-              <button
-                onClick={handleCopyBotim}
-                className="flex w-full items-center justify-between rounded-xl border border-cyan-500/40 bg-cyan-500/10 px-4 py-3 text-xs sm:text-sm font-semibold text-cyan-600 dark:text-cyan-400 transition-all hover:bg-cyan-500/20 active:scale-95 cursor-pointer"
-              >
-                <span className="flex items-center gap-2">
-                  <PhoneForwarded className="h-4 w-4 shrink-0" />
-                  <span>{copiedBotim ? "BOTIM Handle Copied!" : "BOTIM VoIP Handle"}</span>
-                </span>
-                <span className="font-mono text-xs opacity-80 flex items-center gap-1">
-                  {copiedBotim ? <Check className="h-3.5 w-3.5 text-cyan-400" /> : <Copy className="h-3.5 w-3.5" />}
-                  {RESUME_DATA.contact.phone}
-                </span>
-              </button>
+              {content.botim && (
+                <button
+                  onClick={handleCopyBotim}
+                  className="flex w-full items-center justify-between rounded-xl border border-cyan-500/40 bg-cyan-500/10 px-4 py-3 text-xs sm:text-sm font-semibold text-cyan-600 dark:text-cyan-400 transition-all hover:bg-cyan-500/20 active:scale-95 cursor-pointer"
+                >
+                  <span className="flex items-center gap-2">
+                    <PhoneForwarded className="h-4 w-4 shrink-0" />
+                    <span>{copiedBotim ? "BOTIM Handle Copied!" : "BOTIM VoIP Handle"}</span>
+                  </span>
+                  <span className="font-mono text-xs opacity-80 flex items-center gap-1">
+                    {copiedBotim ? <Check className="h-3.5 w-3.5 text-cyan-400" /> : <Copy className="h-3.5 w-3.5" />}
+                    {RESUME_DATA.contact.phone}
+                  </span>
+                </button>
+              )}
 
               {/* LinkedIn & GitHub Buttons */}
               <div className="grid grid-cols-2 gap-2.5">
@@ -204,7 +212,7 @@ export const ContactFooter: React.FC = () => {
           </div>
           <div className="flex items-center gap-2 font-mono text-[11px] theme-gold-text cursor-default select-none">
             <Sparkles className="h-3.5 w-3.5" />
-            <span>Dubai, UAE Executive Portfolio Edition</span>
+            <span>{content.footer.editionLabel}</span>
           </div>
         </div>
 

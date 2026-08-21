@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
+import { RegionProvider, useRegion } from './context/RegionContext';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
-import { DubaiRecruiterFacts } from './components/DubaiRecruiterFacts';
+import { RecruiterFacts } from './components/RecruiterFacts';
 import { MetricsGrid } from './components/MetricsGrid';
 import { AiArchitectureShowcase } from './components/AiArchitectureShowcase';
 import { ExperienceTimeline } from './components/ExperienceTimeline';
@@ -13,6 +14,7 @@ import { DocMindShowcase } from './components/DocMindShowcase';
 import { DocMindOverlay } from './components/DocMindOverlay';
 
 function MainLayout() {
+  const { region } = useRegion();
   const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
@@ -20,7 +22,18 @@ function MainLayout() {
   const isManualNavRef = useRef(false);
   const manualNavTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const sectionIds = ['hero', 'dubai-facts', 'ai-project', 'metrics', 'ai-spotlight', 'experience', 'skills', 'contact'];
+  const showRecruiterFacts = region === 'dubai';
+
+  const sectionIds = [
+    'hero',
+    ...(showRecruiterFacts ? ['location-facts'] : []),
+    'ai-project',
+    'metrics',
+    'ai-spotlight',
+    'experience',
+    'skills',
+    'contact',
+  ];
 
   // Mouse Movement Ambient Glow Listener
   useEffect(() => {
@@ -64,7 +77,7 @@ function MainLayout() {
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [showRecruiterFacts]);
 
   const handleNavigate = (sectionId: string) => {
     setActiveSection(sectionId);
@@ -105,8 +118,8 @@ function MainLayout() {
       {/* Hero Section */}
       <HeroSection onOpenResumeModal={() => setIsResumeModalOpen(true)} />
 
-      {/* Recruiter Quick Facts Bar */}
-      <DubaiRecruiterFacts />
+      {/* Recruiter Quick Facts Bar (Dubai edition only) */}
+      {showRecruiterFacts && <RecruiterFacts />}
 
       {/* DocMind Featured AI Project */}
       <DocMindShowcase />
@@ -141,7 +154,9 @@ function MainLayout() {
 export function App() {
   return (
     <ThemeProvider>
-      <MainLayout />
+      <RegionProvider>
+        <MainLayout />
+      </RegionProvider>
     </ThemeProvider>
   );
 }

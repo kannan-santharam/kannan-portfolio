@@ -85,7 +85,7 @@ export const DocMindOverlay: React.FC<DocMindOverlayProps> = ({ isOpen, onOpenCh
               <input
                 type="text"
                 readOnly
-                placeholder="Ask the AI about Kannan's experience, skills, or Dubai move…"
+                placeholder="Ask the AI about Kannan's experience, skills, or next role…"
                 aria-label="Open DocMind AI Assistant"
                 onFocus={(e) => {
                   e.currentTarget.blur();

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FileText, Menu, X, Sun, Moon, MessageSquare, Bot, Sparkles, ChevronDown } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
 import { useTheme } from '../context/ThemeContext';
+import { useRegion } from '../context/RegionContext';
 
 interface NavbarProps {
   onOpenResumeModal: () => void;
@@ -20,9 +21,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, a
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [aiMenuOpen, setAiMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const { region, content } = useRegion();
 
   const navItems: NavItem[] = [
-    { name: 'Relocation & Visa', id: 'dubai-facts' },
+    ...(region === 'dubai' ? [{ name: content.navLabel, id: 'location-facts' }] : []),
     {
       name: 'AI',
       children: [
@@ -233,8 +235,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, a
         <div className="border-t border-[var(--border-card)] bg-[var(--bg-page)] px-4 pb-6 pt-3 backdrop-blur-xl md:hidden shadow-2xl">
           <div className="mb-3 flex items-center justify-between rounded-xl theme-gold-badge px-3 py-2 text-xs font-medium">
             <div className="flex items-center gap-2">
-              <span>🇦🇪</span>
-              <span>Ready for Dubai, UAE</span>
+              <span>{content.mobileBanner.flag}</span>
+              <span>{content.mobileBanner.text}</span>
             </div>
             <span className="font-bold theme-title">60d Notice</span>
           </div>
@@ -294,7 +296,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, a
             </button>
 
             <a
-              href={`https://wa.me/${RESUME_DATA.contact.phoneClean}?text=Hi%20Kannan,%20I'm%20reaching%20out%20regarding%20a%20Lead%20Frontend%20role%20in%20Dubai.`}
+              href={`https://wa.me/${RESUME_DATA.contact.phoneClean}?text=${encodeURIComponent(content.hero.whatsappMessage)}`}
               target="_blank"
               rel="noreferrer"
               className="flex w-full items-center justify-center gap-2 rounded-xl border border-emerald-600 bg-emerald-600 dark:bg-emerald-500/10 py-2.5 text-xs font-bold text-white dark:text-emerald-400 shadow-sm"
