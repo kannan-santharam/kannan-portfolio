@@ -48,8 +48,8 @@ export const RESUME_DATA = {
     {
       value: "AI-Native",
       label: "AI Platform & Agentic Tooling",
-      description: "Architected an AI test platform via Web Streams and built custom Claude Code skills with MCP server guardrails.",
-      subtext: "HTTP Web Streams · MCP Servers · Claude Code",
+      description: "Architected an AI test platform via Web Streams, and shipped Claude Code skills that turn a Figma node link into production Base UI components.",
+      subtext: "MCP Servers · Claude Code · Figma MCP",
       badge: "GenAI & Agentic Tech",
       iconName: "Bot"
     },
@@ -79,24 +79,6 @@ export const RESUME_DATA = {
     }
   ] as MetricItem[],
 
-  aiInitiatives: [
-    {
-      title: "AI Test-Authoring Platform via Web Streams",
-      description: "Architected an automated testing platform orchestrating LLM agents to auto-generate, execute, and self-heal Playwright test suites with real-time feedback streamed via HTTP Web Streams.",
-      tags: ["HTTP Web Streams", "fetch + ReadableStream", "LLM Orchestration", "Playwright", "Agent Automation"]
-    },
-    {
-      title: "Custom Claude Code Skills & MCP Servers",
-      description: "Authored custom production Claude Code skills and engineered Model Context Protocol (MCP) servers, enabling agents to query codebase symbol graphs and safely generate refactors.",
-      tags: ["Claude Code", "MCP (Model Context Protocol)", "MCP Servers", "Cursor IDE"]
-    },
-    {
-      title: "Agent Guardrails & Strict Write-Scope Design",
-      description: "Designed multi-tier permission boundaries ensuring autonomous AI coding agents only modify target domain modules without mutating core platform interfaces.",
-      tags: ["Agent Safety", "Write-Scope Boundaries", "Security Control", "Amazon Bedrock AgentCore"]
-    }
-  ],
-
   experiences: [
     {
       id: "superops",
@@ -111,13 +93,14 @@ export const RESUME_DATA = {
         "Mentored junior and mid-level engineers on React best practices and monorepo code quality, while standardizing a reusable UI SDK framework adopted across product teams.",
         "Architected an AI test authoring platform from zero using React and Node.js, orchestrating LLM agents over HTTP Streamable Web Streams (fetch + ReadableStream) to auto-generate, run, and self-heal end-to-end test suites.",
         "Authored custom production Claude Code skills and engineered Model Context Protocol (MCP) servers, establishing strict multi-tier write-scope guardrails to secure autonomous agent workflows across the codebase.",
+        "Built a headless design system from scratch on Base UI, and authored a custom Claude Code skill that pulls design context from a Figma node link through an MCP server to generate production components automatically, cutting page build time from 2 days of AI-assisted engineering to a few hours.",
         "Executed a solo Webpack 5 to Rspack migration in 3 weeks, reducing cold-start build compilation from 2 minutes to 5 seconds across 12 packages.",
         "Improved application load times through React lazy loading, route-level code splitting and per-package chunking strategy across the monorepo.",
         "Eliminated 30,000+ lines of dead code and unused dependencies across the monorepo using Knip static analysis.",
         "Maintained platform health with a 232-spec Playwright regression suite in Jenkins CI.",
         "Built role-based access control (RBAC) gates and high-frequency polling dashboards using custom cached Apollo query hooks, balancing data freshness against network load."
       ],
-      skills: ["React", "TypeScript", "Rspack", "MCP Servers", "HTTP Streamable", "Claude Code Skills", "GraphQL", "Apollo", "Playwright", "Zustand", "Knip"]
+      skills: ["React", "TypeScript", "Rspack", "MCP Servers", "HTTP Streamable", "Claude Code Skills", "Base UI", "Figma MCP", "GraphQL", "Apollo", "Playwright", "Zustand", "Knip"]
     },
     {
       id: "freshworks",
@@ -139,31 +122,21 @@ export const RESUME_DATA = {
       skills: ["React", "JavaScript", "Node.js", "REST APIs", "SaaS Integrations (Jira, Salesforce, Zendesk, ServiceNow)", "Customer 360", "SASS"]
     },
     {
-      id: "infigenic",
-      company: "Infigenic, LLC",
-      location: "Bengaluru, India",
-      period: "Jan 2018 to Jun 2018",
+      id: "niche-infigenic",
+      company: "Niche Video Media, LLC / Infigenic, LLC (acquired by Freshworks)",
+      location: "Chennai & Bengaluru, India",
+      period: "Mar 2016 to Jun 2018",
       title: "Software Developer",
-      featured: false,
-      highlights: [
-        "Designed and implemented high-converting company web pages and product landing pages.",
-        "Built a seamless integration connecting Freshservice with DocuSign using REST API services; the company was subsequently acquired by Freshworks."
-      ],
-      skills: ["JavaScript", "HTML5", "CSS3", "REST APIs", "DocuSign API"]
-    },
-    {
-      id: "niche",
-      company: "Niche Video Media, LLC",
-      location: "Chennai, India",
-      period: "Mar 2016 to Dec 2017",
-      title: "Web Application Developer & Designer",
+      progression: "Web Application Developer & Designer → Software Developer",
       featured: false,
       highlights: [
         "Designed and implemented responsive web pages, landing pages, and custom plugins for a commercial video-hosting platform.",
         "Built a video player customisation feature from scratch with configurable player buttons, annotations, and call-to-action overlays.",
-        "Implemented an administrative dashboard that dynamically calculated Stripe pricing plans based on feature selection, storage tiers, and bandwidth limits."
+        "Implemented an administrative dashboard that dynamically calculated Stripe pricing plans based on feature selection, storage tiers, and bandwidth limits.",
+        "Built high-converting company and product landing pages supporting top-of-funnel demand.",
+        "Built a seamless integration connecting Freshservice with DocuSign using REST API services, joining Freshworks with the team on acquisition."
       ],
-      skills: ["JavaScript", "HTML5", "CSS3", "Responsive Design", "Stripe API"]
+      skills: ["JavaScript", "HTML5", "CSS3", "Responsive Design", "Stripe API", "REST APIs", "DocuSign API"]
     }
   ] as ExperienceItem[],
 
@@ -175,6 +148,7 @@ export const RESUME_DATA = {
         { name: "Claude Code Skills", level: "Expert", hot: true },
         { name: "Model Context Protocol (MCP) Servers", level: "Expert", hot: true },
         { name: "HTTP Streamable (ReadableStream)", level: "Expert", hot: true },
+        { name: "Figma MCP (Design-to-Code)", level: "Expert", hot: true },
         { name: "Cursor IDE & Agent Workflows", level: "Expert", hot: true },
         { name: "LLM Orchestration & Prompting", level: "Advanced", hot: true },
         { name: "Agent Write-Scope Safety", level: "Expert", hot: true },
@@ -214,6 +188,7 @@ export const RESUME_DATA = {
         { name: "Rspack & Webpack 5 Migration", level: "Expert", hot: true },
         { name: "Micro-Frontends", level: "Advanced" },
         { name: "Design Systems & UI SDKs", level: "Expert" },
+        { name: "Base UI Headless Components", level: "Expert", hot: true },
         { name: "Role-Based Access Control (RBAC)", level: "Expert" },
         { name: "Knip Static Dead-Code Analysis", level: "Expert" }
       ]
