@@ -1,686 +1,323 @@
-%PDF-1.4
+%PDF-1.3
 %‚„œ”
 1 0 obj
 <<
-/Producer (pypdf)
+/PageMode /UseNone
+/Pages 2 0 R
+/Type /Catalog
 >>
 endobj
 2 0 obj
 <<
-/Type /Pages
 /Count 2
-/Kids [ 4 0 R 11 0 R ]
+/Kids [ 3 0 R 14 0 R ]
+/Type /Pages
 >>
 endobj
 3 0 obj
 <<
-/Type /Catalog
-/Pages 2 0 R
-/Outlines 13 0 R
->>
-endobj
-4 0 obj
-<<
-/Contents 5 0 R
+/Annots [ 4 0 R 5 0 R 6 0 R 7 0 R ]
+/Contents 8 0 R
 /MediaBox [ 0 0 595.2756 841.8898 ]
+/Parent 2 0 R
 /Resources <<
-/Font 6 0 R
+/Font 9 0 R
 /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
 >>
 /Rotate 0
 /Trans <<
 >>
 /Type /Page
-/Parent 2 0 R
-/Annots [ 14 0 R 15 0 R 16 0 R 17 0 R ]
+>>
+endobj
+4 0 obj
+<<
+/A <<
+/S /URI
+/Type /Action
+/URI (mailto\072as\056kannan4\100gmail\056com)
+>>
+/Border [ 0 0 0 ]
+/Rect [ 328.9528 758.3898 436.3628 769.9898 ]
+/Subtype /Link
+/Type /Annot
 >>
 endobj
 5 0 obj
 <<
-/Length 9535
+/A <<
+/S /URI
+/Type /Action
+/URI (https\072\057\057linkedin\056com\057in\057askannan)
 >>
-stream
-1 0 0 1 0 0 cm
-BT
-/F1 12 Tf
-14.4 TL
-ET
-q
-1 0 0 1 49.15 787.8898 cm
-q
-0.180392 0.454902 0.709804 rg
-BT
-1 0 0 1 0 3 Tm
-/F2 21 Tf
-24 TL
-90.4208 0.0 Td
-(KANNAN APPIYA SANTHARAM) Tj
-T*
--90.4208 0.0 Td
-ET
-Q
-Q
-q
-1 0 0 1 49.15 786.3898 cm
-Q
-q
-1 0 0 1 49.15 772.3898 cm
-q
-BT
-1 0 0 1 0 3.5 Tm
-1.664295 0 Td
-14 TL
-/F2 10.5 Tf
-0.2 0.2 0.2 rg
-(Senior Lead Software Engineer \050Lead Frontend Engineer\051  ) Tj
-(\174) Tj
-(  React \267 Node\056js \267 AI\055Native Engineering) Tj
-T*
--1.664295 0 Td
-ET
-Q
-Q
-q
-1 0 0 1 49.15 771.3898 cm
-Q
-q
-1 0 0 1 49.15 758.3898 cm
-q
-BT
-1 0 0 1 0 3 Tm
-81.9778 0.0 Td
--0.000232 Tw
-13 TL
-/F1 10 Tf
-0.2 0.2 0.2 rg
-(Chennai\054 India  ) Tj
-(\174) Tj
-(  \05391 97902 47499 \050WhatsApp\051  ) Tj
-(\174) Tj
-(  ) Tj
-0 0.321569 1 rg
-(as\056kannan4\100gmail\056com) Tj
-T*
-0 Tw
--81.9778 0.0 Td
-ET
-Q
-Q
-q
-1 0 0 1 49.15 757.3898 cm
-Q
-q
-1 0 0 1 49.15 744.3898 cm
-q
-BT
-1 0 0 1 0 3 Tm
-41.3478 0.0 Td
-13 TL
-/F1 10 Tf
-0 0.321569 1 rg
-(linkedin\056com\057in\057askannan) Tj
-0.2 0.2 0.2 rg
-(  ) Tj
-( ) Tj
-(\174) Tj
-( ) Tj
-(  ) Tj
-0 0.321569 1 rg
-(github\056com\057kannan\055santharam) Tj
-0.2 0.2 0.2 rg
-(  ) Tj
-( ) Tj
-(\174) Tj
-( ) Tj
-(  ) Tj
-0 0.321569 1 rg
-(kannan\055ai\055dev\056vercel\056app\057ind) Tj
-T*
--41.3478 0.0 Td
-ET
-Q
-Q
-q
-1 0 0 1 49.15 743.3898 cm
-Q
-q
-1 0 0 1 49.15 730.3898 cm
-q
-BT
-1 0 0 1 0 3 Tm
-145.7678 0.0 Td
-13 TL
-/F2 10 Tf
-0.2 0.2 0.2 rg
-(Nationality\072) Tj
-/F1 10 Tf
-( Indian  ) Tj
-(\174) Tj
-(  ) Tj
-/F2 10 Tf
-(Notice Period\072) Tj
-/F1 10 Tf
-( 60 Days) Tj
-T*
--145.7678 0.0 Td
-ET
-Q
-Q
-q
-1 0 0 1 49.15 728.3898 cm
-Q
-q
-1 0 0 1 49.15 709.3898 cm
-q
-0.121569 0.219608 0.392157 rg
-BT
-1 0 0 1 0 3.5 Tm
-/F2 11.5 Tf
-15 TL
-(PROFESSIONAL SUMMARY) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 707.3898 cm
-q
-1 w
-1 J
-0.121569 0.219608 0.392157 RG
-n
-0 0 m
-496.9756 0 l
-S
-Q
-Q
-q
-1 0 0 1 49.15 594.4898 cm
-q
-0.2 0.2 0.2 rg
-BT
-1 0 0 1 0 99.9 Tm
-/F1 10.5 Tf
-13.8 TL
-(Senior Lead Software Engineer with 10\0565\053 years of experience turning AI\055native engineering into) Tj
-T*
-(measurable business impact\072 architected an AI test\055authoring platform and LLM\055orchestrated agent) Tj
-T*
-(workflows\054 backed by custom Claude Code skills and Model Context Protocol \050MCP\051 servers with strict) Tj
-T*
-(write\055scope guardrails\054 cutting manual test effort and speeding releases\056 Delivered a 96\045 build\055time) Tj
-T*
-(reduction reclaiming hundreds of engineering hours monthly and eliminated 30\054000\053 lines of dead code\054) Tj
-T*
-(without disrupting a platform serving 4\054000\053 MSP and IT enterprise customers\056 Proven record leading solo) Tj
-T*
-(platform migrations and mentoring engineering teams\056 Seeking a Senior Lead Software Engineer \057) Tj
-T*
-(Engineering Manager role in India\056) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 592.9898 cm
-Q
-q
-1 0 0 1 49.15 573.9898 cm
-q
-0.121569 0.219608 0.392157 rg
-BT
-1 0 0 1 0 3.5 Tm
-/F2 11.5 Tf
-15 TL
-(CAREER HIGHLIGHTS) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 571.9898 cm
-q
-1 w
-1 J
-0.121569 0.219608 0.392157 RG
-n
-0 0 m
-496.9756 0 l
-S
-Q
-Q
-q
-1 0 0 1 49.15 514.2898 cm
-q
-BT
-1 0 0 1 14 44.7 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Architected an AI test\055authoring platform from zero\054 orchestrating LLM agents over HTTP Streamable) Tj
-T*
-12.432 0.0 Td
-(Web Streams \050fetch \053 ReadableStream\051 to auto\055generate\054 execute\054 and self\055heal end\055to\055end test suites\054) Tj
-T*
-(while engineering custom Claude Code skills and Model Context Protocol \050MCP\051 servers with strict) Tj
-T*
-(write\055scope guardrails\056) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 513.4898 cm
-Q
-q
-1 0 0 1 49.15 485.8898 cm
-q
-BT
-1 0 0 1 14 17.1 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Reduced cold\055start build compilation from 2 minutes to 5 seconds\054 a 96\045 improvement\054 through a solo) Tj
-T*
-12.432 0.0 Td
-(Webpack 5 to Rspack migration completed in 3 weeks across 12 monorepo packages\056) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 485.0898 cm
-Q
-q
-1 0 0 1 49.15 457.4898 cm
-q
-BT
-1 0 0 1 14 17.1 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Led an engineering squad of frontend developers at SuperOps\054 driving sprint execution\054 architecture) Tj
-T*
-12.432 0.0 Td
-(reviews\054 and cross\055team delivery supporting 4\054000\053 MSP and IT enterprise customers\056) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 456.6898 cm
-Q
-q
-1 0 0 1 49.15 429.0898 cm
-q
-BT
-1 0 0 1 14 17.1 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Mentored 6 to 7 junior and onboarding software engineers across SuperOps and Freshworks on React) Tj
-T*
-12.432 0.0 Td
-(best practices\054 REST API development\054 and UI architecture to accelerate team ramp\055up\056) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 428.2898 cm
-Q
-q
-1 0 0 1 49.15 426.7898 cm
-Q
-q
-1 0 0 1 49.15 407.7898 cm
-q
-0.121569 0.219608 0.392157 rg
-BT
-1 0 0 1 0 3.5 Tm
-/F2 11.5 Tf
-15 TL
-(TECHNICAL SKILLS) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 405.7898 cm
-q
-1 w
-1 J
-0.121569 0.219608 0.392157 RG
-n
-0 0 m
-496.9756 0 l
-S
-Q
-Q
-q
-1 0 0 1 49.15 375.6898 cm
-q
-BT
-1 0 0 1 0 17.1 Tm
-13.8 TL
-/F2 10.5 Tf
-0.2 0.2 0.2 rg
-(AI \046 Agentic Tooling\072) Tj
-/F1 10.5 Tf
-( Claude Code\054 Model Context Protocol \050MCP\051 Servers\054 Cursor IDE\054 LLM) Tj
-T*
-(Orchestration\054 HTTP Streamable \050ReadableStream\051\054 Agent Guardrails \046 Write\055Scope Design) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 374.8898 cm
-Q
-q
-1 0 0 1 49.15 347.2898 cm
-q
-BT
-1 0 0 1 0 17.1 Tm
-13.8 TL
-/F2 10.5 Tf
-0.2 0.2 0.2 rg
-(Frontend Core\072) Tj
-/F1 10.5 Tf
-( React\054 TypeScript\054 JavaScript \050ES6\053\051\054 HTML5\054 CSS3\054 Tailwind CSS\054 SASS\054 Responsive) Tj
-T*
-(Web Design\054 Core Web Vitals) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 346.4898 cm
-Q
-q
-1 0 0 1 49.15 318.8898 cm
-q
-BT
-1 0 0 1 0 17.1 Tm
-13.8 TL
-/F2 10.5 Tf
-0.2 0.2 0.2 rg
-(State\054 APIs \046 Streaming\072) Tj
-/F1 10.5 Tf
-( GraphQL\054 Apollo Client\054 Zustand\054 REST API Design\054 Custom Cached Query) Tj
-T*
-(Hooks\054 Server\055Sent Events \050SSE\051\054 HTTP Streamable Web Streams) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 318.0898 cm
-Q
-q
-1 0 0 1 49.15 290.4898 cm
-q
-BT
-1 0 0 1 0 17.1 Tm
-13.8 TL
-/F2 10.5 Tf
-0.2 0.2 0.2 rg
-(Architecture\072) Tj
-/F1 10.5 Tf
-( Monorepos\054 Micro\055Frontends\054 Design Systems\054 Role\055Based Access Control \050RBAC\051\054) Tj
-T*
-(Module Federation) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 289.6898 cm
-Q
-q
-1 0 0 1 49.15 275.8898 cm
-q
-BT
-1 0 0 1 0 3.3 Tm
-13.8 TL
-/F2 10.5 Tf
-0.2 0.2 0.2 rg
-(Build \046 Performance\072) Tj
-/F1 10.5 Tf
-( Rspack\054 Webpack 5\054 Code Splitting\054 Knip Static Analysis\054 Bundle Optimisation) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 275.0898 cm
-Q
-q
-1 0 0 1 49.15 247.4898 cm
-q
-BT
-1 0 0 1 0 17.1 Tm
-13.8 TL
-/F2 10.5 Tf
-0.2 0.2 0.2 rg
-(Testing\054 Cloud \046 DevOps\072) Tj
-/F1 10.5 Tf
-( Playwright End\055to\055End Suite \050232 specs\051\054 Node\056js\054 Jenkins CI\057CD Pipelines\054) Tj
-T*
-(Docker\054 AWS \050EC2\054 S3\054 Route 53\051\054 Amazon Bedrock AgentCore) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 246.6898 cm
-Q
-q
-1 0 0 1 49.15 205.2898 cm
-q
-BT
-1 0 0 1 0 30.9 Tm
-13.8 TL
-/F2 10.5 Tf
-0.2 0.2 0.2 rg
-(Leadership \046 Process\072) Tj
-/F1 10.5 Tf
-( Engineering Squad Leadership\054 Developer Mentorship \0506 to 7 engineers\051\054) Tj
-T*
-(Technical Knowledge Sharing\054 Agile Methodology\054 Git \046 GitHub Flow\054 Architecture \046 Code Reviews\054) Tj
-T*
-(Cross\055Team Collaboration) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 204.4898 cm
-Q
-q
-1 0 0 1 49.15 202.9898 cm
-Q
-q
-1 0 0 1 49.15 183.9898 cm
-q
-0.121569 0.219608 0.392157 rg
-BT
-1 0 0 1 0 3.5 Tm
-/F2 11.5 Tf
-15 TL
-(PROFESSIONAL EXPERIENCE) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 181.9898 cm
-q
-1 w
-1 J
-0.121569 0.219608 0.392157 RG
-n
-0 0 m
-496.9756 0 l
-S
-Q
-Q
-q
-1 0 0 1 49.15 165.9898 cm
-q
-0 0 0 rg
-BT
-/F1 10 Tf
-12 TL
-ET
-q
-1 0 0 1 0 0 cm
-q
-0.2 0.2 0.2 rg
-BT
-1 0 0 1 0 3 Tm
-/F2 10.5 Tf
-13.5 TL
-(Senior Lead Software Engineer) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 345 0 cm
-q
-0.2 0.2 0.2 rg
-BT
-1 0 0 1 0 3 Tm
-/F2 10.5 Tf
-13.5 TL
-72.3365 0 Td
-(Jul 2022 \226 Present) Tj
-T*
--72.3365 0 Td
-ET
-Q
-Q
-q
-Q
-Q
-Q
-q
-1 0 0 1 49.15 152.4898 cm
-q
-0.180392 0.454902 0.709804 rg
-BT
-1 0 0 1 0 3 Tm
-/F2 10.5 Tf
-13.5 TL
-(SuperOps \227 Chennai\054 India) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 140.4898 cm
-q
-0.333333 0.333333 0.333333 rg
-BT
-1 0 0 1 0 3 Tm
-/F3 9 Tf
-12 TL
-(Progression\072 Senior Software Engineer ) Tj
-/F4 9 Tf
-12 TL
-(\256) Tj
-/F3 9 Tf
-12 TL
-( Lead Software Engineer ) Tj
-/F4 9 Tf
-12 TL
-(\256) Tj
-/F3 9 Tf
-12 TL
-( Senior Lead Software Engineer) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 139.6898 cm
-Q
-q
-1 0 0 1 49.15 98.28976 cm
-q
-BT
-1 0 0 1 14 30.9 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Led an engineering squad of frontend developers\054 driving sprint execution\054 architecture reviews\054 and) Tj
-T*
-12.432 0.0 Td
-(cross\055team collaboration across product\054 design\054 and QA to deliver enterprise features supporting) Tj
-T*
-(4\054000\053 MSP and IT enterprise customers\056) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 97.48976 cm
-Q
-q
-1 0 0 1 49.15 69.88976 cm
-q
-BT
-1 0 0 1 14 17.1 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Mentored junior and mid\055level engineers on React best practices and monorepo code quality\054 while) Tj
-T*
-12.432 0.0 Td
-(standardising a reusable UI SDK framework adopted across product teams\056) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 69.08976 cm
-Q
-q
-1 0 0 1 49.15 41.48976 cm
-q
-BT
-1 0 0 1 14 17.1 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Architected an AI test\055authoring platform from zero using React and Node\056js\054 orchestrating LLM agents) Tj
-T*
-12.432 0.0 Td
-(over HTTP Streamable Web Streams \050fetch \053 ReadableStream\051 to auto\055generate\054 run\054 and self\055heal) Tj
-T*
-ET
-Q
-Q
-
-endstream
+/Border [ 0 0 0 ]
+/Rect [ 96.0578 730.3898 208.3278 741.9898 ]
+/Subtype /Link
+/Type /Annot
+>>
 endobj
 6 0 obj
 <<
-/F1 7 0 R
-/F2 8 0 R
-/F3 9 0 R
-/F4 10 0 R
+/A <<
+/S /URI
+/Type /Action
+/URI (https\072\057\057github\056com\057kannan\055santharam)
+>>
+/Border [ 0 0 0 ]
+/Rect [ 222.0478 730.3898 357.1078 741.9898 ]
+/Subtype /Link
+/Type /Annot
 >>
 endobj
 7 0 obj
+<<
+/A <<
+/S /URI
+/Type /Action
+/URI (https\072\057\057kannan\055ai\055dev\056vercel\056app\057ind)
+>>
+/Border [ 0 0 0 ]
+/Rect [ 370.8278 730.3898 499.2178 741.9898 ]
+/Subtype /Link
+/Type /Annot
+>>
+endobj
+8 0 obj
+<<
+/Length 9424
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT /F2 21 Tf 25.2 TL ET
+.180392 .454902 .709804 rg
+BT 1 0 0 1 139.5708 790.8898 Tm (KANNAN APPIYA SANTHARAM) Tj T* ET
+BT /F2 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 53.1188 775.8898 Tm (Senior Lead Software Engineer \(Frontend/Fullstack\)  |  React \267 Node.js \267 AI-Native Engineering) Tj T* ET
+BT /F1 10 Tf 12 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 158.9128 761.3898 Tm (Chennai, India  |  +91 97902 47499  |  ) Tj T* ET
+BT /F1 10 Tf 12 TL ET
+0 .321569 1 rg
+BT 1 0 0 1 328.9528 761.3898 Tm (as.kannan4@gmail.com) Tj T* ET
+BT /F2 10 Tf 12 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 194.9178 747.3898 Tm (Nationality:) Tj T* ET
+BT /F1 10 Tf 12 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 249.3678 747.3898 Tm ( Indian  |  ) Tj T* ET
+BT /F2 10 Tf 12 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 293.1078 747.3898 Tm (Notice Period:) Tj T* ET
+BT /F1 10 Tf 12 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 360.8978 747.3898 Tm ( 60 Days) Tj T* ET
+BT /F1 10 Tf 12 TL ET
+0 .321569 1 rg
+BT 1 0 0 1 96.0578 733.3898 Tm (linkedin.com/in/askannan) Tj T* ET
+BT /F1 10 Tf 12 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 208.3278 733.3898 Tm (  |  ) Tj T* ET
+BT /F1 10 Tf 12 TL ET
+0 .321569 1 rg
+BT 1 0 0 1 222.0478 733.3898 Tm (github.com/kannan-santharam) Tj T* ET
+BT /F1 10 Tf 12 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 357.1078 733.3898 Tm (  |  ) Tj T* ET
+BT /F1 10 Tf 12 TL ET
+0 .321569 1 rg
+BT 1 0 0 1 370.8278 733.3898 Tm (kannan-ai-dev.vercel.app/ind) Tj T* ET
+BT /F2 11.5 Tf 13.8 TL ET
+.121569 .219608 .392157 rg
+BT 1 0 0 1 49.15 712.4898 Tm (PROFESSIONAL SUMMARY) Tj T* ET
+1 w
+1 J
+.121569 .219608 .392157 RG
+n 49.15 706.9898 m 546.1256 706.9898 l S
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 49.15 693.9898 Tm (Full-stack Senior Lead Software Engineer with 10.5+ years in enterprise SaaS, working across React) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 49.15 679.9898 Tm (and Node.js. Currently leading an engineering team on a platform serving 4,000+ MSP and IT) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 49.15 665.9898 Tm (enterprise customers, focused on AI-native engineering with LLM orchestration, MCP servers, and) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 49.15 651.9898 Tm (production agent skills. Seeking a Senior Lead Software Engineer / Engineering Manager role.) Tj T* ET
+BT /F2 11.5 Tf 13.8 TL ET
+.121569 .219608 .392157 rg
+BT 1 0 0 1 49.15 631.0898 Tm (BUSINESS IMPACT SNAPSHOT) Tj T* ET
+1 w
+1 J
+.121569 .219608 .392157 RG
+n 49.15 625.5898 m 546.1256 625.5898 l S
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 612.5898 Tm (\225   An AI test-authoring platform generates, runs, and self-heals end-to-end suites, converting) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 598.5898 Tm (recurring QA cost into automated coverage.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 583.9898 Tm (\225   A headless Base UI design system built on customised design tokens, paired with a custom) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 569.9898 Tm (Claude Code skill that generates components straight from a Figma node link, took page build-out) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 555.9898 Tm (from 2 days of AI-assisted engineering to a few hours.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 541.3898 Tm (\225   96% faster builds: 2-minute cold starts cut to 5 seconds across 12 packages, reclaiming hundreds) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 527.3898 Tm (of engineering hours a month.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 512.7898 Tm (\225   4,000+ enterprise customers: platform-wide migrations, dead-code removal, and regression) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 498.7898 Tm (automation delivered without disrupting the platform.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 484.1898 Tm (\225   30,000+ lines of dead code retired: smaller maintenance footprint and lower security overhead.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 469.5898 Tm (\225   Team capacity multiplied: squad leadership plus mentorship of 10+ engineers across SuperOps) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 455.5898 Tm (and Freshworks, shortening ramp-up time.) Tj T* ET
+BT /F2 11.5 Tf 13.8 TL ET
+.121569 .219608 .392157 rg
+BT 1 0 0 1 49.15 434.6898 Tm (CORE COMPETENCIES) Tj T* ET
+1 w
+1 J
+.121569 .219608 .392157 RG
+n 49.15 429.1898 m 546.1256 429.1898 l S
+BT /F2 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 49.15 416.1898 Tm (Leadership & Delivery:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 168.357 416.1898 Tm ( Engineering Squad Leadership, Developer Mentorship \(10+ engineers\),) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 49.15 402.1898 Tm (Architecture & Code Reviews, Agile Delivery, Cross-Team Collaboration, Stakeholder & Customer) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 49.15 388.1898 Tm (Communication) Tj T* ET
+BT /F2 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 49.15 373.5898 Tm (AI-Native Engineering:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 167.114 373.5898 Tm ( Production Agent Skills, Model Context Protocol \(MCP\) Servers, LLM) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 49.15 359.5898 Tm (Orchestration, Agent Write-Scope Safety, RAG & Embedding, Amazon Bedrock AgentCore) Tj T* ET
+BT /F2 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 49.15 344.9898 Tm (Platform & Performance:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 178.73 344.9898 Tm ( Monorepos, Module Federation, Rspack & Webpack 5, Micro-Frontends,) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 49.15 330.9898 Tm (Design Systems & UI SDKs, Core Web Vitals) Tj T* ET
+BT /F2 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 49.15 316.3898 Tm (Full Stack Engineering:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 171.404 316.3898 Tm ( React, TypeScript, JavaScript \(ES6+\), Node.js, Python, REST API Design &) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 49.15 302.3898 Tm (Integration, GraphQL & Apollo, Zustand, Playwright, Jenkins CI/CD, Docker, AWS) Tj T* ET
+BT /F2 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 49.15 287.7898 Tm (Tools:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 82.15 287.7898 Tm ( Claude Code, Cursor, GitHub Copilot, Figma MCP, Knip Static Analysis, Git & GitHub Flow) Tj T* ET
+BT /F2 11.5 Tf 13.8 TL ET
+.121569 .219608 .392157 rg
+BT 1 0 0 1 49.15 266.8898 Tm (PROFESSIONAL EXPERIENCE) Tj T* ET
+1 w
+1 J
+.121569 .219608 .392157 RG
+n 49.15 261.3898 m 546.1256 261.3898 l S
+BT /F2 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 49.15 248.3898 Tm (Senior Lead Software Engineer) Tj T* ET
+BT 1 0 0 1 450.1286 248.3898 Tm (Jul 2022 \226 Present) Tj T* ET
+.180392 .454902 .709804 rg
+BT 1 0 0 1 49.15 234.8898 Tm (SuperOps \227 Chennai, India) Tj T* ET
+BT /F3 9 Tf 10.8 TL ET
+.333333 .333333 .333333 rg
+BT 1 0 0 1 49.15 222.8898 Tm (Progression: Senior Software Engineer) Tj T* ET
+BT /F4 9 Tf 10.8 TL ET
+.333333 .333333 .333333 rg
+BT 1 0 0 1 204.715 222.8898 Tm ( \256 ) Tj T* ET
+BT /F3 9 Tf 10.8 TL ET
+.333333 .333333 .333333 rg
+BT 1 0 0 1 218.098 222.8898 Tm (Lead Software Engineer) Tj T* ET
+BT /F4 9 Tf 10.8 TL ET
+.333333 .333333 .333333 rg
+BT 1 0 0 1 314.65 222.8898 Tm ( \256 ) Tj T* ET
+BT /F3 9 Tf 10.8 TL ET
+.333333 .333333 .333333 rg
+BT 1 0 0 1 328.033 222.8898 Tm (Senior Lead Software Engineer) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 208.5898 Tm (\225   Own frontend delivery for a platform serving 4,000+ MSP and IT enterprise customers, leading a) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 194.5898 Tm (squad through sprint planning, architecture review, and cross-functional execution with product and) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 180.5898 Tm (design teams to keep enterprise feature commitments on schedule.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 165.9898 Tm (\225   Cut cold-start build compilation by 96%, from 2 minutes to 5 seconds, via a solo Webpack 5 to) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 151.9898 Tm (Rspack migration delivered in 3 weeks across 12 monorepo packages, reclaiming hundreds of) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 137.9898 Tm (engineering hours per month and accelerating time-to-market for every downstream feature.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 123.3898 Tm (\225   Reduced manual regression effort and release risk by architecting an AI test-authoring platform in) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 109.3898 Tm (React and Node.js that orchestrates LLM agents to generate, execute, and self-heal end-to-end) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 95.3898 Tm (test suites, streaming real-time results over HTTP Web Streams.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 80.7898 Tm (\225   Raised team throughput by putting custom Claude Code skills and MCP servers into production) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 66.7898 Tm (developer workflow, with multi-tier write-scope guardrails that let engineers adopt autonomous) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 52.7898 Tm (agents without exposing core platform interfaces to risk.) Tj T* ET
+ 
+
+endstream
+endobj
+9 0 obj
+<<
+/F1 10 0 R
+/F2 11 0 R
+/F3 12 0 R
+/F4 13 0 R
+>>
+endobj
+10 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -689,7 +326,7 @@ endobj
 /Type /Font
 >>
 endobj
-8 0 obj
+11 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -698,7 +335,7 @@ endobj
 /Type /Font
 >>
 endobj
-9 0 obj
+12 0 obj
 <<
 /BaseFont /Helvetica-Oblique
 /Encoding /WinAnsiEncoding
@@ -707,7 +344,7 @@ endobj
 /Type /Font
 >>
 endobj
-10 0 obj
+13 0 obj
 <<
 /BaseFont /Symbol
 /Name /F4
@@ -715,814 +352,256 @@ endobj
 /Type /Font
 >>
 endobj
-11 0 obj
+14 0 obj
 <<
-/Contents 12 0 R
+/Contents 15 0 R
 /MediaBox [ 0 0 595.2756 841.8898 ]
+/Parent 2 0 R
 /Resources <<
-/Font 6 0 R
+/Font 9 0 R
 /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
 >>
 /Rotate 0
 /Trans <<
 >>
 /Type /Page
-/Parent 2 0 R
->>
-endobj
-12 0 obj
-<<
-/Length 9138
->>
-stream
-1 0 0 1 0 0 cm
-BT
-/F1 12 Tf
-14.4 TL
-ET
-q
-1 0 0 1 49.15 798.0898 cm
-q
-BT
-1 0 0 1 14 3.3 Tm
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(end\055to\055end test suites\056) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 797.2898 cm
-Q
-q
-1 0 0 1 49.15 755.8898 cm
-q
-BT
-1 0 0 1 14 30.9 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Authored custom production Claude Code skills and engineered Model Context Protocol \050MCP\051) Tj
-T*
-12.432 0.0 Td
-(servers\054 establishing strict multi\055tier write\055scope guardrails to secure autonomous agent workflows) Tj
-T*
-(across the codebase\056) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 755.0898 cm
-Q
-q
-1 0 0 1 49.15 727.4898 cm
-q
-BT
-1 0 0 1 14 17.1 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Executed a solo Webpack 5 to Rspack migration in 3 weeks\054 reducing cold\055start build compilation from) Tj
-T*
-12.432 0.0 Td
-(2 minutes to 5 seconds across 12 packages\056) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 726.6898 cm
-Q
-q
-1 0 0 1 49.15 699.0898 cm
-q
-BT
-1 0 0 1 14 17.1 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Improved application load times through React lazy loading\054 route\055level code splitting and per\055package) Tj
-T*
-12.432 0.0 Td
-(chunking strategy across the monorepo\056) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 698.2898 cm
-Q
-q
-1 0 0 1 49.15 670.6898 cm
-q
-BT
-1 0 0 1 14 17.1 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Eliminated 30\054000\053 lines of dead code and unused dependencies across the monorepo using Knip) Tj
-T*
-12.432 0.0 Td
-(static analysis\056) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 669.8898 cm
-Q
-q
-1 0 0 1 49.15 656.0898 cm
-q
-BT
-1 0 0 1 14 3.3 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Maintained platform health with a 232\055spec Playwright regression suite in Jenkins CI\056) Tj
-T*
-12.432 0.0 Td
-ET
-Q
-Q
-q
-1 0 0 1 49.15 655.2898 cm
-Q
-q
-1 0 0 1 49.15 627.6898 cm
-q
-BT
-1 0 0 1 14 17.1 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Built role\055based access control \050RBAC\051 gates and high\055frequency polling dashboards using custom) Tj
-T*
-12.432 0.0 Td
-(cached Apollo query hooks\054 balancing data freshness against network load\056) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 626.8898 cm
-Q
-q
-1 0 0 1 49.15 625.3898 cm
-Q
-q
-1 0 0 1 49.15 611.8898 cm
-q
-0 0 0 rg
-BT
-/F1 10 Tf
-12 TL
-ET
-q
-1 0 0 1 0 0 cm
-q
-0.2 0.2 0.2 rg
-BT
-1 0 0 1 0 3 Tm
-/F2 10.5 Tf
-13.5 TL
-(Senior Software Engineer \050Customer\055Facing Engineering\051) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 345 0 cm
-q
-0.2 0.2 0.2 rg
-BT
-1 0 0 1 0 3 Tm
-/F2 10.5 Tf
-13.5 TL
-65.9105 0 Td
-(Jun 2018 \226 Jul 2022) Tj
-T*
--65.9105 0 Td
-ET
-Q
-Q
-q
-Q
-Q
-Q
-q
-1 0 0 1 49.15 598.3898 cm
-q
-0.180392 0.454902 0.709804 rg
-BT
-1 0 0 1 0 3 Tm
-/F2 10.5 Tf
-13.5 TL
-(Freshworks \227 Chennai\054 India) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 586.3898 cm
-q
-0.333333 0.333333 0.333333 rg
-BT
-1 0 0 1 0 3 Tm
-/F3 9 Tf
-12 TL
-(Progression\072 Onboarding Engineer ) Tj
-/F4 9 Tf
-12 TL
-(\256) Tj
-/F3 9 Tf
-12 TL
-( Senior Software Engineer) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 585.5898 cm
-Q
-q
-1 0 0 1 49.15 557.9898 cm
-q
-BT
-1 0 0 1 14 17.1 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Mentored 6 to 7 junior and onboarding software engineers on React\054 REST API development\054 and UI) Tj
-T*
-12.432 0.0 Td
-(architecture\054 conducting regular code and design reviews to accelerate ramp\055up time\056) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 557.1898 cm
-Q
-q
-1 0 0 1 49.15 529.5898 cm
-q
-BT
-1 0 0 1 14 17.1 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Worked directly with customers alongside Support\054 Customer Success and Sales teams to understand) Tj
-T*
-12.432 0.0 Td
-(use cases and requirements\054 then partnered with Product Design to deliver the resulting UI\056) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 528.7898 cm
-Q
-q
-1 0 0 1 49.15 501.1898 cm
-q
-BT
-1 0 0 1 14 17.1 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Built UI web pages and REST API services across Freshworks products using React\054 JavaScript\054) Tj
-T*
-12.432 0.0 Td
-(Node\056js\054 HTML and SASS\056) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 500.3898 cm
-Q
-q
-1 0 0 1 49.15 472.7898 cm
-q
-BT
-1 0 0 1 14 17.1 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Built a Customer 360 dashboard consolidating all of a customer\047s information into a single operational) Tj
-T*
-12.432 0.0 Td
-(view\056) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 471.9898 cm
-Q
-q
-1 0 0 1 49.15 444.3898 cm
-q
-BT
-1 0 0 1 14 17.1 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Integrated enterprise SaaS platforms including Jira\054 Salesforce\054 Zendesk and ServiceNow with) Tj
-T*
-12.432 0.0 Td
-(Freshworks products through REST API services\056) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 443.5898 cm
-Q
-q
-1 0 0 1 49.15 415.9898 cm
-q
-BT
-1 0 0 1 14 17.1 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Implemented multiple Freshworks add\055ons and supporting REST API services to solve) Tj
-T*
-12.432 0.0 Td
-(customer\055specific operational use cases\056) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 415.1898 cm
-Q
-q
-1 0 0 1 49.15 401.3898 cm
-q
-BT
-1 0 0 1 14 3.3 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Created UI wireframes and design mockups in Balsamiq\054 and led code and UI design reviews\056) Tj
-T*
-12.432 0.0 Td
-ET
-Q
-Q
-q
-1 0 0 1 49.15 400.5898 cm
-Q
-q
-1 0 0 1 49.15 399.0898 cm
-Q
-q
-1 0 0 1 49.15 385.5898 cm
-q
-0 0 0 rg
-BT
-/F1 10 Tf
-12 TL
-ET
-q
-1 0 0 1 0 0 cm
-q
-0.2 0.2 0.2 rg
-BT
-1 0 0 1 0 3 Tm
-/F2 10.5 Tf
-13.5 TL
-(Software Developer) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 345 0 cm
-q
-0.2 0.2 0.2 rg
-BT
-1 0 0 1 0 3 Tm
-/F2 10.5 Tf
-13.5 TL
-62.9915 0 Td
-(Jan 2018 \226 Jun 2018) Tj
-T*
--62.9915 0 Td
-ET
-Q
-Q
-q
-Q
-Q
-Q
-q
-1 0 0 1 49.15 372.0898 cm
-q
-0.180392 0.454902 0.709804 rg
-BT
-1 0 0 1 0 3 Tm
-/F2 10.5 Tf
-13.5 TL
-(Infigenic\054 LLC \227 Bengaluru\054 India) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 371.2898 cm
-Q
-q
-1 0 0 1 49.15 357.4898 cm
-q
-BT
-1 0 0 1 14 3.3 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Designed and implemented company web pages and landing pages\056) Tj
-T*
-12.432 0.0 Td
-ET
-Q
-Q
-q
-1 0 0 1 49.15 356.6898 cm
-Q
-q
-1 0 0 1 49.15 329.0898 cm
-q
-BT
-1 0 0 1 14 17.1 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Built an integration connecting Freshservice with DocuSign using REST API services\073 the company) Tj
-T*
-12.432 0.0 Td
-(was subsequently acquired by Freshworks\056) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 328.2898 cm
-Q
-q
-1 0 0 1 49.15 326.7898 cm
-Q
-q
-1 0 0 1 49.15 313.2898 cm
-q
-0 0 0 rg
-BT
-/F1 10 Tf
-12 TL
-ET
-q
-1 0 0 1 0 0 cm
-q
-BT
-1 0 0 1 0 3 Tm
-13.5 TL
-/F2 10.5 Tf
-0.2 0.2 0.2 rg
-(Web Application Developer \046 Designer) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 345 0 cm
-q
-0.2 0.2 0.2 rg
-BT
-1 0 0 1 0 3 Tm
-/F2 10.5 Tf
-13.5 TL
-61.826 0 Td
-(Mar 2016 \226 Dec 2017) Tj
-T*
--61.826 0 Td
-ET
-Q
-Q
-q
-Q
-Q
-Q
-q
-1 0 0 1 49.15 299.7898 cm
-q
-0.180392 0.454902 0.709804 rg
-BT
-1 0 0 1 0 3 Tm
-/F2 10.5 Tf
-13.5 TL
-(Niche Video Media\054 LLC \227 Chennai\054 India) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 298.9898 cm
-Q
-q
-1 0 0 1 49.15 271.3898 cm
-q
-BT
-1 0 0 1 14 17.1 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Designed and implemented web pages\054 landing pages\054 and plugins for a commercial video\055hosting) Tj
-T*
-12.432 0.0 Td
-(platform\056) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 270.5898 cm
-Q
-q
-1 0 0 1 49.15 242.9898 cm
-q
-BT
-1 0 0 1 14 17.1 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Built a video player customisation feature from scratch with configurable player buttons\054 annotations) Tj
-T*
-12.432 0.0 Td
-(and call\055to\055action overlays\056) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 242.1898 cm
-Q
-q
-1 0 0 1 49.15 214.5898 cm
-q
-BT
-1 0 0 1 14 17.1 Tm
--12.432 0.0 Td
-13.8 TL
-/F1 10.5 Tf
-0.2 0.2 0.2 rg
-(\225   Implemented an admin dashboard that dynamically generated Stripe pricing plans based on feature) Tj
-T*
-12.432 0.0 Td
-(selection\054 storage\054 and bandwidth tiers\056) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 213.7898 cm
-Q
-q
-1 0 0 1 49.15 212.2898 cm
-Q
-q
-1 0 0 1 49.15 193.2898 cm
-q
-0.121569 0.219608 0.392157 rg
-BT
-1 0 0 1 0 3.5 Tm
-/F2 11.5 Tf
-15 TL
-(EDUCATION) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 49.15 191.2898 cm
-q
-1 w
-1 J
-0.121569 0.219608 0.392157 RG
-n
-0 0 m
-496.9756 0 l
-S
-Q
-Q
-q
-1 0 0 1 49.15 174.9898 cm
-q
-0 0 0 rg
-BT
-/F1 10 Tf
-12 TL
-ET
-q
-1 0 0 1 0 0 cm
-q
-0.2 0.2 0.2 rg
-BT
-1 0 0 1 0 3.3 Tm
-/F2 10.5 Tf
-13.8 TL
-(Bachelor of Engineering \050B\056E\056\051\054 Computer Science) Tj
-T*
-ET
-Q
-Q
-q
-1 0 0 1 380 0.3 cm
-q
-0.2 0.2 0.2 rg
-BT
-1 0 0 1 0 3 Tm
-/F2 10.5 Tf
-13.5 TL
-70.59 0 Td
-(2011 \226 2015) Tj
-T*
--70.59 0 Td
-ET
-Q
-Q
-q
-Q
-Q
-Q
-q
-1 0 0 1 49.15 161.1898 cm
-q
-0.333333 0.333333 0.333333 rg
-BT
-1 0 0 1 0 3.3 Tm
-/F1 10.5 Tf
-13.8 TL
-(K\056L\056N\056 College of Information Technology\054 Tamil Nadu\054 India) Tj
-T*
-ET
-Q
-Q
-q
-1 0.0 0.0 1 49.15 142.1898 cm
-q
-0.121569 0.219608 0.392157 rg
-BT
-1 0.0 0.0 1 0.0 3.5 Tm
-/F2 11.5 Tf
-15 TL
-(LANGUAGES) Tj
-T*
-ET
-Q
-Q
-q
-1 0.0 0.0 1 49.15 140.1898 cm
-q
-1 w
-1 J
-0.121569 0.219608 0.392157 RG
-n
-0.0 0.0 m
-496.9756 0.0 l
-S
-Q
-Q
-q
-1 0.0 0.0 1 49.15 123.8898 cm
-q
-0.2 0.2 0.2 rg
-BT
-1 0.0 0.0 1 0.0 3.3 Tm
-/F2 10.5 Tf
-13.8 TL
-/F2 10.5 Tf
-(English\072 ) Tj
-/F1 10.5 Tf
-(Fluent \050Professional Working Proficiency\051  \174  ) Tj
-/F2 10.5 Tf
-(Tamil\072 ) Tj
-/F1 10.5 Tf
-(Native  \174  ) Tj
-/F2 10.5 Tf
-(Hindi\072 ) Tj
-/F1 10.5 Tf
-(Intermediate) Tj
-T*
-ET
-Q
-Q
-
-endstream
-endobj
-13 0 obj
-<<
->>
-endobj
-14 0 obj
-<<
-/A <<
-/S /URI
-/Type /Action
-/URI (mailto\072as\056kannan4\100gmail\056com)
->>
-/Border [ 0 0 0 ]
-/Rect [ 356.7378 759.3898 464.1478 771.3898 ]
-/Subtype /Link
-/Type /Annot
 >>
 endobj
 15 0 obj
 <<
-/A <<
-/S /URI
-/Type /Action
-/URI (https\072\057\057linkedin\056com\057in\057askannan)
+/Length 8723
 >>
-/Border [ 0 0 0 ]
-/Rect [ 90.4978 745.3898 202.7678 757.3898 ]
-/Subtype /Link
-/Type /Annot
->>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 801.3898 Tm (\225   Built a Python MCP server exposing tool calls over a queryable graph of the frontend codebase,) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 787.3898 Tm (now consumed by AI tooling across other engineering teams.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 772.7898 Tm (\225   Built a headless Base UI design system on customised design tokens and authored a Claude Code) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 758.7898 Tm (skill that generates production components from a Figma node link via MCP, cutting page build) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 744.7898 Tm (time from 2 days of AI-assisted engineering to a few hours.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 730.1898 Tm (\225   Lowered total cost of ownership by eliminating 30,000+ lines of dead code and unused) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 716.1898 Tm (dependencies, shrinking the monorepo\222s maintenance, build, and security surface.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 701.5898 Tm (\225   Improved user-perceived performance across the product through route-level code splitting, React) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 687.5898 Tm (lazy loading \(Suspense\), and a per-package chunking strategy.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 672.9898 Tm (\225   Maintained platform health with a 300+ test-case Playwright regression suite in Jenkins CI,) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 658.9898 Tm (catching regressions before release.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 644.3898 Tm (\225   Unlocked enterprise-tier requirements by delivering role-based access control \(RBAC\) and) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 630.3898 Tm (near-real-time operational dashboards, tuning custom cached Apollo hooks to balance data) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 616.3898 Tm (freshness against network load.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 601.7898 Tm (\225   Removed duplicated build effort by standardising a reusable UI SDK framework adopted across) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 587.7898 Tm (product teams.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 573.1898 Tm (\225   Grew engineering capacity by mentoring 4 to 6 junior and mid-level engineers on React and) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 559.1898 Tm (monorepo quality standards, shortening ramp-up and reducing rework.) Tj T* ET
+BT /F2 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 49.15 543.0898 Tm (Senior Software Engineer \(Customer-Facing Engineering\)) Tj T* ET
+BT 1 0 0 1 443.3966 543.0898 Tm (Jun 2018 \226 Jul 2022) Tj T* ET
+.180392 .454902 .709804 rg
+BT 1 0 0 1 49.15 529.5898 Tm (Freshworks \227 Chennai, India) Tj T* ET
+BT /F3 9 Tf 10.8 TL ET
+.333333 .333333 .333333 rg
+BT 1 0 0 1 49.15 517.5898 Tm (Progression: Onboarding Engineer) Tj T* ET
+BT /F4 9 Tf 10.8 TL ET
+.333333 .333333 .333333 rg
+BT 1 0 0 1 187.714 517.5898 Tm ( \256 ) Tj T* ET
+BT /F3 9 Tf 10.8 TL ET
+.333333 .333333 .333333 rg
+BT 1 0 0 1 201.097 517.5898 Tm (Senior Software Engineer) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 503.2898 Tm (\225   Served as the engineering bridge to enterprise customers, partnering with Support, Customer) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 489.2898 Tm (Success, and Sales to turn complex account requirements into shipped solutions that unblocked) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 475.2898 Tm (onboarding and renewals.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 460.6898 Tm (\225   Reduced support handling effort by building a Customer 360 dashboard consolidating support,) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 446.6898 Tm (sales, and account data into a single operational view.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 432.0898 Tm (\225   Widened platform fit in competitive enterprise deals by integrating tier-1 SaaS systems including) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 418.0898 Tm (Jira, Salesforce, Zendesk, and ServiceNow through robust REST API services.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 403.4898 Tm (\225   Closed customer-specific gaps by shipping targeted add-ons and supporting REST API services in) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 389.4898 Tm (place of one-off custom work.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 374.8898 Tm (\225   Accelerated team onboarding by mentoring 6 to 7 junior and onboarding engineers on React,) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 360.8898 Tm (REST API development, and UI architecture through structured code and design reviews.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 346.2898 Tm (\225   Shipped features end-to-end across Freshworks products, building the React UI and the Node.js) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 332.2898 Tm (REST API services behind it, so enterprise requirements landed without waiting on a separate) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 318.2898 Tm (backend team.) Tj T* ET
+BT /F2 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 49.15 302.1898 Tm (Software Developer) Tj T* ET
+BT 1 0 0 1 439.7336 302.1898 Tm (Mar 2016 \226 Jun 2018) Tj T* ET
+.180392 .454902 .709804 rg
+BT 1 0 0 1 49.15 288.6898 Tm (Niche Video Media, LLC / Infigenic, LLC \(acquired by Freshworks\) \227 Chennai & Bengaluru, India) Tj T* ET
+BT /F3 9 Tf 10.8 TL ET
+.333333 .333333 .333333 rg
+BT 1 0 0 1 49.15 276.6898 Tm (Progression: Web Application Developer & Designer) Tj T* ET
+BT /F4 9 Tf 10.8 TL ET
+.333333 .333333 .333333 rg
+BT 1 0 0 1 257.725 276.6898 Tm ( \256 ) Tj T* ET
+BT /F3 9 Tf 10.8 TL ET
+.333333 .333333 .333333 rg
+BT 1 0 0 1 271.108 276.6898 Tm (Software Developer) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 262.3898 Tm (\225   Increased self-serve revenue capture with an admin dashboard that dynamically priced Stripe) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 248.3898 Tm (plans across feature selection, storage tiers, and bandwidth limits.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 233.7898 Tm (\225   Strengthened product differentiation by building video player customisation from scratch, with) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 219.7898 Tm (configurable controls, annotations, and call-to-action overlays driving viewer conversion.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 205.1898 Tm (\225   Built high-converting company and product landing pages supporting top-of-funnel demand.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 50.126 190.5898 Tm (\225   Extended enterprise workflow coverage by delivering a Freshservice\226DocuSign integration over) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 63.15 176.5898 Tm (REST API services, joining Freshworks with the team on acquisition.) Tj T* ET
+BT /F2 11.5 Tf 13.8 TL ET
+.121569 .219608 .392157 rg
+BT 1 0 0 1 49.15 155.6898 Tm (EDUCATION) Tj T* ET
+1 w
+1 J
+.121569 .219608 .392157 RG
+n 49.15 150.1898 m 546.1256 150.1898 l S
+BT /F2 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 49.15 137.1898 Tm (Bachelor of Engineering \(B.E.\), Computer Science) Tj T* ET
+BT 1 0 0 1 484.9656 137.1898 Tm (2011 \226 2015) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.333333 .333333 .333333 rg
+BT 1 0 0 1 49.15 123.1898 Tm (K.L.N. College of Information Technology \(Affiliated with Anna University\), Tamil Nadu, India) Tj T* ET
+BT /F2 11.5 Tf 13.8 TL ET
+.121569 .219608 .392157 rg
+BT 1 0 0 1 49.15 102.2898 Tm (LANGUAGES) Tj T* ET
+1 w
+1 J
+.121569 .219608 .392157 RG
+n 49.15 96.7898 m 546.1256 96.7898 l S
+BT /F2 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 49.15 83.7898 Tm (English:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 92.545 83.7898 Tm ( Fluent \(Professional Working Proficiency\)  |  ) Tj T* ET
+BT /F2 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 312.413 83.7898 Tm (Tamil:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 344.808 83.7898 Tm ( Native  |  ) Tj T* ET
+BT /F2 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 394.132 83.7898 Tm (Hindi:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+.2 .2 .2 rg
+BT 1 0 0 1 425.295 83.7898 Tm ( Intermediate) Tj T* ET
+ 
+
+endstream
 endobj
 16 0 obj
 <<
-/A <<
-/S /URI
-/Type /Action
-/URI (https\072\057\057github\056com\057kannan\055santharam)
->>
-/Border [ 0 0 0 ]
-/Rect [ 222.0478 745.3898 357.1078 757.3898 ]
-/Subtype /Link
-/Type /Annot
->>
-endobj
-17 0 obj
-<<
-/A <<
-/S /URI
-/Type /Action
-/URI (https\072\057\057kannan\055ai\055dev\056vercel\056app\057ind)
->>
-/Border [ 0 0 0 ]
-/Rect [ 376.3878 745.3898 504.7778 757.3898 ]
-/Subtype /Link
-/Type /Annot
+/Author (Kannan Appiya Santharam)
+/CreationDate (D\07220260903105307\05305\04700\047)
+/Creator (anonymous)
+/Keywords ()
+/ModDate (D\07220260903105307\05305\04700\047)
+/Producer (ReportLab PDF Library \055 \050opensource\051)
+/Subject (Business Impact Resume)
+/Title (Kannan Appiya Santharam \055 Senior Lead Software Engineer)
+/Trapped /False
 >>
 endobj
 xref
-0 18
+0 17
 0000000000 65535 f 
 0000000015 00000 n 
-0000000054 00000 n 
-0000000120 00000 n 
-0000000186 00000 n 
-0000000425 00000 n 
-0000010012 00000 n 
-0000010074 00000 n 
-0000010181 00000 n 
-0000010293 00000 n 
-0000010408 00000 n 
-0000010486 00000 n 
-0000010687 00000 n 
-0000019878 00000 n 
-0000019900 00000 n 
-0000020092 00000 n 
-0000020294 00000 n 
-0000020500 00000 n 
+0000000083 00000 n 
+0000000149 00000 n 
+0000000384 00000 n 
+0000000575 00000 n 
+0000000776 00000 n 
+0000000981 00000 n 
+0000001193 00000 n 
+0000010669 00000 n 
+0000010734 00000 n 
+0000010842 00000 n 
+0000010955 00000 n 
+0000011071 00000 n 
+0000011149 00000 n 
+0000011350 00000 n 
+0000020126 00000 n 
 trailer
 <<
-/Size 18
-/Root 3 0 R
-/Info 1 0 R
+/Size 17
+/Root 1 0 R
+/Info 16 0 R
+/ID [ <b181bbc3ad6474390bbb141d4c6394bb> <b181bbc3ad6474390bbb141d4c6394bb> ]
 >>
 startxref
-20713
+20491
 %%EOF

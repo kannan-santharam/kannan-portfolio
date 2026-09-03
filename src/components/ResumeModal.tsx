@@ -98,7 +98,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                     <span>🐙 GitHub</span>
                   </a>
                   <span>·</span>
-                  <a href="https://kannan-ai-dev.vercel.app" target="_blank" rel="noreferrer" className="text-[var(--color-primary)] font-bold flex items-center gap-1">
+                  <a href={content.portfolio.url} target="_blank" rel="noreferrer" className="text-[var(--color-primary)] font-bold flex items-center gap-1">
                     <span>🌐 Portfolio</span>
                   </a>
                 </div>
@@ -125,45 +125,18 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </p>
           </div>
 
-          {/* Key Achievements & Metrics (Clean list in print, cards on screen) */}
+          {/* Business Impact Snapshot */}
           <div>
             <h2 className="text-xs font-bold uppercase tracking-wider theme-gold-text border-b border-[var(--border-card)] pb-1 print:border-b print:border-slate-400 print:text-slate-900 print:text-[10pt] print:pb-0.5">
-              Core Technical Highlights & Metrics
+              Business Impact Snapshot
             </h2>
-            
-            {/* Screen View: Responsive Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2.5 no-print print:hidden">
-              <div className="rounded-xl border border-[var(--border-card)] bg-[var(--bg-inner)] p-3">
-                <div className="text-base font-extrabold theme-cyan-text">AI Platform & Agentic Tooling</div>
-                <div className="text-xs theme-title font-semibold mt-0.5">Web Streams & MCP Server Guardrails</div>
-                <p className="text-[11px] theme-sub mt-1">Architected AI test-authoring platform via HTTP Web Streams and built custom Claude Code skills with multi-tier write guardrails.</p>
-              </div>
-
-              <div className="rounded-xl border border-[var(--border-card)] bg-[var(--bg-inner)] p-3">
-                <div className="text-base font-extrabold theme-gold-text">96% Build Speed Acceleration</div>
-                <div className="text-xs theme-title font-semibold mt-0.5">Webpack 5 to Rspack Solo Migration</div>
-                <p className="text-[11px] theme-sub mt-1">Reduced cold compilation from 2 minutes to 5 seconds across 12 monorepo packages in a 3-week solo migration.</p>
-              </div>
-
-              <div className="rounded-xl border border-[var(--border-card)] bg-[var(--bg-inner)] p-3">
-                <div className="text-base font-extrabold theme-title">Frontend Squad Leadership</div>
-                <div className="text-xs theme-title font-semibold mt-0.5">Cross-Team Execution (4,000+ Customers)</div>
-                <p className="text-[11px] theme-sub mt-1">Led engineering squad across product, design, and QA to deliver enterprise features and standardise a reusable UI SDK.</p>
-              </div>
-
-              <div className="rounded-xl border border-[var(--border-card)] bg-[var(--bg-inner)] p-3">
-                <div className="text-base font-extrabold text-emerald-400">Developer Mentorship (6–7 Eng)</div>
-                <div className="text-xs theme-title font-semibold mt-0.5">Code Quality & Career Ramp-Up</div>
-                <p className="text-[11px] theme-sub mt-1">Mentored junior and onboarding engineers across SuperOps and Freshworks on React best practices, APIs, and UI architecture.</p>
-              </div>
-            </div>
-
-            {/* Print View: Traditional Clean Bullet List */}
-            <ul className="hidden print:block print:list-disc print:pl-5 print:space-y-1 print:text-[9.5pt] print:text-slate-800 print:mt-1">
-              <li><strong>AI Platform & Agentic Engineering:</strong> Architected an automated end-to-end AI test-authoring platform using React and Node.js with real-time feedback streamed via HTTP Web Streams, and engineered production Claude Code skills and MCP servers with strict multi-tier write-scope guardrails.</li>
-              <li><strong>96 Percent Build Speed Acceleration:</strong> Solo executed a 3-week build system migration from Webpack 5 to Rust-powered Rspack across 12 packages at SuperOps, reducing cold start compilation from 2 minutes to 5 seconds.</li>
-              <li><strong>Engineering Squad Leadership:</strong> Led a frontend engineering squad at SuperOps, driving sprint execution, architecture reviews, and cross-team collaboration across product, design, and QA supporting 4,000+ enterprise customers.</li>
-              <li><strong>Developer Mentorship:</strong> Mentored 6 to 7 junior and onboarding software engineers across SuperOps and Freshworks on React best practices, REST API development, and UI architecture to accelerate team ramp-up.</li>
+            <ul className="mt-2 space-y-1 text-xs theme-sub print:list-disc print:pl-5 print:space-y-0.5 print:text-[9.5pt] print:text-slate-800 print:mt-1">
+              {RESUME_DATA.snapshot.map((item) => (
+                <li key={item} className="flex items-start gap-2 print:list-item">
+                  <span className="theme-gold-text mt-0.5 no-print print:hidden">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -212,12 +185,9 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
               Technical Skills Matrix
             </h2>
             <div className="space-y-1.5 text-xs theme-sub mt-2 print:space-y-0.5 print:text-[9pt] print:text-slate-800 print:mt-1">
-              <div><strong>Frontend Core:</strong> React, TypeScript, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, SASS, Responsive Web Design, Core Web Vitals</div>
-              <div><strong>AI & Agentic Tech:</strong> Claude Code Skills, Model Context Protocol (MCP) Servers, Cursor IDE, LLM Orchestration, HTTP Streamable (ReadableStream), Agent Guardrails & Write-Scope Design</div>
-              <div><strong>State, APIs & Streaming:</strong> GraphQL, Apollo Client, REST APIs, Zustand, Custom Cached Query Hooks, Server-Sent Events (SSE), HTTP Streamable Web Streams</div>
-              <div><strong>Architecture & Build:</strong> Monorepos, Rust-powered Rspack, Webpack 5, Micro-Frontends, Knip Static Analysis, Design Systems, Role-Based Access Control (RBAC)</div>
-              <div><strong>Testing, DevOps & Cloud:</strong> Playwright End-to-End Suite (232 specs), Node.js, Jenkins CI/CD Pipelines, Docker, AWS (EC2, S3, Route 53), Amazon Bedrock AgentCore</div>
-              <div><strong>Leadership & Process:</strong> Engineering Squad Leadership, Developer Mentorship (6 to 7 engineers), Technical Knowledge Sharing, Agile Methodology, Git & GitHub Flow, Architecture & Code Reviews, Cross-Team Collaboration</div>
+              {RESUME_DATA.competencies.map((group) => (
+                <div key={group.label}><strong>{group.label}:</strong> {group.items.join(', ')}</div>
+              ))}
             </div>
           </div>
 
@@ -230,7 +200,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
               {RESUME_DATA.education.degree}
             </div>
             <div className="text-xs theme-sub print:text-[9pt] print:text-slate-700">
-              {RESUME_DATA.education.institution} ({RESUME_DATA.education.period}) · {RESUME_DATA.education.location}
+              {RESUME_DATA.education.institution} ({RESUME_DATA.education.period})
             </div>
           </div>
 

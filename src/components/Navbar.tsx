@@ -65,7 +65,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, a
                 <span>{RESUME_DATA.name}</span>
               </span>
             </div>
-            <p className="text-[9px] sm:text-xs theme-muted whitespace-nowrap">React · TypeScript · AI-Native</p>
+            <p className="text-[9px] sm:text-xs theme-muted whitespace-nowrap">React · Node.js · AI-Native</p>
           </div>
         </a>
 

@@ -28,8 +28,8 @@ function MainLayout() {
     'hero',
     ...(showRecruiterFacts ? ['location-facts'] : []),
     'ai-project',
-    'metrics',
     'ai-spotlight',
+    'metrics',
     'experience',
     'skills',
     'contact',
@@ -124,11 +124,11 @@ function MainLayout() {
       {/* DocMind Featured AI Project */}
       <DocMindShowcase />
 
+      {/* AI-Native Specialisation (AI first) */}
+      <AiArchitectureShowcase />
+
       {/* Proven Metrics Grid */}
       <MetricsGrid />
-
-      {/* AI-Native Specialisation */}
-      <AiArchitectureShowcase />
 
       {/* Career History Timeline */}
       <ExperienceTimeline />

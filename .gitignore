@@ -32,3 +32,6 @@ lerna-debug.log*
 *.sln
 *.sw?
 *.docx
+
+# Local resume generators (build the PDF/DOCX from src/data/resumeContent.json)
+scripts/

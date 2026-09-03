@@ -108,13 +108,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                 {RESUME_DATA.title}
               </p>
               <p className="mt-1 font-mono text-[10px] sm:text-xs tracking-wider theme-muted">
-                10.5+ YEARS ENTERPRISE SAAS · REACT · MONOREPOS · AI-NATIVE ARCHITECTURE
+                10.5+ YEARS ENTERPRISE SAAS · REACT · NODE.JS · PYTHON · AI-NATIVE ARCHITECTURE
               </p>
             </div>
 
             {/* Professional Summary */}
             <p className="text-sm leading-relaxed theme-sub sm:text-lg">
-              Specialised in AI-driven development and agentic workflows, LLM orchestration, custom <span className="font-semibold theme-title">Claude Code skills</span>, and <span className="font-semibold theme-gold-text">MCP servers</span>. Proven track record of leading solo platform migrations, cutting build compilation times by <span className="font-bold theme-cyan-text">96%</span>, and establishing safety guardrails across distributed engineering teams.
+              <span className="font-semibold theme-title">AI-native engineer</span>, full stack across React, Node.js and Python. Architected an <span className="font-semibold theme-title">LLM test-authoring platform</span> that generates, runs and self-heals end-to-end suites. Built <span className="font-semibold theme-gold-text">production agent skills</span> and <span className="font-semibold theme-gold-text">MCP servers</span> with write-scope guardrails, plus a headless <span className="font-semibold theme-title">Base UI design system</span> whose Figma-to-component skill takes page build-out from 2 days to <span className="font-bold theme-cyan-text">a few hours</span>.
             </p>
 
             {/* Core Value Metric Cards (Informational Summary) */}
@@ -144,8 +144,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                   <ShieldCheck className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold theme-title">Monorepo Quality</div>
-                  <div className="text-[10px] sm:text-[11px] theme-muted">232 Playwright Specs</div>
+                  <div className="text-xs font-bold theme-title">Codebase Quality</div>
+                  <div className="text-[10px] sm:text-[11px] theme-muted">300+ Playwright Tests</div>
                 </div>
               </div>
             </div>

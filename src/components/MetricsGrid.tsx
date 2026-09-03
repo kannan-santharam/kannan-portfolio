@@ -28,7 +28,7 @@ export const MetricsGrid: React.FC = () => {
             <span>Proven Engineering Impact</span>
           </div>
           <h2 className="mt-3 text-3xl font-extrabold theme-title sm:text-4xl">
-            High-Impact Monorepo & AI Milestones
+            High-Impact Engineering & AI Milestones
           </h2>
           <p className="mx-auto mt-2 max-w-2xl text-base theme-sub">
             Quantitative architectural achievements delivered across 10.5+ years of scaling enterprise SaaS platforms.

@@ -1,0 +1,189 @@
+{
+  "$comment": "Single source of truth for resume content. Consumed by scripts/build_resume.py (PDFs) and src/data/resumeData.ts (site). Edit here only.",
+  "identity": {
+    "name": "Kannan Appiya Santharam",
+    "title": "Senior Lead Software Engineer (Frontend/Fullstack)",
+    "tagline": "React · Node.js · AI-Native Engineering",
+    "noticePeriod": "60 Days",
+    "nationality": "Indian"
+  },
+  "contact": {
+    "phone": "+91 97902 47499",
+    "phoneClean": "+919790247499",
+    "email": "as.kannan4@gmail.com",
+    "emailUrl": "mailto:as.kannan4@gmail.com",
+    "linkedin": "linkedin.com/in/askannan",
+    "linkedinUrl": "https://linkedin.com/in/askannan",
+    "github": "github.com/kannan-santharam",
+    "githubUrl": "https://github.com/kannan-santharam"
+  },
+  "summaryTemplate": "Full-stack Senior Lead Software Engineer with 10.5+ years in enterprise SaaS, working across React and Node.js. Currently leading an engineering team on a platform serving 4,000+ MSP and IT enterprise customers, focused on AI-native engineering with LLM orchestration, MCP servers, and production agent skills. {seeking}",
+  "snapshot": [
+    "An AI test-authoring platform generates, runs, and self-heals end-to-end suites, converting recurring QA cost into automated coverage.",
+    "A headless Base UI design system built on customised design tokens, paired with a custom Claude Code skill that generates components straight from a Figma node link, took page build-out from 2 days of AI-assisted engineering to a few hours.",
+    "96% faster builds: 2-minute cold starts cut to 5 seconds across 12 packages, reclaiming hundreds of engineering hours a month.",
+    "4,000+ enterprise customers: platform-wide migrations, dead-code removal, and regression automation delivered without disrupting the platform.",
+    "30,000+ lines of dead code retired: smaller maintenance footprint and lower security overhead.",
+    "Team capacity multiplied: squad leadership plus mentorship of 10+ engineers across SuperOps and Freshworks, shortening ramp-up time."
+  ],
+  "competencies": [
+    {
+      "label": "Leadership & Delivery",
+      "items": [
+        "Engineering Squad Leadership",
+        "Developer Mentorship (10+ engineers)",
+        "Architecture & Code Reviews",
+        "Agile Delivery",
+        "Cross-Team Collaboration",
+        "Stakeholder & Customer Communication"
+      ]
+    },
+    {
+      "label": "AI-Native Engineering",
+      "items": [
+        "Production Agent Skills",
+        "Model Context Protocol (MCP) Servers",
+        "LLM Orchestration",
+        "Agent Write-Scope Safety",
+        "RAG & Embedding",
+        "Amazon Bedrock AgentCore"
+      ]
+    },
+    {
+      "label": "Platform & Performance",
+      "items": [
+        "Monorepos",
+        "Module Federation",
+        "Rspack & Webpack 5",
+        "Micro-Frontends",
+        "Design Systems & UI SDKs",
+        "Core Web Vitals"
+      ]
+    },
+    {
+      "label": "Full Stack Engineering",
+      "items": [
+        "React",
+        "TypeScript",
+        "JavaScript (ES6+)",
+        "Node.js",
+        "Python",
+        "REST API Design & Integration",
+        "GraphQL & Apollo",
+        "Zustand",
+        "Playwright",
+        "Jenkins CI/CD",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "label": "Tools",
+      "items": [
+        "Claude Code",
+        "Cursor",
+        "GitHub Copilot",
+        "Figma MCP",
+        "Knip Static Analysis",
+        "Git & GitHub Flow"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Senior Lead Software Engineer",
+      "dates": "Jul 2022 – Present",
+      "company": "SuperOps — Chennai, India",
+      "progression": [
+        "Senior Software Engineer",
+        "Lead Software Engineer",
+        "Senior Lead Software Engineer"
+      ],
+      "bullets": [
+        "Own frontend delivery for a platform serving 4,000+ MSP and IT enterprise customers, leading a squad through sprint planning, architecture review, and cross-functional execution with product and design teams to keep enterprise feature commitments on schedule.",
+        "Cut cold-start build compilation by 96%, from 2 minutes to 5 seconds, via a solo Webpack 5 to Rspack migration delivered in 3 weeks across 12 monorepo packages, reclaiming hundreds of engineering hours per month and accelerating time-to-market for every downstream feature.",
+        "Reduced manual regression effort and release risk by architecting an AI test-authoring platform in React and Node.js that orchestrates LLM agents to generate, execute, and self-heal end-to-end test suites, streaming real-time results over HTTP Web Streams.",
+        "Raised team throughput by putting custom Claude Code skills and MCP servers into production developer workflow, with multi-tier write-scope guardrails that let engineers adopt autonomous agents without exposing core platform interfaces to risk.",
+        "Built a Python MCP server exposing tool calls over a queryable graph of the frontend codebase, now consumed by AI tooling across other engineering teams.",
+        "Built a headless Base UI design system on customised design tokens and authored a Claude Code skill that generates production components from a Figma node link via MCP, cutting page build time from 2 days of AI-assisted engineering to a few hours.",
+        "Lowered total cost of ownership by eliminating 30,000+ lines of dead code and unused dependencies, shrinking the monorepo’s maintenance, build, and security surface.",
+        "Improved user-perceived performance across the product through route-level code splitting, React lazy loading (Suspense), and a per-package chunking strategy.",
+        "Maintained platform health with a 300+ test-case Playwright regression suite in Jenkins CI, catching regressions before release.",
+        "Unlocked enterprise-tier requirements by delivering role-based access control (RBAC) and near-real-time operational dashboards, tuning custom cached Apollo hooks to balance data freshness against network load.",
+        "Removed duplicated build effort by standardising a reusable UI SDK framework adopted across product teams.",
+        "Grew engineering capacity by mentoring 4 to 6 junior and mid-level engineers on React and monorepo quality standards, shortening ramp-up and reducing rework."
+      ]
+    },
+    {
+      "title": "Senior Software Engineer (Customer-Facing Engineering)",
+      "dates": "Jun 2018 – Jul 2022",
+      "company": "Freshworks — Chennai, India",
+      "progression": [
+        "Onboarding Engineer",
+        "Senior Software Engineer"
+      ],
+      "bullets": [
+        "Served as the engineering bridge to enterprise customers, partnering with Support, Customer Success, and Sales to turn complex account requirements into shipped solutions that unblocked onboarding and renewals.",
+        "Reduced support handling effort by building a Customer 360 dashboard consolidating support, sales, and account data into a single operational view.",
+        "Widened platform fit in competitive enterprise deals by integrating tier-1 SaaS systems including Jira, Salesforce, Zendesk, and ServiceNow through robust REST API services.",
+        "Closed customer-specific gaps by shipping targeted add-ons and supporting REST API services in place of one-off custom work.",
+        "Accelerated team onboarding by mentoring 6 to 7 junior and onboarding engineers on React, REST API development, and UI architecture through structured code and design reviews.",
+        "Shipped features end-to-end across Freshworks products, building the React UI and the Node.js REST API services behind it, so enterprise requirements landed without waiting on a separate backend team."
+      ]
+    },
+    {
+      "title": "Software Developer",
+      "dates": "Mar 2016 – Jun 2018",
+      "company": "Niche Video Media, LLC / Infigenic, LLC (acquired by Freshworks) — Chennai & Bengaluru, India",
+      "progression": [
+        "Web Application Developer & Designer",
+        "Software Developer"
+      ],
+      "bullets": [
+        "Increased self-serve revenue capture with an admin dashboard that dynamically priced Stripe plans across feature selection, storage tiers, and bandwidth limits.",
+        "Strengthened product differentiation by building video player customisation from scratch, with configurable controls, annotations, and call-to-action overlays driving viewer conversion.",
+        "Built high-converting company and product landing pages supporting top-of-funnel demand.",
+        "Extended enterprise workflow coverage by delivering a Freshservice–DocuSign integration over REST API services, joining Freshworks with the team on acquisition."
+      ]
+    }
+  ],
+  "education": {
+    "degree": "Bachelor of Engineering (B.E.), Computer Science",
+    "institution": "K.L.N. College of Information Technology (Affiliated with Anna University), Tamil Nadu, India",
+    "years": "2011 – 2015"
+  },
+  "languages": [
+    {
+      "name": "English",
+      "level": "Fluent (Professional Working Proficiency)"
+    },
+    {
+      "name": "Tamil",
+      "level": "Native"
+    },
+    {
+      "name": "Hindi",
+      "level": "Intermediate"
+    }
+  ],
+  "regions": {
+    "dubai": {
+      "seeking": "Seeking a Lead Software Engineer / Engineering Manager role in Dubai, UAE.",
+      "subject": "Business Impact Resume - Dubai, UAE",
+      "portfolio": "kannan-ai-dev.vercel.app",
+      "portfolioUrl": "https://kannan-ai-dev.vercel.app",
+      "locationLine": "Chennai, India (Ready to Relocate to Dubai, UAE)",
+      "phoneLine": "+91 97902 47499",
+      "visaStatus": "Employment Visa Sponsorship Required"
+    },
+    "india": {
+      "seeking": "Seeking a Senior Lead Software Engineer / Engineering Manager role.",
+      "subject": "Business Impact Resume",
+      "portfolio": "kannan-ai-dev.vercel.app/ind",
+      "portfolioUrl": "https://kannan-ai-dev.vercel.app/ind",
+      "locationLine": "Chennai, India",
+      "phoneLine": "+91 97902 47499",
+      "visaStatus": null
+    }
+  }
+}
