@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileSearch, ExternalLink, Database, Workflow, Radio } from 'lucide-react';
+import { FileSearch, ExternalLink } from 'lucide-react';
 
 const DOCMIND_LIVE_URL = 'https://docmind-rag-llm.vercel.app';
 const DOCMIND_REPO_URL = 'https://github.com/kannan-santharam/DocMind';
@@ -29,7 +29,7 @@ export const DocMindShowcase: React.FC = () => {
             <div>
               <h3 className="text-xl font-bold theme-title">Built, deployed, and answering questions right now</h3>
               <p className="mt-2 max-w-2xl text-xs theme-sub leading-relaxed">
-                Preloaded with Kannan's professional profile, so recruiters can interrogate his experience the moment the page opens — or upload their own job description and ask against it. It can even explain how it was itself engineered.
+                Open it from the ask bar at the bottom of this page and it starts preloaded with Kannan's professional profile, ready for recruiter questions. The standalone demo opens empty, so upload a PDF, DOCX, Markdown, or pasted text and ask against that. It can even explain how it was itself engineered.
               </p>
               <div className="mt-4 flex flex-wrap gap-1.5">
                 <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Next.js 16</span>
@@ -63,92 +63,6 @@ export const DocMindShowcase: React.FC = () => {
               </a>
             </div>
           </div>
-        </div>
-
-        {/* Engineering Deep-Dive Cards */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-
-          {/* Card 1: Embeddings vs Index Limits */}
-          <div className="rounded-2xl border border-[var(--border-card)] bg-[var(--bg-card)] p-6 shadow-xl transition-all hover:border-[var(--border-gold)]">
-            <div className="mb-4 flex items-center justify-between">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl theme-gold-badge">
-                <Database className="h-5 w-5" />
-              </div>
-              <span className="font-mono text-xs font-bold theme-gold-text">Vector Search</span>
-            </div>
-
-            <h3 className="text-xl font-bold theme-title">Embeddings vs Index Limits</h3>
-            <p className="mt-2 text-xs theme-sub leading-relaxed">
-              pgvector's HNSW index rejects anything above 2000 dimensions, so the model's native 3072-dim embeddings are truncated to 768 and re-normalised before indexing.
-            </p>
-
-            <div className="mt-4 rounded-xl border border-[var(--border-card)] bg-[var(--code-bg)] p-3 font-mono text-[11px] text-[var(--code-text)]">
-              <div className="text-slate-400">// 3072 native → HNSW cap is 2000</div>
-              <div className="text-amber-300">vec = normalize(vec.slice(0, 768))</div>
-              <div className="text-emerald-400">USING hnsw (embedding vector_cosine_ops)</div>
-            </div>
-
-            <div className="mt-4 flex flex-wrap gap-1.5">
-              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">pgvector</span>
-              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">HNSW</span>
-              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">768-dim</span>
-            </div>
-          </div>
-
-          {/* Card 2: Measured Quotas & Fallback Chain */}
-          <div className="rounded-2xl border border-[var(--border-card)] bg-[var(--bg-card)] p-6 shadow-xl transition-all hover:border-[var(--border-gold)]">
-            <div className="mb-4 flex items-center justify-between">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--color-cyan)]/10 theme-cyan-text">
-                <Workflow className="h-5 w-5" />
-              </div>
-              <span className="font-mono text-xs font-bold theme-cyan-text">Resilience</span>
-            </div>
-
-            <h3 className="text-xl font-bold theme-title">Resilient Model Cascading</h3>
-            <p className="mt-2 text-xs theme-sub leading-relaxed">
-              API rate limits were measured against the live service, not assumed — informing a five-model Gemini fallback chain that cascades automatically on quota errors so answers keep flowing without user-facing failures.
-            </p>
-
-            <div className="mt-4 rounded-xl border border-[var(--border-card)] bg-[var(--code-bg)] p-3 font-mono text-[11px] text-[var(--code-text)]">
-              <div className="text-rose-400">429 RESOURCE_EXHAUSTED → cascade</div>
-              <div className="text-emerald-400">fallbackChain: [5 Gemini models]</div>
-              <div className="text-slate-400">// zero user-facing errors</div>
-            </div>
-
-            <div className="mt-4 flex flex-wrap gap-1.5">
-              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Model Cascading</span>
-              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Rate-Limit Aware</span>
-              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">High Availability</span>
-            </div>
-          </div>
-
-          {/* Card 3: SSE Framing Bug */}
-          <div className="rounded-2xl border border-[var(--border-card)] bg-[var(--bg-card)] p-6 shadow-xl transition-all hover:border-[var(--border-gold)]">
-            <div className="mb-4 flex items-center justify-between">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-500">
-                <Radio className="h-5 w-5" />
-              </div>
-              <span className="font-mono text-xs font-bold text-emerald-500">Streaming</span>
-            </div>
-
-            <h3 className="text-xl font-bold theme-title">Live Agent Decision Trail</h3>
-            <p className="mt-2 text-xs theme-sub leading-relaxed">
-              The agent streams its reasoning to the UI in real time over Server-Sent Events — whether it chose to retrieve, how it rewrote a thin query, and the answer token-by-token, backed by a hardened stream parser.
-            </p>
-
-            <div className="mt-4 rounded-xl border border-[var(--border-card)] bg-[var(--code-bg)] p-3 font-mono text-[11px] text-[var(--code-text)]">
-              <div className="theme-cyan-text">event: decision → "retrieval needed"</div>
-              <div className="text-amber-300">event: rewrite → "sharpen query"</div>
-              <div className="text-emerald-400">event: answer → tokens + citations</div>
-            </div>
-
-            <div className="mt-4 flex flex-wrap gap-1.5">
-              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">SSE</span>
-              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Streaming UX</span>
-              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Agent Transparency</span>
-            </div>
-          </div>
-
         </div>
 
       </div>

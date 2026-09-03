@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MessageSquare, Phone, MapPin, Copy, Check, Sparkles, PhoneCall, Zap, Globe, PhoneForwarded } from 'lucide-react';
+import { Mail, MessageSquare, Phone, MapPin, Copy, Check, PhoneCall, Zap, Globe, PhoneForwarded } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
 import { useRegion } from '../context/RegionContext';
 
@@ -37,7 +37,7 @@ export const ContactFooter: React.FC = () => {
       id: 'rspack',
       label: '⚡ 96% Rspack Build Speedup',
       icon: Zap,
-      message: "Hi Kannan, I'm interested in your 96% monorepo build speedup win (Webpack 5 to Rspack). Let's connect."
+      message: "Hi Kannan, I'm interested in your 96% build speedup win (Webpack 5 to Rspack). Let's connect."
     },
     {
       id: 'call',
@@ -209,10 +209,6 @@ export const ContactFooter: React.FC = () => {
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-[var(--border-card)] pt-8 sm:flex-row text-xs theme-muted">
           <div>
             © {new Date().getFullYear()} {RESUME_DATA.name}. Built with React & Tailwind CSS.
-          </div>
-          <div className="flex items-center gap-2 font-mono text-[11px] theme-gold-text cursor-default select-none">
-            <Sparkles className="h-3.5 w-3.5" />
-            <span>{content.footer.editionLabel}</span>
           </div>
         </div>
 

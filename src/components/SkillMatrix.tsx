@@ -1,28 +1,27 @@
 import React, { useState } from 'react';
-import { Cpu, Flame } from 'lucide-react';
+import { Cpu } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
 
-export const SkillMatrix: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+const ALL = 'all';
 
-  const categories = [
-    { id: 'all', label: 'All Skills' },
-    { id: 'ai', label: 'AI & Agentic' },
-    { id: 'frontend', label: 'Frontend Core' },
-    { id: 'state', label: 'State & Data' },
-    { id: 'architecture', label: 'Architecture & Build' },
-    { id: 'devops', label: 'Testing & Cloud' },
-    { id: 'leadership', label: 'Leadership' },
+export const SkillMatrix: React.FC = () => {
+  const [selected, setSelected] = useState<string>(ALL);
+
+  // Rail entries come straight from the data, so a rail label can never drift
+  // from the group heading it filters to.
+  const rail = [
+    { id: ALL, label: 'All Skills', count: RESUME_DATA.skillCategories.reduce((n, c) => n + c.skills.length, 0) },
+    ...RESUME_DATA.skillCategories.map(c => ({ id: c.category, label: c.title, count: c.skills.length }))
   ];
 
-  const filteredCategories = selectedCategory === 'all'
+  const groups = selected === ALL
     ? RESUME_DATA.skillCategories
-    : RESUME_DATA.skillCategories.filter(cat => cat.category === selectedCategory);
+    : RESUME_DATA.skillCategories.filter(c => c.category === selected);
 
   return (
     <section id="skills" className="py-12 sm:py-16 bg-[var(--bg-page)] text-[var(--text-body)] border-t border-[var(--border-card)] transition-colors duration-250">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="mb-8 text-center sm:mb-10">
           <div className="inline-flex items-center gap-2 rounded-full border border-[var(--color-cyan)]/30 bg-[var(--color-cyan)]/10 px-3.5 py-1 text-xs font-semibold theme-cyan-text">
@@ -35,69 +34,55 @@ export const SkillMatrix: React.FC = () => {
           <p className="mx-auto mt-1.5 max-w-2xl text-xs sm:text-base theme-sub">
             Categorized skills honed over 10.5+ years of scaling enterprise client platforms and AI workflows.
           </p>
+        </div>
 
-          {/* Touch-Friendly Horizontally Scrollable Filter Strip on Mobile */}
-          <div className="mt-6 flex overflow-x-auto no-scrollbar justify-start sm:justify-center gap-1.5 pb-2 px-1">
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
-                className={`shrink-0 rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
-                  selectedCategory === cat.id
-                    ? 'bg-gradient-to-r from-[#0052FF] via-[#0066FF] to-[#00D2FF] text-white font-bold shadow-md'
-                    : 'border border-[var(--border-card)] bg-[var(--bg-card)] theme-sub hover:border-[var(--border-gold)]'
-                }`}
-              >
-                {cat.label}
-              </button>
+        <div className="flex flex-col gap-6 lg:flex-row lg:gap-10">
+
+          {/* Filter rail — vertical on desktop, horizontally scrollable strip on mobile */}
+          <nav
+            aria-label="Skill categories"
+            className="flex shrink-0 gap-1.5 overflow-x-auto no-scrollbar pb-2 lg:w-60 lg:flex-col lg:gap-0.5 lg:overflow-visible lg:pb-0 lg:sticky lg:top-24 lg:self-start"
+          >
+            {rail.map((item) => {
+              const active = selected === item.id;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => setSelected(item.id)}
+                  aria-current={active ? 'true' : undefined}
+                  className={`shrink-0 cursor-pointer rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all lg:flex lg:w-full lg:items-center lg:justify-between lg:rounded-lg lg:border-l-2 lg:px-3.5 lg:py-2.5 lg:text-left lg:text-sm ${
+                    active
+                      ? 'bg-gradient-to-r from-[#0052FF] via-[#0066FF] to-[#00D2FF] font-bold text-white shadow-md lg:border-l-[var(--color-cyan)] lg:bg-none lg:bg-[var(--bg-card)] lg:text-[var(--color-primary)] lg:shadow-none'
+                      : 'border border-[var(--border-card)] bg-[var(--bg-card)] theme-sub hover:border-[var(--border-gold)] lg:border-0 lg:border-l-2 lg:border-l-transparent lg:bg-transparent lg:hover:bg-[var(--bg-card)]'
+                  }`}
+                >
+                  <span>{item.label}</span>
+                  <span className="hidden font-mono text-[11px] theme-muted lg:inline">{item.count}</span>
+                </button>
+              );
+            })}
+          </nav>
+
+          {/* Skills pane — resume rhythm: a label rule, then the group's skills inline */}
+          <div className="min-w-0 flex-1 space-y-7">
+            {groups.map((group) => (
+              <div key={group.category}>
+                <div className="mb-3 flex items-baseline gap-3 border-b border-[var(--border-card)] pb-2">
+                  <h3 className="text-xs font-bold uppercase tracking-wider theme-title sm:text-sm">
+                    {group.title}
+                  </h3>
+                  <span className="font-mono text-[11px] theme-muted">{group.skills.length}</span>
+                </div>
+
+                <p className="text-sm leading-relaxed theme-sub">
+                  {group.skills.map((skill) => skill.name).join(', ')}
+                </p>
+              </div>
             ))}
+
           </div>
+
         </div>
-
-        {/* Skill Category Cards */}
-        <div className="grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {filteredCategories.map((catGroup, idx) => (
-            <div
-              key={idx}
-              className="rounded-2xl border border-[var(--border-card)] bg-[var(--bg-card)] p-5 sm:p-6 shadow-xl transition-all hover:border-[var(--border-gold)]"
-            >
-              <div className="mb-3.5 border-b border-[var(--border-card)] pb-3">
-                <h3 className="text-base sm:text-lg font-bold theme-title flex items-center justify-between">
-                  <span>{catGroup.title}</span>
-                  <span className="text-xs font-mono theme-gold-text">{catGroup.skills.length} skills</span>
-                </h3>
-              </div>
-
-              <div className="space-y-2">
-                {catGroup.skills.map((skill, sIdx) => (
-                  <div
-                    key={sIdx}
-                    className="flex items-center justify-between rounded-lg bg-[var(--bg-inner)] px-3 py-2 border border-[var(--border-card)]"
-                  >
-                    <div className="flex items-center gap-2">
-                      {skill.hot && <Flame className="h-3.5 w-3.5 theme-gold-text shrink-0" />}
-                      <span className="text-xs font-medium theme-title">{skill.name}</span>
-                    </div>
-
-                    {skill.level && (
-                      <span className={`rounded px-2 py-0.5 text-[10px] font-mono font-semibold ${
-                        skill.level === 'Expert'
-                          ? 'theme-gold-badge'
-                          : skill.level === 'Advanced'
-                          ? 'bg-[var(--color-cyan)]/10 text-[var(--color-cyan)] border border-[var(--color-cyan)]/30'
-                          : 'bg-[var(--bg-pill)] theme-sub border border-[var(--border-card)]'
-                      }`}>
-                        {skill.level}
-                      </span>
-                    )}
-                  </div>
-                ))}
-              </div>
-
-            </div>
-          ))}
-        </div>
-
       </div>
     </section>
   );

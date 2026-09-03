@@ -1,3 +1,5 @@
+import resumeContent from './resumeContent.json';
+
 export type Region = 'dubai' | 'india';
 
 export interface RecruiterFact {
@@ -12,6 +14,9 @@ export interface RegionProfile {
   code: Region;
   flag: string;
   seekingLine: string;
+
+  /** Region-specific portfolio link, from resumeContent.json's regions block. */
+  portfolio: { url: string; display: string };
 
   hero: {
     statusBadge: string;
@@ -41,7 +46,6 @@ export interface RegionProfile {
     heading: string;
     paragraph: string;
     monoLine: string;
-    editionLabel: string;
   };
 
   resumeModal: {
@@ -64,7 +68,11 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
   dubai: {
     code: 'dubai',
     flag: '🇦🇪',
-    seekingLine: 'Seeking a Lead Software Engineer / Engineering Manager role in Dubai, UAE.',
+    seekingLine: resumeContent.regions.dubai.seeking,
+    portfolio: {
+      url: resumeContent.regions.dubai.portfolioUrl,
+      display: resumeContent.regions.dubai.portfolio
+    },
 
     hero: {
       statusBadge: 'Ready to Relocate to Dubai, UAE',
@@ -123,10 +131,9 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
         message: 'Hi Kannan, I reviewed your executive portfolio and would like to discuss a Lead Engineering role in Dubai, UAE.',
       },
       bannerBadge: '🇦🇪 Available for Dubai, UAE Hiring',
-      heading: 'Ready to Lead & Accelerate Frontend Engineering in Dubai',
-      paragraph: 'Seeking a Lead Frontend Engineer or Engineering Manager position with a tech product company in Dubai. Available on 60 days notice with full mobility for visa processing.',
+      heading: 'Ready to Lead & Accelerate Software/AI/Frontend Engineering in Dubai',
+      paragraph: 'Seeking a Lead Software Engineer or Engineering Manager position with a tech product company in Dubai. Available on 60 days notice with full mobility for visa processing.',
       monoLine: 'Dubai Relocation Ready',
-      editionLabel: 'Dubai, UAE Executive Portfolio Edition',
     },
 
     resumeModal: {
@@ -141,7 +148,7 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
 
     seo: {
       title: 'Kannan Appiya Santharam | Senior Lead Software Engineer | Dubai, UAE',
-      description: 'Senior Lead Software Engineer with 10.5+ years experience delivering high-performance monorepos, React 19, TypeScript, Rspack migrations, and AI-Native Engineering (Claude Code skills, MCP, SSE streaming). Ready to relocate to Dubai, UAE.',
+      description: 'Full-stack Senior Lead Software Engineer with 10.5+ years in enterprise SaaS, working across React, TypeScript and Node.js, with AI-Native Engineering (Claude Code skills, MCP servers, Base UI design system generated from Figma). Ready to relocate to Dubai, UAE.',
       keywords: 'Software Lead Dubai, Lead Software Engineer Dubai, Engineering Manager UAE, Senior Lead Software Engineer, Rspack Migration, Claude Code MCP, AI Native Engineering',
     },
     resumePdf: RESUME_PDF,
@@ -150,7 +157,11 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
   india: {
     code: 'india',
     flag: '🇮🇳',
-    seekingLine: 'Seeking a Senior Lead Software Engineer / Engineering Manager role in India.',
+    seekingLine: resumeContent.regions.india.seeking,
+    portfolio: {
+      url: resumeContent.regions.india.portfolioUrl,
+      display: resumeContent.regions.india.portfolio
+    },
 
     hero: {
       statusBadge: 'Based in Chennai, India',
@@ -204,10 +215,9 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
 
     footer: {
       bannerBadge: '📍 Based in Chennai, India',
-      heading: 'Ready to Lead & Accelerate Frontend Engineering in India',
+      heading: 'Ready to Lead & Accelerate Software/AI/Frontend Engineering in India',
       paragraph: 'Seeking a Senior Lead Software Engineer or Engineering Manager position with a product company in India. Available on 60 days notice, open to remote or on-site roles.',
       monoLine: 'Chennai, India Based',
-      editionLabel: 'India Executive Portfolio Edition',
     },
 
     resumeModal: {
@@ -219,7 +229,7 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
 
     seo: {
       title: 'Kannan Appiya Santharam | Senior Lead Software Engineer | Chennai, India',
-      description: 'Senior Lead Software Engineer with 10.5+ years experience delivering high-performance monorepos, React 19, TypeScript, Rspack migrations, and AI-Native Engineering (Claude Code skills, MCP, SSE streaming). Based in Chennai, India.',
+      description: 'Full-stack Senior Lead Software Engineer with 10.5+ years in enterprise SaaS, working across React, TypeScript and Node.js, with AI-Native Engineering (Claude Code skills, MCP servers, Base UI design system generated from Figma). Based in Chennai, India.',
       keywords: 'Software Lead Chennai, Lead Software Engineer India, Engineering Manager India, Senior Lead Software Engineer, Rspack Migration, Claude Code MCP, AI Native Engineering',
     },
     resumePdf: RESUME_PDF_INDIA,
