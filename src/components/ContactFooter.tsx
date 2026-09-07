@@ -73,7 +73,9 @@ export const ContactFooter: React.FC = () => {
                 )}
               </div>
 
-              <h2 className="text-3xl font-extrabold theme-title sm:text-4xl">
+              {/* `Software/AI/Frontend` is one unbreakable token, so it overflowed
+                  narrow screens. Smaller on mobile, and break-words lets it wrap. */}
+              <h2 className="text-2xl font-extrabold theme-title break-words sm:text-4xl">
                 {content.footer.heading}
               </h2>
 
@@ -209,6 +211,9 @@ export const ContactFooter: React.FC = () => {
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-[var(--border-card)] pt-8 sm:flex-row text-xs theme-muted">
           <div>
             © {new Date().getFullYear()} {RESUME_DATA.name}. Built with React & Tailwind CSS.
+          </div>
+          <div className="max-w-md text-center sm:text-right">
+            This site records basic visit information (approximate location, device and referrer) to understand traffic.
           </div>
         </div>
 

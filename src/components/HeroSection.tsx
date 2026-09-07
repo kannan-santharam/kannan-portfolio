@@ -101,7 +101,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
 
             {/* Name & Title */}
             <div>
-              <h1 className="text-2xl font-extrabold tracking-tight theme-title sm:text-4xl lg:text-[42px] xl:text-5xl whitespace-nowrap">
+              <h1 className="text-2xl font-extrabold tracking-tight theme-title sm:text-4xl lg:text-[42px] xl:text-5xl whitespace-normal sm:whitespace-nowrap">
                 {RESUME_DATA.name}
               </h1>
               <p className="mt-1.5 text-lg font-bold text-gold-gradient sm:text-2xl">

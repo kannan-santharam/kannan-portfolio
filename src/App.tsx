@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { ThemeProvider } from './context/ThemeContext';
 import { RegionProvider, useRegion } from './context/RegionContext';
 import { Navbar } from './components/Navbar';
@@ -156,6 +157,9 @@ export function App() {
     <ThemeProvider>
       <RegionProvider>
         <MainLayout />
+        {/* Vercel Web Analytics: aggregate page views, referrer, country, device.
+            No cookies and no per-visitor identity; see the footer note. */}
+        <Analytics />
       </RegionProvider>
     </ThemeProvider>
   );
