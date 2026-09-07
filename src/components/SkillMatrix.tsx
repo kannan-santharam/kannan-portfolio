@@ -41,7 +41,7 @@ export const SkillMatrix: React.FC = () => {
           {/* Filter rail — vertical on desktop, horizontally scrollable strip on mobile */}
           <nav
             aria-label="Skill categories"
-            className="flex shrink-0 gap-1.5 overflow-x-auto no-scrollbar pb-2 lg:w-60 lg:flex-col lg:gap-0.5 lg:overflow-visible lg:pb-0 lg:sticky lg:top-24 lg:self-start"
+            className="flex w-full min-w-0 gap-1.5 overflow-x-auto no-scrollbar pb-2 lg:w-60 lg:shrink-0 lg:flex-col lg:gap-0.5 lg:overflow-visible lg:pb-0 lg:sticky lg:top-24 lg:self-start"
           >
             {rail.map((item) => {
               const active = selected === item.id;
