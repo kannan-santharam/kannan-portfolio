@@ -122,8 +122,9 @@ export const HeroSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Primary Actions. One document CTA and one contact CTA: a
-                recruiter does one thing here, and Dubai runs on WhatsApp. */}
+            {/* Primary Actions. One document CTA and one direct-contact CTA:
+                a recruiter does one thing here, and WhatsApp is the channel
+                both regions actually answer on. */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2">
               <a
                 href={content.resumePdf}
@@ -144,16 +145,15 @@ export const HeroSection: React.FC = () => {
                 <span>WhatsApp Direct Chat</span>
               </a>
 
-              {/* Routes to the contact block, which carries what the WhatsApp
-                  button does not: BOTIM, LinkedIn, GitHub and the prewritten
-                  enquiry topics. Labelled for those so it does not read as a
-                  second WhatsApp CTA. */}
+              {/* Routes to the contact block, which carries the channels the
+                  WhatsApp button does not. The label comes from the region
+                  profile because those channels differ by region. */}
               <button
                 onClick={scrollToContact}
                 className="flex items-center justify-center gap-2 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] px-4 py-3 text-xs sm:text-sm font-semibold theme-title transition-all hover:border-[var(--color-primary)] hover:bg-[var(--bg-card-hover)] cursor-pointer text-center active:scale-95"
               >
                 <ArrowDown className="h-4 w-4 shrink-0 theme-cyan-text" />
-                <span>BOTIM, LinkedIn & More</span>
+                <span>{content.hero.contactCtaLabel}</span>
               </button>
             </div>
 
