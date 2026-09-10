@@ -108,13 +108,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                 {RESUME_DATA.title}
               </p>
               <p className="mt-1 font-mono text-[10px] sm:text-xs tracking-wider theme-muted">
-                10.5+ YEARS ENTERPRISE SAAS · REACT · NODE.JS · PYTHON · AI-NATIVE ARCHITECTURE
+                10.5+ YEARS ENTERPRISE SAAS · REACT · TYPESCRIPT · NODE.JS · AI-NATIVE ARCHITECTURE
               </p>
             </div>
 
             {/* Professional Summary */}
             <p className="text-sm leading-relaxed theme-sub sm:text-lg">
-              <span className="font-semibold theme-title">AI-native engineer</span>, full stack across React, Node.js and Python. Architected an <span className="font-semibold theme-title">LLM test-authoring platform</span> that generates, runs and self-heals end-to-end suites. Built <span className="font-semibold theme-gold-text">production agent skills</span> and <span className="font-semibold theme-gold-text">MCP servers</span> with write-scope guardrails, plus a headless <span className="font-semibold theme-title">Base UI design system</span> whose Figma-to-component skill takes page build-out from 2 days to <span className="font-bold theme-cyan-text">a few hours</span>.
+              <span className="font-semibold theme-title">AI-native engineer</span>, full stack across React, TypeScript and Node.js. Architected an <span className="font-semibold theme-title">AI test-authoring platform</span> that generates, runs and self-heals end-to-end suites. Built <span className="font-semibold theme-gold-text">production agent skills</span> and <span className="font-semibold theme-gold-text">MCP servers</span> with write-scope guardrails, plus a headless <span className="font-semibold theme-title">Base UI design system</span> whose Figma-to-component skill reduces page development from 2 days to <span className="font-bold theme-cyan-text">a few hours</span>.
             </p>
 
             {/* Core Value Metric Cards (Informational Summary) */}
@@ -227,7 +227,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                 <div className="space-y-2.5 text-xs theme-sub cursor-default select-none">
                   <div className="flex items-center justify-between rounded-lg bg-[var(--bg-inner)] p-2.5 border border-[var(--border-card)]">
                     <span className="theme-muted">Target Role:</span>
-                    <span className="font-semibold theme-title">Lead Software Engineer / Engineering Manager</span>
+                    <span className="font-semibold theme-title">{content.hero.targetRole}</span>
                   </div>
 
                   <div className="flex items-center justify-between rounded-lg bg-[var(--bg-inner)] p-2.5 border border-[var(--border-card)]">

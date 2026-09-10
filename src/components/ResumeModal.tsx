@@ -105,6 +105,11 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
               </div>
             </div>
 
+            {/* Print-only meta line, mirroring the PDF header. */}
+            <div className="mt-3 hidden print:block print:text-[9pt] print:text-slate-800">
+              Nationality: {RESUME_DATA.nationality} | {content.resumeModal.visaBadge ? `Visa Status: ${content.resumeModal.visaBadge} | ` : ''}Notice Period: {RESUME_DATA.relocation.noticePeriod}
+            </div>
+
             {/* UI Status Strip (Screen only — hidden during print) */}
             <div className="mt-3 flex flex-wrap items-center gap-2 pt-2 border-t border-[var(--border-card)] text-xs no-print print:hidden">
               <span className="theme-gold-badge rounded-full px-3 py-1 font-bold">{content.resumeModal.statusBadge}</span>
@@ -125,18 +130,26 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </p>
           </div>
 
-          {/* Business Impact Snapshot */}
+          {/* Key Achievements */}
           <div>
             <h2 className="text-xs font-bold uppercase tracking-wider theme-gold-text border-b border-[var(--border-card)] pb-1 print:border-b print:border-slate-400 print:text-slate-900 print:text-[10pt] print:pb-0.5">
-              Business Impact Snapshot
+              Key Achievements
             </h2>
             <ul className="mt-2 space-y-1 text-xs theme-sub print:list-disc print:pl-5 print:space-y-0.5 print:text-[9.5pt] print:text-slate-800 print:mt-1">
-              {RESUME_DATA.snapshot.map((item) => (
-                <li key={item} className="flex items-start gap-2 print:list-item">
-                  <span className="theme-gold-text mt-0.5 no-print print:hidden">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
+              {RESUME_DATA.snapshot.map((item, i) => {
+                // The lead-in is bold in the PDF; mirror it here so the popup and
+                // the downloaded file read the same.
+                const lead = RESUME_DATA.snapshotLeads[i] ?? '';
+                return (
+                  <li key={item} className="flex items-start gap-2 print:list-item">
+                    <span className="theme-gold-text mt-0.5 no-print print:hidden">•</span>
+                    <span>
+                      <strong className="font-semibold theme-title">{lead}</strong>
+                      {item.slice(lead.length)}
+                    </span>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -201,6 +214,16 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </div>
             <div className="text-xs theme-sub print:text-[9pt] print:text-slate-700">
               {RESUME_DATA.education.institution} ({RESUME_DATA.education.period})
+            </div>
+          </div>
+
+          {/* Languages */}
+          <div className="border-t border-[var(--border-card)] pt-3 print:border-t print:border-slate-400 print:pt-1.5">
+            <h2 className="text-xs font-bold uppercase tracking-wider theme-gold-text mb-1 print:text-slate-900 print:text-[10pt]">
+              Languages
+            </h2>
+            <div className="text-xs theme-sub print:text-[9pt] print:text-slate-700">
+              {RESUME_DATA.languages.map((l) => `${l.name}: ${l.level}`).join(' | ')}
             </div>
           </div>
 

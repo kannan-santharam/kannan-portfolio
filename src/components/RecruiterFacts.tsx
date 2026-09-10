@@ -68,7 +68,7 @@ export const RecruiterFacts: React.FC = () => {
             </div>
             <div className="flex items-center gap-2">
               <span className="font-semibold theme-title">Target Designation:</span>
-              <span className="theme-sub">Lead Software Engineer / Engineering Manager</span>
+              <span className="theme-sub">{content.hero.targetRole}</span>
             </div>
           </div>
 

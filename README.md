@@ -1,20 +1,20 @@
 # Kannan Appiya Santharam — Executive Portfolio & AI Career Agent
 
-> **Senior Lead Software Engineer (Lead Frontend Engineer)** with 10.5+ years of experience delivering high-performance web applications, large-scale monorepos, and scalable client architectures for global SaaS products. Specialised in frontend infrastructure, AI-driven engineering workflows, LLM orchestration, custom Claude Code skills, Model Context Protocol (MCP) servers, and HTTP Streamable Web Streams (`fetch` + `ReadableStream`).
+> **Senior Lead Software Engineer (Frontend/Full Stack)** with 10.5+ years of experience delivering high-performance web applications, large-scale monorepos, and scalable client architectures for global SaaS products. Specialised in frontend and full stack infrastructure, AI-driven engineering workflows, LLM orchestration, custom Claude Code skills, Model Context Protocol (MCP) servers, and HTTP Web Streams (`fetch` + `ReadableStream`).
 >
-> 🌐 **Live Portfolio:** [https://kannan-ai-dev.vercel.app/](https://kannan-ai-dev.vercel.app/)  
-> 📄 **Official PDF Resume:** [Download PDF](https://kannan-ai-dev.vercel.app/Kannan_Santharam_Senior_Lead_Software_Engineer.pdf)  
+> 🌐 **Live Portfolio:** [Dubai/UAE](https://kannan-ai-dev.vercel.app/) · [India](https://kannan-ai-dev.vercel.app/ind)  
+> 📄 **PDF Resume:** [Dubai/UAE](https://kannan-ai-dev.vercel.app/Kannan_Santharam_Senior_Lead_Software_Engineer.pdf) · [India](https://kannan-ai-dev.vercel.app/Kannan_Santharam_Senior_Lead_Software_Engineer_ind.pdf)  
 > 🇦🇪 **Relocation Readiness:** Chennai, India ➔ Ready to Relocate to Dubai, UAE (60-Day Notice Period)
 
 ---
 
 ## 🌟 Key Architecture & Engineering Highlights
 
-* **AI-Native Engineering & Autonomous Tooling:** Architected an automated end-to-end test authoring platform from zero, orchestrating LLM agents over HTTP Streamable Web Streams (`fetch` + `ReadableStream`) to auto-generate, execute, and self-heal test suites. Authored custom production Claude Code skills and engineered Model Context Protocol (MCP) servers with strict multi-tier write-scope guardrails.
-* **96% Build Speed Acceleration (Rspack Migration):** Solo-led a 3-week build migration from Webpack 5 to Rust-powered Rspack across 12 monorepo packages at SuperOps. Reduced cold-start build compilation from 2 minutes (120s) down to 5 seconds, with HMR hot reloads under 50ms.
-* **Frontend Engineering Squad Leadership:** Led an engineering squad of frontend developers at SuperOps, governing architecture reviews, sprint execution, and cross-team delivery supporting **4,000+ MSP and IT enterprise customers**.
-* **Developer Mentorship:** Mentored 10+ junior and mid-level engineers across SuperOps and Freshworks on React best practices, REST API development, and UI architecture to accelerate team ramp-up.
-* **Dead Code Elimination:** Stripped 30,000+ lines of dead code and unreferenced exports across 12 packages using Knip static analysis.
+* **AI-Native Engineering & Autonomous Tooling:** Architected an automated end-to-end test authoring platform from zero, orchestrating LLM agents over HTTP Web Streams (`fetch` + `ReadableStream`) to auto-generate, execute, and self-heal test suites. Authored custom production Claude Code skills and engineered Model Context Protocol (MCP) servers with strict multi-tier write-scope guardrails.
+* **96% Build Speed Acceleration (Rspack Migration):** Solo-led a 3-week build migration from Webpack 5 to Rust-powered Rspack across 12 monorepo packages at SuperOps. Reduced build time from 2 minutes (120s) down to 5 seconds.
+* **Engineering Team Leadership:** Lead and manage a frontend team of 4 to 6 engineers at SuperOps across sprint planning, architecture reviews, hiring and interviews, performance feedback and career development, and roadmap prioritisation, supporting **4,000+ MSP and IT enterprise customers**.
+* **Developer Mentorship:** Mentored 10+ engineers across SuperOps and Freshworks on React, monorepo code quality standards, REST API development, and UI architecture to accelerate team ramp-up.
+* **70% Faster Initial Page Load:** Cut initial page load from 5 seconds to 1.5 seconds through route-level code splitting, React lazy loading (Suspense), and per-package bundle chunking, alongside dead-code and unused-dependency removal via Knip static analysis to reduce technical debt.
 * **Enterprise Test Reliability:** Maintained platform stability with a 300+ test-case Playwright regression suite integrated into Jenkins CI/CD pipelines.
 
 ---
@@ -23,11 +23,11 @@
 
 | Domain | Technologies |
 |---|---|
-| **Frontend Core** | React 19, TypeScript, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, SASS, Responsive Design, Core Web Vitals |
-| **AI & Agentic Tech** | Claude Code Skills, Model Context Protocol (MCP) Servers, Gemini 2.5 Flash, LLM Orchestration, HTTP Streamable (ReadableStream), Langfuse Observability |
-| **State & APIs** | GraphQL, Apollo Client, REST API Design, Zustand, Custom Cached Query Hooks, Server-Sent Events (SSE) |
+| **Frontend Core** | React, TypeScript, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, SASS, Responsive Design, Core Web Vitals |
+| **AI & Agentic Tech** | Production Agent Skills (Claude Code), Model Context Protocol (MCP) Servers, Gemini 2.5 Flash, LLM Orchestration, HTTP Web Streams (ReadableStream), Langfuse Observability |
+| **State & APIs** | GraphQL, Apollo Client, REST API Design, MySQL, Zustand, Custom Cached Query Hooks, HTTP Web Streams |
 | **Build & Architecture** | Vite, Rust-powered Rspack, Webpack 5, Monorepos, Micro-Frontends, Knip Static Analysis, Design Systems, RBAC |
-| **Testing & DevOps** | Playwright (300+ Tests), Node.js, Jenkins CI/CD, Docker, AWS (EC2, S3, Route 53) |
+| **Testing & DevOps** | Playwright (300+ Tests), Jest, Vitest, Node.js, Jenkins CI/CD, Docker, AWS (EC2, S3, Route 53) |
 
 ---
 
@@ -77,8 +77,8 @@ pnpm run preview
 
 ```text
 ├── public/
-│   ├── Kannan_Santharam_Senior_Lead_Software_Engineer.pdf   # Canonical ATS Resume PDF
-│   ├── Kannan_Santharam_Cover_Letter_Careem.pdf             # Executive Careem Cover Letter PDF
+│   ├── Kannan_Santharam_Senior_Lead_Software_Engineer.pdf       # Dubai/UAE resume PDF
+│   ├── Kannan_Santharam_Senior_Lead_Software_Engineer_ind.pdf   # India resume PDF
 │   └── favicon.svg, icons.svg, kannanphoto.jpeg
 ├── src/
 │   ├── components/                 # React UI Components (Hero, Resume Modal, DocMind Overlay, etc.)

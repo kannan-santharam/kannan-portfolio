@@ -18,10 +18,10 @@ export const ExperienceTimeline: React.FC = () => {
             <span>Career History & Track Record</span>
           </div>
           <h2 className="mt-2.5 text-2xl font-extrabold theme-title sm:text-4xl">
-            10.5+ Years Enterprise SaaS Leadership
+            10.5+ Years in Enterprise SaaS
           </h2>
           <p className="mt-1.5 max-w-3xl text-xs sm:text-base theme-sub">
-            Progressive leadership positions across high-growth global technology companies in Chennai and Bengaluru, India.
+            Progressive engineering roles into technical leadership across high-growth global technology companies in Chennai and Bengaluru, India.
           </p>
         </div>
 
