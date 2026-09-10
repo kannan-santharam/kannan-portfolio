@@ -1,0 +1,12 @@
+{
+  "dubai": {
+    "title": "Kannan Appiya Santharam | Senior Lead Software Engineer | Dubai, UAE",
+    "description": "Full Stack Senior Lead Software Engineer with 10.5+ years in enterprise SaaS, working across React, TypeScript and Node.js, with AI-Native Engineering (Claude Code skills, MCP servers, Base UI design system generated from Figma). Ready to relocate to Dubai, UAE.",
+    "keywords": "Software Lead Dubai, Lead Software Engineer Dubai, Engineering Manager UAE, Staff Engineer Dubai, Full Stack Developer Dubai, React Developer Dubai, Senior Lead Software Engineer, Rspack Migration, Claude Code MCP, AI Native Engineering"
+  },
+  "india": {
+    "title": "Kannan Appiya Santharam | Senior Lead Software Engineer | Chennai, India",
+    "description": "Full Stack Senior Lead Software Engineer with 10.5+ years in enterprise SaaS, working across React, TypeScript and Node.js, with AI-Native Engineering (Claude Code skills, MCP servers, Base UI design system generated from Figma). Based in Chennai, India.",
+    "keywords": "Software Lead Chennai, Lead Software Engineer India, Engineering Manager India, Staff Engineer India, Full Stack Developer India, React Developer India, Senior Lead Software Engineer, Rspack Migration, Claude Code MCP, AI Native Engineering"
+  }
+}

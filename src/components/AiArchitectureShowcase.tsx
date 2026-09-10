@@ -56,7 +56,7 @@ export const AiArchitectureShowcase: React.FC = () => {
 
             <h3 className="text-xl font-bold theme-title">Claude Code Skills & MCP</h3>
             <p className="mt-2 text-xs theme-sub leading-relaxed">
-              Authored custom production Claude Code skills powered by Model Context Protocol (MCP) servers, enabling AI agents to reason over complex monorepo ASTs and dependencies.
+              Authored custom production Claude Code skills powered by Model Context Protocol (MCP) servers, exposing the frontend codebase as a queryable graph that AI agents reason over across the monorepo.
             </p>
 
             <div className="mt-4 flex flex-wrap gap-1.5">
@@ -77,13 +77,13 @@ export const AiArchitectureShowcase: React.FC = () => {
 
             <h3 className="text-xl font-bold theme-title">Write-Scope Guardrails</h3>
             <p className="mt-2 text-xs theme-sub leading-relaxed">
-              Designed multi-tier permission boundaries ensuring autonomous AI coding agents only modify target domain modules without mutating core platform interfaces.
+              Designed multi-tier write-scope boundaries so engineers can run autonomous AI coding agents safely, without exposing core platform interfaces to risk.
             </p>
 
             <div className="mt-4 flex flex-wrap gap-1.5">
-              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">AST Sandbox</span>
+              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Queryable Codebase Graph</span>
               <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Security Control</span>
-              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Bedrock Core</span>
+              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Amazon Bedrock AgentCore</span>
             </div>
           </div>
 
@@ -98,7 +98,7 @@ export const AiArchitectureShowcase: React.FC = () => {
 
             <h3 className="text-xl font-bold theme-title">Base UI Design System & Figma Skill</h3>
             <p className="mt-2 text-xs theme-sub leading-relaxed">
-              Built a headless design system from scratch on Base UI with customised design tokens, then authored a Claude Code skill that pulls design context from a Figma node link through an MCP server and generates the production component, taking page build-out from 2 days of AI-assisted engineering to a few hours.
+              Built a headless design system from scratch on Base UI with customised design tokens, then authored a Claude Code skill that pulls design context from a Figma node link through an MCP server and generates the production component, reducing page development from 2 days of AI-assisted engineering to a few hours.
             </p>
 
             <div className="mt-4 flex flex-wrap gap-1.5">

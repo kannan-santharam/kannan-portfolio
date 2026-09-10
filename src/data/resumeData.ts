@@ -24,7 +24,7 @@ export interface MetricItem {
 export interface SkillCategory {
   title: string;
   category: string;
-  skills: { name: string; level?: 'Expert' | 'Advanced' | 'Proficient'; hot?: boolean }[];
+  skills: { name: string }[];
 }
 
 /**
@@ -38,12 +38,12 @@ const EXPERIENCE_PRESENTATION: { id: string; featured: boolean; skills: string[]
   {
     id: "superops",
     featured: true,
-    skills: ["React", "TypeScript", "Rspack", "MCP Servers", "HTTP Streamable", "Claude Code Skills", "Base UI", "Figma MCP", "GraphQL", "Apollo", "Playwright", "Zustand", "Knip"]
+    skills: ["React", "TypeScript", "Node.js", "Python", "Rspack", "MCP Servers", "HTTP Web Streams", "Claude Code Skills", "Base UI", "Figma MCP", "GraphQL", "Apollo", "Playwright", "Zustand", "Knip"]
   },
   {
     id: "freshworks",
     featured: true,
-    skills: ["React", "JavaScript", "Node.js", "REST APIs", "SaaS Integrations (Jira, Salesforce, Zendesk, ServiceNow)", "Customer 360", "SASS"]
+    skills: ["React", "JavaScript", "Node.js", "MySQL", "REST APIs", "SaaS Integrations (Jira, Salesforce, Zendesk, ServiceNow)", "Customer 360", "SASS"]
   },
   {
     id: "niche-infigenic",
@@ -87,6 +87,7 @@ export const RESUME_DATA = {
   relocation: {
     noticePeriod: content.identity.noticePeriod,
   },
+  nationality: content.identity.nationality,
   contact: {
     phone: content.contact.phone,
     phoneClean: content.contact.phoneClean,
@@ -105,12 +106,15 @@ export const RESUME_DATA = {
   // Business-impact highlight bullets (shared with the PDF build).
   snapshot: content.snapshot,
 
+  // Bold lead-in for each snapshot line, parallel by index (shared with the PDF build).
+  snapshotLeads: content.snapshotLeads,
+
   // Grouped competency lines (shared with the PDF build).
   competencies: content.competencies,
 
   // SITE-ONLY PRESENTATION DATA — deliberately absent from resumeContent.json.
   // `metrics` are the homepage metric cards; `skillCategories` (below) is the
-  // interactive skills matrix with proficiency levels and `hot` flags. Neither
+  // interactive skills matrix. Neither
   // has an equivalent in the resume PDFs, so their omission from the JSON
   // single source of truth is intentional, not an oversight. Edit them here.
   metrics: [
@@ -125,15 +129,15 @@ export const RESUME_DATA = {
     {
       value: "96%",
       label: "Build Speed Acceleration",
-      description: "Reduced cold-start compilation from 2 minutes to 5 seconds across 12 packages in a solo Webpack 5 → Rspack migration completed in 3 weeks.",
+      description: "Reduced build time from 2 minutes to 5 seconds across 12 packages in a solo Webpack 5 → Rspack migration completed in 3 weeks.",
       subtext: "12 Packages · 3 Weeks Solo Project",
       badge: "Performance Architecture",
       iconName: "Zap"
     },
     {
-      value: "Squad Lead",
-      label: "Frontend Squad Leadership",
-      description: "Led an engineering squad driving sprint execution, architecture reviews, and cross-team delivery for 4,000+ enterprise customers.",
+      value: "Team Lead",
+      label: "Engineering Team Leadership",
+      description: "Lead and manage a frontend team of 4 to 6 engineers across sprint planning, architecture reviews, hiring and interviews, performance feedback and career development, and roadmap prioritisation for a platform serving 4,000+ MSP and IT enterprise customers.",
       subtext: "Cross-Functional Collaboration · Enterprise Scale",
       badge: "Engineering Leadership",
       iconName: "Users"
@@ -141,7 +145,7 @@ export const RESUME_DATA = {
     {
       value: "10+ Eng",
       label: "Developer Mentorship",
-      description: "Mentored 10+ junior and mid-level engineers across SuperOps and Freshworks on React, monorepo quality standards, REST API development, and UI architecture.",
+      description: "Mentored 10+ engineers across SuperOps and Freshworks on React, monorepo code quality standards, REST API development, and UI architecture.",
       subtext: "Talent Development & Ramp-Up Acceleration",
       badge: "People & Growth",
       iconName: "Award"
@@ -156,84 +160,88 @@ export const RESUME_DATA = {
       title: "AI & Agentic Tooling",
       category: "ai",
       skills: [
-        { name: "Claude Code Skills", level: "Expert", hot: true },
-        { name: "Model Context Protocol (MCP) Servers", level: "Expert", hot: true },
-        { name: "HTTP Streamable (ReadableStream)", level: "Expert", hot: true },
-        { name: "Figma MCP (Design-to-Code)", level: "Expert", hot: true },
-        { name: "Cursor IDE & Agent Workflows", level: "Expert", hot: true },
-        { name: "LLM Orchestration & Prompting", level: "Advanced", hot: true },
-        { name: "Agent Write-Scope Safety", level: "Expert", hot: true },
-        { name: "Amazon Bedrock AgentCore", level: "Proficient" }
+        { name: "Production Agent Skills (Claude Code)" },
+        { name: "Model Context Protocol (MCP) Servers" },
+        { name: "HTTP Web Streams (ReadableStream)" },
+        { name: "Figma MCP (Design-to-Code)" },
+        { name: "Cursor IDE & Agent Workflows" },
+        { name: "GitHub Copilot" },
+        { name: "LLM Orchestration & Prompting" },
+        { name: "AI Agent Guardrails & Safety" },
+        { name: "RAG & Embedding" },
+        { name: "Amazon Bedrock AgentCore" }
       ]
     },
     {
       title: "Software Core & Frameworks",
       category: "frontend",
       skills: [
-        { name: "React", level: "Expert", hot: true },
-        { name: "TypeScript", level: "Expert", hot: true },
-        { name: "JavaScript (ES6+)", level: "Expert" },
-        { name: "HTML5 & CSS3", level: "Expert" },
-        { name: "Tailwind CSS & SASS", level: "Expert" },
-        { name: "Responsive Web Design", level: "Expert" },
-        { name: "Core Web Vitals", level: "Expert" },
-        { name: "Next.js", level: "Proficient" }
+        { name: "React" },
+        { name: "TypeScript" },
+        { name: "JavaScript (ES6+)" },
+        { name: "HTML5 & CSS3" },
+        { name: "Tailwind CSS & SASS" },
+        { name: "Responsive Web Design" },
+        { name: "Performance Optimisation & Core Web Vitals" },
+        { name: "Next.js" }
       ]
     },
     {
       title: "Backend & Full Stack",
       category: "backend",
       skills: [
-        { name: "Node.js Backend Services", level: "Advanced" },
-        { name: "REST API Design & Integration", level: "Expert" },
-        { name: "Python", level: "Proficient" }
+        { name: "Node.js Backend Services" },
+        { name: "REST API Design & Integration" },
+        { name: "MySQL" },
+        { name: "Python" }
       ]
     },
     {
       title: "State, Data & APIs",
       category: "state",
       skills: [
-        { name: "GraphQL & Apollo Client", level: "Expert", hot: true },
-        { name: "HTTP Streamable Web Streams", level: "Expert", hot: true },
-        { name: "Server-Sent Events (SSE)", level: "Expert", hot: true },
-        { name: "Zustand State Management", level: "Expert" },
-        { name: "Custom Cached Query Hooks", level: "Expert" }
+        { name: "GraphQL & Apollo Client" },
+        { name: "Zustand State Management" },
+        { name: "Custom Cached Query Hooks" }
       ]
     },
     {
       title: "Architecture & Performance",
       category: "architecture",
       skills: [
-        { name: "Monorepos & Module Federation", level: "Expert", hot: true },
-        { name: "Rspack & Webpack 5", level: "Expert", hot: true },
-        { name: "Micro-Frontends", level: "Advanced" },
-        { name: "Design Systems & UI SDKs", level: "Expert" },
-        { name: "Base UI Headless Components", level: "Expert", hot: true },
-        { name: "Role-Based Access Control (RBAC)", level: "Expert" },
-        { name: "Knip Static Dead-Code Analysis", level: "Expert" }
+        { name: "Monorepos & Module Federation" },
+        { name: "Rspack & Webpack 5" },
+        { name: "Micro-Frontends" },
+        { name: "Design Systems & UI SDKs" },
+        { name: "Base UI Headless Components" },
+        { name: "Role-Based Access Control (RBAC)" },
+        { name: "Knip Static Dead-Code Analysis" }
       ]
     },
     {
       title: "Testing, DevOps & Cloud",
       category: "devops",
       skills: [
-        { name: "Playwright End-to-End Suite (300+ tests)", level: "Expert", hot: true },
-        { name: "Jenkins CI/CD Pipelines", level: "Proficient" },
-        { name: "Docker", level: "Proficient" },
-        { name: "AWS (EC2, S3, Route 53)", level: "Proficient" }
+        { name: "Playwright End-to-End Suite (300+ tests)" },
+        { name: "Jest & Vitest Unit Testing" },
+        { name: "Jenkins CI/CD Pipelines" },
+        { name: "Docker" },
+        { name: "AWS (EC2, S3, Route 53)" }
       ]
     },
     {
       title: "Leadership & Process",
       category: "leadership",
       skills: [
-        { name: "Engineering Squad Leadership", level: "Expert" },
-        { name: "Developer Mentorship (10+ engineers)", level: "Expert" },
-        { name: "Technical Knowledge Sharing", level: "Expert", hot: true },
-        { name: "Architecture & Code Reviews", level: "Expert" },
-        { name: "Agile Methodology", level: "Expert" },
-        { name: "Git & GitHub Flow", level: "Expert" },
-        { name: "Cross-Team Collaboration", level: "Expert" }
+        { name: "Engineering Team Leadership" },
+        { name: "Solution Architecture & System Design" },
+        { name: "Developer Mentorship (10+ engineers)" },
+        { name: "Technical Knowledge Sharing" },
+        { name: "Architecture & Code Reviews" },
+        { name: "Agile & Scrum" },
+        { name: "Git & GitHub Flow" },
+        { name: "Cross-Team Collaboration" },
+        { name: "Stakeholder Management & Customer Communication" }
       ]
     }
   ] as SkillCategory[],
