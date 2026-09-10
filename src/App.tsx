@@ -13,6 +13,7 @@ import { ContactFooter } from './components/ContactFooter';
 import { ResumeModal } from './components/ResumeModal';
 import { DocMindShowcase } from './components/DocMindShowcase';
 import { DocMindOverlay } from './components/DocMindOverlay';
+import { AvatarGreeter } from './components/AvatarGreeter';
 
 function MainLayout() {
   const { region } = useRegion();
@@ -117,7 +118,7 @@ function MainLayout() {
       />
 
       {/* Hero Section */}
-      <HeroSection onOpenResumeModal={() => setIsResumeModalOpen(true)} />
+      <HeroSection />
 
       {/* Recruiter Quick Facts Bar (Dubai edition only) */}
       {showRecruiterFacts && <RecruiterFacts />}
@@ -139,6 +140,9 @@ function MainLayout() {
 
       {/* Contact & Footer */}
       <ContactFooter />
+
+      {/* 3D Greeter Avatar (desktop, loaded after first paint) */}
+      <AvatarGreeter isChatOpen={isChatOpen} onOpenChat={() => setIsChatOpen(true)} />
 
       {/* Full-Screen DocMind AI Assistant Overlay */}
       <DocMindOverlay isOpen={isChatOpen} onOpenChange={setIsChatOpen} />
