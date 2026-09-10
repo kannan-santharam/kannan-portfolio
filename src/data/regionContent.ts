@@ -83,7 +83,7 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
       statusBadge: 'Ready to Relocate to Dubai, UAE',
       contactBadge: 'BOTIM App & WhatsApp Active',
       targetRole: 'Lead / Staff Engineer or Engineering Manager',
-      visaBadge: 'Employer-Sponsored Visa',
+      visaBadge: 'Visa Sponsorship Required',
       mobileStrip: '🇦🇪 Relocation: Dubai, UAE',
       readinessLabel: 'Relocation Readiness:',
       readinessValue: 'Dubai, UAE 🇦🇪 · 60 Days Notice',
@@ -147,7 +147,7 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
       contactLine: 'Phone / BOTIM / WhatsApp',
       locationLine: 'Chennai, India · Notice Period: 60 Days · Target Location: Dubai, UAE (Relocation Ready)',
       statusBadge: '🇦🇪 Ready to Relocate to Dubai, UAE',
-      visaBadge: 'Employer-Sponsored Visa',
+      visaBadge: 'Visa Sponsorship Required',
     },
 
     botim: true,
