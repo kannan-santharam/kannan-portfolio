@@ -223,7 +223,7 @@ export const RESUME_DATA = {
       category: "devops",
       skills: [
         { name: "Playwright End-to-End Suite (300+ tests)" },
-        { name: "Jest & Vitest Unit Testing" },
+        { name: "Unit Testing (Jest, Vitest)" },
         { name: "Jenkins CI/CD Pipelines" },
         { name: "Docker" },
         { name: "AWS (EC2, S3, Route 53)" }
