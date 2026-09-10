@@ -23,15 +23,11 @@ export interface RegionProfile {
 
   hero: {
     statusBadge: string;
-    contactBadge?: string;
     visaBadge?: string;
     /** Role titles this region's resume asks for; mirrors resumeContent.json's `seeking`. */
     targetRole: string;
-    mobileStrip: string;
-    readinessLabel: string;
-    readinessValue: string;
-    contactLabel: string;
-    contactValue: string;
+    /** The ask, stated in the headline block: role, place, and where from. */
+    roleLine: string;
     whatsappMessage: string;
   };
 
@@ -80,15 +76,10 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
     },
 
     hero: {
-      statusBadge: 'Ready to Relocate to Dubai, UAE',
-      contactBadge: 'BOTIM App & WhatsApp Active',
+      statusBadge: 'Chennai, India → Dubai, UAE · Ready to Relocate',
       targetRole: 'Lead / Staff Engineer or Engineering Manager',
-      visaBadge: 'Visa Sponsorship Required',
-      mobileStrip: '🇦🇪 Relocation: Dubai, UAE',
-      readinessLabel: 'Relocation Readiness:',
-      readinessValue: 'Dubai, UAE 🇦🇪 · 60 Days Notice',
-      contactLabel: 'Direct UAE Contact:',
-      contactValue: 'BOTIM & WhatsApp (+91 97902 47499)',
+      roleLine: 'SEEKING LEAD / STAFF ENGINEER OR ENGINEERING MANAGER · DUBAI, UAE',
+      visaBadge: 'Sponsorship Required',
       whatsappMessage: 'Hi Kannan, I reviewed your portfolio and would like to connect regarding a role in Dubai.',
     },
 
@@ -115,7 +106,7 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
         color: 'theme-cyan-text',
       },
       {
-        label: 'Direct UAE Communication',
+        label: 'Direct Contact',
         value: 'BOTIM & WhatsApp Active',
         subtext: 'Available on BOTIM App (+91 97902 47499) for UAE VoIP calling & messaging',
         iconName: 'MessageSquare',
@@ -137,7 +128,7 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
         message: 'Hi Kannan, I reviewed your executive portfolio and would like to discuss a Lead Engineering role in Dubai, UAE.',
       },
       bannerBadge: '🇦🇪 Available for Dubai, UAE Hiring',
-      heading: 'Ready to Lead & Accelerate Software/AI/Frontend Engineering in Dubai',
+      heading: 'Ready to Lead & Accelerate Engineering Teams in Dubai',
       paragraph: 'Seeking a Lead Software Engineer, Staff Engineer or Engineering Manager position with a tech product company in Dubai. Available on 60 days notice with full mobility for visa processing.',
       monoLine: 'Dubai Relocation Ready',
     },
@@ -147,7 +138,7 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
       contactLine: 'Phone / BOTIM / WhatsApp',
       locationLine: 'Chennai, India · Notice Period: 60 Days · Target Location: Dubai, UAE (Relocation Ready)',
       statusBadge: '🇦🇪 Ready to Relocate to Dubai, UAE',
-      visaBadge: 'Visa Sponsorship Required',
+      visaBadge: 'Sponsorship Required',
     },
 
     botim: true,
@@ -167,13 +158,8 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
 
     hero: {
       statusBadge: 'Based in Chennai, India',
-      contactBadge: 'WhatsApp Active',
       targetRole: 'Senior Lead / Staff Engineer or Engineering Manager',
-      mobileStrip: '📍 Based in Chennai, India',
-      readinessLabel: 'Current Location:',
-      readinessValue: 'Chennai, India',
-      contactLabel: 'Direct Contact:',
-      contactValue: 'WhatsApp (+91 97902 47499)',
+      roleLine: 'SEEKING SENIOR LEAD / STAFF ENGINEER OR ENGINEERING MANAGER · INDIA',
       whatsappMessage: 'Hi Kannan, I reviewed your portfolio and would like to connect regarding a role in India.',
     },
 
@@ -218,7 +204,7 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
 
     footer: {
       bannerBadge: '📍 Based in Chennai, India',
-      heading: 'Ready to Lead & Accelerate Software/AI/Frontend Engineering in India',
+      heading: 'Ready to Lead & Accelerate Engineering Teams in India',
       paragraph: 'Seeking a Senior Lead Software Engineer, Staff Engineer or Engineering Manager position with a product company in India. Available on 60 days notice, open to remote or on-site roles.',
       monoLine: 'Chennai, India Based',
     },

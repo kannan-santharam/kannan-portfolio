@@ -1,31 +1,26 @@
-import React, { useState } from 'react';
-import { 
-  Calendar, 
-  FileText, 
+import React from 'react';
+import {
+  ArrowDown,
+  Bot,
+  Calendar,
   MessageSquare,
   ShieldCheck,
+  Users,
   Zap,
-  Bot,
   Download,
-  PhoneForwarded,
-  Copy,
-  Check
 } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
 import { useRegion } from '../context/RegionContext';
 
-interface HeroSectionProps {
-  onOpenResumeModal: () => void;
-}
-
-export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) => {
-  const [copiedBotim, setCopiedBotim] = useState(false);
+export const HeroSection: React.FC = () => {
   const { content } = useRegion();
 
-  const handleCopyBotim = () => {
-    navigator.clipboard.writeText(RESUME_DATA.contact.phone);
-    setCopiedBotim(true);
-    setTimeout(() => setCopiedBotim(false), 2000);
+  // Matches the navbar's scroll offset so the section heading clears the
+  // fixed header.
+  const scrollToContact = () => {
+    const el = document.getElementById('contact');
+    if (!el) return;
+    window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
   };
 
   return (
@@ -46,24 +41,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                   <img
                     src="/kannanphoto.jpeg"
                     alt={RESUME_DATA.name}
-                    className="h-72 sm:h-80 w-full object-cover object-top"
+                    className="h-56 sm:h-72 w-full object-cover object-top"
                   />
-                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent p-3 text-white">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="text-xs font-bold text-white">{RESUME_DATA.name}</div>
-                        <div className="text-[10px] text-[#00D2FF]">Senior Lead Software Engineer</div>
-                      </div>
-                      <div className="rounded bg-slate-900/90 border border-[#00D2FF]/40 px-1.5 py-0.5 font-mono text-[9px] text-slate-200 cursor-default select-none">
-                        10.5+ Yrs Exp
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-3 flex items-center justify-between gap-2 text-[11px] theme-sub cursor-default select-none">
-                  <span><strong className="theme-gold-text">{content.hero.mobileStrip}</strong></span>
-                  <span>Notice: <strong className="theme-title">60 Days</strong></span>
                 </div>
               </div>
             </div>
@@ -84,13 +63,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                 <span>Notice: {RESUME_DATA.relocation.noticePeriod}</span>
               </span>
 
-              {content.hero.contactBadge && (
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3.5 py-1.5 text-xs font-bold text-cyan-600 dark:text-cyan-400 cursor-default select-none">
-                  <PhoneForwarded className="h-3.5 w-3.5" />
-                  <span>{content.hero.contactBadge}</span>
-                </span>
-              )}
-
               {content.hero.visaBadge && (
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border-card)] bg-[var(--bg-card)] px-3.5 py-1.5 text-xs font-medium theme-sub cursor-default select-none">
                   <ShieldCheck className="h-3.5 w-3.5 text-emerald-500" />
@@ -108,17 +80,27 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                 {RESUME_DATA.title}
               </p>
               <p className="mt-1 font-mono text-[10px] sm:text-xs tracking-wider theme-muted">
-                10.5+ YEARS ENTERPRISE SAAS · REACT · TYPESCRIPT · NODE.JS · AI-NATIVE ARCHITECTURE
+                {content.hero.roleLine}
               </p>
             </div>
 
             {/* Professional Summary */}
             <p className="text-sm leading-relaxed theme-sub sm:text-lg">
-              <span className="font-semibold theme-title">AI-native engineer</span>, full stack across React, TypeScript and Node.js. Architected an <span className="font-semibold theme-title">AI test-authoring platform</span> that generates, runs and self-heals end-to-end suites. Built <span className="font-semibold theme-gold-text">production agent skills</span> and <span className="font-semibold theme-gold-text">MCP servers</span> with write-scope guardrails, plus a headless <span className="font-semibold theme-title">Base UI design system</span> whose Figma-to-component skill reduces page development from 2 days to <span className="font-bold theme-cyan-text">a few hours</span>.
+              I <span className="font-semibold theme-title">lead a frontend team of 4 to 6</span> at SuperOps and own delivery across React, TypeScript and Node.js, with <span className="font-semibold theme-title">10.5+ years</span> in enterprise SaaS. Architected an <span className="font-semibold theme-title">AI test-authoring platform</span> that generates, runs and self-heals end-to-end suites, and a headless <span className="font-semibold theme-gold-text">Base UI design system</span> whose Figma-to-component skill takes page development from 2 days to <span className="font-bold theme-cyan-text">a few hours</span>.
             </p>
 
             {/* Core Value Metric Cards (Informational Summary) */}
             <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3 sm:gap-3 pt-1">
+              <div className="flex items-center gap-3 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] p-3 shadow-sm cursor-default select-none">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[var(--color-cyan)]/10 theme-cyan-text">
+                  <Users className="h-4 w-4 sm:h-5 sm:w-5" />
+                </div>
+                <div>
+                  <div className="text-xs font-bold theme-title">Team of 4 to 6</div>
+                  <div className="text-[10px] sm:text-[11px] theme-muted">Frontend engineers led</div>
+                </div>
+              </div>
+
               <div className="flex items-center gap-3 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] p-3 shadow-sm cursor-default select-none">
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#0052FF]/15 text-[#38BDF8]">
                   <Zap className="h-4 w-4 sm:h-5 sm:w-5" />
@@ -130,7 +112,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
               </div>
 
               <div className="flex items-center gap-3 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] p-3 shadow-sm cursor-default select-none">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[var(--color-cyan)]/10 theme-cyan-text">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-500">
                   <Bot className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
                 <div>
@@ -138,63 +120,41 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                   <div className="text-[10px] sm:text-[11px] theme-muted">Claude Code & MCP</div>
                 </div>
               </div>
-
-              <div className="flex items-center gap-3 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] p-3 shadow-sm cursor-default select-none">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-500">
-                  <ShieldCheck className="h-4 w-4 sm:h-5 sm:w-5" />
-                </div>
-                <div>
-                  <div className="text-xs font-bold theme-title">Codebase Quality</div>
-                  <div className="text-[10px] sm:text-[11px] theme-muted">300+ Playwright Tests</div>
-                </div>
-              </div>
             </div>
 
-            {/* Symmetrically Grouped Action Buttons (Clickable CTAs with clear hover & shadow effects) */}
-            <div className="space-y-3 pt-2">
-              {/* Row 1: Primary Document & Executive CV Actions */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                <a
-                  href={content.resumePdf}
-                  download={content.resumePdf.split('/').pop()}
-                  className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#0052FF] via-[#0066FF] to-[#00D2FF] px-5 py-3 text-xs sm:text-sm font-bold text-white transition-all hover:scale-[1.01] hover:shadow-lg hover:shadow-[#0052FF]/30 cursor-pointer text-center active:scale-95 shadow-md"
-                >
-                  <Download className="h-4 w-4 shrink-0" />
-                  <span>Download Official PDF Resume</span>
-                </a>
+            {/* Primary Actions. One document CTA and one contact CTA: a
+                recruiter does one thing here, and Dubai runs on WhatsApp. */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2">
+              <a
+                href={content.resumePdf}
+                download={content.resumePdf.split('/').pop()}
+                className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#0052FF] via-[#0066FF] to-[#00D2FF] px-5 py-3 text-xs sm:text-sm font-bold text-white transition-all hover:scale-[1.01] hover:shadow-lg hover:shadow-[#0052FF]/30 cursor-pointer text-center active:scale-95 shadow-md"
+              >
+                <Download className="h-4 w-4 shrink-0" />
+                <span>Download CV (PDF)</span>
+              </a>
 
-                <button
-                  onClick={onOpenResumeModal}
-                  className="flex items-center justify-center gap-2 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] px-5 py-3 text-xs sm:text-sm font-semibold theme-title transition-all hover:border-[var(--color-primary)] hover:bg-[var(--bg-card-hover)] cursor-pointer text-center active:scale-95"
-                >
-                  <FileText className="h-4 w-4 shrink-0 theme-cyan-text" />
-                  <span>View Resume</span>
-                </button>
-              </div>
+              <a
+                href={`https://wa.me/${RESUME_DATA.contact.phoneClean}?text=${encodeURIComponent(content.hero.whatsappMessage)}`}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center justify-center gap-2 rounded-xl border border-emerald-600 bg-emerald-600 dark:bg-emerald-500/10 px-4 py-3 text-xs sm:text-sm font-bold text-white dark:text-emerald-400 transition-all hover:bg-emerald-700 dark:hover:bg-emerald-500/20 text-center active:scale-95 cursor-pointer shadow-md"
+              >
+                <MessageSquare className="h-4 w-4 shrink-0" />
+                <span>WhatsApp Direct Chat</span>
+              </a>
 
-              {/* Row 2: Direct Messaging & BOTIM Copy Button */}
-              <div className={`grid grid-cols-1 gap-2.5 ${content.botim ? 'sm:grid-cols-2' : ''}`}>
-                <a
-                  href={`https://wa.me/${RESUME_DATA.contact.phoneClean}?text=${encodeURIComponent(content.hero.whatsappMessage)}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-xl border border-emerald-600 bg-emerald-600 dark:bg-emerald-500/10 px-4 py-3 text-xs sm:text-sm font-bold text-white dark:text-emerald-400 transition-all hover:bg-emerald-700 dark:hover:bg-emerald-500/20 text-center active:scale-95 cursor-pointer shadow-md"
-                >
-                  <MessageSquare className="h-4 w-4 shrink-0" />
-                  <span>WhatsApp Direct Chat</span>
-                </a>
-
-                {content.botim && (
-                  <button
-                    onClick={handleCopyBotim}
-                    className="flex items-center justify-center gap-2 rounded-xl border border-cyan-500/40 bg-cyan-500/10 px-4 py-3 text-xs sm:text-sm font-semibold text-cyan-600 dark:text-cyan-400 transition-all hover:bg-cyan-500/20 cursor-pointer text-center active:scale-95"
-                  >
-                    {copiedBotim ? <Check className="h-4 w-4 shrink-0 text-cyan-400" /> : <PhoneForwarded className="h-4 w-4 shrink-0" />}
-                    <span>{copiedBotim ? "BOTIM Handle Copied!" : "BOTIM App Handle"}</span>
-                    {!copiedBotim && <Copy className="h-3 w-3 shrink-0 ml-1 text-cyan-400/70" />}
-                  </button>
-                )}
-              </div>
+              {/* Routes to the contact block, which carries what the WhatsApp
+                  button does not: BOTIM, LinkedIn, GitHub and the prewritten
+                  enquiry topics. Labelled for those so it does not read as a
+                  second WhatsApp CTA. */}
+              <button
+                onClick={scrollToContact}
+                className="flex items-center justify-center gap-2 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] px-4 py-3 text-xs sm:text-sm font-semibold theme-title transition-all hover:border-[var(--color-primary)] hover:bg-[var(--bg-card-hover)] cursor-pointer text-center active:scale-95"
+              >
+                <ArrowDown className="h-4 w-4 shrink-0 theme-cyan-text" />
+                <span>BOTIM, LinkedIn & More</span>
+              </button>
             </div>
 
           </div>
@@ -211,17 +171,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                     alt={RESUME_DATA.name}
                     className="h-84 w-full object-cover object-top transition-transform duration-500 hover:scale-105"
                   />
-                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent p-3.5 text-white">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="text-sm font-bold text-white">{RESUME_DATA.name}</div>
-                        <div className="text-xs text-[#00D2FF]">Senior Lead Software Engineer</div>
-                      </div>
-                      <div className="rounded-md bg-slate-900/90 border border-[#00D2FF]/40 px-2 py-1 font-mono text-[10px] text-slate-200 cursor-default select-none">
-                        10.5+ Yrs Exp
-                      </div>
-                    </div>
-                  </div>
                 </div>
 
                 <div className="space-y-2.5 text-xs theme-sub cursor-default select-none">
@@ -231,23 +180,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                   </div>
 
                   <div className="flex items-center justify-between rounded-lg bg-[var(--bg-inner)] p-2.5 border border-[var(--border-card)]">
-                    <span className="theme-muted">{content.hero.readinessLabel}</span>
-                    <span className="font-semibold theme-gold-text">{content.hero.readinessValue}</span>
-                  </div>
-
-                  <div className="flex items-center justify-between rounded-lg bg-[var(--bg-inner)] p-2.5 border border-[var(--border-card)]">
-                    <span className="theme-muted">{content.hero.contactLabel}</span>
-                    <span className="font-semibold text-cyan-400">{content.hero.contactValue}</span>
-                  </div>
-
-                  <div className="flex items-center justify-between rounded-lg bg-[var(--bg-inner)] p-2.5 border border-[var(--border-card)]">
                     <span className="theme-muted">Current Position:</span>
-                    <span className="font-semibold theme-title">SuperOps (Senior Lead)</span>
-                  </div>
-
-                  <div className="flex items-center justify-between rounded-lg bg-[var(--bg-inner)] p-2.5 border border-[var(--border-card)]">
-                    <span className="theme-muted">Languages:</span>
-                    <span className="font-semibold theme-sub">English (Fluent) · Tamil · Hindi</span>
+                    <span className="font-semibold theme-title">SuperOps · Senior Lead</span>
                   </div>
                 </div>
 
