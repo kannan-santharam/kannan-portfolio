@@ -28,6 +28,9 @@ export interface RegionProfile {
     targetRole: string;
     /** The ask, stated in the headline block: role, place, and where from. */
     roleLine: string;
+    /** Names what the contact section holds beyond WhatsApp, which differs by
+        region: BOTIM is a UAE app and must never surface for India. */
+    contactCtaLabel: string;
     whatsappMessage: string;
   };
 
@@ -79,6 +82,7 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
       statusBadge: 'Chennai, India → Dubai, UAE · Ready to Relocate',
       targetRole: 'Lead / Staff Engineer or Engineering Manager',
       roleLine: 'SEEKING LEAD / STAFF ENGINEER OR ENGINEERING MANAGER · DUBAI, UAE',
+      contactCtaLabel: 'BOTIM, LinkedIn & More',
       visaBadge: 'Sponsorship Required',
       whatsappMessage: 'Hi Kannan, I reviewed your portfolio and would like to connect regarding a role in Dubai.',
     },
@@ -129,7 +133,7 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
       },
       bannerBadge: '🇦🇪 Available for Dubai, UAE Hiring',
       heading: 'Ready to Lead & Accelerate Engineering Teams in Dubai',
-      paragraph: 'Seeking a Lead Software Engineer, Staff Engineer or Engineering Manager position with a tech product company in Dubai. Available on 60 days notice with full mobility for visa processing.',
+      paragraph: 'Seeking a Lead / Staff Engineer or Engineering Manager position with a tech product company in Dubai. Available on 60 days notice with full mobility for visa processing.',
       monoLine: 'Dubai Relocation Ready',
     },
 
@@ -160,6 +164,7 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
       statusBadge: 'Based in Chennai, India',
       targetRole: 'Senior Lead / Staff Engineer or Engineering Manager',
       roleLine: 'SEEKING SENIOR LEAD / STAFF ENGINEER OR ENGINEERING MANAGER · INDIA',
+      contactCtaLabel: 'LinkedIn, GitHub & More',
       whatsappMessage: 'Hi Kannan, I reviewed your portfolio and would like to connect regarding a role in India.',
     },
 
@@ -194,18 +199,22 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
       },
     ],
     sectionHeading: 'India Hiring Snapshot',
-    sectionBadge: 'Immediately Available',
+    sectionBadge: 'No Sponsorship Needed',
     navLabel: 'Location & Availability',
 
     mobileBanner: {
-      flag: '📍',
+      flag: '🇮🇳',
       text: 'Based in Chennai, India',
     },
 
     footer: {
-      bannerBadge: '📍 Based in Chennai, India',
+      quickTopic: {
+        label: '🇮🇳 India Role Inquiry',
+        message: 'Hi Kannan, I reviewed your executive portfolio and would like to discuss a Senior Lead Engineering role in India.',
+      },
+      bannerBadge: '🇮🇳 Based in Chennai, India',
       heading: 'Ready to Lead & Accelerate Engineering Teams in India',
-      paragraph: 'Seeking a Senior Lead Software Engineer, Staff Engineer or Engineering Manager position with a product company in India. Available on 60 days notice, open to remote or on-site roles.',
+      paragraph: 'Seeking a Senior Lead / Staff Engineer or Engineering Manager position with a product company in India. Available on 60 days notice, open to remote or on-site roles.',
       monoLine: 'Chennai, India Based',
     },
 
@@ -213,7 +222,7 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
       badge: 'India Hiring Ready',
       contactLine: 'Phone / WhatsApp',
       locationLine: 'Chennai, India · Notice Period: 60 Days',
-      statusBadge: '📍 Based in Chennai, India',
+      statusBadge: '🇮🇳 Based in Chennai, India',
     },
 
     seo: seo.india,

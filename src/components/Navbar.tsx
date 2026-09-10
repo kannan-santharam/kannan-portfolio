@@ -52,20 +52,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, a
         <a 
           href="#" 
           onClick={(e) => { e.preventDefault(); onNavigate('hero'); }}
-          className="group flex items-center gap-2 shrink-0"
+          className="group flex min-w-0 items-center gap-2"
         >
           <div className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#0052FF] to-[#00D2FF] p-0.5 shadow-md shadow-[#0052FF]/20 transition-transform group-hover:scale-105 shrink-0">
             <div className="flex h-full w-full items-center justify-center rounded-[9px] bg-[#0B0E14] font-mono text-xs sm:text-sm font-bold text-[#00D2FF]">
               KS
             </div>
           </div>
-          <div className="shrink-0">
+          <div className="min-w-0">
             <div className="flex items-center gap-1">
-              <span className="font-bold tracking-tight text-xs sm:text-base theme-title whitespace-nowrap">
-                <span>{RESUME_DATA.name}</span>
+              <span className="block truncate font-bold tracking-tight text-xs sm:text-base theme-title">
+                {RESUME_DATA.name}
               </span>
             </div>
-            <p className="text-[9px] sm:text-xs theme-muted whitespace-nowrap">React · TypeScript · Node.js · AI-Native</p>
+            <p className="truncate text-[9px] sm:text-xs theme-muted">React · TypeScript · Node.js · AI-Native</p>
           </div>
         </a>
 
