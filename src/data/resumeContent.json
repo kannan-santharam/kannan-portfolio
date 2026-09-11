@@ -31,13 +31,18 @@
       "label": "Full Stack Engineering",
       "items": [
         "React",
+        "Next.js",
         "TypeScript",
         "JavaScript (ES6+)",
+        "HTML5 & CSS3",
         "Responsive Web Design",
+        "Tailwind CSS",
+        "Internationalisation (i18n, react-intl)",
         "Node.js",
         "MySQL",
         "Python",
         "REST API Design & Integration",
+        "Microservices",
         "GraphQL & Apollo",
         "Zustand",
         "Unit Testing (Jest, Vitest)",
@@ -130,9 +135,9 @@
       ]
     },
     {
-      "title": "Software Developer",
+      "title": "Software Developer (acquired by Freshworks)",
       "dates": "Mar 2016 – Jun 2018",
-      "company": "Niche Video Media, LLC / Infigenic, LLC (acquired by Freshworks) — Chennai & Bengaluru, India",
+      "company": "Niche Video Media / Infigenic — Chennai & Bengaluru, India",
       "progression": [
         "Web Application Developer & Designer",
         "Software Developer"
