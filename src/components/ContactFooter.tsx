@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MessageSquare, Phone, MapPin, Copy, Check, PhoneCall, Zap, Globe, PhoneForwarded } from 'lucide-react';
+import { Mail, MessageSquare, Phone, MapPin, Copy, Check, PhoneCall, Zap, Globe, PhoneForwarded, CalendarClock } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
 import { useRegion } from '../context/RegionContext';
 
@@ -40,10 +40,10 @@ export const ContactFooter: React.FC = () => {
       message: "Hi Kannan, I'm interested in your 96% build speedup win (Webpack 5 to Rspack). Let's connect."
     },
     {
-      id: 'call',
-      label: '📞 Schedule 15-Min Call',
+      id: 'availability',
+      label: '📅 Notice Period & Availability',
       icon: PhoneCall,
-      message: "Hi Kannan, I'd like to schedule a 15-minute introductory phone screening call regarding a position."
+      message: "Hi Kannan, could you confirm your notice period and earliest start date?"
     }
   ];
 
@@ -139,6 +139,21 @@ export const ContactFooter: React.FC = () => {
             {/* Right Action Box */}
             <div className="space-y-3 lg:col-span-5 rounded-2xl border border-[var(--border-card)] bg-[var(--bg-page)] p-6 shadow-inner">
               
+              {/* Booking CTA. Calendly renders slots in the visitor's own
+                  timezone, so the availability note stays timezone-free. */}
+              <a
+                href={RESUME_DATA.contact.calendly}
+                target="_blank"
+                rel="noreferrer"
+                className="flex w-full items-center justify-between gap-2 rounded-xl bg-gradient-to-r from-[#0052FF] to-[#00D2FF] px-4 py-3 text-xs sm:text-sm font-bold text-white transition-all hover:shadow-lg hover:shadow-[#0052FF]/25 active:scale-95 cursor-pointer shadow-md"
+              >
+                <span className="flex items-center gap-2">
+                  <CalendarClock className="h-4 w-4 shrink-0" />
+                  <span>Book a 30 min intro call</span>
+                </span>
+                <span className="font-mono text-[10px] opacity-80">your local time</span>
+              </a>
+
               {/* WhatsApp Direct CTA */}
               <a
                 href={getWaUrl("Hi Kannan, I reviewed your executive portfolio and would like to connect.")}
