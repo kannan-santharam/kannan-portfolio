@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FileText, Menu, X, Sun, Moon, MessageSquare, Bot, Sparkles, ChevronDown } from 'lucide-react';
+import { FileText, Menu, X, Sun, Moon, MessageSquare, Bot, Sparkles, ChevronDown, CalendarClock } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
 import { useTheme } from '../context/ThemeContext';
 import { useRegion } from '../context/RegionContext';
@@ -197,6 +197,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, a
             <span>View CV</span>
           </button>
 
+          {/* Booking sits in the nav rather than the hero: it is sticky, so it
+              is reachable at the point someone has finished reading and is
+              ready to talk, without adding a fourth CTA to the fold. */}
+          <a
+            href={RESUME_DATA.contact.calendly}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-[#0052FF] to-[#00D2FF] px-3 py-1.5 text-xs font-bold text-white shadow-md transition-all hover:shadow-lg hover:shadow-[#0052FF]/25 cursor-pointer ml-1"
+          >
+            <CalendarClock className="h-3.5 w-3.5" />
+            <span>Book a Call</span>
+          </a>
+
         </div>
 
         {/* Mobile Controls (Hides GitHub/LinkedIn, Shows View CV) */}
@@ -286,6 +299,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, a
           </div>
 
           <div className="mt-4 flex flex-col gap-2 pt-3 border-t border-[var(--border-card)]">
+            <a
+              href={RESUME_DATA.contact.calendly}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#0052FF] to-[#00D2FF] py-2.5 text-xs font-bold text-white shadow-md"
+            >
+              <CalendarClock className="h-4 w-4" />
+              <span>Book a 30 min Intro Call</span>
+            </a>
+
             <button
               onClick={() => { setMobileMenuOpen(false); onOpenResumeModal(); }}
               className="flex w-full items-center justify-center gap-2 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] py-2.5 text-xs font-bold theme-title shadow-sm"

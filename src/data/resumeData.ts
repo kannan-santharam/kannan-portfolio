@@ -98,6 +98,9 @@ export const RESUME_DATA = {
     linkedinDisplay: content.contact.linkedin,
     github: content.contact.githubUrl,
     githubDisplay: content.contact.github,
+    // Site only. The resume generators render the header from named fields,
+    // so this never reaches the PDF or the DOCX.
+    calendly: content.contact.calendlyUrl,
   },
   // `summaryTemplate` ends with a `{seeking}` placeholder; the region-specific
   // seeking sentence is appended at render time (ResumeModal + content.seekingLine).

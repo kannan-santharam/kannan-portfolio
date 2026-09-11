@@ -15,7 +15,8 @@
     "linkedin": "linkedin.com/in/askannan",
     "linkedinUrl": "https://linkedin.com/in/askannan",
     "github": "github.com/kannan-santharam",
-    "githubUrl": "https://github.com/kannan-santharam"
+    "githubUrl": "https://github.com/kannan-santharam",
+    "calendlyUrl": "https://calendly.com/kannansantharam/meeting-with-kannan"
   },
   "summaryTemplate": "Full Stack Senior Lead Software Engineer with 10.5+ years in enterprise SaaS, working across React, TypeScript, and Node.js. Currently leading an engineering team on a platform serving 4,000+ MSP and IT enterprise customers, driving technical direction across AI-native engineering with LLM orchestration, MCP servers, and production agent skills. {seeking}",
   "snapshot": [

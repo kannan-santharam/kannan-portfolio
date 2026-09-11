@@ -60,12 +60,9 @@ export const RecruiterFacts: React.FC = () => {
             })}
           </div>
 
-          {/* Additional Notes */}
-          <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-[var(--border-card)] pt-4 text-xs theme-sub">
-            <div className="flex items-center gap-2">
-              <span className="font-semibold theme-gold-text">Language Proficiency:</span>
-              <span>English (Fluent Professional) · Tamil (Native) · Hindi (Intermediate)</span>
-            </div>
+          {/* Additional Notes. Languages moved to the hero profile card, which
+              renders for both regions; this section is Dubai only. */}
+          <div className="mt-6 flex flex-wrap items-center justify-end gap-4 border-t border-[var(--border-card)] pt-4 text-xs theme-sub">
             <div className="flex items-center gap-2">
               <span className="font-semibold theme-title">Target Designation:</span>
               <span className="theme-sub">{content.hero.targetRole}</span>

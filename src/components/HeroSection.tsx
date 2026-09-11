@@ -12,6 +12,11 @@ import {
 import { RESUME_DATA } from '../data/resumeData';
 import { useRegion } from '../context/RegionContext';
 
+/** "English (Fluent) · Tamil (Native) · Hindi (Intermediate)" */
+const languageLine = RESUME_DATA.languages
+  .map((l) => `${l.name} (${l.level.replace(/\s*\(.*\)$/, '')})`)
+  .join(' · ');
+
 export const HeroSection: React.FC = () => {
   const { content } = useRegion();
 
@@ -44,6 +49,8 @@ export const HeroSection: React.FC = () => {
                     className="h-56 sm:h-72 w-full object-cover object-top"
                   />
                 </div>
+
+                <p className="mt-3 text-center text-[11px] theme-muted">{languageLine}</p>
               </div>
             </div>
           </div>
@@ -182,6 +189,14 @@ export const HeroSection: React.FC = () => {
                   <div className="flex items-center justify-between rounded-lg bg-[var(--bg-inner)] p-2.5 border border-[var(--border-card)]">
                     <span className="theme-muted">Current Position:</span>
                     <span className="font-semibold theme-title">SuperOps · Senior Lead</span>
+                  </div>
+
+                  {/* Lives here rather than in the hiring checklist, which only
+                      renders for Dubai. Read from the resume so the wording
+                      cannot drift from the PDF. */}
+                  <div className="flex items-center justify-between gap-3 rounded-lg bg-[var(--bg-inner)] p-2.5 border border-[var(--border-card)]">
+                    <span className="theme-muted shrink-0">Languages:</span>
+                    <span className="text-right font-semibold theme-sub">{languageLine}</span>
                   </div>
                 </div>
 
