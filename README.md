@@ -12,10 +12,10 @@
 
 * **AI-Native Engineering & Autonomous Tooling:** Architected an automated end-to-end test authoring platform from zero, orchestrating LLM agents over HTTP Web Streams (`fetch` + `ReadableStream`) to auto-generate, execute, and self-heal test suites. Authored custom production Claude Code skills and engineered Model Context Protocol (MCP) servers with strict multi-tier write-scope guardrails.
 * **96% Build Speed Acceleration (Rspack Migration):** Solo-led a 3-week build migration from Webpack 5 to Rust-powered Rspack across 12 monorepo packages at SuperOps. Reduced build time from 2 minutes (120s) down to 5 seconds.
-* **Engineering Team Leadership:** Lead and manage a frontend team of 4 to 6 engineers at SuperOps across sprint planning, architecture reviews, hiring and interviews, performance feedback and career development, and roadmap prioritisation, supporting **4,000+ MSP and IT enterprise customers**.
-* **Developer Mentorship:** Mentored 10+ engineers across SuperOps and Freshworks on React, monorepo code quality standards, REST API development, and UI architecture to accelerate team ramp-up.
-* **70% Faster Initial Page Load:** Cut initial page load from 5 seconds to 1.5 seconds through route-level code splitting, React lazy loading (Suspense), and per-package bundle chunking, alongside eliminating 30,000+ lines of dead code and unused dependencies via Knip static analysis to reduce technical debt.
-* **Enterprise Test Reliability:** Maintained platform stability with a 300+ test-case Playwright regression suite integrated into Jenkins CI/CD pipelines.
+* **Engineering Team Leadership:** Lead and manage a frontend team of 6 engineers at SuperOps across sprint planning, architecture reviews, hiring and interviews, performance feedback and career development, and roadmap prioritisation, on a platform managing **millions of customer endpoints**, shipping weekly.
+* **Hiring & Mentorship:** Hired 9 engineers across SuperOps and Freshworks at 90% retention, and mentored 10+ more on React, monorepo code quality standards, REST API development, and UI architecture to accelerate team ramp-up.
+* **70% Faster Initial Page Load:** Cut initial page load from 5 seconds to 1.5 seconds through route-level code splitting, React lazy loading (Suspense), and per-package bundle chunking, removing slowness-related support tickets, alongside eliminating 30,000+ lines of dead code and unused dependencies via Knip static analysis to reduce technical debt.
+* **Regression From 6 Hours to 40 Minutes:** Replaced a 6-hour manual product regression with a 40-minute automated run in Jenkins CI/CD across a 300+ test-case Playwright suite.
 
 ---
 
@@ -92,7 +92,7 @@ pnpm run preview
 
 ## 📬 Contact & Connect
 
-* **Location:** Chennai, India (Ready to Relocate to Dubai, UAE)
+* **Location:** Dubai, UAE (Relocating from Chennai, India)
 * **Phone / WhatsApp / BOTIM:** [+91 97902 47499](https://wa.me/919790247499)
 * **Email:** [as.kannan4@gmail.com](mailto:as.kannan4@gmail.com)
 * **LinkedIn:** [linkedin.com/in/askannan](https://linkedin.com/in/askannan)

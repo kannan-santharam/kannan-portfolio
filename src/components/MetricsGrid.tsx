@@ -85,8 +85,8 @@ export const MetricsGrid: React.FC = () => {
                 <Code2 className="h-5 w-5" />
               </div>
               <div>
-                <h4 className="text-sm font-bold theme-title">Reusable API / UI SDK Integration Framework</h4>
-                <p className="text-xs theme-sub">Standardised with its architectural standards and adopted across SuperOps product teams, reducing duplicate development effort.</p>
+                <h4 className="text-sm font-bold theme-title">Headless Base UI Design System</h4>
+                <p className="text-xs theme-sub">30+ reusable components on customised design tokens, now used across 40 to 50+ pages and sections.</p>
               </div>
             </div>
             <div className="flex shrink-0 items-center gap-2 rounded-lg border border-[var(--border-card)] bg-[var(--bg-inner)] px-3 py-1.5 text-xs font-mono theme-sub">

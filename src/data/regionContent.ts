@@ -140,7 +140,7 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
     resumeModal: {
       badge: 'Dubai Hiring Ready',
       contactLine: 'Phone / BOTIM / WhatsApp',
-      locationLine: 'Chennai, India · Notice Period: 60 Days · Target Location: Dubai, UAE (Relocation Ready)',
+      locationLine: 'Dubai, UAE (Relocating from Chennai, India) · Notice Period: 60 Days',
       statusBadge: '🇦🇪 Ready to Relocate to Dubai, UAE',
       visaBadge: 'Sponsorship Required',
     },

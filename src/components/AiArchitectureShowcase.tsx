@@ -34,7 +34,7 @@ export const AiArchitectureShowcase: React.FC = () => {
 
             <h3 className="text-xl font-bold theme-title">AI Test-Authoring Platform</h3>
             <p className="mt-2 text-xs theme-sub leading-relaxed">
-              Architected an automated end-to-end test platform using React and Node.js. Orchestrates autonomous LLM agents to generate, execute, and self-heal test suites.
+              Architected an automated end-to-end test platform using React and Node.js. Orchestrates autonomous LLM agents to generate, execute, and self-heal test suites, cutting full product regression from 6 hours of manual testing to a 40-minute automated run.
             </p>
 
             <div className="mt-4 flex flex-wrap gap-1.5">
