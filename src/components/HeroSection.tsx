@@ -93,7 +93,7 @@ export const HeroSection: React.FC = () => {
 
             {/* Professional Summary */}
             <p className="text-sm leading-relaxed theme-sub sm:text-lg">
-              I <span className="font-semibold theme-title">lead a frontend team of 4 to 6</span> at SuperOps and own delivery across React, TypeScript and Node.js, with <span className="font-semibold theme-title">10.5+ years</span> in enterprise SaaS. Architected an <span className="font-semibold theme-title">AI test-authoring platform</span> that generates, runs and self-heals end-to-end suites, and a headless <span className="font-semibold theme-gold-text">Base UI design system</span> whose Figma-to-component skill takes page development from 2 days to <span className="font-bold theme-cyan-text">a few hours</span>.
+              I <span className="font-semibold theme-title">lead a frontend team of 6</span> at SuperOps on a platform managing <span className="font-semibold theme-title">millions of customer endpoints</span>, with <span className="font-semibold theme-title">10.5+ years</span> in enterprise SaaS across React, TypeScript and Node.js. Architected an <span className="font-semibold theme-title">AI test-authoring platform</span> that cut full product regression from <span className="font-bold theme-cyan-text">6 hours to 40 minutes</span>, and a headless <span className="font-semibold theme-gold-text">Base UI design system</span> of 30+ components across 40 to 50+ pages that takes page development from 2 days to <span className="font-bold theme-cyan-text">a few hours</span>.
             </p>
 
             {/* Core Value Metric Cards (Informational Summary) */}
@@ -103,8 +103,8 @@ export const HeroSection: React.FC = () => {
                   <Users className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold theme-title">Team of 4 to 6</div>
-                  <div className="text-[10px] sm:text-[11px] theme-muted">Frontend engineers led</div>
+                  <div className="text-xs font-bold theme-title">Team of 6</div>
+                  <div className="text-[10px] sm:text-[11px] theme-muted">9 hired · 90% retention</div>
                 </div>
               </div>
 

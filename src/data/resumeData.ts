@@ -138,17 +138,17 @@ export const RESUME_DATA = {
       iconName: "Zap"
     },
     {
-      value: "Team Lead",
+      value: "Team of 6",
       label: "Engineering Team Leadership",
-      description: "Lead and manage a frontend team of 4 to 6 engineers across sprint planning, architecture reviews, hiring and interviews, performance feedback and career development, and roadmap prioritisation for a platform serving 4,000+ MSP and IT enterprise customers.",
+      description: "Lead and manage a frontend team of 6 engineers across sprint planning, architecture reviews, hiring and interviews, performance feedback and career development, and roadmap prioritisation for a platform managing millions of customer endpoints, shipping weekly.",
       subtext: "Cross-Functional Collaboration · Enterprise Scale",
       badge: "Engineering Leadership",
       iconName: "Users"
     },
     {
-      value: "10+ Eng",
-      label: "Developer Mentorship",
-      description: "Mentored 10+ engineers across SuperOps and Freshworks on React, monorepo code quality standards, REST API development, and UI architecture.",
+      value: "9 Hired",
+      label: "Hiring & Mentorship",
+      description: "Hired 9 engineers across SuperOps and Freshworks at 90% retention, and mentored 10+ more on React, monorepo code quality standards, REST API development, and UI architecture.",
       subtext: "Talent Development & Ramp-Up Acceleration",
       badge: "People & Growth",
       iconName: "Award"
