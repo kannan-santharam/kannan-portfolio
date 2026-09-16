@@ -96,7 +96,7 @@
         "Reduced dev build time by 96%, from 2 minutes to 5 seconds, through a solo Webpack 5 to Rspack migration delivered in 3 weeks across 12 monorepo packages, reclaiming roughly 50 engineer-hours a month across a 15-engineer frontend org and accelerating time-to-market for every downstream feature.",
         "Reduced manual regression effort and release risk by architecting an AI test-authoring platform in React and Node.js that orchestrates LLM agents to generate, execute, and self-heal end-to-end test suites, streaming real-time results over HTTP Web Streams, cutting full product regression from 6 hours of manual testing to a 40-minute automated run in Jenkins CI/CD across a 300+ test-case Playwright suite.",
         "Improved developer productivity by integrating custom Claude Code skills and MCP servers into the production development workflow, with multi-tier write-scope guardrails that let engineers run autonomous agents without exposing core platform interfaces to risk.",
-        "Built a Python MCP server exposing the frontend codebase as a queryable graph, packaged as a Docker image and hosted on AWS EC2 behind token-based authentication, now used by AI tooling across multiple engineering teams.",
+        "Built a Python MCP server exposing the frontend codebase as a queryable graph, packaged as a Docker image and hosted on AWS EC2 behind token-based authentication, adopted by 3 engineering squads as the shared context source for their AI tooling.",
         "Built a headless Base UI design system of 30+ reusable components now used across 40 to 50+ pages and sections, with customised design tokens and a Claude Code skill that generates production components from a Figma node link via MCP, reducing page development from 2 days of AI-assisted engineering to a few hours.",
         "Cut initial page load from 5 seconds to 1.5 seconds through route-level code splitting, React lazy loading (Suspense), and per-package bundle chunking, removing slowness-related support tickets, and eliminated 30,000+ lines of dead code and unused dependencies to reduce technical debt and the build and security surface."
       ]
@@ -114,7 +114,7 @@
         "Reduced support handling effort by building a Customer 360 dashboard consolidating support, sales, and account data into a single operational view.",
         "Built tier-1 SaaS integrations over REST API services, the Jira integration adopted by 4,000+ Freshworks customers, alongside Salesforce, Zendesk, and ServiceNow for 100+ mid-market and enterprise customers, expanding platform fit in enterprise deals.",
         "Shipped custom features and public apps across 4 Freshworks products, filling product gaps for enterprise accounts and reaching 10,000+ customers through the marketplace, with React on the front end and JWT for app authentication and OAuth 2.0 where the third-party API supported it.",
-        "Built the Node.js microservices behind customer-specific features, deployed on AWS EC2 with S3, DynamoDB and MySQL as the data layer, so each customer's logic ran isolated from the core product.",
+        "Built Node.js middleware and microservices for 50+ enterprise accounts worth $50K to $1M ARR each, deployed on AWS EC2 with S3, DynamoDB and MySQL, delivering requirements the core product could not and securing onboarding and renewals for those deals.",
         "Mentored 6 to 7 junior and onboarding engineers on React, REST API development, and UI architecture through structured code and design reviews, accelerating team onboarding."
       ]
     },
