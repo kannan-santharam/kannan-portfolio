@@ -1,7 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowLeft, Bot, Sparkles, Loader2, FileSearch } from 'lucide-react';
+import { useRegion } from '../context/RegionContext';
+import type { Region } from '../data/regionContent';
 
 const DOCMIND_URL = 'https://docmind-rag-llm.vercel.app';
+
+// DocMind picks its edition from geo-IP unless the parent tells it otherwise.
+// Forward the region THIS page resolved (route, cookie, default) so the two
+// never disagree. DocMind accepts `in` and `dubai` here.
+const DOCMIND_REGION_PARAM: Record<Region, 'in' | 'dubai'> = {
+  india: 'in',
+  dubai: 'dubai'
+};
+
+const buildDocMindUrl = (region: Region): string => {
+  const url = new URL(DOCMIND_URL);
+  url.searchParams.set('region', DOCMIND_REGION_PARAM[region]);
+  return url.toString();
+};
 
 interface DocMindOverlayProps {
   isOpen: boolean;
@@ -9,8 +25,13 @@ interface DocMindOverlayProps {
 }
 
 export const DocMindOverlay: React.FC<DocMindOverlayProps> = ({ isOpen, onOpenChange }) => {
+  const { region } = useRegion();
   const [isIframeLoaded, setIsIframeLoaded] = useState(false);
   const [isLaunching, setIsLaunching] = useState(false);
+
+  // Resolved once on mount: changing an iframe src reloads it, which restarts
+  // DocMind and wipes the visitor's chat, so the src must not track state.
+  const [docMindSrc] = useState(() => buildDocMindUrl(region));
 
   // Expand the input bar to full screen, then swap in the overlay
   const launchOverlay = () => {
@@ -129,7 +150,7 @@ export const DocMindOverlay: React.FC<DocMindOverlayProps> = ({ isOpen, onOpenCh
               </div>
             )}
             <iframe
-              src={DOCMIND_URL}
+              src={docMindSrc}
               title="DocMind — agentic RAG chatbot"
               allow="clipboard-write"
               onLoad={() => setIsIframeLoaded(true)}
