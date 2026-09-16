@@ -42,6 +42,7 @@
         "MySQL",
         "Python",
         "REST API Design & Integration",
+        "JWT & OAuth 2.0",
         "Microservices",
         "GraphQL & Apollo",
         "Zustand",
@@ -130,7 +131,7 @@
         "Acted as the technical point of contact for 100+ mid-market and enterprise accounts over a four-year tenure, partnering with Support, Customer Success, and Sales to turn complex account requirements into solutions that unblocked onboarding and renewals, recognised with the Customer Champion Award.",
         "Reduced support handling effort by building a Customer 360 dashboard consolidating support, sales, and account data into a single operational view.",
         "Built tier-1 SaaS integrations over REST API services, the Jira integration adopted by 4,000+ Freshworks customers, alongside Salesforce, Zendesk, and ServiceNow for 100+ mid-market and enterprise customers, expanding platform fit in enterprise deals.",
-        "Developed features end-to-end across Freshworks products, building the React UI with the Node.js REST API services and MySQL data layer behind it, and shipped reusable add-ons in place of one-off custom development.",
+        "Shipped custom features and public apps across 4 Freshworks products, filling product gaps for enterprise accounts and reaching 10,000+ customers through the marketplace, building the React UI, Node.js REST API services and MySQL data layer, with JWT for app authentication and OAuth 2.0 where the third-party API supported it.",
         "Mentored 6 to 7 junior and onboarding engineers on React, REST API development, and UI architecture through structured code and design reviews, accelerating team onboarding."
       ]
     },
