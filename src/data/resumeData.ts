@@ -38,12 +38,12 @@ const EXPERIENCE_PRESENTATION: { id: string; featured: boolean; skills: string[]
   {
     id: "superops",
     featured: true,
-    skills: ["React", "TypeScript", "Node.js", "Python", "Rspack", "MCP Servers", "HTTP Web Streams", "Claude Code Skills", "Base UI", "Figma MCP", "GraphQL", "Apollo", "Playwright", "Zustand", "Knip"]
+    skills: ["React", "TypeScript", "Node.js", "Python", "Rspack", "MCP Servers", "Docker", "AWS EC2", "HTTP Web Streams", "Claude Code Skills", "Base UI", "Figma MCP", "GraphQL", "Apollo", "Playwright", "Zustand", "Knip"]
   },
   {
     id: "freshworks",
     featured: true,
-    skills: ["React", "JavaScript", "Node.js", "MySQL", "REST APIs", "SaaS Integrations (Jira, Salesforce, Zendesk, ServiceNow)", "Customer 360", "SASS"]
+    skills: ["React", "JavaScript", "Node.js", "Microservices", "AWS (EC2, S3, DynamoDB)", "MySQL", "REST APIs", "JWT", "OAuth 2.0", "SaaS Integrations (Jira, Salesforce, Zendesk, ServiceNow)", "Customer 360", "SASS"]
   },
   {
     id: "niche-infigenic",
@@ -167,8 +167,6 @@ export const RESUME_DATA = {
         { name: "Model Context Protocol (MCP) Servers" },
         { name: "HTTP Web Streams (ReadableStream)" },
         { name: "Figma MCP (Design-to-Code)" },
-        { name: "Cursor IDE & Agent Workflows" },
-        { name: "GitHub Copilot" },
         { name: "LLM Orchestration & Prompting" },
         { name: "AI Agent Guardrails & Safety" },
         { name: "RAG & Embedding" },
@@ -195,7 +193,9 @@ export const RESUME_DATA = {
       skills: [
         { name: "Node.js Backend Services" },
         { name: "REST API Design & Integration" },
-        { name: "MySQL" },
+        { name: "JWT & OAuth 2.0 Authentication" },
+        { name: "Node.js Microservices on AWS" },
+        { name: "MySQL & DynamoDB" },
         { name: "Python" }
       ]
     },
@@ -229,7 +229,7 @@ export const RESUME_DATA = {
         { name: "Unit Testing (Jest, Vitest)" },
         { name: "Jenkins CI/CD Pipelines" },
         { name: "Docker" },
-        { name: "AWS (EC2, S3, Route 53)" }
+        { name: "AWS (EC2, S3, DynamoDB, Route 53)" }
       ]
     },
     {
