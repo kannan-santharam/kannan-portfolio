@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, Bot, Cpu, ShieldCheck, TrendingUp, Sparkles, Code2 } from 'lucide-react';
+import { Zap, Bot, Cpu, ShieldCheck, TrendingUp, Sparkles, Code2, Users } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
 
 export const MetricsGrid: React.FC = () => {
@@ -11,6 +11,10 @@ export const MetricsGrid: React.FC = () => {
         return <Bot className="h-6 w-6 theme-gold-text" />;
       case 'Cpu':
         return <Cpu className="h-6 w-6 text-purple-500" />;
+      case 'TrendingUp':
+        return <TrendingUp className="h-6 w-6 text-emerald-500" />;
+      case 'Users':
+        return <Users className="h-6 w-6 text-sky-500" />;
       case 'ShieldCheck':
       default:
         return <ShieldCheck className="h-6 w-6 text-emerald-500" />;
@@ -85,13 +89,13 @@ export const MetricsGrid: React.FC = () => {
                 <Code2 className="h-5 w-5" />
               </div>
               <div>
-                <h4 className="text-sm font-bold theme-title">Headless Base UI Design System</h4>
-                <p className="text-xs theme-sub">30+ reusable components on customised design tokens, now used across 40 to 50+ pages and sections.</p>
+                <h4 className="text-sm font-bold theme-title">6 Hours → 40 Minutes Regression</h4>
+                <p className="text-xs theme-sub">AI-driven end-to-end testing platform: LLM agents generate, run and self-heal a 300+ test-case Playwright suite that gates every release in Jenkins CI/CD.</p>
               </div>
             </div>
             <div className="flex shrink-0 items-center gap-2 rounded-lg border border-[var(--border-card)] bg-[var(--bg-inner)] px-3 py-1.5 text-xs font-mono theme-sub">
               <Sparkles className="h-3.5 w-3.5 theme-gold-text" />
-              <span>Standardized Service Layer</span>
+              <span>Release Gate in Jenkins CI/CD</span>
             </div>
           </div>
         </div>

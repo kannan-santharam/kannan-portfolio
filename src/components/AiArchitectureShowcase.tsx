@@ -16,14 +16,14 @@ export const AiArchitectureShowcase: React.FC = () => {
             LLM Agents, MCP Servers, Design-to-Code & Guardrails
           </h2>
           <p className="mx-auto mt-2 max-w-2xl text-base theme-sub">
-            Pioneering agentic development workflows at enterprise scale, from design-to-code component generation through to safe autonomous code modifications, for maximum engineer throughput.
+            Pioneering agentic development workflows in production, from design-to-code component generation through to safe autonomous code modification.
           </p>
         </div>
 
         {/* 4 Pillar Cards */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           
-          {/* Card 1: LLM Agents & Test Platform */}
+          {/* Card 1: LLM Agents & AI-Driven E2E Testing Platform */}
           <div className="rounded-2xl border border-[var(--border-card)] bg-[var(--bg-card)] p-6 shadow-xl transition-all hover:border-[var(--border-gold)]">
             <div className="mb-4 flex items-center justify-between">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl theme-gold-badge">
@@ -32,9 +32,9 @@ export const AiArchitectureShowcase: React.FC = () => {
               <span className="font-mono text-xs font-bold theme-gold-text">LLM Agents</span>
             </div>
 
-            <h3 className="text-xl font-bold theme-title">AI Test-Authoring Platform</h3>
+            <h3 className="text-xl font-bold theme-title">AI-Driven End-to-End Testing Platform</h3>
             <p className="mt-2 text-xs theme-sub leading-relaxed">
-              Architected an automated end-to-end test platform using React and Node.js. Orchestrates autonomous LLM agents to generate, execute, and self-heal test suites, cutting full product regression from 6 hours of manual testing to a 40-minute automated run.
+              Architected an AI-driven end-to-end testing platform in React and Node.js, where LLM agents generate, run and self-heal a 300+ test-case Playwright suite, cutting full product regression from 6 hours of manual testing to a 40-minute automated run that gates every release.
             </p>
 
             <div className="mt-4 flex flex-wrap gap-1.5">
@@ -56,13 +56,13 @@ export const AiArchitectureShowcase: React.FC = () => {
 
             <h3 className="text-xl font-bold theme-title">Claude Code Skills & MCP</h3>
             <p className="mt-2 text-xs theme-sub leading-relaxed">
-              Authored custom production Claude Code skills powered by Model Context Protocol (MCP) servers, exposing the frontend codebase as a queryable graph that AI agents reason over across the monorepo.
+              Authored custom production Claude Code skills powered by a Model Context Protocol (MCP) server that exposes the frontend codebase as a queryable graph that AI agents reason over across the monorepo. The server is built in Python, shipped as a Docker image on AWS EC2 behind token-based authentication, and adopted by 3 engineering squads.
             </p>
 
             <div className="mt-4 flex flex-wrap gap-1.5">
               <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">MCP Servers</span>
               <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Claude Code</span>
-              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Cursor IDE</span>
+              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Docker on AWS EC2</span>
             </div>
           </div>
 
@@ -81,9 +81,9 @@ export const AiArchitectureShowcase: React.FC = () => {
             </p>
 
             <div className="mt-4 flex flex-wrap gap-1.5">
-              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Queryable Codebase Graph</span>
+              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Write-Scope Tiers</span>
               <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Security Control</span>
-              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Amazon Bedrock AgentCore</span>
+              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Autonomous Agents</span>
             </div>
           </div>
 
@@ -98,7 +98,7 @@ export const AiArchitectureShowcase: React.FC = () => {
 
             <h3 className="text-xl font-bold theme-title">Base UI Design System & Figma Skill</h3>
             <p className="mt-2 text-xs theme-sub leading-relaxed">
-              Built a headless design system from scratch on Base UI with customised design tokens, then authored a Claude Code skill that pulls design context from a Figma node link through an MCP server and generates the production component, reducing page development from 2 days of AI-assisted engineering to a few hours.
+              Built a headless design system from scratch on Base UI with customised design tokens, then authored a Claude Code skill that pulls design context from a Figma node link through an MCP server and generates the production component, cutting page development time from 2 days, even with AI assistance, to a few hours.
             </p>
 
             <div className="mt-4 flex flex-wrap gap-1.5">

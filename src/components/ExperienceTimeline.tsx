@@ -21,7 +21,7 @@ export const ExperienceTimeline: React.FC = () => {
             10.5+ Years in Enterprise SaaS
           </h2>
           <p className="mt-1.5 max-w-3xl text-xs sm:text-base theme-sub">
-            Progressive engineering roles into technical leadership across high-growth global technology companies in Chennai and Bengaluru, India.
+            Engineering roles progressing into technical leadership across global technology companies in Chennai and Bengaluru, India.
           </p>
         </div>
 

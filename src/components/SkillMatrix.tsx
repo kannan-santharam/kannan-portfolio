@@ -32,7 +32,7 @@ export const SkillMatrix: React.FC = () => {
             Engineering & Leadership Skill Matrix
           </h2>
           <p className="mx-auto mt-1.5 max-w-2xl text-xs sm:text-base theme-sub">
-            Categorized skills honed over 10.5+ years of scaling enterprise client platforms and AI workflows.
+            Categorised skills honed over 10.5+ years of scaling enterprise SaaS platforms and AI workflows.
           </p>
         </div>
 

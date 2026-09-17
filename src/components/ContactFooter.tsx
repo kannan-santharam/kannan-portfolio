@@ -34,10 +34,10 @@ export const ContactFooter: React.FC = () => {
         }]
       : []),
     {
-      id: 'rspack',
-      label: '⚡ 96% Rspack Build Speedup',
+      id: 'ai-testing',
+      label: '🤖 AI-Driven End-to-End Testing Platform',
       icon: Zap,
-      message: "Hi Kannan, I'm interested in your 96% build speedup win (Webpack 5 to Rspack). Let's connect."
+      message: "Hi Kannan, I'm interested in the AI-driven end-to-end testing platform that cut regression from 6 hours to 40 minutes. Let's connect."
     },
     {
       id: 'availability',

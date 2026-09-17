@@ -10,6 +10,10 @@ import {
   Download,
 } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
+import { PhotoCarousel } from './PhotoCarousel';
+
+// Both hero cards rotate through the same two photos; add here to extend.
+const HERO_PHOTOS = ['/kannanphoto.jpeg', '/kannan_photo.jpg'];
 import { useRegion } from '../context/RegionContext';
 
 /** "English (Fluent) · Tamil (Native) · Hindi (Intermediate)" */
@@ -42,13 +46,11 @@ export const HeroSection: React.FC = () => {
             <div className="relative mx-auto max-w-xs sm:max-w-md">
               <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-[#0052FF] via-[#00D2FF] to-[#7C3AED] opacity-35 blur-md" />
               <div className="relative rounded-xl border border-[var(--border-gold)] bg-[var(--bg-card)] p-3.5 shadow-xl backdrop-blur-xl">
-                <div className="relative overflow-hidden rounded-lg border border-[var(--border-card)]">
-                  <img
-                    src="/kannanphoto.jpeg"
-                    alt={RESUME_DATA.name}
-                    className="h-56 sm:h-72 w-full object-cover object-top"
-                  />
-                </div>
+                <PhotoCarousel
+                  photos={HERO_PHOTOS}
+                  alt={RESUME_DATA.name}
+                  className="h-56 sm:h-72 w-full rounded-lg border border-[var(--border-card)]"
+                />
 
                 <p className="mt-3 text-center text-[11px] theme-muted">{languageLine}</p>
               </div>
@@ -93,7 +95,7 @@ export const HeroSection: React.FC = () => {
 
             {/* Professional Summary */}
             <p className="text-sm leading-relaxed theme-sub sm:text-lg">
-              I <span className="font-semibold theme-title">lead a frontend team of 6</span> at SuperOps on a platform managing <span className="font-semibold theme-title">millions of customer endpoints</span>, with <span className="font-semibold theme-title">10.5+ years</span> in enterprise SaaS across React, TypeScript and Node.js. Architected an <span className="font-semibold theme-title">AI test-authoring platform</span> that cut full product regression from <span className="font-bold theme-cyan-text">6 hours to 40 minutes</span>, and a headless <span className="font-semibold theme-gold-text">Base UI design system</span> of 30+ components across 40 to 50+ pages that takes page development from 2 days to <span className="font-bold theme-cyan-text">a few hours</span>.
+              With <span className="font-semibold theme-title">10.5+ years</span> in enterprise SaaS across React, TypeScript and Node.js, I <span className="font-semibold theme-title">lead a frontend team of 6</span> at SuperOps on a platform managing <span className="font-semibold theme-title">millions of customer endpoints</span>. I architected an <span className="font-semibold theme-title">AI-driven end-to-end testing platform</span> that cut full product regression from <span className="font-bold theme-cyan-text">6 hours to 40 minutes</span>, and earlier at Freshworks built the Node.js middleware and microservices behind <span className="font-semibold theme-title">50+ enterprise accounts</span> worth <span className="font-bold theme-cyan-text">$100K to $1M ARR</span> each.
             </p>
 
             {/* Core Value Metric Cards (Informational Summary) */}
@@ -113,8 +115,8 @@ export const HeroSection: React.FC = () => {
                   <Zap className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold theme-title">96% Faster Builds</div>
-                  <div className="text-[10px] sm:text-[11px] theme-muted">Webpack 5 ➔ Rspack</div>
+                  <div className="text-xs font-bold theme-title">10,000+ Customers</div>
+                  <div className="text-[10px] sm:text-[11px] theme-muted">Apps across 4 Freshworks products</div>
                 </div>
               </div>
 
@@ -172,13 +174,11 @@ export const HeroSection: React.FC = () => {
               <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-[#0052FF] via-[#00D2FF] to-[#7C3AED] opacity-35 blur-md transition duration-500 group-hover:opacity-50" />
               
               <div className="relative rounded-2xl border border-[var(--border-gold)] bg-[var(--bg-card)] p-4 shadow-xl backdrop-blur-xl">
-                <div className="relative mb-5 overflow-hidden rounded-xl border border-[var(--border-card)]">
-                  <img
-                    src="/kannanphoto.jpeg"
-                    alt={RESUME_DATA.name}
-                    className="h-84 w-full object-cover object-top transition-transform duration-500 hover:scale-105"
-                  />
-                </div>
+                <PhotoCarousel
+                  photos={HERO_PHOTOS}
+                  alt={RESUME_DATA.name}
+                  className="mb-5 h-84 w-full rounded-xl border border-[var(--border-card)]"
+                />
 
                 <div className="space-y-2.5 text-xs theme-sub cursor-default select-none">
                   <div className="flex items-center justify-between rounded-lg bg-[var(--bg-inner)] p-2.5 border border-[var(--border-card)]">

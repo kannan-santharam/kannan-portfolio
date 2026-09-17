@@ -153,6 +153,18 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </ul>
           </div>
 
+          {/* Technical Skills Matrix */}
+          <div>
+            <h2 className="text-xs font-bold uppercase tracking-wider theme-gold-text border-b border-[var(--border-card)] pb-1 print:border-b print:border-slate-400 print:text-slate-900 print:text-[10pt] print:pb-0.5">
+              Technical Skills Matrix
+            </h2>
+            <div className="space-y-1.5 text-xs theme-sub mt-2 print:space-y-0.5 print:text-[9pt] print:text-slate-800 print:mt-1">
+              {RESUME_DATA.competencies.map((group) => (
+                <div key={group.label}><strong>{group.label}:</strong> {group.items.join(', ')}</div>
+              ))}
+            </div>
+          </div>
+
           {/* Work Experience */}
           <div>
             <h2 className="text-xs font-bold uppercase tracking-wider theme-gold-text border-b border-[var(--border-card)] pb-1 print:border-b print:border-slate-400 print:text-slate-900 print:text-[10pt] print:pb-0.5">
@@ -188,18 +200,6 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                     ))}
                   </ul>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Technical Skills Matrix */}
-          <div>
-            <h2 className="text-xs font-bold uppercase tracking-wider theme-gold-text border-b border-[var(--border-card)] pb-1 print:border-b print:border-slate-400 print:text-slate-900 print:text-[10pt] print:pb-0.5">
-              Technical Skills Matrix
-            </h2>
-            <div className="space-y-1.5 text-xs theme-sub mt-2 print:space-y-0.5 print:text-[9pt] print:text-slate-800 print:mt-1">
-              {RESUME_DATA.competencies.map((group) => (
-                <div key={group.label}><strong>{group.label}:</strong> {group.items.join(', ')}</div>
               ))}
             </div>
           </div>
