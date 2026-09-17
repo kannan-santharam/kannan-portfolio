@@ -39,3 +39,7 @@ scripts/
 # Photo sources for the CV builder; the site only needs the generated .jpg
 public/kannan_photo.png
 public/kannancrop.png
+
+# Per-company tailored resumes (built by the tailor-resume skill) and local Claude config
+companies/
+.claude/
