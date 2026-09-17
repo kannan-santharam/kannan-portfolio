@@ -142,7 +142,7 @@ export const AvatarGreeter: React.FC<AvatarGreeterProps> = ({ isChatOpen, onOpen
       // the overlay itself, and gets out of the way once the chat is open.
       // `invisible` while hidden, not just opacity-0: the CTA and the avatar
       // are focusable, and an opacity-0 layer keeps them in the tab order.
-      className={`pointer-events-none fixed right-4 bottom-24 z-40 hidden lg:block transition-all duration-700 ease-out ${
+      className={`pointer-events-none fixed right-4 bottom-40 z-40 hidden lg:block transition-all duration-700 ease-out ${
         isEntered && !isChatOpen
           ? 'translate-y-0 opacity-100'
           : 'invisible translate-y-16 opacity-0'

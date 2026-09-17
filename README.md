@@ -10,11 +10,11 @@
 
 ## 🌟 Key Architecture & Engineering Highlights
 
-* **AI-Native Engineering & Autonomous Tooling:** Architected an automated end-to-end test authoring platform from zero, orchestrating LLM agents over HTTP Web Streams (`fetch` + `ReadableStream`) to auto-generate, execute, and self-heal test suites. Authored custom production Claude Code skills and engineered Model Context Protocol (MCP) servers with strict multi-tier write-scope guardrails.
+* **AI-Native Engineering & Autonomous Tooling:** Architected an AI-driven end-to-end testing platform from zero, orchestrating LLM agents over HTTP Web Streams (`fetch` + `ReadableStream`) to auto-generate, execute, and self-heal test suites. Authored custom production Claude Code skills and engineered Model Context Protocol (MCP) servers with strict multi-tier write-scope guardrails.
 * **96% Build Speed Acceleration (Rspack Migration):** Solo-led a 3-week build migration from Webpack 5 to Rust-powered Rspack across 12 monorepo packages at SuperOps. Reduced build time from 2 minutes (120s) down to 5 seconds.
 * **Engineering Team Leadership:** Lead and manage a frontend team of 6 engineers at SuperOps across sprint planning, architecture reviews, hiring and interviews, performance feedback and career development, and roadmap prioritisation, on a platform managing **millions of customer endpoints**, shipping weekly.
 * **Hiring & Mentorship:** Hired 9 engineers across SuperOps and Freshworks at 90% retention, and mentored 10+ more on React, monorepo code quality standards, REST API development, and UI architecture to accelerate team ramp-up.
-* **70% Faster Initial Page Load:** Cut initial page load from 5 seconds to 1.5 seconds through route-level code splitting, React lazy loading (Suspense), and per-package bundle chunking, removing slowness-related support tickets, alongside eliminating 30,000+ lines of dead code and unused dependencies via Knip static analysis to reduce technical debt.
+* **70% Faster Initial Page Load:** Cut initial page load from 5 seconds to 1.5 seconds through route-level code splitting, React lazy loading (Suspense), and per-package bundle chunking, removing slowness-related support tickets, alongside eliminating 30,000+ lines of dead code and unused dependencies to reduce technical debt.
 * **Regression From 6 Hours to 40 Minutes:** Replaced a 6-hour manual product regression with a 40-minute automated run in Jenkins CI/CD across a 300+ test-case Playwright suite.
 
 ---
@@ -25,8 +25,8 @@
 |---|---|
 | **Frontend Core** | React, TypeScript, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, SASS, Responsive Design, Core Web Vitals |
 | **AI & Agentic Tech** | Production Agent Skills (Claude Code), Model Context Protocol (MCP) Servers, Gemini 2.5 Flash, LLM Orchestration, HTTP Web Streams (ReadableStream), Langfuse Observability |
-| **State & APIs** | GraphQL, Apollo Client, REST API Design, MySQL, Zustand, Custom Cached Query Hooks, HTTP Web Streams |
-| **Build & Architecture** | Vite, Rust-powered Rspack, Webpack 5, Monorepos, Micro-Frontends, Knip Static Analysis, Design Systems, RBAC |
+| **State & APIs** | GraphQL, Apollo Client, REST API Design, MySQL, DynamoDB, JWT & OAuth 2.0, Custom Cached Query Hooks, HTTP Web Streams |
+| **Build & Architecture** | Vite, Rust-powered Rspack, Webpack 5, Monorepos, Micro-Frontends, Node.js Microservices, Docker, Design Systems, RBAC |
 | **Testing & DevOps** | Playwright (300+ Tests), Jest, Vitest, Node.js, Jenkins CI/CD, Docker, AWS (EC2, S3, Route 53) |
 
 ---

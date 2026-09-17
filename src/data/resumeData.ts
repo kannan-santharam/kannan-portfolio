@@ -38,12 +38,12 @@ const EXPERIENCE_PRESENTATION: { id: string; featured: boolean; skills: string[]
   {
     id: "superops",
     featured: true,
-    skills: ["React", "TypeScript", "Node.js", "Python", "Rspack", "MCP Servers", "Docker", "AWS EC2", "HTTP Web Streams", "Claude Code Skills", "Base UI", "Figma MCP", "GraphQL", "Apollo", "Playwright", "Zustand", "Knip"]
+    skills: ["React", "TypeScript", "Node.js", "Python", "Rspack", "MCP Servers", "Docker", "AWS EC2", "HTTP Web Streams", "Claude Code Skills", "Base UI", "Figma MCP", "GraphQL", "Playwright"]
   },
   {
     id: "freshworks",
     featured: true,
-    skills: ["React", "JavaScript", "Node.js", "Microservices", "AWS (EC2, S3, DynamoDB)", "MySQL", "REST APIs", "JWT", "OAuth 2.0", "SaaS Integrations (Jira, Salesforce, Zendesk, ServiceNow)", "Customer 360", "SASS"]
+    skills: ["React", "JavaScript", "Node.js", "Microservices", "AWS (EC2, S3, DynamoDB)", "MySQL", "REST APIs", "JWT", "OAuth 2.0", "SaaS Integrations (Jira, Salesforce, Zendesk, ServiceNow)", "SASS"]
   },
   {
     id: "niche-infigenic",
@@ -124,34 +124,34 @@ export const RESUME_DATA = {
     {
       value: "AI-Native",
       label: "AI Platform & Agentic Tooling",
-      description: "Architected an AI test platform via Web Streams, and built a headless Base UI design system on customised design tokens whose Claude Code skill turns a Figma node link into production components.",
+      description: "Architected an AI-driven end-to-end testing platform in React and Node.js, and built a Python MCP server on AWS EC2 that exposes the codebase as a queryable graph, now used by 3 engineering squads.",
       subtext: "MCP Servers · Claude Code · Figma MCP",
       badge: "GenAI & Agentic Tech",
       iconName: "Bot"
     },
     {
-      value: "96%",
-      label: "Build Speed Acceleration",
-      description: "Reduced build time from 2 minutes to 5 seconds across 12 packages in a solo Webpack 5 → Rspack migration completed in 3 weeks.",
-      subtext: "12 Packages · 3 Weeks Solo Project",
-      badge: "Performance Architecture",
-      iconName: "Zap"
+      value: "$100K–$1M",
+      label: "ARR per Enterprise Account",
+      description: "Built the Node.js middleware and microservices behind 50+ enterprise accounts worth $100K to $1M ARR each at Freshworks, on AWS EC2 with S3, DynamoDB and MySQL.",
+      subtext: "50+ Accounts · AWS EC2 · S3 · DynamoDB · MySQL",
+      badge: "Revenue Impact",
+      iconName: "TrendingUp"
     },
     {
       value: "Team of 6",
-      label: "Engineering Team Leadership",
-      description: "Lead and manage a frontend team of 6 engineers across sprint planning, architecture reviews, hiring and interviews, performance feedback and career development, and roadmap prioritisation for a platform managing millions of customer endpoints, shipping weekly.",
-      subtext: "Cross-Functional Collaboration · Enterprise Scale",
-      badge: "Engineering Leadership",
+      label: "Engineering Leadership & Hiring",
+      description: "Lead a frontend team of 6 at SuperOps on a platform managing millions of endpoints, shipping weekly, and have hired 9 engineers and mentored 10+ across SuperOps and Freshworks at 90% retention.",
+      subtext: "9 Hired · 10+ Mentored · 90% Retention",
+      badge: "People & Growth",
       iconName: "Users"
     },
     {
-      value: "9 Hired",
-      label: "Hiring & Mentorship",
-      description: "Hired 9 engineers across SuperOps and Freshworks at 90% retention, and mentored 10+ more on React, monorepo code quality standards, REST API development, and UI architecture.",
-      subtext: "Talent Development & Ramp-Up Acceleration",
-      badge: "People & Growth",
-      iconName: "Award"
+      value: "70%",
+      label: "Faster Initial Load",
+      description: "Cut product initial load time from 5 seconds to 1.5 seconds through route-level code splitting, React lazy loading and per-package bundle chunking, ending the slowness-related support tickets.",
+      subtext: "5s → 1.5s · Code Splitting · Lazy Loading",
+      badge: "Performance",
+      iconName: "Zap"
     }
   ] as MetricItem[],
 
@@ -203,8 +203,7 @@ export const RESUME_DATA = {
       title: "State, Data & APIs",
       category: "state",
       skills: [
-        { name: "GraphQL & Apollo Client" },
-        { name: "Zustand State Management" },
+        { name: "GraphQL" },
         { name: "Custom Cached Query Hooks" }
       ]
     },
@@ -215,10 +214,9 @@ export const RESUME_DATA = {
         { name: "Monorepos & Module Federation" },
         { name: "Rspack & Webpack 5" },
         { name: "Micro-Frontends" },
-        { name: "Design Systems & UI SDKs" },
+        { name: "Design Systems" },
         { name: "Base UI Headless Components" },
-        { name: "Role-Based Access Control (RBAC)" },
-        { name: "Knip Static Dead-Code Analysis" }
+        { name: "Role-Based Access Control (RBAC)" }
       ]
     },
     {

@@ -21,9 +21,11 @@ const regionHtml = (): Plugin => {
   const seo = JSON.parse(readFileSync('src/data/seo.json', 'utf8')) as Record<string, Seo>;
   const stamp = (html: string, s: Seo) =>
     html
-      .replace(/<title>[\s\S]*?<\/title>/, `<title>${s.title}</title>`)
-      .replace(/(<meta name="description" content=")[\s\S]*?(")/, `$1${s.description}$2`)
-      .replace(/(<meta name="keywords" content=")[\s\S]*?(")/, `$1${s.keywords}$2`);
+      // Function replacers: a string replacement treats "$1" in the SEO copy
+      // ("$100K to $1M ARR") as a capture-group reference and corrupts the tag.
+      .replace(/<title>[\s\S]*?<\/title>/, () => `<title>${s.title}</title>`)
+      .replace(/(<meta name="description" content=")[\s\S]*?(")/, (_m, p1, p2) => p1 + s.description + p2)
+      .replace(/(<meta name="keywords" content=")[\s\S]*?(")/, (_m, p1, p2) => p1 + s.keywords + p2);
 
   return {
     name: 'region-html',

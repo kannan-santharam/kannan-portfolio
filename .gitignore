@@ -35,3 +35,7 @@ lerna-debug.log*
 
 # Local resume generators (build the PDF/DOCX from src/data/resumeContent.json)
 scripts/
+
+# Photo sources for the CV builder; the site only needs the generated .jpg
+public/kannan_photo.png
+public/kannancrop.png

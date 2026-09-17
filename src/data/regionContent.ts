@@ -80,8 +80,8 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
 
     hero: {
       statusBadge: 'Chennai, India → Dubai, UAE · Ready to Relocate',
-      targetRole: 'Lead / Staff Engineer or Engineering Manager',
-      roleLine: 'SEEKING LEAD / STAFF ENGINEER OR ENGINEERING MANAGER · DUBAI, UAE',
+      targetRole: 'Senior Lead / Staff Engineer or Engineering Manager',
+      roleLine: 'SEEKING SENIOR LEAD / STAFF ENGINEER OR ENGINEERING MANAGER · DUBAI, UAE',
       contactCtaLabel: 'BOTIM, LinkedIn & More',
       visaBadge: 'Sponsorship Required',
       whatsappMessage: 'Hi Kannan, I reviewed your portfolio and would like to connect regarding a role in Dubai.',
@@ -133,7 +133,7 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
       },
       bannerBadge: '🇦🇪 Available for Dubai, UAE Hiring',
       heading: 'Ready to Lead & Accelerate Engineering Teams in Dubai',
-      paragraph: 'Seeking a Lead / Staff Engineer or Engineering Manager position with a tech product company in Dubai. Available on 60 days notice with full mobility for visa processing.',
+      paragraph: 'Seeking a Senior Lead / Staff Engineer or Engineering Manager position with a tech product company in Dubai. Available on 60 days\' notice with full mobility for visa processing.',
       monoLine: 'Dubai Relocation Ready',
     },
 
@@ -214,7 +214,7 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
       },
       bannerBadge: '🇮🇳 Based in Chennai, India',
       heading: 'Ready to Lead & Accelerate Engineering Teams in India',
-      paragraph: 'Seeking a Senior Lead / Staff Engineer or Engineering Manager position with a product company in India. Available on 60 days notice, open to remote or on-site roles.',
+      paragraph: 'Seeking a Senior Lead / Staff Engineer or Engineering Manager position with a product company in India. Available on 60 days\' notice, open to remote or on-site roles.',
       monoLine: 'Chennai, India Based',
     },
 
