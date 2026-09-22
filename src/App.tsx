@@ -162,8 +162,11 @@ export function App() {
       <RegionProvider>
         <MainLayout />
         {/* Vercel Web Analytics: aggregate page views, referrer, country, device.
-            No cookies and no per-visitor identity; see the footer note. */}
-        <Analytics />
+            No cookies and no per-visitor identity; see the footer note.
+            Own-visit opt-out: run localStorage.setItem('va-disable', '1') once in
+            the browser console (per browser) and every event from that browser
+            is dropped before it is sent. Dev mode never sends anyway. */}
+        <Analytics beforeSend={(event) => (localStorage.getItem('va-disable') ? null : event)} />
       </RegionProvider>
     </ThemeProvider>
   );
