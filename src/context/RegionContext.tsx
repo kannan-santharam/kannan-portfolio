@@ -20,12 +20,15 @@ const getCookie = (name: string): string | undefined => {
 
 const isRegion = (value: string | undefined): value is Region => value === 'dubai' || value === 'india';
 
-// Explicit /ind link (shared directly with Indian recruiters): always India,
-// regardless of geolocation. The root path defaults to Dubai, switching to
-// India only when the geolocation cookie set by middleware.ts says so.
+// Explicit region links, shared directly with recruiters: /ind is always
+// India and /uae is always Dubai, regardless of geolocation. The root path
+// defaults to Dubai, switching to India only when the geolocation cookie set
+// by middleware.ts says so.
+const PATH_REGION: Record<string, Region> = { '/ind': 'india', '/uae': 'dubai' };
+
 const getPathRegion = (): Region | undefined => {
   const path = window.location.pathname.replace(/\/+$/, '');
-  return path === '/ind' ? 'india' : undefined;
+  return PATH_REGION[path];
 };
 
 export const RegionProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {

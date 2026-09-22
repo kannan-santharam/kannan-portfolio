@@ -13,8 +13,8 @@ type Seo = { title: string; description: string; keywords: string };
  * only rewrites the title and meta tags after JS runs. Crawlers and link
  * previews (LinkedIn, WhatsApp, Slack) read the HTML as served, so `/ind` used
  * to advertise the Dubai copy. This stamps each region's metadata into its own
- * static HTML at build time: `/` keeps index.html, `/ind` gets ind.html, both
- * referencing the same hashed assets. Strings come from src/data/seo.json,
+ * static HTML at build time: `/` and `/uae` keep index.html (Dubai), `/ind`
+ * gets ind.html, all referencing the same hashed assets. Strings come from src/data/seo.json,
  * which regionContent.ts also imports, so the two can never disagree.
  */
 const regionHtml = (): Plugin => {
