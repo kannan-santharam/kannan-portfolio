@@ -1,7 +1,24 @@
 {
   "rewrites": [
-    { "source": "/ind", "destination": "/ind.html" },
-    { "source": "/ind/", "destination": "/ind.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/ind",
+      "destination": "/ind.html"
+    },
+    {
+      "source": "/ind/",
+      "destination": "/ind.html"
+    },
+    {
+      "source": "/uae",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/uae/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }
