@@ -2,7 +2,7 @@
 
 > **Senior Lead Software Engineer (Frontend/Full Stack)** with 10.5+ years of experience delivering high-performance web applications, large-scale monorepos, and scalable client architectures for global SaaS products. Specialised in frontend and full stack infrastructure, AI-driven engineering workflows, LLM orchestration, custom Claude Code skills, Model Context Protocol (MCP) servers, and HTTP Web Streams (`fetch` + `ReadableStream`).
 >
-> 🌐 **Live Portfolio:** [Dubai/UAE](https://www.kannansantharam.com/) · [India](https://www.kannansantharam.com/ind)  
+> 🌐 **Live Portfolio:** [Dubai/UAE](https://www.kannansantharam.com/uae) · [India](https://www.kannansantharam.com/ind)  
 > 📄 **PDF Resume:** [Dubai/UAE](https://www.kannansantharam.com/Kannan_Santharam_Senior_Lead_Software_Engineer.pdf) · [India](https://www.kannansantharam.com/Kannan_Santharam_Senior_Lead_Software_Engineer_ind.pdf)  
 > 🇦🇪 **Relocation Readiness:** Chennai, India ➔ Ready to Relocate to Dubai, UAE (60-Day Notice Period)
 
