@@ -23,7 +23,29 @@ export const AiArchitectureShowcase: React.FC = () => {
         {/* 4 Pillar Cards */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           
-          {/* Card 1: LLM Agents & AI-Driven E2E Testing Platform */}
+          {/* Card 1: Frontend work automation (shown first on purpose) */}
+          <div className="rounded-2xl border border-[var(--border-card)] bg-[var(--bg-card)] p-6 shadow-xl transition-all hover:border-[var(--border-gold)]">
+            <div className="mb-4 flex items-center justify-between">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-500/10 text-violet-500">
+                <Component className="h-5 w-5" />
+              </div>
+              <span className="font-mono text-xs font-bold text-violet-500">Design to Code</span>
+            </div>
+
+            <h3 className="text-xl font-bold theme-title">Frontend Work Automated</h3>
+            <p className="mt-2 text-xs theme-sub leading-relaxed">
+              Automated most of our frontend work. On a new frontend monorepo I set up from scratch on Vite, Turborepo and pnpm, Claude agents turn designs into production code, integrate APIs from backend contracts and write Playwright tests. Strict commit checks block anything that breaks design tokens or translations. New page development now takes about 5 hours instead of 2 weeks.
+            </p>
+
+            <div className="mt-4 flex flex-wrap gap-1.5">
+              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Vite + Turborepo</span>
+              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Base UI</span>
+              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Guardrails</span>
+            </div>
+          </div>
+
+
+          {/* Card 2: LLM Agents & AI E2E Testing Platform */}
           <div className="rounded-2xl border border-[var(--border-card)] bg-[var(--bg-card)] p-6 shadow-xl transition-all hover:border-[var(--border-gold)]">
             <div className="mb-4 flex items-center justify-between">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl theme-gold-badge">
@@ -32,9 +54,9 @@ export const AiArchitectureShowcase: React.FC = () => {
               <span className="font-mono text-xs font-bold theme-gold-text">LLM Agents</span>
             </div>
 
-            <h3 className="text-xl font-bold theme-title">AI-Driven End-to-End Testing Platform</h3>
+            <h3 className="text-xl font-bold theme-title">AI End to End Testing Platform</h3>
             <p className="mt-2 text-xs theme-sub leading-relaxed">
-              Architected an AI-driven end-to-end testing platform in React and Node.js, where LLM agents generate, run and self-heal a 300+ test-case Playwright suite, cutting full product regression from 6 hours of manual testing to a 40-minute automated run that gates every release.
+              Architected an AI testing platform in React and Node.js, where LLM agents write, run and fix a 300+ case Playwright suite and add tests for each new feature as it is built, cutting full product regression from 6 hours of manual testing to a 40 minute automated run that gates every release.
             </p>
 
             <div className="mt-4 flex flex-wrap gap-1.5">
@@ -45,7 +67,7 @@ export const AiArchitectureShowcase: React.FC = () => {
             </div>
           </div>
 
-          {/* Card 2: Custom Claude Code Skills & MCP */}
+          {/* Card 3: Custom Claude Code Skills & MCP */}
           <div className="rounded-2xl border border-[var(--border-card)] bg-[var(--bg-card)] p-6 shadow-xl transition-all hover:border-[var(--border-gold)]">
             <div className="mb-4 flex items-center justify-between">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--color-cyan)]/10 theme-cyan-text">
@@ -66,7 +88,7 @@ export const AiArchitectureShowcase: React.FC = () => {
             </div>
           </div>
 
-          {/* Card 3: Write-Scope Guardrails */}
+          {/* Card 4: Write-Scope Guardrails */}
           <div className="rounded-2xl border border-[var(--border-card)] bg-[var(--bg-card)] p-6 shadow-xl transition-all hover:border-[var(--border-gold)]">
             <div className="mb-4 flex items-center justify-between">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-500">
@@ -84,27 +106,6 @@ export const AiArchitectureShowcase: React.FC = () => {
               <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Write-Scope Tiers</span>
               <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Security Control</span>
               <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Autonomous Agents</span>
-            </div>
-          </div>
-
-          {/* Card 4: Design System & Figma-to-Component Skill */}
-          <div className="rounded-2xl border border-[var(--border-card)] bg-[var(--bg-card)] p-6 shadow-xl transition-all hover:border-[var(--border-gold)]">
-            <div className="mb-4 flex items-center justify-between">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-500/10 text-violet-500">
-                <Component className="h-5 w-5" />
-              </div>
-              <span className="font-mono text-xs font-bold text-violet-500">Design-to-Code</span>
-            </div>
-
-            <h3 className="text-xl font-bold theme-title">Base UI Design System & Figma Skill</h3>
-            <p className="mt-2 text-xs theme-sub leading-relaxed">
-              Built a headless design system from scratch on Base UI with customised design tokens, then authored a Claude Code skill that pulls design context from a Figma node link through an MCP server and generates the production component, cutting page development time from 2 days, even with AI assistance, to a few hours.
-            </p>
-
-            <div className="mt-4 flex flex-wrap gap-1.5">
-              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Base UI</span>
-              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Figma MCP</span>
-              <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Design System</span>
             </div>
           </div>
 
