@@ -1,23 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowLeft, Bot, Sparkles, Loader2, FileSearch } from 'lucide-react';
 import { useRegion } from '../context/RegionContext';
-import type { Region } from '../data/regionContent';
-
-const DOCMIND_URL = 'https://docmind-rag-llm.vercel.app';
-
-// DocMind picks its edition from geo-IP unless the parent tells it otherwise.
-// Forward the region THIS page resolved (route, cookie, default) so the two
-// never disagree. DocMind accepts `in` and `dubai` here.
-const DOCMIND_REGION_PARAM: Record<Region, 'in' | 'dubai'> = {
-  india: 'in',
-  dubai: 'dubai'
-};
-
-const buildDocMindUrl = (region: Region): string => {
-  const url = new URL(DOCMIND_URL);
-  url.searchParams.set('region', DOCMIND_REGION_PARAM[region]);
-  return url.toString();
-};
+import { buildDocMindUrl } from '../lib/docmind';
 
 interface DocMindOverlayProps {
   isOpen: boolean;
