@@ -224,6 +224,40 @@ html.light .text-gold-gradient {
   }
 }
 
+/* Height breakpoints for the chat home: laptops with a short browser window,
+   and phones held sideways. Width breakpoints alone squeeze these screens. */
+@custom-variant mid (@media (max-height: 900px));
+@custom-variant short (@media (max-height: 760px));
+@custom-variant xshort (@media (max-height: 480px));
+
+/* Chat home composer: a slow multi colour ring and a soft glow behind it */
+.composer-ring,
+.composer-glow {
+  background: conic-gradient(
+    from var(--border-run-angle),
+    #0052FF 0%,
+    #00D2FF 20%,
+    #7C3AED 40%,
+    #F472B6 60%,
+    #00E599 80%,
+    #0052FF 100%
+  );
+  animation: borderRun 4s linear infinite;
+}
+
+.composer-glow {
+  filter: blur(18px);
+  opacity: 0.3;
+  animation: borderRun 4s linear infinite, geminiPulseGlow 3.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .composer-ring,
+  .composer-glow {
+    animation: none;
+  }
+}
+
 /* Glowing Lapis & Cyan Gradient Animation */
 @keyframes techGradientMove {
   0% {

@@ -10,10 +10,8 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>(() => {
-    const saved = localStorage.getItem('theme') as Theme;
-    return saved || 'dark';
-  });
+  // The site is dark only; the switcher is gone and any saved light choice is ignored.
+  const [theme, setTheme] = useState<Theme>('dark');
 
   useEffect(() => {
     const root = document.documentElement;

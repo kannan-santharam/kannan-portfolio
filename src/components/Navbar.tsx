@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { FileText, Menu, X, Sun, Moon, MessageSquare, Bot, Sparkles, ChevronDown, CalendarClock } from 'lucide-react';
+import { FileText, Menu, X, MessageSquare, Bot, Sparkles, ChevronDown, CalendarClock, ArrowLeft } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
-import { useTheme } from '../context/ThemeContext';
-import { useRegion } from '../context/RegionContext';
+import { useRegion, regionPathPrefix } from '../context/RegionContext';
 
 interface NavbarProps {
   onOpenResumeModal: () => void;
@@ -20,7 +19,6 @@ interface NavItem {
 export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, activeSection, onNavigate }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [aiMenuOpen, setAiMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
   const { region, content } = useRegion();
 
   const navItems: NavItem[] = [
@@ -54,10 +52,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, a
           onClick={(e) => { e.preventDefault(); onNavigate('hero'); }}
           className="group flex min-w-0 items-center gap-2"
         >
-          <div className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#0052FF] to-[#00D2FF] p-0.5 shadow-md shadow-[#0052FF]/20 transition-transform group-hover:scale-105 shrink-0">
-            <div className="flex h-full w-full items-center justify-center rounded-[9px] bg-[#0B0E14] font-mono text-xs sm:text-sm font-bold text-[#00D2FF]">
-              KS
-            </div>
+          <div className="h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-gradient-to-br from-[#0052FF] to-[#00D2FF] p-0.5 shadow-md shadow-[#0052FF]/20 transition-transform group-hover:scale-105 shrink-0">
+            <img src="/kannan_avatar.jpg" alt="" className="h-full w-full rounded-full object-cover" />
           </div>
           <div className="min-w-0">
             <div className="flex items-center gap-1">
@@ -151,14 +147,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, a
 
         {/* Action Buttons & Theme Switcher (Desktop) */}
         <div className="hidden items-center gap-1.5 md:flex shrink-0">
-          <button
-            onClick={toggleTheme}
-            className="flex h-9 w-9 items-center justify-center rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] text-[var(--text-title)] transition-all hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] cursor-pointer"
-            title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
-            aria-label="Toggle Theme"
+          {/* Back to the chat home page, keeping the region prefix */}
+          <a
+            href={regionPathPrefix() || '/'}
+            className="flex items-center gap-1.5 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] px-3 py-1.5 text-xs font-semibold theme-title transition-all hover:border-[var(--color-primary)] hover:bg-[var(--bg-card-hover)] cursor-pointer mr-1"
           >
-            {theme === 'dark' ? <Sun className="h-4 w-4 text-[#38BDF8]" /> : <Moon className="h-4 w-4 text-[#0052FF]" />}
-          </button>
+            <ArrowLeft className="h-3.5 w-3.5 theme-cyan-text" />
+            <span>Chat</span>
+          </a>
 
           {/* GitHub Desktop Icon Link */}
           <a
@@ -214,13 +210,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, a
 
         {/* Mobile Controls (Hides GitHub/LinkedIn, Shows View CV) */}
         <div className="flex items-center gap-1.5 md:hidden shrink-0">
-          <button
-            onClick={toggleTheme}
+          <a
+            href={regionPathPrefix() || '/'}
             className="flex h-8 w-8 items-center justify-center rounded-lg border border-[var(--border-card)] bg-[var(--bg-card)] text-[var(--text-title)] active:scale-95"
-            aria-label="Toggle Theme"
+            aria-label="Back to chat"
           >
-            {theme === 'dark' ? <Sun className="h-3.5 w-3.5 text-[#E2B755]" /> : <Moon className="h-3.5 w-3.5 text-[#B88820]" />}
-          </button>
+            <ArrowLeft className="h-3.5 w-3.5 theme-cyan-text" />
+          </a>
 
           {/* View CV Button on Mobile Header */}
           <button

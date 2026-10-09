@@ -9,6 +9,14 @@
       "destination": "/ind.html"
     },
     {
+      "source": "/ind/profile",
+      "destination": "/ind.html"
+    },
+    {
+      "source": "/ind/profile/",
+      "destination": "/ind.html"
+    },
+    {
       "source": "/uae",
       "destination": "/index.html"
     },

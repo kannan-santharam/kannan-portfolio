@@ -83,7 +83,7 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
       targetRole: 'Frontend and full stack leadership roles',
       roleLine: 'FRONTEND & FULL STACK · TEAM LEADERSHIP · DUBAI, UAE',
       contactCtaLabel: 'BOTIM, LinkedIn & More',
-      visaBadge: 'Sponsorship Required',
+      visaBadge: 'Visa Status · Sponsorship Required',
       whatsappMessage: 'Hi Kannan, I reviewed your portfolio and would like to connect regarding a role in Dubai.',
     },
 
@@ -140,9 +140,9 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
     resumeModal: {
       badge: 'Dubai Hiring Ready',
       contactLine: 'Phone / BOTIM / WhatsApp',
-      locationLine: 'Dubai, UAE (Relocating from Chennai, India) · Notice Period: 60 Days',
+      locationLine: 'Dubai, UAE (Relocating from Chennai, India) · Notice Period: 60 Days (Negotiable)',
       statusBadge: '🇦🇪 Ready to Relocate to Dubai, UAE',
-      visaBadge: 'Sponsorship Required',
+      visaBadge: 'Visa Status · Sponsorship Required',
     },
 
     botim: true,
@@ -221,7 +221,7 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
     resumeModal: {
       badge: 'India Hiring Ready',
       contactLine: 'Phone / WhatsApp',
-      locationLine: 'Chennai, India · Notice Period: 60 Days',
+      locationLine: 'Chennai, India · Notice Period: 60 Days (Negotiable)',
       statusBadge: '🇮🇳 Based in Chennai, India',
     },
 
