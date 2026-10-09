@@ -38,7 +38,7 @@ const EXPERIENCE_PRESENTATION: { id: string; featured: boolean; skills: string[]
   {
     id: "superops",
     featured: true,
-    skills: ["React", "TypeScript", "Node.js", "Python", "Rspack", "MCP Servers", "Docker", "AWS EC2", "HTTP Web Streams", "Claude Code Skills", "Base UI", "Figma MCP", "GraphQL", "Playwright"]
+    skills: ["React", "TypeScript", "Node.js", "Python", "Vite", "Turborepo", "Rspack", "MCP Servers", "Docker", "AWS EC2", "HTTP Web Streams", "Claude Code Skills", "Base UI", "Figma MCP", "GraphQL", "Playwright"]
   },
   {
     id: "freshworks",
@@ -122,10 +122,10 @@ export const RESUME_DATA = {
   // single source of truth is intentional, not an oversight. Edit them here.
   metrics: [
     {
-      value: "AI-Native",
-      label: "AI Platform & Agentic Tooling",
-      description: "Architected an AI-driven end-to-end testing platform in React and Node.js, and built a Python MCP server on AWS EC2 that exposes the codebase as a queryable graph, now used by 3 engineering squads.",
-      subtext: "MCP Servers · Claude Code · Figma MCP",
+      value: "2 wks → 5 hrs",
+      label: "Frontend Work Automated",
+      description: "Automated most frontend work with Claude agents that turn designs into production code, integrate APIs from backend contracts and write Playwright tests, all behind strict commit checks. New page development dropped from 2 weeks to about 5 hours.",
+      subtext: "Claude Agents · API Integration · Auto Tests · Guardrails",
       badge: "GenAI & Agentic Tech",
       iconName: "Bot"
     },
@@ -212,6 +212,7 @@ export const RESUME_DATA = {
       category: "architecture",
       skills: [
         { name: "Monorepos & Module Federation" },
+        { name: "Vite & Turborepo" },
         { name: "Rspack & Webpack 5" },
         { name: "Micro-Frontends" },
         { name: "Design Systems" },

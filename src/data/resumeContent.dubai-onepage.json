@@ -1,0 +1,161 @@
+{
+  "$comment": "One-page Dubai edition. Shortened from resumeContent.json with the same facts only. Built by scripts/build_resume_onepage.py. Not read by the site.",
+  "identity": {
+    "name": "Kannan Appiya Santharam",
+    "title": "Senior Lead Software Engineer (Frontend/Full Stack)",
+    "tagline": "React | TypeScript | Node.js | AI-Native",
+    "noticePeriod": "60 Days (Negotiable)",
+    "nationality": "Indian"
+  },
+  "contact": {
+    "phone": "+91 97902 47499",
+    "phoneClean": "+919790247499",
+    "email": "as.kannan4@gmail.com",
+    "emailUrl": "mailto:as.kannan4@gmail.com",
+    "linkedin": "linkedin.com/in/askannan",
+    "linkedinUrl": "https://linkedin.com/in/askannan",
+    "github": "github.com/kannan-santharam",
+    "githubUrl": "https://github.com/kannan-santharam"
+  },
+  "summaryTemplate": "Senior Lead Software Engineer with 10.5+ years in enterprise SaaS, focused on frontend and full stack (React, TypeScript, Node.js). Automated most frontend work with Claude agents, cutting new page development from 2 weeks to about 5 hours. Lead a frontend team of 6 at SuperOps on a platform managing millions of endpoints. At Freshworks, built custom solutions behind 50+ enterprise accounts worth $100K to $1M ARR each. Mentored 15+ engineers. {seeking}",
+  "snapshot": [],
+  "snapshotLeads": [],
+  "competencies": [
+    {
+      "label": "Frontend & Full Stack",
+      "items": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "Python",
+        "GraphQL",
+        "REST APIs",
+        "Microservices",
+        "JWT & OAuth 2.0",
+        "MySQL",
+        "DynamoDB",
+        "Tailwind CSS",
+        "Playwright",
+        "Jest & Vitest"
+      ]
+    },
+    {
+      "label": "Platform & Performance",
+      "items": [
+        "System Design",
+        "Monorepos",
+        "Module Federation",
+        "Micro-Frontends",
+        "Vite",
+        "Turborepo",
+        "Rspack",
+        "Webpack",
+        "Design Systems",
+        "Core Web Vitals",
+        "Jenkins CI/CD",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "label": "AI-Native Engineering",
+      "items": [
+        "LLM Orchestration",
+        "MCP Servers",
+        "Agent Skills & Guardrails",
+        "RAG & Embeddings",
+        "Amazon Bedrock AgentCore",
+        "Claude Code"
+      ]
+    },
+    {
+      "label": "Leadership",
+      "items": [
+        "Hiring & Mentoring",
+        "Cross Team Collaboration",
+        "Stakeholder & Customer Management"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Senior Lead Software Engineer",
+      "dates": "Jul 2022 – Present",
+      "company": "SuperOps — Chennai, India",
+      "progression": [
+        "Senior Software Engineer",
+        "Lead Software Engineer",
+        "Senior Lead Software Engineer"
+      ],
+      "bullets": [
+        "Automated most of our frontend work with Claude agents that turn designs into production code, integrate APIs from backend contracts and write Playwright tests behind commit checks, on a new monorepo set up from scratch (Vite, Turborepo, pnpm, React 19).",
+        "Lead a team of 6 engineers, running sprint planning, use case discussions, architecture reviews, hiring and performance reviews, and planning the roadmap with product managers.",
+        "Build product features hands on, including role based access control (RBAC) and near real time dashboards in React and TypeScript, with cached GraphQL hooks that keep data fresh without overloading the network.",
+        "Cut dev build time by 96%, from 2 minutes to 5 seconds, by moving 12 monorepo packages from Webpack 5 to Rspack alone in 3 weeks. This saves about 50 engineer hours a month.",
+        "Cut first page load by 70%, from 5 seconds to 1.5 seconds, with code splitting and lazy loading, which ended slowness tickets. Removed 30,000+ lines of dead code.",
+        "Built an AI testing platform in React and Node.js where LLM agents write, run and fix a 300+ case Playwright suite. Full regression dropped from 6 hours of manual testing to 40 minutes and now gates every release.",
+        "Built a Python MCP server that lets AI tools query the codebase as a graph (Docker on AWS EC2, token auth), now used by 3 squads. Set up Claude Code skills with write limits so agents can work safely."
+      ]
+    },
+    {
+      "title": "Senior Software Engineer (Customer-Facing Engineering)",
+      "dates": "Jun 2018 – Jul 2022",
+      "company": "Freshworks — Chennai, India",
+      "progression": [
+        "Onboarding Engineer",
+        "Senior Software Engineer"
+      ],
+      "bullets": [
+        "Main technical contact for 100+ mid market and enterprise accounts, working with Support, Customer Success and Sales. Won the Customer Champion Award. Mentored 7 engineers.",
+        "Built Node.js middleware and microservices on AWS for 50+ enterprise accounts worth $100K to $1M ARR each, covering needs the core product could not and keeping renewals on track.",
+        "Built the Jira integration used by 4,000+ customers, plus Salesforce, Zendesk and ServiceNow integrations. Shipped apps in React and Node.js across 4 products to 10,000+ customers."
+      ]
+    },
+    {
+      "title": "Software Developer (acquired by Freshworks)",
+      "dates": "Mar 2016 – Jun 2018",
+      "company": "Niche Video Media / Infigenic — Chennai & Bengaluru, India",
+      "progression": [
+        "Web Application Developer & Designer",
+        "Software Developer"
+      ],
+      "bullets": [
+        "Built the Freshservice and DocuSign integration that won a $500K ARR deal. Team acquired by Freshworks.",
+        "Built a Stripe plan admin dashboard, a custom video player with call to action overlays, and landing pages."
+      ]
+    }
+  ],
+  "education": {
+    "degree": "B.E., Computer Science",
+    "institution": "K.L.N. College of Information Technology (Anna University), India",
+    "years": "2011 – 2015"
+  },
+  "languages": [
+    {
+      "name": "English",
+      "level": "Fluent"
+    },
+    {
+      "name": "Tamil",
+      "level": "Native"
+    },
+    {
+      "name": "Hindi",
+      "level": "Intermediate"
+    }
+  ],
+  "regions": {
+    "dubai": {
+      "seeking": "Keen to bring strong frontend and full stack skills and team leadership to a role in the UAE.",
+      "subject": "Senior Lead Software Engineer Resume - Dubai, UAE",
+      "portfolio": "kannansantharam.com",
+      "portfolioUrl": "https://www.kannansantharam.com",
+      "locationLine": "Dubai, UAE (Ready to Relocate from Chennai, India)",
+      "phoneLine": "+91 97902 47499",
+      "visaStatus": "Sponsorship Required",
+      "phoneNote": " (WhatsApp, BOTIM & Phone)",
+      "photo": true
+    }
+  }
+}

@@ -24,7 +24,7 @@ export interface RegionProfile {
   hero: {
     statusBadge: string;
     visaBadge?: string;
-    /** Role titles this region's resume asks for; mirrors resumeContent.json's `seeking`. */
+    /** Role focus without job titles, matching the one page resume's approach. */
     targetRole: string;
     /** The ask, stated in the headline block: role, place, and where from. */
     roleLine: string;
@@ -80,8 +80,8 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
 
     hero: {
       statusBadge: 'Chennai, India → Dubai, UAE · Ready to Relocate',
-      targetRole: 'Senior Lead / Staff Engineer or Engineering Manager',
-      roleLine: 'SEEKING SENIOR LEAD / STAFF ENGINEER OR ENGINEERING MANAGER · DUBAI, UAE',
+      targetRole: 'Frontend and full stack leadership roles',
+      roleLine: 'FRONTEND & FULL STACK · TEAM LEADERSHIP · DUBAI, UAE',
       contactCtaLabel: 'BOTIM, LinkedIn & More',
       visaBadge: 'Sponsorship Required',
       whatsappMessage: 'Hi Kannan, I reviewed your portfolio and would like to connect regarding a role in Dubai.',
@@ -104,7 +104,7 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
       },
       {
         label: 'Notice Period',
-        value: '60 Days',
+        value: '60 Days (Negotiable)',
         subtext: 'Standard transition period from current Senior Lead role at SuperOps',
         iconName: 'Clock',
         color: 'theme-cyan-text',
@@ -162,8 +162,8 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
 
     hero: {
       statusBadge: 'Based in Chennai, India',
-      targetRole: 'Senior Lead / Staff Engineer or Engineering Manager',
-      roleLine: 'SEEKING SENIOR LEAD / STAFF ENGINEER OR ENGINEERING MANAGER · INDIA',
+      targetRole: 'Frontend and full stack leadership roles',
+      roleLine: 'FRONTEND & FULL STACK · TEAM LEADERSHIP · INDIA',
       contactCtaLabel: 'LinkedIn, GitHub & More',
       whatsappMessage: 'Hi Kannan, I reviewed your portfolio and would like to connect regarding a role in India.',
     },
@@ -185,7 +185,7 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
       },
       {
         label: 'Notice Period',
-        value: '60 Days',
+        value: '60 Days (Negotiable)',
         subtext: 'Standard transition period from current Senior Lead role at SuperOps',
         iconName: 'Clock',
         color: 'theme-cyan-text',

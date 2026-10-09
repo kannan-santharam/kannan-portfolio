@@ -95,11 +95,20 @@ export const HeroSection: React.FC = () => {
 
             {/* Professional Summary */}
             <p className="text-sm leading-relaxed theme-sub sm:text-lg">
-              With <span className="font-semibold theme-title">10.5+ years</span> in enterprise SaaS across React, TypeScript and Node.js, I <span className="font-semibold theme-title">lead a frontend team of 6</span> at SuperOps on a platform managing <span className="font-semibold theme-title">millions of customer endpoints</span>. I architected an <span className="font-semibold theme-title">AI-driven end-to-end testing platform</span> that cut full product regression from <span className="font-bold theme-cyan-text">6 hours to 40 minutes</span>, and earlier at Freshworks built the Node.js middleware and microservices behind <span className="font-semibold theme-title">50+ enterprise accounts</span> worth <span className="font-bold theme-cyan-text">$100K to $1M ARR</span> each.
+              With <span className="font-semibold theme-title">10.5+ years</span> in enterprise SaaS across React, TypeScript and Node.js, I <span className="font-semibold theme-title">lead a frontend team of 6</span> at SuperOps on a platform managing <span className="font-semibold theme-title">millions of customer endpoints</span>. I <span className="font-semibold theme-title">automated most of our frontend work</span> with Claude agents, cutting new page development from <span className="font-bold theme-cyan-text">2 weeks to about 5 hours</span>, and built an <span className="font-semibold theme-title">AI testing platform</span> that cut full product regression from <span className="font-bold theme-cyan-text">6 hours to 40 minutes</span>. Earlier at Freshworks, I built the Node.js middleware and microservices behind <span className="font-semibold theme-title">50+ enterprise accounts</span> worth <span className="font-bold theme-cyan-text">$100K to $1M ARR</span> each.
             </p>
 
             {/* Core Value Metric Cards (Informational Summary) */}
             <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3 sm:gap-3 pt-1">
+              <div className="flex items-center gap-3 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] p-3 shadow-sm cursor-default select-none">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-500">
+                  <Bot className="h-4 w-4 sm:h-5 sm:w-5" />
+                </div>
+                <div>
+                  <div className="text-xs font-bold theme-title">Frontend Automated</div>
+                  <div className="text-[10px] sm:text-[11px] theme-muted">Page development 2 weeks → 5 hrs</div>
+                </div>
+              </div>
               <div className="flex items-center gap-3 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] p-3 shadow-sm cursor-default select-none">
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[var(--color-cyan)]/10 theme-cyan-text">
                   <Users className="h-4 w-4 sm:h-5 sm:w-5" />
@@ -120,15 +129,6 @@ export const HeroSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] p-3 shadow-sm cursor-default select-none">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-500">
-                  <Bot className="h-4 w-4 sm:h-5 sm:w-5" />
-                </div>
-                <div>
-                  <div className="text-xs font-bold theme-title">AI-Native Agents</div>
-                  <div className="text-[10px] sm:text-[11px] theme-muted">Claude Code & MCP</div>
-                </div>
-              </div>
             </div>
 
             {/* Primary Actions. One document CTA and one direct-contact CTA:
