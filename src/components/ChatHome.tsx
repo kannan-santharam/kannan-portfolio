@@ -212,7 +212,12 @@ export const ChatHome: React.FC = () => {
   const ask = (raw: string) => {
     const typed = raw.trim();
     if (!typed) return;
-    const question = jdMode ? `${JD_PROMPT}\n\n${typed}` : typed;
+    // A JD copied back from the fallback banner already carries the instruction;
+    // strip every copy so it is sent exactly once.
+    const hadPrompt = typed.includes(JD_PROMPT);
+    const body = typed.split(JD_PROMPT).join('').trim();
+    if (!body) return;
+    const question = jdMode || hadPrompt ? `${JD_PROMPT}\n\n${body}` : typed;
     setJdMode(false);
     setInput('');
 
