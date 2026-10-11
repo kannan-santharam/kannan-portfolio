@@ -58,9 +58,9 @@ const QUICK_ANSWERS: Record<string, string> = {
   'Tell me about your experience leading frontend teams':
     'I lead a frontend team of 6 at SuperOps and run sprint planning, architecture reviews, hiring and performance reviews, while still building features myself. I have hired 9 engineers across SuperOps and Freshworks, with 90% retention.',
   'What is your visa status and notice period?':
-    'I am an Indian national based in Chennai and ready to relocate to Dubai. I will need UAE employment visa sponsorship. My notice period is 60 days and it is negotiable.',
+    'I am an Indian national based in Chennai and ready to relocate to Dubai. I will need UAE employment visa sponsorship. My notice period is 30 days.',
   'Where are you based and what is your notice period?':
-    'I am based in Chennai, India. My notice period is 60 days and it is negotiable.'
+    'I am based in Chennai, India. My notice period is 60 days.'
 };
 
 const PROOF = [
@@ -275,7 +275,7 @@ export const ChatHome: React.FC = () => {
     el.style.height = `${Math.min(el.scrollHeight, 224)}px`;
   }, [input]);
 
-  const badges = [content.hero.statusBadge, content.hero.visaBadge, `Notice ${RESUME_DATA.relocation.noticePeriod}`].filter(Boolean);
+  const badges = [content.hero.statusBadge, content.hero.visaBadge, `Notice ${content.noticePeriod}`].filter(Boolean);
 
   return (
     // The intro scrolls with the page itself (an inner scroll box is unreliable on

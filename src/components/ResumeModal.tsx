@@ -107,13 +107,13 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
             {/* Print-only meta line, mirroring the PDF header. */}
             <div className="mt-3 hidden print:block print:text-[9pt] print:text-slate-800">
-              Nationality: {RESUME_DATA.nationality} | {content.resumeModal.visaBadge ? `Visa Status: ${content.resumeModal.visaBadge} | ` : ''}Notice Period: {RESUME_DATA.relocation.noticePeriod}
+              Nationality: {RESUME_DATA.nationality} | {content.resumeModal.visaBadge ? `Visa Status: ${content.resumeModal.visaBadge} | ` : ''}Notice Period: {content.noticePeriod}
             </div>
 
             {/* UI Status Strip (Screen only — hidden during print) */}
             <div className="mt-3 flex flex-wrap items-center gap-2 pt-2 border-t border-[var(--border-card)] text-xs no-print print:hidden">
               <span className="theme-gold-badge rounded-full px-3 py-1 font-bold">{content.resumeModal.statusBadge}</span>
-              <span className="rounded-full border border-[var(--border-card)] bg-[var(--bg-inner)] px-3 py-1 theme-sub">Notice Period: {RESUME_DATA.relocation.noticePeriod}</span>
+              <span className="rounded-full border border-[var(--border-card)] bg-[var(--bg-inner)] px-3 py-1 theme-sub">Notice Period: {content.noticePeriod}</span>
               {content.resumeModal.visaBadge && (
                 <span className="rounded-full border border-[var(--border-card)] bg-[var(--bg-inner)] px-3 py-1 theme-sub">{content.resumeModal.visaBadge}</span>
               )}

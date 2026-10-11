@@ -17,6 +17,8 @@ export interface RegionProfile {
   code: Region;
   flag: string;
   seekingLine: string;
+  /** Notice period for this region's roles (Dubai 30 days, India 60 days). */
+  noticePeriod: string;
 
   /** Region-specific portfolio link, from resumeContent.json's regions block. */
   portfolio: { url: string; display: string };
@@ -73,6 +75,7 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
     code: 'dubai',
     flag: '🇦🇪',
     seekingLine: resumeContent.regions.dubai.seeking,
+    noticePeriod: resumeContent.regions.dubai.noticePeriod,
     portfolio: {
       url: resumeContent.regions.dubai.portfolioUrl,
       display: resumeContent.regions.dubai.portfolio
@@ -104,8 +107,8 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
       },
       {
         label: 'Notice Period',
-        value: '60 Days (Negotiable)',
-        subtext: 'Standard transition period from current Senior Lead role at SuperOps',
+        value: '30 Days',
+        subtext: 'Can join within 30 days of accepting an offer',
         iconName: 'Clock',
         color: 'theme-cyan-text',
       },
@@ -133,14 +136,14 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
       },
       bannerBadge: '🇦🇪 Available for Dubai, UAE Hiring',
       heading: 'Ready to Lead & Accelerate Engineering Teams in Dubai',
-      paragraph: 'Seeking a Senior Lead / Staff Engineer or Engineering Manager position with a tech product company in Dubai. Available on 60 days\' notice with full mobility for visa processing.',
+      paragraph: 'Seeking a Senior Lead / Staff Engineer or Engineering Manager position with a tech product company in Dubai. Available on 30 days\' notice with full mobility for visa processing.',
       monoLine: 'Dubai Relocation Ready',
     },
 
     resumeModal: {
       badge: 'Dubai Hiring Ready',
       contactLine: 'Phone / BOTIM / WhatsApp',
-      locationLine: 'Dubai, UAE (Relocating from Chennai, India) · Notice Period: 60 Days (Negotiable)',
+      locationLine: 'Dubai, UAE (Relocating from Chennai, India) · Notice Period: 30 Days',
       statusBadge: '🇦🇪 Ready to Relocate to Dubai, UAE',
       visaBadge: 'Visa Status · Sponsorship Required',
     },
@@ -155,6 +158,7 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
     code: 'india',
     flag: '🇮🇳',
     seekingLine: resumeContent.regions.india.seeking,
+    noticePeriod: resumeContent.regions.india.noticePeriod,
     portfolio: {
       url: resumeContent.regions.india.portfolioUrl,
       display: resumeContent.regions.india.portfolio
@@ -185,8 +189,8 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
       },
       {
         label: 'Notice Period',
-        value: '60 Days (Negotiable)',
-        subtext: 'Standard transition period from current Senior Lead role at SuperOps',
+        value: '60 Days',
+        subtext: 'Can join within 60 days of accepting an offer',
         iconName: 'Clock',
         color: 'theme-cyan-text',
       },
@@ -221,7 +225,7 @@ export const REGION_CONTENT: Record<Region, RegionProfile> = {
     resumeModal: {
       badge: 'India Hiring Ready',
       contactLine: 'Phone / WhatsApp',
-      locationLine: 'Chennai, India · Notice Period: 60 Days (Negotiable)',
+      locationLine: 'Chennai, India · Notice Period: 60 Days',
       statusBadge: '🇮🇳 Based in Chennai, India',
     },
 

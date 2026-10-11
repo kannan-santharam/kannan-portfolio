@@ -211,10 +211,10 @@ export const RESUME_DATA = {
       title: "Architecture & Performance",
       category: "architecture",
       skills: [
-        { name: "Monorepos & Module Federation" },
-        { name: "Vite & Turborepo" },
+        { name: "Monorepos (Turborepo, pnpm)" },
+        { name: "Vite" },
         { name: "Rspack & Webpack 5" },
-        { name: "Micro-Frontends" },
+        { name: "Micro-Frontends & Module Federation" },
         { name: "Design Systems" },
         { name: "Base UI Headless Components" },
         { name: "Role-Based Access Control (RBAC)" }
