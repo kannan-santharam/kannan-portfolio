@@ -50,17 +50,27 @@ const LINKEDIN_POST_EMBED = 'https://www.linkedin.com/embed/feed/update/urn:li:s
 
 // Instant short answers shown while DocMind writes the full, cited one.
 // Written in the same plain style as the resume.
-const QUICK_ANSWERS: Record<string, string> = {
+const SHARED_ANSWERS: Record<string, string> = {
   "How did you automate your team's frontend development?":
     'I automated around 90% of our frontend work at SuperOps. Claude agents turn designs into production code using only our design system, integrate APIs from backend contracts and write the tests. Strict checks block anything that breaks the rules. New page development dropped from about 2 weeks to about 5 hours.',
   'What guardrails keep the AI generated code safe?':
     'Every change the agents make passes the same checks as code written by a person. Colours, sizes and spacing must come from design tokens, plain HTML is blocked, pages are checked as the browser renders them, all text must come from the translation system, and a pre commit hook blocks anything that breaks these rules.',
   'Tell me about your experience leading frontend teams':
-    'I lead a frontend team of 6 at SuperOps and run sprint planning, architecture reviews, hiring and performance reviews, while still building features myself. I have hired 9 engineers across SuperOps and Freshworks, with 90% retention.',
-  'What is your visa status and notice period?':
-    'I am an Indian national based in Chennai and ready to relocate to Dubai. I will need UAE employment visa sponsorship. My notice period is 60 days and it is negotiable.',
-  'Where are you based and what is your notice period?':
-    'I am based in Chennai, India. My notice period is 60 days and it is negotiable.'
+    'I lead a frontend team of 6 at SuperOps and run sprint planning, architecture reviews, hiring and performance reviews, while still building features myself. I have hired 9 engineers across SuperOps and Freshworks, with 90% retention.'
+};
+
+// Keyed by region so a Dubai visitor never gets the India notice period, and back.
+const QUICK_ANSWERS: Record<Region, Record<string, string>> = {
+  dubai: {
+    ...SHARED_ANSWERS,
+    'What is your visa status and notice period?':
+      'I am an Indian national based in Chennai and ready to relocate to Dubai. I will need UAE employment visa sponsorship. My notice period is 30 days.'
+  },
+  india: {
+    ...SHARED_ANSWERS,
+    'Where are you based and what is your notice period?':
+      'I am based in Chennai, India. My notice period is 60 days.'
+  }
 };
 
 const PROOF = [
@@ -221,7 +231,7 @@ export const ChatHome: React.FC = () => {
     setJdMode(false);
     setInput('');
 
-    const quick = QUICK_ANSWERS[typed];
+    const quick = QUICK_ANSWERS[region][typed];
     if (quickTimerRef.current) window.clearTimeout(quickTimerRef.current);
     setQuickAnswer(quick ? { question: typed, answer: quick } : null);
     if (quick) quickTimerRef.current = window.setTimeout(() => setQuickAnswer(null), 30000);
@@ -275,7 +285,7 @@ export const ChatHome: React.FC = () => {
     el.style.height = `${Math.min(el.scrollHeight, 224)}px`;
   }, [input]);
 
-  const badges = [content.hero.statusBadge, content.hero.visaBadge, `Notice ${RESUME_DATA.relocation.noticePeriod}`].filter(Boolean);
+  const badges = [content.hero.statusBadge, content.hero.visaBadge, `Notice ${content.noticePeriod}`].filter(Boolean);
 
   return (
     // The intro scrolls with the page itself (an inner scroll box is unreliable on

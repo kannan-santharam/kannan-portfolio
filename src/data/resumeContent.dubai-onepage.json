@@ -4,7 +4,7 @@
     "name": "Kannan Appiya Santharam",
     "title": "Senior Lead Software Engineer (Frontend/Full Stack)",
     "tagline": "React | TypeScript | Node.js | AI-Native",
-    "noticePeriod": "60 Days (Negotiable)",
+    "noticePeriod": "30 Days",
     "nationality": "Indian"
   },
   "contact": {
@@ -44,11 +44,9 @@
       "label": "Platform & Performance",
       "items": [
         "System Design",
-        "Monorepos",
-        "Module Federation",
-        "Micro-Frontends",
+        "Monorepos (Turborepo, pnpm)",
+        "Micro-Frontends & Module Federation",
         "Vite",
-        "Turborepo",
         "Rspack",
         "Webpack",
         "Design Systems",
@@ -155,7 +153,8 @@
       "phoneLine": "+91 97902 47499",
       "visaStatus": "Sponsorship Required",
       "phoneNote": " (WhatsApp, BOTIM & Phone)",
-      "photo": true
+      "photo": true,
+      "noticePeriod": "30 Days"
     }
   }
 }

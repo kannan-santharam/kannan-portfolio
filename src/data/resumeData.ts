@@ -84,9 +84,7 @@ const experiences: ExperienceItem[] = content.experience.map((exp, idx) => {
 export const RESUME_DATA = {
   name: content.identity.name,
   title: content.identity.title,
-  relocation: {
-    noticePeriod: content.identity.noticePeriod,
-  },
+  // Notice period is per region: use `content.noticePeriod` from useRegion().
   nationality: content.identity.nationality,
   contact: {
     phone: content.contact.phone,
@@ -211,10 +209,10 @@ export const RESUME_DATA = {
       title: "Architecture & Performance",
       category: "architecture",
       skills: [
-        { name: "Monorepos & Module Federation" },
-        { name: "Vite & Turborepo" },
+        { name: "Monorepos (Turborepo, pnpm)" },
+        { name: "Vite" },
         { name: "Rspack & Webpack 5" },
-        { name: "Micro-Frontends" },
+        { name: "Micro-Frontends & Module Federation" },
         { name: "Design Systems" },
         { name: "Base UI Headless Components" },
         { name: "Role-Based Access Control (RBAC)" }
