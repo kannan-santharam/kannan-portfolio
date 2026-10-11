@@ -84,9 +84,7 @@ const experiences: ExperienceItem[] = content.experience.map((exp, idx) => {
 export const RESUME_DATA = {
   name: content.identity.name,
   title: content.identity.title,
-  relocation: {
-    noticePeriod: content.identity.noticePeriod,
-  },
+  // Notice period is per region: use `content.noticePeriod` from useRegion().
   nationality: content.identity.nationality,
   contact: {
     phone: content.contact.phone,
