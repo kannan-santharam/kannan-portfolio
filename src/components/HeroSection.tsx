@@ -13,7 +13,7 @@ import { RESUME_DATA } from '../data/resumeData';
 import { PhotoCarousel } from './PhotoCarousel';
 
 // Both hero cards rotate through the same two photos; add here to extend.
-const HERO_PHOTOS = ['/kannanphoto.jpeg', '/kannan_photo.jpg'];
+const HERO_PHOTOS = ['/kannan_photo.jpg', '/kannanphoto.jpeg'];   // blazer photo first
 import { useRegion } from '../context/RegionContext';
 
 /** "English (Fluent) · Tamil (Native) · Hindi (Intermediate)" */
@@ -69,7 +69,7 @@ export const HeroSection: React.FC = () => {
 
               <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border-card)] bg-[var(--bg-card)] px-3.5 py-1.5 text-xs font-medium theme-sub cursor-default select-none">
                 <Calendar className="h-3.5 w-3.5 theme-cyan-text" />
-                <span>Notice: {RESUME_DATA.relocation.noticePeriod}</span>
+                <span>Notice: {content.noticePeriod}</span>
               </span>
 
               {content.hero.visaBadge && (
