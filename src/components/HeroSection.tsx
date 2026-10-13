@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   ArrowDown,
+  ArrowUpRight,
   Bot,
   Calendar,
   MessageSquare,
@@ -100,7 +101,14 @@ export const HeroSection: React.FC = () => {
 
             {/* Core Value Metric Cards (Informational Summary) */}
             <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3 sm:gap-3 pt-1">
-              <div className="flex items-center gap-3 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] p-3 shadow-sm cursor-default select-none">
+              {/* Links to the LinkedIn post about the automation */}
+              <a
+                href={RESUME_DATA.contact.automationPost}
+                target="_blank"
+                rel="noreferrer"
+                title="Read my LinkedIn post about it"
+                className="group relative flex items-center gap-3 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] p-3 shadow-sm transition-all hover:border-[var(--border-gold)] hover:bg-[var(--bg-card-hover)]"
+              >
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-500">
                   <Bot className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
@@ -108,7 +116,8 @@ export const HeroSection: React.FC = () => {
                   <div className="text-xs font-bold theme-title">Frontend Automated</div>
                   <div className="text-[10px] sm:text-[11px] theme-muted">Page development 2 weeks → 5 hrs</div>
                 </div>
-              </div>
+                <ArrowUpRight className="absolute right-2 top-2 h-3.5 w-3.5 theme-muted transition-colors group-hover:text-[var(--color-cyan)]" />
+              </a>
               <div className="flex items-center gap-3 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] p-3 shadow-sm cursor-default select-none">
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[var(--color-cyan)]/10 theme-cyan-text">
                   <Users className="h-4 w-4 sm:h-5 sm:w-5" />

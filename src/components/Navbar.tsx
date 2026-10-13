@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { FileText, Menu, X, MessageSquare, Bot, Sparkles, ChevronDown, CalendarClock, ArrowLeft } from 'lucide-react';
+import { FileText, Menu, X, MessageSquare, Bot, Sparkles, ChevronDown, CalendarClock } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
-import { useRegion, regionPathPrefix } from '../context/RegionContext';
+import { useRegion } from '../context/RegionContext';
 
 interface NavbarProps {
   onOpenResumeModal: () => void;
@@ -147,15 +147,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, a
 
         {/* Action Buttons & Theme Switcher (Desktop) */}
         <div className="hidden items-center gap-1.5 md:flex shrink-0">
-          {/* Back to the chat home page, keeping the region prefix */}
-          <a
-            href={regionPathPrefix() || '/'}
-            className="flex items-center gap-1.5 rounded-xl border border-[var(--border-card)] bg-[var(--bg-card)] px-3 py-1.5 text-xs font-semibold theme-title transition-all hover:border-[var(--color-primary)] hover:bg-[var(--bg-card-hover)] cursor-pointer mr-1"
-          >
-            <ArrowLeft className="h-3.5 w-3.5 theme-cyan-text" />
-            <span>Chat</span>
-          </a>
-
           {/* GitHub Desktop Icon Link */}
           <a
             href={RESUME_DATA.contact.github}
@@ -210,14 +201,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal, onOpenChat, a
 
         {/* Mobile Controls (Hides GitHub/LinkedIn, Shows View CV) */}
         <div className="flex items-center gap-1.5 md:hidden shrink-0">
-          <a
-            href={regionPathPrefix() || '/'}
-            className="flex h-8 w-8 items-center justify-center rounded-lg border border-[var(--border-card)] bg-[var(--bg-card)] text-[var(--text-title)] active:scale-95"
-            aria-label="Back to chat"
-          >
-            <ArrowLeft className="h-3.5 w-3.5 theme-cyan-text" />
-          </a>
-
           {/* View CV Button on Mobile Header */}
           <button
             onClick={onOpenResumeModal}

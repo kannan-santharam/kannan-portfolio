@@ -4,9 +4,6 @@ import type { Region } from '../data/regionContent';
 // VITE_DOCMIND_URL in .env.local (gitignored) to try a local DocMind.
 const DOCMIND_URL: string = import.meta.env.VITE_DOCMIND_URL || 'https://docmind-rag-llm.vercel.app';
 
-/** Origin postMessage traffic is checked against, in both directions. */
-export const DOCMIND_ORIGIN = new URL(DOCMIND_URL).origin;
-
 // DocMind picks its edition from geo-IP unless the parent tells it otherwise.
 // Forward the region THIS page resolved (route, cookie, default) so the two
 // never disagree. DocMind accepts `in` and `dubai` here.

@@ -99,6 +99,8 @@ export const RESUME_DATA = {
     // Site only. The resume generators render the header from named fields,
     // so this never reaches the PDF or the DOCX.
     calendly: content.contact.calendlyUrl,
+    // Site only: the LinkedIn post about the frontend automation work.
+    automationPost: 'https://www.linkedin.com/feed/update/urn:li:share:7513608659365675010',
   },
   // `summaryTemplate` ends with a `{seeking}` placeholder; the region-specific
   // seeking sentence is appended at render time (ResumeModal + content.seekingLine).
