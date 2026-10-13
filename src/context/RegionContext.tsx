@@ -32,16 +32,6 @@ const getPathRegion = (): Region | undefined => {
   return first ? PATH_REGION[`/${first}`] : undefined;
 };
 
-/** The region prefix the visitor arrived on ('/ind', '/uae' or ''), kept on internal links. */
-export const regionPathPrefix = (): string => {
-  const first = window.location.pathname.split('/')[1];
-  return first && PATH_REGION[`/${first}`] ? `/${first}` : '';
-};
-
-/** True on /profile, /ind/profile and /uae/profile: the full scrolling profile page. */
-export const isProfilePath = (): boolean =>
-  window.location.pathname.replace(/\/+$/, '').endsWith('/profile');
-
 export const RegionProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [region] = useState<Region>(() => {
     const pathRegion = getPathRegion();

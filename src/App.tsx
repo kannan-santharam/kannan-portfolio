@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { ThemeProvider } from './context/ThemeContext';
-import { RegionProvider, useRegion, isProfilePath } from './context/RegionContext';
-import { ChatHome } from './components/ChatHome';
+import { RegionProvider, useRegion } from './context/RegionContext';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { RecruiterFacts } from './components/RecruiterFacts';
@@ -161,9 +160,8 @@ export function App() {
   return (
     <ThemeProvider>
       <RegionProvider>
-        {/* The chat is the home page; the scrolling profile lives at /profile,
-            /ind/profile and /uae/profile. */}
-        {isProfilePath() ? <MainLayout /> : <ChatHome />}
+        {/* The profile is the home page on every path, so old /profile links still work. */}
+        <MainLayout />
         {/* Vercel Web Analytics: aggregate page views, referrer, country, device.
             No cookies and no per-visitor identity; see the footer note.
             Own-visit opt-out: run localStorage.setItem('va-disable', '1') once in
