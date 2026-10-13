@@ -1,5 +1,6 @@
 import React from 'react';
-import { Bot, Component, Cpu, ShieldCheck } from 'lucide-react';
+import { ArrowUpRight, Bot, Component, Cpu, ShieldCheck } from 'lucide-react';
+import { RESUME_DATA } from '../data/resumeData';
 
 export const AiArchitectureShowcase: React.FC = () => {
   return (
@@ -19,6 +20,25 @@ export const AiArchitectureShowcase: React.FC = () => {
             Pioneering agentic development workflows in production, from design-to-code component generation through to safe autonomous code modification.
           </p>
         </div>
+
+        {/* The frontend automation workflow, linking to the LinkedIn post it was shared in */}
+        <a
+          href={RESUME_DATA.contact.automationPost}
+          target="_blank"
+          rel="noreferrer"
+          className="group mx-auto mb-8 block max-w-4xl overflow-hidden rounded-2xl border border-[var(--border-card)] shadow-xl transition-all hover:border-[var(--border-gold)]"
+        >
+          <img
+            src="/frontend_automation_workflow.jpg"
+            alt="Automated frontend workflow, from design input and API contract through Claude agents and strict guardrails to tested, production ready code"
+            loading="lazy"
+            className="w-full bg-white"
+          />
+          <div className="flex items-center justify-between gap-2 bg-[var(--bg-card)] px-4 py-2.5 text-xs font-semibold theme-title sm:text-sm">
+            <span>How I automated our frontend work. Read the LinkedIn post</span>
+            <ArrowUpRight className="h-4 w-4 shrink-0 theme-cyan-text transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </div>
+        </a>
 
         {/* 4 Pillar Cards */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -42,6 +62,16 @@ export const AiArchitectureShowcase: React.FC = () => {
               <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Base UI</span>
               <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Guardrails</span>
             </div>
+
+            <a
+              href={RESUME_DATA.contact.automationPost}
+              target="_blank"
+              rel="noreferrer"
+              className="group mt-4 inline-flex items-center gap-1.5 text-xs font-semibold theme-cyan-text hover:underline"
+            >
+              <span>Read my LinkedIn post about it</span>
+              <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </a>
           </div>
 
 
