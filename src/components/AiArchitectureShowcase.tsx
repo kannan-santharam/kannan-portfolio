@@ -75,7 +75,7 @@ export const AiArchitectureShowcase: React.FC = () => {
 
             <h3 className="text-xl font-bold theme-title">Frontend Work Automated</h3>
             <p className="mt-2 text-xs theme-sub leading-relaxed">
-              Automated most of our frontend work. On a new frontend monorepo I set up from scratch on Vite, Turborepo and pnpm, Claude agents turn designs into production code, integrate APIs from backend contracts and write Playwright tests. Strict commit checks block anything that breaks design tokens or translations. New page development now takes about 5 hours instead of 2 weeks.
+              Automated most of our frontend work. On a new frontend monorepo I set up from scratch on Vite, Turborepo and pnpm, AI agents turn designs into production code, integrate APIs from backend contracts and write Playwright tests. Strict commit checks block anything that breaks design tokens or translations. New page development now takes about 5 hours instead of 2 weeks.
             </p>
 
             <div className="mt-4 flex flex-wrap gap-1.5">
