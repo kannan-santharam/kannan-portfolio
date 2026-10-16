@@ -101,6 +101,8 @@ export const RESUME_DATA = {
     calendly: content.contact.calendlyUrl,
     // Site only: the LinkedIn post about the frontend automation work.
     automationPost: 'https://www.linkedin.com/feed/update/urn:li:share:7513608659365675010',
+    // Site only: the follow up LinkedIn post about the guardrails.
+    guardrailsPost: 'https://www.linkedin.com/feed/update/urn:li:share:7515979541882761216',
   },
   // `summaryTemplate` ends with a `{seeking}` placeholder; the region-specific
   // seeking sentence is appended at render time (ResumeModal + content.seekingLine).
