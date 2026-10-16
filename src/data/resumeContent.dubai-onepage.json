@@ -17,7 +17,7 @@
     "github": "github.com/kannan-santharam",
     "githubUrl": "https://github.com/kannan-santharam"
   },
-  "summaryTemplate": "Senior Lead Software Engineer with 10.5+ years in enterprise SaaS, focused on frontend and full stack (React, TypeScript, Node.js). Automated most frontend work with Claude agents, cutting new page development from 2 weeks to about 5 hours. Lead a frontend team of 6 at SuperOps on a platform managing millions of endpoints. At Freshworks, built custom solutions behind 50+ enterprise accounts worth $100K to $1M ARR each. Mentored 15+ engineers. {seeking}",
+  "summaryTemplate": "Senior Lead Software Engineer with 10.5+ years in enterprise SaaS, focused on frontend and full stack (React, TypeScript, Node.js). Automated most frontend work with AI agents, cutting new page development from 2 weeks to about 5 hours. Lead a frontend team of 6 at SuperOps on a platform managing millions of endpoints. At Freshworks, built custom solutions behind 50+ enterprise accounts worth $100K to $1M ARR each. Mentored 15+ engineers. {seeking}",
   "snapshot": [],
   "snapshotLeads": [],
   "competencies": [
@@ -87,7 +87,7 @@
         "Senior Lead Software Engineer"
       ],
       "bullets": [
-        "Automated most of our frontend work with Claude agents that turn designs into production code, integrate APIs from backend contracts and write Playwright tests behind commit checks, on a new monorepo set up from scratch (Vite, Turborepo, pnpm, React 19).",
+        "Automated most of our frontend work with AI agents that turn designs into production code, integrate APIs from backend contracts and write Playwright tests behind commit checks, on a new monorepo set up from scratch (Vite, Turborepo, pnpm, React 19).",
         "Lead a team of 6 engineers, running sprint planning, use case discussions, architecture reviews, hiring and performance reviews, and planning the roadmap with product managers.",
         "Build product features hands on, including role based access control (RBAC) and near real time dashboards in React and TypeScript, with cached GraphQL hooks that keep data fresh without overloading the network.",
         "Cut dev build time by 96%, from 2 minutes to 5 seconds, by moving 12 monorepo packages from Webpack 5 to Rspack alone in 3 weeks. This saves about 50 engineer hours a month.",
@@ -149,7 +149,7 @@
       "subject": "Senior Lead Software Engineer Resume - Dubai, UAE",
       "portfolio": "kannansantharam.com",
       "portfolioUrl": "https://www.kannansantharam.com",
-      "locationLine": "Dubai, UAE (Ready to Relocate from Chennai, India)",
+      "locationLine": "Dubai, UAE (Ready to relocate from Chennai, India)",
       "phoneLine": "+91 97902 47499",
       "visaStatus": "Sponsorship Required",
       "phoneNote": " (WhatsApp, BOTIM & Phone)",

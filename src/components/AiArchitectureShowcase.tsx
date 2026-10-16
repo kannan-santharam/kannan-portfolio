@@ -2,6 +2,23 @@ import React from 'react';
 import { ArrowUpRight, Bot, Component, Cpu, ShieldCheck } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
 
+const LINKEDIN_POSTS = [
+  {
+    url: RESUME_DATA.contact.automationPost,
+    title: 'LinkedIn post about automating our frontend work',
+    caption: 'How I automated our frontend work. Read the LinkedIn post'
+  },
+  {
+    url: RESUME_DATA.contact.guardrailsPost,
+    title: 'LinkedIn post about the guardrails behind the automation',
+    caption: 'The guardrails that make it safe. Read the LinkedIn post'
+  }
+];
+
+// LinkedIn serves an embeddable view of a post at /embed/ plus the post URN.
+const toEmbedUrl = (postUrl: string): string =>
+  postUrl.replace('/feed/update/', '/embed/feed/update/') + '?collapsed=1';
+
 export const AiArchitectureShowcase: React.FC = () => {
   return (
     <section id="ai-spotlight" className="py-16 bg-[var(--bg-page)] text-[var(--text-body)] border-t border-[var(--border-card)] transition-colors duration-250">
@@ -21,24 +38,28 @@ export const AiArchitectureShowcase: React.FC = () => {
           </p>
         </div>
 
-        {/* The frontend automation workflow, linking to the LinkedIn post it was shared in */}
-        <a
-          href={RESUME_DATA.contact.automationPost}
-          target="_blank"
-          rel="noreferrer"
-          className="group mx-auto mb-8 block max-w-4xl overflow-hidden rounded-2xl border border-[var(--border-card)] shadow-xl transition-all hover:border-[var(--border-gold)]"
-        >
-          <img
-            src="/frontend_automation_workflow.jpg"
-            alt="Automated frontend workflow, from design input and API contract through Claude agents and strict guardrails to tested, production ready code"
-            loading="lazy"
-            className="w-full bg-white"
-          />
-          <div className="flex items-center justify-between gap-2 bg-[var(--bg-card)] px-4 py-2.5 text-xs font-semibold theme-title sm:text-sm">
-            <span>How I automated our frontend work. Read the LinkedIn post</span>
-            <ArrowUpRight className="h-4 w-4 shrink-0 theme-cyan-text transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          </div>
-        </a>
+        {/* The two LinkedIn posts, the automation workflow and its guardrails, side by side */}
+        <div className="mx-auto mb-8 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2">
+          {LINKEDIN_POSTS.map((post) => (
+            <div key={post.url} className="overflow-hidden rounded-2xl border border-[var(--border-card)] shadow-xl transition-all hover:border-[var(--border-gold)]">
+              <iframe
+                src={toEmbedUrl(post.url)}
+                title={post.title}
+                loading="lazy"
+                className="block h-[530px] w-full bg-white lg:h-[575px]"
+              />
+              <a
+                href={post.url}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center justify-between gap-2 bg-[var(--bg-card)] px-4 py-2.5 text-xs font-semibold theme-title sm:text-sm"
+              >
+                <span>{post.caption}</span>
+                <ArrowUpRight className="h-4 w-4 shrink-0 theme-cyan-text transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </a>
+            </div>
+          ))}
+        </div>
 
         {/* 4 Pillar Cards */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -54,7 +75,7 @@ export const AiArchitectureShowcase: React.FC = () => {
 
             <h3 className="text-xl font-bold theme-title">Frontend Work Automated</h3>
             <p className="mt-2 text-xs theme-sub leading-relaxed">
-              Automated most of our frontend work. On a new frontend monorepo I set up from scratch on Vite, Turborepo and pnpm, Claude agents turn designs into production code, integrate APIs from backend contracts and write Playwright tests. Strict commit checks block anything that breaks design tokens or translations. New page development now takes about 5 hours instead of 2 weeks.
+              Automated most of our frontend work. On a new frontend monorepo I set up from scratch on Vite, Turborepo and pnpm, AI agents turn designs into production code, integrate APIs from backend contracts and write Playwright tests. Strict commit checks block anything that breaks design tokens or translations. New page development now takes about 5 hours instead of 2 weeks.
             </p>
 
             <div className="mt-4 flex flex-wrap gap-1.5">
@@ -137,6 +158,16 @@ export const AiArchitectureShowcase: React.FC = () => {
               <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Security Control</span>
               <span className="rounded bg-[var(--bg-inner)] border border-[var(--border-card)] px-2 py-0.5 text-[10px] font-medium theme-sub">Autonomous Agents</span>
             </div>
+
+            <a
+              href={RESUME_DATA.contact.guardrailsPost}
+              target="_blank"
+              rel="noreferrer"
+              className="group mt-4 inline-flex items-center gap-1.5 text-xs font-semibold theme-cyan-text hover:underline"
+            >
+              <span>Read my LinkedIn post about it</span>
+              <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </a>
           </div>
 
         </div>

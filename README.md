@@ -92,7 +92,7 @@ pnpm run preview
 
 ## 📬 Contact & Connect
 
-* **Location:** Dubai, UAE (Relocating from Chennai, India)
+* **Location:** Dubai, UAE (Ready to relocate from Chennai, India)
 * **Phone / WhatsApp / BOTIM:** [+91 97902 47499](https://wa.me/919790247499)
 * **Email:** [as.kannan4@gmail.com](mailto:as.kannan4@gmail.com)
 * **LinkedIn:** [linkedin.com/in/askannan](https://linkedin.com/in/askannan)

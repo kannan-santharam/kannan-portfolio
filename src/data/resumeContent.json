@@ -18,9 +18,9 @@
     "githubUrl": "https://github.com/kannan-santharam",
     "calendlyUrl": "https://calendly.com/kannansantharam/meeting-with-kannan"
   },
-  "summaryTemplate": "10.5+ years in enterprise SaaS, building across React, TypeScript and Node.js. Currently leading a frontend team on a platform managing millions of customer endpoints, owning architecture across a 12-package monorepo, design systems and performance, and automating most frontend work with Claude agents, cutting new page development from 2 weeks to about 5 hours. {seeking}",
+  "summaryTemplate": "10.5+ years in enterprise SaaS, building across React, TypeScript and Node.js. Currently leading a frontend team on a platform managing millions of customer endpoints, owning architecture across a 12-package monorepo, design systems and performance, and automating most frontend work with AI agents, cutting new page development from 2 weeks to about 5 hours. {seeking}",
   "snapshot": [
-    "Automated most frontend work with Claude agents that turn designs into production code, integrate APIs and write tests, cutting new page development from 2 weeks to about 5 hours.",
+    "Automated most frontend work with AI agents that turn designs into production code, integrate APIs and write tests, cutting new page development from 2 weeks to about 5 hours.",
     "Lead a frontend team of 6 at SuperOps on a platform managing millions of endpoints, shipping weekly and owning hiring, performance reviews, architecture and the roadmap with product.",
     "Enabled 50+ enterprise accounts at Freshworks, $100K to $1M ARR each, with custom Node.js middleware and microservices that met requirements the core product could not.",
     "Delivered custom features and public apps across 4 Freshworks products to 10,000+ customers, built in React with Node.js services on AWS, secured with JWT and, for public apps, OAuth 2.0 where the third-party API supported it.",
@@ -95,7 +95,7 @@
         "Senior Lead Software Engineer"
       ],
       "bullets": [
-        "Automated most of our frontend work with Claude agents that turn designs into production code, integrate APIs from backend contracts and write Playwright tests behind strict commit checks, cutting new page development from 2 weeks to about 5 hours, on a new frontend monorepo set up from scratch on Vite, Turborepo and pnpm.",
+        "Automated most of our frontend work with AI agents that turn designs into production code, integrate APIs from backend contracts and write Playwright tests behind strict commit checks, cutting new page development from 2 weeks to about 5 hours, on a new frontend monorepo set up from scratch on Vite, Turborepo and pnpm.",
         "Hands-on delivery of product features in React and TypeScript, including role based access control (RBAC) and near real time operational dashboards using cached Apollo GraphQL hooks that balance data freshness against network load, with product and UI/UX teams.",
         "Manage the team's sprint planning, architecture reviews, interviews, mentoring and performance feedback, and roadmap prioritisation with product managers.",
         "Reduced dev build time by 96%, from 2 minutes to 5 seconds, through a solo Webpack 5 to Rspack migration delivered in 3 weeks across 12 monorepo packages, reclaiming roughly 50 engineer-hours a month across a 15-engineer frontend org.",
@@ -163,7 +163,7 @@
       "subject": "Senior Lead Software Engineer Resume - Dubai, UAE",
       "portfolio": "kannansantharam.com",
       "portfolioUrl": "https://www.kannansantharam.com",
-      "locationLine": "Dubai, UAE (Relocating from Chennai, India)",
+      "locationLine": "Dubai, UAE (Ready to relocate from Chennai, India)",
       "phoneLine": "+91 97902 47499",
       "visaStatus": "Sponsorship Required",
       "phoneNote": " (WhatsApp, BOTIM & Phone)",
